@@ -55,7 +55,6 @@ let g:gruvbox_contrast_light='medium'
 let g:gruvbox_invert_selection=0
 set background=dark
 colorscheme gruvbox
-"let g:airline_theme='gruvbox'
 
 " Buffers and Tab Mode
 let g:airline#extensions#tabline#enabled = 1
