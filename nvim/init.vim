@@ -169,12 +169,12 @@ nnoremap <silent> <leader>b :Bufferlist<CR>
 
 " change current directory when changing buffer
 "set autochdir
-nnoremap <silent> <F3> :<C-u>lcd %:h<CR>
+nnoremap <silent> <F10> :<C-u>lcd %:h<CR>
 
 "------------------------------------
 " NERDTree
 "------------------------------------
-nmap <silent> <F9> :<C-u>NERDTreeToggle<CR>
+nmap <silent> <F11> :<C-u>NERDTreeToggle<CR>
 
 "------------------------------------
 " ctrlp.vim
