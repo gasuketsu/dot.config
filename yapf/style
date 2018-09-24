@@ -1,4 +1,5 @@
 [style]
 based_on_style = facebook
+indent_dictionary_value = False
 split_all_comma_separated_values = True
 split_before_dot = True
