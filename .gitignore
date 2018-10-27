@@ -2,4 +2,5 @@
 !/fish/config.fish
 !/fish/fisherman
 /fisherman/*
+/fisher/*
 /htop/*
