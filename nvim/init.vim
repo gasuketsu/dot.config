@@ -12,17 +12,14 @@ function! s:plug.is_installed(name)
   return has_key(self.plugs, a:name) ? isdirectory(self.plugs[a:name].dir) : 0
 endfunction
 
-if has("win32") || has("win64")
-  let s:plugged_dir = has('~/vimfiles/plugged')
-else
-  let s:plugged_dir = has("nvim") ? '~/.local/share/nvim/plugged' : '~/.vim/plugged/'
-endif
-
+let s:plugged_dir = has("win32") || has("win64") ? '~/vimfiles/plugged/' : '~/.vim/plugged/'
 call plug#begin(expand(s:plugged_dir))
 Plug 'ervandew/supertab'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
-Plug 'kien/ctrlp.vim'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'editorconfig/editorconfig-vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -39,19 +36,19 @@ Plug 'kana/vim-operator-user'
 Plug 'rhysd/vim-clang-format'
 Plug 'saltstack/salt-vim'
 Plug 'rust-lang/rust.vim'
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
+Plug 'python-mode/python-mode', { 'branch': 'develop' }
 " Color Schemes
-Plug 'w0ng/vim-hybrid'
-Plug 'kristijanhusak/vim-hybrid-material'
-Plug 'tomasr/molokai'
+Plug 'nanotech/jellybeans.vim'
+Plug 'sickill/vim-monokai'
 Plug 'morhetz/gruvbox'
 call plug#end()
 
 " Color Scheme
 set t_Co=256
-let g:solarized_italic=0
-let g:solarized_termcolors=256
-let g:gruvbox_contrast_dark='medium'
-let g:gruvbox_contrast_light='medium'
+let g:gruvbox_contrast_dark='hard'
+let g:gruvbox_contrast_light='hard'
 let g:gruvbox_invert_selection=0
 set background=dark
 colorscheme gruvbox
@@ -174,7 +171,7 @@ nnoremap <silent> <F3> :<C-u>lcd %:h<CR>
 "------------------------------------
 " NERDTree
 "------------------------------------
-nmap <silent> <F9> :<C-u>NERDTreeToggle<CR>
+nmap <silent> <C-o> :<C-u>NERDTreeToggle<CR>
 
 "------------------------------------
 " ctrlp.vim
@@ -234,3 +231,17 @@ autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
 autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
 " Toggle auto formatting:
 nmap <Leader>C :ClangFormatAutoToggle<CR>
+
+"-----------------------------
+" rainbow parentheses
+"-----------------------------
+" Always enable Rainbow Parentheses
+autocmd VimEnter * RainbowParenthesesToggle
+autocmd Syntax * RainbowParenthesesLoadRound
+autocmd Syntax * RainbowParenthesesLoadSquare
+autocmd Syntax * RainbowParenthesesLoadBraces
+
+"----------------
+" pymode
+"----------------
+let g:pymode_options_max_line_length = 88
