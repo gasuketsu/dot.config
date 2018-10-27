@@ -12,7 +12,12 @@ function! s:plug.is_installed(name)
   return has_key(self.plugs, a:name) ? isdirectory(self.plugs[a:name].dir) : 0
 endfunction
 
-let s:plugged_dir = has("win32") || has("win64") ? '~/vimfiles/plugged/' : '~/.vim/plugged/'
+if has("win32") || has("win64")
+  let s:plugged_dir = has('~/vimfiles/plugged')
+else
+  let s:plugged_dir = has("nvim") ? '~/.local/share/nvim/plugged' : '~/.vim/plugged/'
+endif
+
 call plug#begin(expand(s:plugged_dir))
 Plug 'ervandew/supertab'
 Plug 'scrooloose/nerdcommenter'
