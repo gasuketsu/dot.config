@@ -42,6 +42,7 @@ Plug 'rhysd/vim-clang-format'
 Plug 'saltstack/salt-vim'
 Plug 'rust-lang/rust.vim'
 Plug 'kien/rainbow_parentheses.vim'
+Plug 'ambv/black'
 Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
 Plug 'python-mode/python-mode', { 'branch': 'develop' }
 " Color Schemes
@@ -60,6 +61,11 @@ colorscheme gruvbox
 
 " Buffers and Tab Mode
 let g:airline#extensions#tabline#enabled = 1
+
+if has("nvim")
+  let g:python_host_prog = ''
+  let g:python3_host_prog = system('type pyenv &>/dev/null && echo -n "$(pyenv root)/versions/$(cat $(pyenv root)/version | head -n 1)/bin/python" || echo -n $(which python)')
+endif
 
 "---------------------------------------
 " Display configuration
