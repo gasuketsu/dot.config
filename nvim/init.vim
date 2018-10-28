@@ -12,11 +12,7 @@ function! s:plug.is_installed(name)
   return has_key(self.plugs, a:name) ? isdirectory(self.plugs[a:name].dir) : 0
 endfunction
 
-if has("win32") || has("win64")
-  let s:plugged_dir = has('~/vimfiles/plugged')
-else
-  let s:plugged_dir = has("nvim") ? '~/.local/share/nvim/plugged' : '~/.vim/plugged/'
-endif
+let s:plugged_dir = '~/.local/share/nvim/plugged'
 
 call plug#begin(expand(s:plugged_dir))
 Plug 'ervandew/supertab'
@@ -62,10 +58,11 @@ colorscheme gruvbox
 " Buffers and Tab Mode
 let g:airline#extensions#tabline#enabled = 1
 
-if has("nvim")
-  let g:python_host_prog = ''
-  let g:python3_host_prog = system('type pyenv &>/dev/null && echo -n "$(pyenv root)/versions/$(cat $(pyenv root)/version | head -n 1)/bin/python" || echo -n $(which python)')
-endif
+"---------------------------------------
+" Binding configuration
+"---------------------------------------
+let g:python_host_prog = ''
+let g:python3_host_prog = system('type pyenv &>/dev/null && echo -n "$(pyenv root)/versions/$(cat $(pyenv root)/version | head -n 1)/bin/python" || echo -n $(which python)')
 
 "---------------------------------------
 " Display configuration
@@ -256,3 +253,9 @@ autocmd Syntax * RainbowParenthesesLoadBraces
 " pymode
 "----------------
 let g:pymode_options_max_line_length = 88
+
+" Post hook to source machine-specific configuration
+" (should be put at the last of this file)
+if filereadable(expand($HOME.'.nvimrc'))
+  source $HOME/.nvimrc
+endif
