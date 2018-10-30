@@ -32,7 +32,6 @@ Plug 'gasuketsu/gtags.vim'
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
 Plug 'ConradIrwin/vim-bracketed-paste'
-Plug 'sjl/splice.vim'
 Plug 'kana/vim-operator-user'
 Plug 'rhysd/vim-clang-format'
 Plug 'saltstack/salt-vim'
@@ -41,6 +40,7 @@ Plug 'kien/rainbow_parentheses.vim'
 Plug 'ambv/black'
 Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
 Plug 'python-mode/python-mode', { 'branch': 'develop' }
+Plug 'dag/vim-fish'
 " Color Schemes
 Plug 'nanotech/jellybeans.vim'
 Plug 'sickill/vim-monokai'
