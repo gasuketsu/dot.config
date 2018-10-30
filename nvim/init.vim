@@ -59,10 +59,10 @@ colorscheme gruvbox
 let g:airline#extensions#tabline#enabled = 1
 
 "---------------------------------------
-" Binding configuration
+" Provider configuration
 "---------------------------------------
-let g:python_host_prog = ''
-let g:python3_host_prog = system('type pyenv &>/dev/null && echo -n "$(pyenv root)/versions/$(cat $(pyenv root)/version | head -n 1)/bin/python" || echo -n $(which python)')
+let g:loaded_python_provider = 1
+let g:python3_host_prog = system('type pyenv &>/dev/null && echo -n $(pyenv which python3) || echo -n $(which python3)')
 
 "---------------------------------------
 " Display configuration
