@@ -243,6 +243,11 @@ autocmd Syntax * RainbowParenthesesLoadBraces
 "----------------
 let g:pymode_options_max_line_length = 88
 
+"----------------
+" black
+"----------------
+let g:black_virtualenv = '~/.local/share/nvim/black'
+
 " Post hook to source machine-specific configuration
 " (should be put at the last of this file)
 if filereadable(expand($HOME.'.nvimrc'))
