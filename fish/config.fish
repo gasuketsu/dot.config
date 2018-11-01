@@ -1,5 +1,6 @@
 set -g theme_display_hg yes
 set -g theme_color_scheme base16
+set -g theme_date_format "+%Y-%m-%dT%T%:z"
 
 if status --is-login
   if test -d $HOME/.pyenv
