@@ -1,15 +1,22 @@
 #! /usr/bin/env bash
 
 # vim-plug (for neovim)
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+if [ ! -f ~/.local/share/nvim/site/autoload/plug.vim ]; then
+  curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+fi
 
 # Fisherman
-curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs \
-  https://git.io/fisher
+if [ ! -f ~/.config/fish/functions/fisher.fish ]; then
+  curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
+fi
 
 # tmux-tpm
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+if [ ! -d ~/.tmux/plugin/tpm ]; then
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+fi
 
-# pyenv
-curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
+# asdf
+if [ ! -d ~/.asdf ]; then
+  git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.6.0
+fi

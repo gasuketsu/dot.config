@@ -61,7 +61,7 @@ let g:airline#extensions#tabline#enabled = 1
 " Provider configuration
 "---------------------------------------
 let g:loaded_python_provider = 1
-let g:python3_host_prog = system('type pyenv &>/dev/null && echo -n $(pyenv which python3) || echo -n $(which python3)')
+let g:python3_host_prog = system('type asdf &>/dev/null && echo -n $(asdf which python) || echo -n $(which python3)')
 let g:loaded_ruby_provider = 1
 let g:loaded_node_provider = 1
 
