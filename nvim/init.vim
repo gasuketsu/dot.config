@@ -68,6 +68,7 @@ let g:loaded_node_provider = 1
 "---------------------------------------
 " Display configuration
 "---------------------------------------
+set shortmess+=I
 set shellslash
 set encoding=utf-8
 set fileencodings=utf-8,euc-jp,sjis,cp932,iso-2022-jp
