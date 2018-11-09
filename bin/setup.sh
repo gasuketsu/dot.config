@@ -12,7 +12,7 @@ if [ ! -f ~/.config/fish/functions/fisher.fish ]; then
 fi
 
 # tmux-tpm
-if [ ! -d ~/.tmux/plugin/tpm ]; then
+if [ ! -d ~/.tmux/plugins/tpm ]; then
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 fi
 
