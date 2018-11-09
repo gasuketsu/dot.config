@@ -25,7 +25,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'milkypostman/vim-togglelist'
-Plug 'sandeepcr529/Buffet.vim'
+Plug 'ap/vim-buftabline'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'gasuketsu/gtags.vim'
@@ -168,8 +168,10 @@ nnoremap <silent> <C-k> :<C-u>cp<CR>
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
 
-" Buffet
-nnoremap <silent> <leader>b :Bufferlist<CR>
+" fzf
+nnoremap <silent> <leader>f :Files<CR>
+nnoremap <silent> <leader>b :Buffers<CR>
+nnoremap <silent> <leader>g :GFiles<CR>
 
 " change current directory when changing buffer
 "set autochdir
@@ -241,9 +243,11 @@ autocmd Syntax * RainbowParenthesesLoadSquare
 autocmd Syntax * RainbowParenthesesLoadBraces
 
 "----------------
-" pymode
+" python-mode
 "----------------
+let g:pymode_python = 'python3'
 let g:pymode_options_max_line_length = 88
+let g:pymode_breakpoint = 0
 
 "----------------
 " black
