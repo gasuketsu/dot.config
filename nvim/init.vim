@@ -256,7 +256,7 @@ let g:black_virtualenv = '~/.local/share/nvim/black'
 
 " Post hook to source machine-specific configuration
 " (should be put at the last of this file)
-let s:local_rc = expand($HOME.'/.nvimrc')
+let s:local_rc = expand($HOME.'/.nvimrc_local')
 if filereadable(s:local_rc)
   execute 'source' s:local_rc
 endif
