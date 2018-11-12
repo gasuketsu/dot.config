@@ -24,3 +24,7 @@ fi
 if [ ! -d ~/.asdf ]; then
   git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.6.0
 fi
+
+if [ ! -f ~/.config/fish/completions/asdf.fish ]; then
+  cp ~/.asdf/completions/asdf.fish ~/.config/fish/completions
+fi
