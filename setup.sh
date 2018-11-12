@@ -11,7 +11,11 @@ if [ ! -f ~/.config/fish/functions/fisher.fish ]; then
   curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
 fi
 
-# tmux-tpm
+# tmux
+if [ ! -e ~/.tmux.conf ]; then
+  ln -s ~/.config/tmux/.tmux.conf ~/.tmux.conf
+fi
+
 if [ ! -d ~/.tmux/plugins/tpm ]; then
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 fi
