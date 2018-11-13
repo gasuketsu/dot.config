@@ -145,6 +145,7 @@ fi
 # Try to keep environment pollution down, EPA loves us.
 unset use_color sh
 
-if shopt -q login_shell && type fish > /dev/null; then
-  exec fish
-fi
+# Uncomment if you want to use fishshell as login shell
+#if shopt -q login_shell && type fish > /dev/null; then
+#  exec fish
+#fi
