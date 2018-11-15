@@ -26,5 +26,6 @@ if [ ! -d ~/.asdf ]; then
 fi
 
 if [ ! -f ~/.config/fish/completions/asdf.fish ]; then
+  mkdir -p ~/.config/fish/completions
   cp ~/.asdf/completions/asdf.fish ~/.config/fish/completions
 fi
