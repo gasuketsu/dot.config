@@ -44,15 +44,17 @@ Plug 'dag/vim-fish'
 Plug 'nanotech/jellybeans.vim'
 Plug 'sickill/vim-monokai'
 Plug 'morhetz/gruvbox'
+Plug 'srcery-colors/srcery-vim'
 call plug#end()
 
 " Color Scheme
-set t_Co=256
 let g:gruvbox_contrast_dark='hard'
 let g:gruvbox_contrast_light='hard'
 let g:gruvbox_invert_selection=0
+let g:srcery_inverse_matches=1
+let g:srcery_inverse_match_paren=1
 set background=dark
-colorscheme gruvbox
+colorscheme srcery
 
 " Buffers and Tab Mode
 let g:airline#extensions#tabline#enabled = 1
