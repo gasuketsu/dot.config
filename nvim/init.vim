@@ -51,10 +51,8 @@ call plug#end()
 let g:gruvbox_contrast_dark='hard'
 let g:gruvbox_contrast_light='hard'
 let g:gruvbox_invert_selection=0
-let g:srcery_inverse_matches=1
-let g:srcery_inverse_match_paren=1
 set background=dark
-colorscheme srcery
+colorscheme gruvbox
 
 " Buffers and Tab Mode
 let g:airline#extensions#tabline#enabled = 1
