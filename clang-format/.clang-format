@@ -1,0 +1,28 @@
+---
+# Based on HHVM coding conventions
+# https://github.com/facebook/hhvm/blob/master/hphp/doc/coding-conventions.md
+
+AlignAfterOpenBracket: Align
+AlignEscapedNewlinesLeft: 'true'
+AlignTrailingComments: 'true'
+AllowShortBlocksOnASingleLine: 'false'
+AllowShortCaseLabelsOnASingleLine: 'true'
+AllowShortIfStatementsOnASingleLine: 'true'
+AllowShortLoopsOnASingleLine: 'true'
+AlwaysBreakTemplateDeclarations: 'true'
+BinPackArguments: 'false'
+BinPackParameters: 'false'
+BreakBeforeBraces: WebKit
+BreakConstructorInitializersBeforeComma: 'false'
+ColumnLimit: '88'
+ConstructorInitializerAllOnOneLineOrOnePerLine: 'true'
+ConstructorInitializerIndentWidth: '2'
+Cpp11BracedListStyle: 'true'
+IndentWidth: '2'
+MaxEmptyLinesToKeep: '2'
+NamespaceIndentation: None
+Standard: Cpp11
+TabWidth: '4'
+UseTab: Never
+
+...
