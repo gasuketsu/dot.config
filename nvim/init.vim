@@ -18,6 +18,7 @@ call plug#begin(expand(s:plugged_dir))
 Plug 'ervandew/supertab'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
+Plug 'jeetsukumaran/vim-buffergator'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'editorconfig/editorconfig-vim'
@@ -174,11 +175,14 @@ nnoremap <silent> <C-j> :<C-u>cn<CR>
 nnoremap <silent> <C-k> :<C-u>cp<CR>
 
 "-----------------------------
+" Buffergator
+"-----------------------------
+let g:buffergator_viewport_split_policy = 'T'
+
+"-----------------------------
 " fzf
 "-----------------------------
-let g:fzf_layout = { 'up': '~40%' }
 nnoremap <silent> <leader>f :Files<CR>
-nnoremap <silent> <leader>b :Buffers<CR>
 nnoremap <silent> <leader>g :GFiles<CR>
 
 "-----------------------------
