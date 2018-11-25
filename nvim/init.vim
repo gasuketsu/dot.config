@@ -182,8 +182,9 @@ let g:buffergator_viewport_split_policy = 'T'
 "-----------------------------
 " fzf
 "-----------------------------
-nnoremap <silent> <leader>f :Files<CR>
-nnoremap <silent> <leader>g :GFiles<CR>
+nnoremap <silent> <leader>ff :Files<CR>
+nnoremap <silent> <leader>fg :GFiles<CR>
+nnoremap <silent> <leader>fb :Buffers<CR>
 
 "-----------------------------
 " NERDTree
