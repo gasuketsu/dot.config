@@ -4,6 +4,7 @@ set -g theme_date_format "+%Y-%m-%dT%T%:z"
 
 if status --is-interactive
   type nvim > /dev/null 2>&1; and set -gx EDITOR nvim
+  set -gx VIRTUAL_ENV_DISABLE_PROMPT 1
 end
 
 # asdf
