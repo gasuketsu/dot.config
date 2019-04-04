@@ -142,6 +142,8 @@ set clipboard=unnamed
 set hlsearch
 set ignorecase
 set smartcase
+set wrapscan
+set inccommand=split
 
 " IME settings in Insert/Search Mode for Windows environment
 " 0:off 1:off 2:on
