@@ -41,6 +41,7 @@ Plug 'ambv/black'
 Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
 Plug 'python-mode/python-mode', { 'branch': 'develop' }
 Plug 'dag/vim-fish'
+Plug 'fatih/vim-go'
 " Color Schemes
 Plug 'nanotech/jellybeans.vim'
 Plug 'sickill/vim-monokai'
