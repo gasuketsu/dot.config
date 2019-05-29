@@ -34,3 +34,9 @@ if [ ! -f ~/.config/fish/completions/asdf.fish ]; then
   mkdir -p ~/.config/fish/completions
   cp ~/.asdf/completions/asdf.fish ~/.config/fish/completions
 fi
+
+# EditorConfig
+if [ ! -e ~/.editorconfig ]; then
+  ln -s ~/.config/editorconfig/.editorconfig ~/.editorconfig
+fi
+
