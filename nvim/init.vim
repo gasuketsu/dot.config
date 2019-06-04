@@ -42,6 +42,7 @@ Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
 Plug 'python-mode/python-mode', { 'branch': 'develop' }
 Plug 'dag/vim-fish'
 Plug 'fatih/vim-go'
+Plug 'cespare/vim-toml'
 " Color Schemes
 Plug 'nanotech/jellybeans.vim'
 Plug 'sickill/vim-monokai'
@@ -242,6 +243,11 @@ let g:pymode_breakpoint = 0
 " black
 "-----------------------------
 let g:black_virtualenv = '~/.local/share/nvim/black'
+
+"-----------------------------
+" vim-go
+"-----------------------------
+let g:auto_type_info = 1
 
 " Post hook to source machine-specific configuration
 " (should be put at the last of this file)
