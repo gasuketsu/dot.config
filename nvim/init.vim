@@ -15,7 +15,6 @@ endfunction
 let s:plugged_dir = '~/.local/share/nvim/plugged'
 
 call plug#begin(expand(s:plugged_dir))
-Plug 'ervandew/supertab'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'jeetsukumaran/vim-buffergator'
@@ -43,6 +42,7 @@ Plug 'python-mode/python-mode', { 'branch': 'develop' }
 Plug 'dag/vim-fish'
 Plug 'fatih/vim-go'
 Plug 'cespare/vim-toml'
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
 " Color Schemes
 Plug 'nanotech/jellybeans.vim'
 Plug 'sickill/vim-monokai'
@@ -94,6 +94,8 @@ set cmdheight=2
 set laststatus=2
 set showcmd
 set display=lastline
+set updatetime=100
+set signcolumn=yes
 
 "-----------------------------
 " Editor configuration
@@ -193,7 +195,7 @@ nnoremap <silent> <leader>fb :Buffers<CR>
 "-----------------------------
 " NERDTree
 "-----------------------------
-nmap <silent> <C-o> :<C-u>NERDTreeToggle<CR>
+nmap <silent> <F3> :<C-u>NERDTreeToggle<CR>
 
 "-----------------------------
 " vim-better-whitespace
@@ -247,7 +249,34 @@ let g:black_virtualenv = '~/.local/share/nvim/black'
 "-----------------------------
 " vim-go
 "-----------------------------
-let g:auto_type_info = 1
+let g:go_highlight_types = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_calls = 1
+
+"-----------------------------
+" coc.nvim
+"-----------------------------
+" use <c-n> for trigger completion
+inoremap <silent><expr> <C-n> pumvisible() ? "\<C-n>" : coc#refresh()
+
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
+" Coc only does snippet and additional edit on confirm.
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" Use `C-o` and `C-i` to navigate diagnostics
+nmap <silent> <C-o> <Plug>(coc-diagnostic-prev)
+nmap <silent> <C-i> <Plug>(coc-diagnostic-next)
+
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Remap for format selected region
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
 
 " Post hook to source machine-specific configuration
 " (should be put at the last of this file)
