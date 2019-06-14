@@ -37,8 +37,6 @@ Plug 'rhysd/vim-clang-format'
 Plug 'rust-lang/rust.vim'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'ambv/black'
-Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
-Plug 'python-mode/python-mode', { 'branch': 'develop' }
 Plug 'dag/vim-fish'
 Plug 'fatih/vim-go'
 Plug 'cespare/vim-toml'
@@ -264,18 +262,18 @@ inoremap <silent><expr> <C-n> pumvisible() ? "\<C-n>" : coc#refresh()
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " Use `C-o` and `C-i` to navigate diagnostics
-nmap <silent> <C-o> <Plug>(coc-diagnostic-prev)
-nmap <silent> <C-i> <Plug>(coc-diagnostic-next)
+nmap <silent> gp <Plug>(coc-diagnostic-prev)
+nmap <silent> gn <Plug>(coc-diagnostic-next)
 
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gt <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 " Remap for format selected region
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+xmap <leader>f <Plug>(coc-format-selected)
+nmap <leader>f <Plug>(coc-format-selected)
 
 
 " Post hook to source machine-specific configuration
