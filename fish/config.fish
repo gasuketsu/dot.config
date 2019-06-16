@@ -9,6 +9,11 @@ if status --is-interactive
   set -gx PIPENV_VENV_IN_PROJECT 1
 end
 
+# yarn
+if test -d $HOME/.yarn/bin
+  set -x PATH $HOME/.yarn/bin $HOME/.config/yarn/global/node_modules/.bin $PATH
+end
+
 # asdf
 if test -f $HOME/.asdf/asdf.fish
   status --is-interactive; and source $HOME/.asdf/asdf.fish
