@@ -69,7 +69,7 @@ let g:airline#extensions#tabline#show_buffers = 1
 " Provider configuration
 "-----------------------------
 let g:loaded_python_provider = 1
-let g:python3_host_prog = system('type asdf &>/dev/null && echo -n $(asdf which python) || echo -n $(which python3)')
+let g:python3_host_prog = expand($HOME.'/.config/nvim/py3nvim/.venv/bin/python')
 let g:loaded_ruby_provider = 1
 let g:loaded_node_provider = 1
 
@@ -242,7 +242,7 @@ let g:pymode_breakpoint = 0
 "-----------------------------
 " black
 "-----------------------------
-let g:black_virtualenv = '~/.local/share/nvim/black'
+let g:black_virtualenv = expand($HOME.'/.config/nvim/py3nvim/.venv')
 
 "-----------------------------
 " vim-go

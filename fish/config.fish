@@ -6,6 +6,7 @@ if status --is-interactive
   type nvim > /dev/null 2>&1; and set -gx EDITOR nvim
   type fish > /dev/null 2>&1; and set -gx PIPENV_SHELL (which fish)
   set -gx VIRTUAL_ENV_DISABLE_PROMPT 1
+  set -gx PIPENV_VENV_IN_PROJECT 1
 end
 
 # asdf
