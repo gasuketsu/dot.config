@@ -1,5 +1,10 @@
 {
     "python": {
+        "jediEnabled": true,
+        "linting": {
+            "pylintEnabled": false,
+            "flake8Enabled": true
+        },
         "formatting": {
             "provider": "black"
         },
