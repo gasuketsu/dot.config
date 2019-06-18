@@ -1,21 +1,14 @@
 {
-    "python": {
-        "jediEnabled": true,
-        "linting": {
-            "pylintEnabled": false,
-            "flake8Enabled": true
-        },
-        "formatting": {
-            "provider": "black"
-        },
-        "analysis": {
-            "diagnosticPublishDelay": 500
+    "python.jediEnabled": true,
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.formatting.provider": "black",
+    "python.analysis.diagnosticPublishDelay": 500,
+    "languageserver": {
+        "golang": {
+            "command": "gopls",
+            "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+            "filetypes": ["go"]
         }
-    },
-    "golang": {
-        "command": "gopls",
-        "args": ["--diagnostics-style=instant"],
-        "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
-        "filetypes": ["go"]
     }
 }

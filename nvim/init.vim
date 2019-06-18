@@ -25,7 +25,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'milkypostman/vim-togglelist'
+Plug 'drmingdrmer/vim-toggle-quickfix'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'gasuketsu/gtags.vim'
@@ -40,7 +40,7 @@ Plug 'ambv/black'
 Plug 'dag/vim-fish'
 Plug 'fatih/vim-go'
 Plug 'cespare/vim-toml'
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Color Schemes
 Plug 'nanotech/jellybeans.vim'
 Plug 'sickill/vim-monokai'
@@ -69,7 +69,7 @@ let g:airline#extensions#tabline#show_buffers = 1
 " Provider configuration
 "-----------------------------
 let g:loaded_python_provider = 1
-let g:python3_host_prog = expand($HOME.'/.config/nvim/py3nvim/.venv/bin/python')
+let g:python3_host_prog = $HOME.'/.config/nvim/py3nvim/.venv/bin/python'
 let g:loaded_ruby_provider = 1
 let g:loaded_node_provider = 1
 
@@ -184,6 +184,12 @@ nnoremap <silent> <C-k> :<C-u>cp<CR>
 let g:buffergator_viewport_split_policy = 'T'
 
 "-----------------------------
+" toggle-quickfix
+"-----------------------------
+nmap <Leader>q <Plug>window:quickfix:toggle
+nmap <Leader>l <Plug>window:location:toggle
+
+"-----------------------------
 " fzf
 "-----------------------------
 nnoremap <silent> <leader>ff :Files<CR>
@@ -242,7 +248,7 @@ let g:pymode_breakpoint = 0
 "-----------------------------
 " black
 "-----------------------------
-let g:black_virtualenv = expand($HOME.'/.config/nvim/py3nvim/.venv')
+let g:black_virtualenv = $HOME.'/.config/nvim/py3nvim/.venv'
 
 "-----------------------------
 " vim-go
