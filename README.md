@@ -6,7 +6,7 @@ Clone this respository into `~/.config` as below:
 $ git clone https://github.com/gasuketsu/dot.config ~/.config
 ```
 
-## Instalattion and setup
+## Instalation and setup
 
 * Run setup script `setup.sh` to setup [asdf](https://github.com/asdf-vm/asdf), [tpm](https://github.com/tmux-plugins/tpm), [fisherman](https://github.com/jorgebucaran/fisher) and initial configurations.
 
