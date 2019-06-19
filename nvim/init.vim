@@ -27,7 +27,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'gasuketsu/gtags.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'rhysd/vim-clang-format'
 Plug 'rust-lang/rust.vim'
@@ -159,14 +158,6 @@ nnoremap <silent> <F3> :<C-u>lcd %:h<CR>
 " Ctags
 "-----------------------------
 set tags+=tags;~/
-
-"-----------------------------
-" Gtags
-"-----------------------------
-nnoremap tg :<C-u>Gtags -g
-nnoremap <silent> tf :<C-u>Gtags -f %<CR>
-nnoremap <silent> tt :<C-u>Gtags <C-r><C-w><CR>
-nnoremap <silent> tr :<C-u>Gtags -r <C-r><C-w><CR>
 
 "-----------------------------
 " Buffergator
