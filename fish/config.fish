@@ -7,14 +7,17 @@ if status --is-interactive
   type fish > /dev/null 2>&1; and set -gx PIPENV_SHELL (which fish)
   set -gx VIRTUAL_ENV_DISABLE_PROMPT 1
   set -gx PIPENV_VENV_IN_PROJECT 1
-end
 
-# yarn
-if test -d $HOME/.yarn/bin
-  set -x PATH $HOME/.yarn/bin $HOME/.config/yarn/global/node_modules/.bin $PATH
-end
+  if test -d $HOME/.local/bin
+    set -gxp PATH $HOME/.local/bin
+  end
+  # yarn
+  if test -d $HOME/.yarn/bin
+    set -gxp PATH $HOME/.yarn/bin $HOME/.config/yarn/global/node_modules/.bin
+  end
 
-# asdf
-if test -f $HOME/.asdf/asdf.fish
-  status --is-interactive; and source $HOME/.asdf/asdf.fish
+  # asdf
+  if test -f $HOME/.asdf/asdf.fish
+    source $HOME/.asdf/asdf.fish
+  end
 end
