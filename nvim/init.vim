@@ -25,14 +25,11 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'drmingdrmer/vim-toggle-quickfix'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'gasuketsu/gtags.vim'
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
-Plug 'ConradIrwin/vim-bracketed-paste'
-Plug 'kana/vim-operator-user'
 Plug 'rhysd/vim-clang-format'
 Plug 'rust-lang/rust.vim'
 Plug 'kien/rainbow_parentheses.vim'
@@ -42,10 +39,7 @@ Plug 'fatih/vim-go'
 Plug 'cespare/vim-toml'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Color Schemes
-Plug 'nanotech/jellybeans.vim'
-Plug 'sickill/vim-monokai'
 Plug 'morhetz/gruvbox'
-Plug 'srcery-colors/srcery-vim'
 call plug#end()
 
 "-----------------------------
@@ -174,9 +168,6 @@ nnoremap tg :<C-u>Gtags -g
 nnoremap <silent> tf :<C-u>Gtags -f %<CR>
 nnoremap <silent> tt :<C-u>Gtags <C-r><C-w><CR>
 nnoremap <silent> tr :<C-u>Gtags -r <C-r><C-w><CR>
-nnoremap <silent> <C-Q> :<C-u>ccl<CR>
-nnoremap <silent> <C-j> :<C-u>cn<CR>
-nnoremap <silent> <C-k> :<C-u>cp<CR>
 
 "-----------------------------
 " Buffergator
@@ -184,10 +175,14 @@ nnoremap <silent> <C-k> :<C-u>cp<CR>
 let g:buffergator_viewport_split_policy = 'T'
 
 "-----------------------------
-" toggle-quickfix
+" vim-qf
 "-----------------------------
-nmap <Leader>q <Plug>window:quickfix:toggle
-nmap <Leader>l <Plug>window:location:toggle
+nmap <Leader>q <Plug>(qf_qf_toggle)
+nmap <Leader>l <Plug>(qf_loc_toggle)
+nmap <silent> [q <Plug>(qf_qf_previous)
+nmap <silent> ]q <Plug>(qf_qf_next)
+nmap <silent> [l <Plug>(qf_loc_previous)
+nmap <silent> ]l <Plug>(qf_loc_next)
 
 "-----------------------------
 " fzf
@@ -199,7 +194,7 @@ nnoremap <silent> <leader>fb :Buffers<CR>
 "-----------------------------
 " NERDTree
 "-----------------------------
-nmap <silent> <F3> :<C-u>NERDTreeToggle<CR>
+nnoremap <silent> <F9> :NERDTreeToggle<CR>
 
 "-----------------------------
 " vim-better-whitespace
