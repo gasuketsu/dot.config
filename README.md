@@ -5,21 +5,22 @@ Manages configurations stored under your `~/.config`.
 
 ### Initial setup
 
-Just setup script `setup.sh` after cloning this respository into `~/.config` as below:
+Run `setup.sh` after cloning this respository into `~/.config` as below:
 
 ```
 $ git clone https://github.com/gasuketsu/dot.config ~/.config
 $ ~/.config/setup.sh
 ```
 
-### Vim Plug
+### Vim/Neovim plugins
+
 Install plugins by running ``PlugInstall`` command in your vim/neovim.
 
 ```
 :PlugInstall
 ```
 
-### coc.nvim
+### coc.nvim extentions
 
 Install following extentions by running ``CocInstall`` command in your neovim.
 
