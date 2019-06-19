@@ -1,0 +1,5 @@
+[push]
+	default = simple
+[alias]
+  glog = log --graph --decorate --date=iso
+  root = rev-parse --show-toplevel
