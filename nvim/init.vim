@@ -28,7 +28,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'gasuketsu/gtags.vim'
-Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
 Plug 'rhysd/vim-clang-format'
 Plug 'rust-lang/rust.vim'
@@ -275,6 +274,10 @@ nmap <silent> gr <Plug>(coc-references)
 " Remap for format selected region
 xmap <leader>f <Plug>(coc-format-selected)
 nmap <leader>f <Plug>(coc-format-selected)
+
+" git
+nmap <silent> [g <Plug>(coc-git-prevchunk)
+nmap <silent> ]g <Plug>(coc-git-nextchunk)
 
 
 " Post hook to source machine-specific configuration
