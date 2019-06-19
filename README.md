@@ -1,7 +1,7 @@
 # dot.config
 Manages configurations stored under your `~/.config`.
 
-## Instalation and setup
+## Installation and setup
 
 ### Initial setup
 
