@@ -2,8 +2,6 @@ set -g theme_display_hg yes
 set -g theme_color_scheme terminal
 set -g theme_date_format "+%Y-%m-%dT%T%:z"
 
-set -gx XDG_CONFIG_HOME $HOME/.config
-
 if status --is-interactive
   type nvim > /dev/null 2>&1; and set -gx EDITOR nvim
   type fish > /dev/null 2>&1; and set -gx PIPENV_SHELL (which fish)
