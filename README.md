@@ -32,4 +32,5 @@ Install following extentions by running ``CocInstall`` command in your neovim.
 :CocInstall coc-json
 :CocInstall coc-python
 :CocInstall coc-git
+:CocInstall coc-prettier
 ```

@@ -4,6 +4,9 @@
     "python.linting.flake8Enabled": true,
     "python.formatting.provider": "black",
     "python.analysis.diagnosticPublishDelay": 500,
+
+    "coc.preferences.formatOnSaveFiletypes": ["python", "json"],
+
     "languageserver": {
         "golang": {
             "command": "gopls",
