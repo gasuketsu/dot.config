@@ -104,10 +104,7 @@ set hidden
 " wildmode(complement)
 set wildmenu
 set wildmode=list:longest
-set wildignore+=*.o,*.obj,*.a,*.pyc,*.DS_Store,*.db,*/tmp/*,*.swp,*.zip,*.exe,*.dll,*.so
-if has("win32") || has("win64")
-  set wildignore+=NTUSER*,ntuser*
-endif
+set wildignore+=*.o,*.obj,*.a,*.pyc,*.DS_Store,*.db,*/tmp/*,*.swp,*.zip,*.exe,*.dll,*.so,NTUSER*,ntuser*
 
 " no beep
 set vb t_vb=
@@ -137,15 +134,6 @@ set ignorecase
 set smartcase
 set wrapscan
 set inccommand=split
-
-" IME settings in Insert/Search Mode for Windows environment
-" 0:off 1:off 2:on
-if has("win32") || has("win64")
-    set iminsert=0
-    set imsearch=0
-  " Fix IM control mode
-  let IM_CtrlMode = 4
-endif
 
 " Yank to end of line
 nnoremap Y y$
@@ -209,10 +197,10 @@ let g:multiple_cursor_quit_key='<Esc>'
 "--------------------------
 let g:clang_format#detect_style_file = 1
 " map to <Leader>cf in C++ code
-autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
-autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
+autocmd FileType c,cpp,objc nnoremap <buffer><Leader>Cf :ClangFormat<CR>
+autocmd FileType c,cpp,objc vnoremap <buffer><Leader>Cf :ClangFormat<CR>
 " Toggle auto formatting:
-nmap <Leader>C :ClangFormatAutoToggle<CR>
+nmap <Leader>Ct :ClangFormatAutoToggle<CR>
 
 "-----------------------------
 " rainbow parentheses
@@ -222,13 +210,6 @@ autocmd VimEnter * RainbowParenthesesToggle
 autocmd Syntax * RainbowParenthesesLoadRound
 autocmd Syntax * RainbowParenthesesLoadSquare
 autocmd Syntax * RainbowParenthesesLoadBraces
-
-"-----------------------------
-" pymode
-"-----------------------------
-let g:pymode_python = 'python3'
-let g:pymode_options_max_line_length = 88
-let g:pymode_breakpoint = 0
 
 "-----------------------------
 " black
