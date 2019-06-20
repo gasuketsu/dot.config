@@ -27,6 +27,7 @@ Install following extentions by running ``CocInstall`` command in your neovim.
 * [coc-json](https://github.com/neoclide/coc-json)
 * [coc-python](https://github.com/neoclide/coc-python)
 * [coc-git](https://github.com/neoclide/coc-git)
+* [coc-prettier](https://github.com/neoclide/coc-prettier)
 
 ```
 :CocInstall coc-json
