@@ -138,9 +138,9 @@ set inccommand=split
 " Yank to end of line
 nnoremap Y y$
 " turn off search highlighting until the next search
-nnoremap <C-L> :nohl<CR><C-L>
+nnoremap <silent> <C-l> :nohl<CR>
 " change current directory when changing buffer
-nnoremap <silent> <F3> :<C-u>lcd %:h<CR>
+nnoremap <silent> <F6> :<C-u>lcd %:h<CR>
 
 "-----------------------------
 " Ctags
@@ -172,7 +172,7 @@ nnoremap <silent> <leader>fb :Buffers<CR>
 "-----------------------------
 " NERDTree
 "-----------------------------
-nnoremap <silent> <F9> :NERDTreeToggle<CR>
+nnoremap <silent> <F3> :NERDTreeToggle<CR>
 
 "-----------------------------
 " vim-better-whitespace
@@ -180,8 +180,8 @@ nnoremap <silent> <F9> :NERDTreeToggle<CR>
 " disable highlighting trailing whitespace by default.
 " (perform :ToggleWhitespace to enable highlighting)
 nnoremap <silent> <leader>w :ToggleWhitespace<CR>
-vnoremap <silent> <F12> :StripWhitespace<CR>
-nnoremap <silent> <F12> :StripWhitespace<CR>
+vnoremap <silent> <leader>sw :StripWhitespace<CR>
+nnoremap <silent> <leader>sw :StripWhitespace<CR>
 
 "-----------------------------
 " multiple cursors

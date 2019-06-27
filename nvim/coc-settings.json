@@ -5,7 +5,7 @@
     "python.formatting.provider": "black",
     "python.analysis.diagnosticPublishDelay": 500,
 
-    "coc.preferences.formatOnSaveFiletypes": ["python", "json"],
+    "coc.preferences.formatOnSaveFiletypes": ["python"],
 
     "languageserver": {
         "golang": {
