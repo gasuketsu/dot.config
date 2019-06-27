@@ -68,7 +68,7 @@ if [ -d ~/.asdf ]; then
         echo "install golang($asdf_nodejs_version) with asdf..."
         asdf plugin-add nodejs
         bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
-        asdf install nodejjs $asdf_nodejs_version
+        asdf install nodejs $asdf_nodejs_version
         asdf global nodejs $asdf_nodejs_version
     fi
     # make sure shims are up to date
