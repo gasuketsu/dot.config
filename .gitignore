@@ -9,4 +9,5 @@
 Pipfile.lock
 /lxc/*
 /coc/*
+/configstore/
 .venv/
