@@ -60,7 +60,9 @@ let g:airline#extensions#tabline#show_buffers = 1
 "-----------------------------
 " Provider configuration
 "-----------------------------
-set pyxversion=3
+if has('pyx')
+    set pyxversion=3
+endif
 let g:loaded_python_provider = 1
 let g:python3_host_prog = $HOME.'/.config/nvim/py3nvim/.venv/bin/python'
 let g:loaded_ruby_provider = 1
