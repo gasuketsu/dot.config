@@ -19,7 +19,7 @@ set -g fish_color_match --background=brblue
 set -g fish_color_normal normal
 set -g fish_color_operator bryellow
 set -g fish_color_param cyan
-set -g fish_color_quote brgreen
+set -g fish_color_quote green
 set -g fish_color_redirection brblue
 set -g fish_color_search_match 'bryellow'  '--background=brblack'
 set -g fish_color_selection 'white'  '--bold'  '--background=brblack'
