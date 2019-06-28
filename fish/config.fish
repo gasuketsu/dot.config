@@ -36,10 +36,6 @@ if status --is-interactive
     if test -d $HOME/.local/bin
         set -gxp PATH $HOME/.local/bin
     end
-    # yarn
-    if test -d $HOME/.yarn/bin
-        set -gxp PATH $HOME/.yarn/bin $HOME/.config/yarn/global/node_modules/.bin
-    end
 
     # asdf
     if test -f $HOME/.asdf/asdf.fish
