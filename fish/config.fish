@@ -1,7 +1,9 @@
+# bobthefish theme
 set -g theme_display_hg yes
 set -g theme_color_scheme terminal
 set -g theme_date_format "+%Y-%m-%dT%T%:z"
 
+# color
 set -g fish_color_autosuggestion '555'  'brblack'
 set -g fish_color_cancel -r
 set -g fish_color_command --bold
