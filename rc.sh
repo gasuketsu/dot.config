@@ -1,6 +1,7 @@
 export TERM=xterm-256color
 export EDITOR="nvim"
 export PIPENV_VENV_IN_PROJECT=1
+export GO111MODULE=on
 
 if [ -d $HOME/.local/bin ]; then
   export PATH=$HOME/.local/bin:$PATH
