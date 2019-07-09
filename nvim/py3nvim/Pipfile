@@ -9,7 +9,6 @@ black = "*"
 pylint = "*"
 flake8 = "*"
 python-language-server = "*"
-jedi = "*"
 
 [dev-packages]
 
