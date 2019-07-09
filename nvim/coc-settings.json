@@ -1,5 +1,6 @@
 {
   "http.proxy": "",
+  "python.pythonPath": "~/.config/nvim/py3nvim/.venv/bin/python",
   "python.jediEnabled": true,
   "python.linting.pylintEnabled": false,
   "python.linting.flake8Enabled": true,
