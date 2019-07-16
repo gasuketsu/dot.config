@@ -6,9 +6,6 @@ name = "pypi"
 [packages]
 neovim = "*"
 black = "*"
-pylint = "*"
-flake8 = "*"
-python-language-server = "*"
 
 [dev-packages]
 
