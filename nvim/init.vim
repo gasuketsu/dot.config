@@ -124,6 +124,8 @@ set tabstop=4
 set shiftwidth=0
 set cindent
 set cino=>2,l1,:0,N-s,g0,(0,W2
+" per-filetype specific indentation
+autocmd FileType yaml   setlocal tabstop=2
 
 " enable to delete newline
 set backspace=2
