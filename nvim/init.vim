@@ -227,6 +227,8 @@ let g:black_virtualenv = $HOME.'/.config/nvim/py3nvim/.venv'
 let g:go_highlight_types = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_function_calls = 1
+let g:go_code_completion_enabled = 0
+let g:go_def_mapping_enabled = 0
 
 "-----------------------------
 " coc.nvim
