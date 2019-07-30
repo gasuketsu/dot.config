@@ -99,9 +99,7 @@ set mouse=a
 set nobackup
 set noswapfile
 set viminfo=
-if v:version >= 704
-  set noundofile
-endif
+set noundofile
 
 " enable to open other file in edit
 set hidden
