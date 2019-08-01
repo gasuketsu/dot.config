@@ -48,14 +48,13 @@ call plug#end()
 set termguicolors
 
 " Colorscheme
-let g:gruvbox_contrast_dark='hard'
+let g:gruvbox_contrast_dark='soft'
 let g:gruvbox_contrast_light='hard'
 let g:gruvbox_invert_selection=0
 set background=dark
-colorscheme tender
+colorscheme gruvbox
 
 " Airline
-let g:airline_theme = 'tenderplus'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 1
 
@@ -160,8 +159,8 @@ let g:buffergator_viewport_split_policy = 'T'
 "-----------------------------
 " vim-qf
 "-----------------------------
-nmap <Leader>q <Plug>(qf_qf_toggle)
-nmap <Leader>l <Plug>(qf_loc_toggle)
+nmap <Leader>qq <Plug>(qf_qf_toggle)
+nmap <Leader>ql <Plug>(qf_loc_toggle)
 nmap <silent> [q <Plug>(qf_qf_previous)
 nmap <silent> ]q <Plug>(qf_qf_next)
 nmap <silent> [l <Plug>(qf_loc_previous)
@@ -260,6 +259,15 @@ nmap <silent> ]g <Plug>(coc-git-nextchunk)
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 nnoremap <silent> <leader>cp :Prettier<CR>
+
+" CocList
+nnoremap <silent> <leader>cd :<C-u>CocList diagnostics<CR>
+nnoremap <silent> <leader>ce :<C-u>CocList extensions<CR>
+nnoremap <silent> <leader>cc :<C-u>CocList commands<CR>
+nnoremap <silent> <leader>cr :<C-u>CocListResume<CR>
+
+nnoremap <silent> <leader>cj :<C-u>CocNext<CR>
+nnoremap <silent> <leader>ck :<C-u>CocPrev<CR>
 
 " Post hook to source machine-specific configuration
 " (should be put at the last of this file)
