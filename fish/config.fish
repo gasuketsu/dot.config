@@ -1,7 +1,6 @@
 # bobthefish theme
 set -g theme_display_hg yes
-set -g theme_color_scheme terminal
-set -g theme_date_format "+%Y-%m-%dT%T%:z"
+set -g theme_color_scheme gruvbox
 
 # color
 set -g fish_color_autosuggestion '555'  'brblack'
@@ -44,3 +43,6 @@ if status --is-interactive
         source $HOME/.asdf/asdf.fish
     end
 end
+
+# disable right_prompt
+function fish_right_prompt; end
