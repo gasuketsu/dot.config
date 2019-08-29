@@ -5,20 +5,21 @@ Manages configurations stored under your `~/.config`.
 
 * Prerequisites for building Python
 ```
-# install default GCC toolchain
-sudo apt install  build-essential
+### Debian/Ubuntu
+apt install build-essential zlib1g-dev libffi-dev libssl-dev libbz2-dev libncursesw5-dev libgdbm-dev liblzma-dev libsqlite3-dev uuid-dev libreadline-dev
+apt install tk-dev    (if you also want to have GUI support)
 
-# install required libraries for building Python
-sudo apt install zlib1g-dev libffi-dev
+### openSUSE
+zypper install gcc automake xz bzip2 bzip2-devel openssl-devel ncurses-devel readline-devel zlib-devel libffi-devel sqlite3-devel
+zypper install tk-devel    (if you also want to have GUI support)
 
-# install optional (but mostly required) libraries for building Python
-sudo apt install libssl-dev
+### CentOS/Fedora 21 and below
+yum install gcc xz zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel libffi-devel
+yum install tk-devel    (if you also want to have GUI support)
 
-# install additional optional libraries
-sudo apt install libbz2-dev libncursesw5-dev libgdbm-dev liblzma-dev libsqlite3-dev uuid-dev libreadline-dev
-
-# Optionally, install tk-dev if you also want to have GUI support
-sudo apt install tk-dev
+### Fedora 22 and above
+dnf install make gcc xz zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel libffi-devel
+dnd install tk-devel    (if you also want to have GUI support)
 ```
 
 ## Installation and setup
@@ -64,6 +65,10 @@ Install following extentions by running ``CocInstall`` command in your neovim.
 * [coc-python](https://github.com/neoclide/coc-python)
 * [coc-git](https://github.com/neoclide/coc-git)
 * [coc-prettier](https://github.com/neoclide/coc-prettier)
+
+Find and install [coc.nvim extentions](https://github.com/neoclide/coc.nvim#extensions) depends on your need.
+
+You may need to configure `"http.proxy"` in `~/.config/nvim/coc-settings.json` if your environment is behind proxy.
 
 ```
 :CocInstall coc-json
