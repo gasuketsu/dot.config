@@ -1,6 +1,6 @@
 # bobthefish theme
 set -g theme_display_hg yes
-set -g theme_color_scheme gruvbox
+set -g theme_color_scheme terminal
 
 # color
 set -g fish_color_autosuggestion '555'  'brblack'
