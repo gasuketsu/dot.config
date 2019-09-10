@@ -83,15 +83,25 @@ if ! pip show pipenv > /dev/null; then
 fi
 
 # venv for nvim python bindings
-if [ ! -d ~/.config/nvim/py3nvim/.venv ]; then
-    echo "##### setting up virtualenv for neovim python bindings..."
-    cd ~/.config/nvim/py3nvim && pipenv install --dev
+echo "##### setting up virtualenv for neovim python bindings..."
+cd ~/.config/nvim/py3nvim && pipenv install --dev
+py3nvim_venv=`cd ~/.config/nvim/py3nvim && pipenv --venv`
+if [ ! -f ~/.nvimrc_local ]; then
+    echo "let g:python3_host_prog = ${py3nvim_venv}/bin/python" >> ~/.nvimrc_local
+    echo "let g:black_virtualenv = ${py3nvim_venv}" >> ~/.nvimrc_local
+else
+    if ! grep 'let g:python3_host_prog' ~/.nvimrc_local > /dev/null 2>&1; then
+        echo "let g:python3_host_prog = ${py3nvim_venv}/bin/python" >> ~/.nvimrc_local
+    fi
+    if ! grep 'let g:black_virtualenv' ~/.nvimrc_local > /dev/null 2>&1; then
+        echo "let g:black_virtualenv = ${py3nvim_venv}" >> ~/.nvimrc_local
+    fi
 fi
 
 
 echo
 echo "######################################################"
-echo " Finishsed setup"
+echo " Finished setup"
 echo
 echo " Make sure to add following line into your ~/.bashrc"
 echo " source ~/.config/rc.sh"

@@ -218,7 +218,9 @@ autocmd Syntax * RainbowParenthesesLoadBraces
 "-----------------------------
 " black
 "-----------------------------
-let g:black_virtualenv = $HOME.'/.config/nvim/py3nvim/.venv'
+" Assuming you don't have env_var `PIPENV_VENV_IN_PROJECT=1` and
+" you define ``g:black_virtualenv`` in ~/.nvimrc_local according to your
+" environment.
 
 "-----------------------------
 " vim-go
