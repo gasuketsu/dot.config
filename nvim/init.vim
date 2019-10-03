@@ -35,7 +35,7 @@ Plug 'ambv/black'
 Plug 'dag/vim-fish'
 Plug 'fatih/vim-go'
 Plug 'cespare/vim-toml'
-Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Color Schemes
 Plug 'morhetz/gruvbox'
 Plug 'jacoborus/tender.vim'
