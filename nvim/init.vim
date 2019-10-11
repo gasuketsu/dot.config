@@ -146,6 +146,8 @@ nnoremap <silent> <C-l> :nohl<CR>
 " change current directory when changing buffer
 nnoremap <silent> <F6> :<C-u>lcd %:h<CR>
 
+map q <Nop>
+
 "-----------------------------
 " Ctags
 "-----------------------------
