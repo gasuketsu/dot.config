@@ -1,5 +1,4 @@
 # bobthefish theme
-set -g theme_display_hg yes
 set -g theme_color_scheme terminal
 
 # color
