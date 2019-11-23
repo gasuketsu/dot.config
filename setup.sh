@@ -1,9 +1,9 @@
 #! /usr/bin/env bash
 
-asdf_version=v0.7.4
-asdf_python_version=3.7.4
-asdf_golang_version=1.13.1
-asdf_nodejs_version=12.11.1
+asdf_version=v0.7.5
+asdf_python_version=3.8.0
+asdf_golang_version=1.13.4
+asdf_nodejs_version=12.13.1
 
 # vim-plug (for neovim)
 if [ ! -f ~/.local/share/nvim/site/autoload/plug.vim ]; then
