@@ -45,6 +45,11 @@ if [ ! -e ~/.editorconfig ]; then
     ln -s ~/.config/editorconfig/.editorconfig ~/.editorconfig
 fi
 
+# .gitconfig
+if [ ! -e ~/.gitconfig ]; then
+    touch ~/.gitconfig
+fi
+
 source ~/.config/rc.sh
 
 # install languages
