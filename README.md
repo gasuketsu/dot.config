@@ -19,7 +19,7 @@ yum install tk-devel    (if you also want to have GUI support)
 
 ### Fedora 22 and above
 dnf install make gcc xz zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel libffi-devel
-dnd install tk-devel    (if you also want to have GUI support)
+dnf install tk-devel    (if you also want to have GUI support)
 ```
 
 ## Installation and setup
