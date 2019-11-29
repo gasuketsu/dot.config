@@ -12,4 +12,3 @@ Pipfile.lock
 /configstore/
 .venv/
 /nvim/coc-settings.json
-/go/*
