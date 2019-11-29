@@ -38,6 +38,7 @@ Plug 'cespare/vim-toml'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Color Schemes
 Plug 'morhetz/gruvbox'
+Plug 'sainnhe/gruvbox-material'
 Plug 'jacoborus/tender.vim'
 call plug#end()
 
@@ -52,7 +53,7 @@ let g:gruvbox_contrast_dark='medium'
 let g:gruvbox_contrast_light='medium'
 let g:gruvbox_invert_selection=0
 set background=dark
-colorscheme gruvbox
+colorscheme gruvbox-material
 
 " Airline
 let g:airline#extensions#tabline#enabled = 1
