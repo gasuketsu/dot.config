@@ -34,6 +34,8 @@ Plug 'kien/rainbow_parentheses.vim'
 Plug 'ambv/black'
 Plug 'dag/vim-fish'
 Plug 'fatih/vim-go'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 Plug 'cespare/vim-toml'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Color Schemes
