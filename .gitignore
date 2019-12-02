@@ -5,7 +5,6 @@
 /fisher/*
 /htop/*
 /pudb/*
-!/pudb/pudb.cfg
 Pipfile.lock
 /lxc/*
 /coc/*
