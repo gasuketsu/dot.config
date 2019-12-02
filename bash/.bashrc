@@ -16,7 +16,7 @@ fi
 HISTTIMEFORMAT='%F %T '
 
 # ignore well-used commands that are meaningless to record
-HISTIGNORE="fg*:bg*:history*:ls*:pwd*"
+HISTIGNORE="fg*:bg*:history*:pwd*"
 
 # Bash won't get SIGWINCH if another process is in the foreground.
 # Enable checkwinsize so that bash will check the terminal size when
@@ -129,17 +129,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
-if [ -f /opt/iprepo/repo/etc/profile.d/repo.sh ]; then
-  source /opt/iprepo/repo/etc/profile.d/repo.sh
-fi
-
-if [ -d $HOME/.local/bin ]; then
-  export PATH=$HOME/.local/bin:$PATH
-fi
-
-# asdf
-if [ -f $HOME/.asdf/asdf.sh ]; then
-  source $HOME/.asdf/asdf.sh
+# enable misc features (e.g. asdf).
+if [ -f ~/.config/rc.sh ]; then
+  . ~/.config/rc.sh
 fi
 
 # Try to keep environment pollution down, EPA loves us.
