@@ -80,15 +80,15 @@ if [ -d ~/.asdf ]; then
     asdf reshim
 fi
 
-# pip
+# (python) pip
 if ! pip show pipenv > /dev/null; then
-    echo "##### (pip) installing must-have packages..."
+    echo "##### (python) install/update must-have packages..."
     pip install -U pip pipenv black flake8 python-language-server
     asdf reshim
 fi
 
-# venv for nvim python bindings
-echo "##### setting up virtualenv for neovim python bindings..."
+# (python) venv for nvim python bindings
+echo "##### (python) setting up virtualenv for neovim python bindings..."
 cd ~/.config/nvim/py3nvim && pipenv install --dev
 py3nvim_venv=`cd ~/.config/nvim/py3nvim && pipenv --venv`
 if [ ! -f ~/.nvimrc_local ]; then
@@ -103,6 +103,12 @@ else
     fi
 fi
 
+# (go) enable GO111MODULE if not set
+go_module=`go env GO111MODULE`
+if [ -z $go_module ]; then
+    echo "##### (go) setting GO111MODULE=on"
+    go env -w GO111MODULE=on
+fi
 
 echo
 echo "######################################################"
