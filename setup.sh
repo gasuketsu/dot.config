@@ -1,5 +1,7 @@
 #! /usr/bin/env bash
 
+CWD=$PWD
+
 asdf_version=v0.7.5
 asdf_python_version=3.8.0
 asdf_golang_version=1.13.4
@@ -88,9 +90,12 @@ if ! pip show pipenv > /dev/null; then
 fi
 
 # (python) venv for nvim python bindings
-echo "##### (python) setting up virtualenv for neovim python bindings..."
-cd ~/.config/nvim/py3nvim && pipenv install --dev
-py3nvim_venv=`cd ~/.config/nvim/py3nvim && pipenv --venv`
+cd ~/.config/nvim/py3nvim
+if ! pipenv --venv > /dev/null; then
+    echo "##### (python) setting up virtualenv for neovim python bindings..."
+    pipenv install --dev
+fi
+py3nvim_venv=`pipenv --venv`
 if [ ! -f ~/.nvimrc_local ]; then
     echo "let g:python3_host_prog = "\'"${py3nvim_venv}/bin/python"\' >> ~/.nvimrc_local
     echo "let g:black_virtualenv = "\'"${py3nvim_venv}"\' >> ~/.nvimrc_local
@@ -102,6 +107,7 @@ else
         echo "let g:black_virtualenv = "\'"${py3nvim_venv}"\' >> ~/.nvimrc_local
     fi
 fi
+cd $CWD
 
 # (go) enable GO111MODULE if not set
 go_module=`go env GO111MODULE`
