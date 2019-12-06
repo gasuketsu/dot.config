@@ -5,13 +5,5 @@
   "python.formatting.provider": "black",
   "python.analysis.diagnosticPublishDelay": 500,
 
-  "coc.preferences.formatOnSaveFiletypes": ["python"],
-
-  "languageserver": {
-    "golang": {
-      "command": "gopls",
-      "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
-      "filetypes": ["go"]
-    }
-  }
+  "coc.preferences.formatOnSaveFiletypes": ["python"]
 }
