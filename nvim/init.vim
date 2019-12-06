@@ -31,6 +31,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'rhysd/vim-clang-format'
 Plug 'rust-lang/rust.vim'
 Plug 'kien/rainbow_parentheses.vim'
+Plug 'Yggdroot/indentLine'
 Plug 'ambv/black'
 Plug 'dag/vim-fish'
 Plug 'fatih/vim-go'
@@ -83,7 +84,6 @@ set number
 set cursorline
 set wrap
 set list
-set listchars=tab:>-,trail:.,extends:<,precedes:>
 set ambiwidth=double
 
 set cmdheight=2
