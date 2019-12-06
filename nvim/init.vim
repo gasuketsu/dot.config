@@ -29,19 +29,13 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'tpope/vim-fugitive'
 Plug 'rhysd/vim-clang-format'
-Plug 'rust-lang/rust.vim'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'ambv/black'
-Plug 'dag/vim-fish'
-Plug 'fatih/vim-go'
-Plug 'peitalin/vim-jsx-typescript'
-Plug 'cespare/vim-toml'
+Plug 'sheerun/vim-polyglot'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Color Schemes
 Plug 'morhetz/gruvbox'
-Plug 'sainnhe/gruvbox-material'
-Plug 'jacoborus/tender.vim'
 call plug#end()
 
 "-----------------------------
@@ -227,13 +221,12 @@ autocmd Syntax * RainbowParenthesesLoadBraces
 " environment.
 
 "-----------------------------
-" vim-go
+" sheerun/vim-polyglot
 "-----------------------------
+" go
 let g:go_highlight_types = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_function_calls = 1
-let g:go_code_completion_enabled = 0
-let g:go_def_mapping_enabled = 0
 
 "-----------------------------
 " coc.nvim
@@ -274,6 +267,13 @@ nnoremap <silent> <leader>cr :<C-u>CocListResume<CR>
 
 nnoremap <silent> <leader>cj :<C-u>CocNext<CR>
 nnoremap <silent> <leader>ck :<C-u>CocPrev<CR>
+
+" Language specific configuration
+" Remap keys for tagging in go
+autocmd FileType go nmap <silent> tj :CocCommand go.tags.add.line json<CR>
+autocmd FileType go nmap <silent> ty :CocCommand go.tags.add.line yaml<CR>
+autocmd FileType go nmap <silent> tx :CocCommand go.tags.clear.line<CR>
+
 
 " Post hook to source machine-specific configuration
 " (should be put at the last of this file)
