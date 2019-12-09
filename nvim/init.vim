@@ -56,10 +56,14 @@ let g:lightline = {
             \ 'colorscheme': 'gruvbox',
             \ 'active': {
             \   'left': [ [ 'mode', 'paste' ],
-            \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+            \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
+            \   'right': [['lineinfo', 'column'], ['percent'], ['fileformat', 'fileencoding', 'filetype']],
+            \ },
+            \ 'component': {
+            \   'lineinfo': "%{printf('%3d/%d', line('.'),  line('$'))}",
             \ },
             \ 'component_function': {
-            \   'gitbranch': 'fugitive#head'
+            \   'gitbranch': 'fugitive#head',
             \ },
             \ }
 
