@@ -233,6 +233,10 @@ let g:cpp_class_scope_highlight = 1
 "-----------------------------
 " coc.nvim
 "-----------------------------
+highlight link CocErrorSign GruvboxRed
+highlight link CocWarningSign GruvboxOrange
+highlight link CocInfoSign GruvboxYellow
+
 " use <c-n> for trigger completion
 inoremap <silent><expr> <C-n> pumvisible() ? "\<C-n>" : coc#refresh()
 
