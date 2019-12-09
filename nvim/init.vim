@@ -25,7 +25,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'itchyny/lightline.vim'
+Plug 'vim-airline/vim-airline'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'tpope/vim-fugitive'
 Plug 'rhysd/vim-clang-format'
@@ -51,21 +51,8 @@ let g:gruvbox_invert_selection=0
 set background=dark
 colorscheme gruvbox
 
-" statusline (lightline)
-let g:lightline = {
-            \ 'colorscheme': 'gruvbox',
-            \ 'active': {
-            \   'left': [ [ 'mode', 'paste' ],
-            \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
-            \   'right': [['lineinfo', 'column'], ['percent'], ['fileformat', 'fileencoding', 'filetype']],
-            \ },
-            \ 'component': {
-            \   'lineinfo': "%{printf('%3d/%d', line('.'),  line('$'))}",
-            \ },
-            \ 'component_function': {
-            \   'gitbranch': 'fugitive#head',
-            \ },
-            \ }
+" statusline (airline)
+let g:airline#extensions#tabline#enabled = 1
 
 "-----------------------------
 " Provider configuration
