@@ -25,7 +25,6 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'itchyny/lightline.vim'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'tpope/vim-fugitive'
 Plug 'rhysd/vim-clang-format'
 Plug 'kien/rainbow_parentheses.vim'
@@ -234,6 +233,9 @@ autocmd Syntax * RainbowParenthesesLoadBraces
 let g:go_highlight_types = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_function_calls = 1
+" cpp
+let g:cpp_class_decl_highlight = 1
+let g:cpp_class_scope_highlight = 1
 
 "-----------------------------
 " coc.nvim
