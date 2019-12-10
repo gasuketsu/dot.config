@@ -171,6 +171,11 @@ nnoremap <silent> <leader>fg :GFiles<CR>
 nnoremap <silent> <leader>fb :Buffers<CR>
 
 "-----------------------------
+" NERDCommenter
+"-----------------------------
+let g:NERDDefaultAlign = 'left'
+
+"-----------------------------
 " NERDTree
 "-----------------------------
 nnoremap <silent> <F3> :NERDTreeToggle<CR>
