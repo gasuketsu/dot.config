@@ -240,7 +240,7 @@ let g:cpp_class_scope_highlight = 1
 "-----------------------------
 highlight link CocErrorSign GruvboxRed
 highlight link CocWarningSign GruvboxOrange
-highlight link CocInfoSign GruvboxYellow
+highlight link CocInfoSign GruvboxAqua
 
 " use <c-n> for trigger completion
 inoremap <silent><expr> <C-n> pumvisible() ? "\<C-n>" : coc#refresh()
