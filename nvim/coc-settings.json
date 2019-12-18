@@ -5,5 +5,9 @@
   "python.formatting.provider": "black",
   "python.analysis.diagnosticPublishDelay": 500,
 
-  "coc.preferences.formatOnSaveFiletypes": ["python", "go"]
+  "coc.preferences.formatOnSaveFiletypes": [
+    "python",
+    "go"
+  ],
+  "coc.preferences.extensionUpdateCheck": "daily"
 }
