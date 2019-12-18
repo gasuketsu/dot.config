@@ -65,15 +65,15 @@ Install following extentions by running ``CocInstall`` command in your neovim.
 * [coc-python](https://github.com/neoclide/coc-python)
 * [coc-git](https://github.com/neoclide/coc-git)
 * [coc-prettier](https://github.com/neoclide/coc-prettier)
+* [coc-go](https://github.com/josa42/coc-go)
 
 Find and install [coc.nvim extentions](https://github.com/neoclide/coc.nvim#extensions) depends on your need.
-
-You may need to configure `"http.proxy"` in `~/.config/nvim/coc-settings.json` if your environment is behind proxy.
 
 ```
 :CocInstall coc-json
 :CocInstall coc-python
 :CocInstall coc-git
 :CocInstall coc-prettier
+:CocInstall coc-go
 ```
 

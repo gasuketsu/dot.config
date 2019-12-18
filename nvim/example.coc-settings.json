@@ -1,5 +1,4 @@
 {
-  "http.proxy": "user:password@proxy.example.com:8080",
   "python.jediEnabled": true,
   "python.linting.pylintEnabled": false,
   "python.linting.flake8Enabled": true,
