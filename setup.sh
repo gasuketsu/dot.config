@@ -2,10 +2,14 @@
 
 CWD=$PWD
 
-asdf_version=v0.7.5
-asdf_python_version=3.8.0
-asdf_golang_version=1.13.4
-asdf_nodejs_version=12.13.1
+asdf_version=v0.7.6
+
+declare -A asdf_lang_versions
+asdf_lang_versions["python"]=3.8.1
+asdf_lang_versions["golang"]=1.13.5
+asdf_lang_versions["nodejs"]=12.14.0
+
+pip_packages=("pip" "pipenv" "black" "flake8" "python-language-server")
 
 # vim-plug (for neovim)
 if [ ! -f ~/.local/share/nvim/site/autoload/plug.vim ]; then
@@ -37,9 +41,9 @@ if [ ! -d ~/.asdf ]; then
     git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch $asdf_version
 fi
 
-if [ ! -f ~/.config/fish/completions/asdf.fish ]; then
+if [ ! -e ~/.config/fish/completions/asdf.fish ]; then
     mkdir -p ~/.config/fish/completions
-    cp ~/.asdf/completions/asdf.fish ~/.config/fish/completions
+    ln -s ~/.asdf/completions/asdf.fish ~/.config/fish/completions
 fi
 
 # EditorConfig
@@ -56,45 +60,29 @@ source ~/.config/rc.sh
 
 # install languages
 if [ -d ~/.asdf ]; then
-    # python
-    if ! asdf plugin-list | grep python > /dev/null; then
-        echo "##### (asdf) installing python $asdf_python_version ..."
-        asdf plugin-add python
-        asdf install python $asdf_python_version
-        asdf global python $asdf_python_version
-    fi
-    # golang
-    if ! asdf plugin-list | grep golang > /dev/null; then
-        echo "##### (asdf) installing golang $asdf_golang_version ..."
-        asdf plugin-add golang
-        asdf install golang $asdf_golang_version
-        asdf global golang $asdf_golang_version
-    fi
-    # nodejs
-    if ! asdf plugin-list | grep nodejs > /dev/null; then
-        echo "##### (asdf) installing golang $asdf_nodejs_version ..."
-        asdf plugin-add nodejs
-        bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
-        asdf install nodejs $asdf_nodejs_version
-        asdf global nodejs $asdf_nodejs_version
-    fi
+    for lang in "${!asdf_lang_versions[@]}"; do
+        ver=${asdf_lang_versions[$lang]}
+        echo "#### (asdf) installing $lang $ver ..."
+        asdf plugin-add $lang
+        asdf install $lang $ver
+        asdf global $lang $ver
+    done
+    # update installed plugins
+    asdf plugin-update --all
     # make sure shims are up to date
     asdf reshim
 fi
 
 # (python) pip
-if ! pip show pipenv > /dev/null; then
-    echo "##### (python) install/update must-have packages..."
-    pip install -U pip pipenv black flake8 python-language-server
-    asdf reshim
-fi
+echo "##### (python) install/update must-have packages..."
+pip install -U ${pip_packages[@]}
+asdf reshim
 
 # (python) venv for nvim python bindings
 cd ~/.config/nvim/py3nvim
-if ! pipenv --venv > /dev/null; then
-    echo "##### (python) setting up virtualenv for neovim python bindings..."
-    pipenv install --dev
-fi
+echo "##### (python) setting up virtualenv for neovim python bindings..."
+pipenv install --dev
+
 py3nvim_venv=`pipenv --venv`
 if [ ! -f ~/.nvimrc_local ]; then
     echo "let g:python3_host_prog = "\'"${py3nvim_venv}/bin/python"\' >> ~/.nvimrc_local
