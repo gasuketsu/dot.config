@@ -282,7 +282,7 @@ nnoremap <silent> <leader>ck :<C-u>CocPrev<CR>
 " Language specific configuration
 " Remap keys for tagging in go
 nnoremap <Plug>(GoTagsAddLine) :<C-u>CocCommand go.tags.add.line<CR>
-nnoremap <Plug>(GoTagsRemoveLine) :<C-u>CocCommand go.tags.clear.line<CR>
+nnoremap <Plug>(GoTagsRemoveLine) :<C-u>CocCommand go.tags.remove.line<CR>
 nnoremap <Plug>(GoTagsClearTagLine) :<C-u>CocCommand go.tags.clear.line<CR>
 autocmd FileType go nmap <silent> tj <Plug>(GoTagsAddLine)
 autocmd FileType go nmap <silent> tr <Plug>(GoTagsRemoveLine)
