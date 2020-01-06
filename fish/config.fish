@@ -32,14 +32,14 @@ if status --is-interactive
     and set -gx PIPENV_SHELL (which fish)
     set -gx VIRTUAL_ENV_DISABLE_PROMPT 1
 
-    if test -d $HOME/.local/bin
-        set -gxp PATH $HOME/.local/bin
-    end
-
+    test -d $HOME/.local/bin
+    and set -gxp PATH $HOME/.local/bin
+    # fzf
+    test -d $HOME/.fzf/bin
+    and set -gxp PATH $HOME/.fzf/bin
     # asdf
-    if test -f $HOME/.asdf/asdf.fish
-        source $HOME/.asdf/asdf.fish
-    end
+    test -f $HOME/.asdf/asdf.fish
+    and source $HOME/.asdf/asdf.fish
 end
 
 # disable right_prompt
