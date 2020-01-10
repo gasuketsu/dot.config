@@ -17,8 +17,17 @@ indent_size = 4
 indent_style = tab
 indent_size = 4
 
-[*.yml]
+[*.{yml,yaml}]
 indent_size = 2
 
 [*.json]
 indent_size = 2
+
+[*.{c,h,cc,hh,cpp,hpp}]
+indent_size = 2
+
+[Makefile*]
+indent_style = tab
+
+[*.{mk,am,am.*}]
+indent_style = tab
