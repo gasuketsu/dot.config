@@ -56,6 +56,11 @@ if [ ! -e ~/.gitconfig ]; then
     touch ~/.gitconfig
 fi
 
+# lemonade
+if [ ! -f ~/.config/lemonade.toml ]; then
+    cp ~/.config/lemonade/default.toml ~/.config/lemonade.toml
+fi
+
 source ~/.config/rc.sh
 
 # install languages

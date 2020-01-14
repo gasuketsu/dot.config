@@ -1,0 +1,5 @@
+# change host and port according to your environment
+host = '127.0.0.1'
+port = 2489
+trans-loopback = true
+trans-localfile = true

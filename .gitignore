@@ -11,3 +11,4 @@ Pipfile.lock
 /configstore/
 .venv/
 /go/*
+/lemonade.toml
