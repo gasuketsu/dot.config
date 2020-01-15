@@ -32,6 +32,7 @@ Plug 'rhysd/vim-clang-format'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'ambv/black'
+Plug 'godlygeek/tabular' " required for vim polyglot
 Plug 'sheerun/vim-polyglot'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Color Schemes
@@ -229,6 +230,8 @@ let g:go_highlight_function_calls = 1
 " cpp
 let g:cpp_class_decl_highlight = 1
 let g:cpp_class_scope_highlight = 1
+" markdown
+let g:vim_markdown_conceal_code_blocks = 0
 
 "-----------------------------
 " coc.nvim
