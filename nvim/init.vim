@@ -37,6 +37,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Color Schemes
 Plug 'morhetz/gruvbox'
+Plug 'cocopon/iceberg.vim'
 call plug#end()
 
 "-----------------------------
@@ -50,7 +51,7 @@ let g:gruvbox_contrast_dark='medium'
 let g:gruvbox_contrast_light='medium'
 let g:gruvbox_invert_selection=0
 set background=dark
-colorscheme gruvbox
+colorscheme iceberg
 
 " statusline (airline)
 let g:airline#extensions#tabline#enabled = 1
