@@ -52,21 +52,13 @@ let g:gruvbox_contrast_light='medium'
 let g:gruvbox_invert_selection=0
 
 augroup nord-theme-overrides
-  autocmd!
-  autocmd ColorScheme nord highlight Constant ctermfg=15 guifg=#b48ead
-  autocmd ColorScheme nord highlight Character ctermfg=15 guifg=#b48ead
-  autocmd ColorScheme nord highlight Number ctermfg=15 guifg=#b48ead
-  autocmd ColorScheme nord highlight Boolean ctermfg=15 guifg=#b48ead
-  autocmd ColorScheme nord highlight Float ctermfg=15 guifg=#b48ead
-  autocmd ColorScheme nord highlight Statement ctermfg=11 guifg=#bf616a
-  autocmd ColorScheme nord highlight Conditional ctermfg=11 guifg=#bf616a
-  autocmd ColorScheme nord highlight Repeat ctermfg=11 guifg=#bf616a
-  autocmd ColorScheme nord highlight Label ctermfg=11 guifg=#bf616a
-  autocmd ColorScheme nord highlight Exception ctermfg=11 guifg=#bf616a
-  autocmd ColorScheme nord highlight Type ctermfg=13 guifg=#ebcb8b
-  autocmd ColorScheme nord highlight StrongClass ctermfg=12 guifg=#d08770
-  autocmd ColorScheme nord highlight Structure ctermfg=8 guifg=#88c0d0
-  autocmd ColorScheme nord highlight Typedef ctermfg=13 guifg=#ebcb8b
+    autocmd!
+    autocmd ColorScheme nord highlight Constant ctermfg=15 guifg=#b48ead
+    autocmd ColorScheme nord highlight Statement ctermfg=11 guifg=#bf616a
+    autocmd ColorScheme nord highlight Conditional ctermfg=11 guifg=#bf616a
+    autocmd ColorScheme nord highlight Repeat ctermfg=11 guifg=#bf616a
+    autocmd ColorScheme nord highlight Label ctermfg=11 guifg=#bf616a
+    autocmd ColorScheme nord highlight Exception ctermfg=11 guifg=#bf616a
 augroup END
 
 set background=dark
