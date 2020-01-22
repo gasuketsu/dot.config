@@ -37,7 +37,6 @@ Plug 'sheerun/vim-polyglot'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Color Schemes
 Plug 'morhetz/gruvbox'
-Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
 "-----------------------------
@@ -51,22 +50,8 @@ let g:gruvbox_contrast_dark='medium'
 let g:gruvbox_contrast_light='medium'
 let g:gruvbox_invert_selection=0
 
-augroup nord-theme-overrides
-    autocmd!
-    autocmd ColorScheme nord highlight Constant ctermfg=15 guifg=#b48ead
-    autocmd ColorScheme nord highlight Character ctermfg=15 guifg=#b48ead
-    autocmd ColorScheme nord highlight Number ctermfg=15 guifg=#b48ead
-    autocmd ColorScheme nord highlight Boolean ctermfg=15 guifg=#b48ead
-    autocmd ColorScheme nord highlight Float ctermfg=15 guifg=#b48ead
-    autocmd ColorScheme nord highlight Statement ctermfg=11 guifg=#bf616a
-    autocmd ColorScheme nord highlight Conditional ctermfg=11 guifg=#bf616a
-    autocmd ColorScheme nord highlight Repeat ctermfg=11 guifg=#bf616a
-    autocmd ColorScheme nord highlight Label ctermfg=11 guifg=#bf616a
-    autocmd ColorScheme nord highlight Exception ctermfg=11 guifg=#bf616a
-augroup END
-
 set background=dark
-colorscheme nord
+colorscheme gruvbox
 
 " statusline (airline)
 let g:airline#extensions#tabline#enabled = 1
