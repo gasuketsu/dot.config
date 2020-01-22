@@ -182,6 +182,7 @@ nnoremap <silent> <F3> :NERDTreeToggle<CR>
 "-----------------------------
 " disable highlighting trailing whitespace by default.
 " (perform :ToggleWhitespace to enable highlighting)
+highlight ExtraWhitespace guibg='#fb4934'
 nnoremap <silent> <leader>w :ToggleWhitespace<CR>
 vnoremap <silent> <leader>sw :StripWhitespace<CR>
 nnoremap <silent> <leader>sw :StripWhitespace<CR>
