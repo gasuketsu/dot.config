@@ -23,7 +23,7 @@ fi
 
 # tmux
 if [ ! -e ~/.tmux.conf ]; then
-    ln -s ~/.config/tmux/.tmux.conf ~/.tmux.conf
+    ln -s ~/.config/tmux/tmux.conf ~/.tmux.conf
 fi
 
 # tpgm
