@@ -115,6 +115,8 @@ set ttimeout
 set timeoutlen=200
 
 " Default Indentation
+set tabstop=4
+set shiftwidth=4
 set cindent
 set cino=l1,:0,N-s,g0,(0,W4,m1
 
