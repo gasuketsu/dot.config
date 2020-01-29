@@ -3,23 +3,35 @@ Manages configurations stored under your `~/.config`.
 
 ## Prerequisites
 
-* Prerequisites for building Python
+* Prerequisites
 ```
 ### Debian/Ubuntu
+# Python build
 apt install build-essential zlib1g-dev libffi-dev libssl-dev libbz2-dev libncursesw5-dev libgdbm-dev liblzma-dev libsqlite3-dev uuid-dev libreadline-dev
 apt install tk-dev    (if you also want to have GUI support)
+# tmux
+apt install ncurses-term
 
 ### openSUSE
+# Python build
 zypper install gcc automake xz bzip2 bzip2-devel openssl-devel ncurses-devel readline-devel zlib-devel libffi-devel sqlite3-devel
 zypper install tk-devel    (if you also want to have GUI support)
+# tmux
+zypper install ncurses-term
 
 ### CentOS/Fedora 21 and below
+# Python build
 yum install gcc xz zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel libffi-devel
 yum install tk-devel    (if you also want to have GUI support)
+# tmux
+yum install ncurses-term
 
 ### Fedora 22 and above
+# Python build
 dnf install make gcc xz zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel libffi-devel
 dnf install tk-devel    (if you also want to have GUI support)
+# tmux
+dnf install ncurses-term
 ```
 
 ## Installation and setup
