@@ -60,6 +60,7 @@ colorscheme gruvbox-material
 
 " statusline (airline)
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 let g:airline_theme = 'gruvbox_material'
 
 "-----------------------------
@@ -85,7 +86,7 @@ set number
 set cursorline
 set wrap
 set list
-set ambiwidth=double
+set ambiwidth=single
 
 set cmdheight=2
 set laststatus=2
