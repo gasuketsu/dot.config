@@ -6,8 +6,8 @@ asdf_version=v0.7.6
 
 declare -A asdf_lang_versions
 asdf_lang_versions["python"]=3.8.1
-asdf_lang_versions["golang"]=1.13.5
-asdf_lang_versions["nodejs"]=12.14.0
+asdf_lang_versions["golang"]=1.13.7
+asdf_lang_versions["nodejs"]=12.14.1
 
 pip_packages=("pip" "pipenv" "black" "flake8" "python-language-server")
 
