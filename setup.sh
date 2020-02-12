@@ -69,6 +69,10 @@ if [ -d ~/.asdf ]; then
         ver=${asdf_lang_versions[$lang]}
         echo "#### (asdf) installing $lang $ver ..."
         asdf plugin-add $lang
+        if [ $lang = "nodejs" ]; then
+            # Import the Node.js release team's OpenPGP keys
+            bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
+        fi
         asdf install $lang $ver
         asdf global $lang $ver
     done
