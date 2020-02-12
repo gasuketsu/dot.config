@@ -1,5 +1,5 @@
 [core]
-	pager = less -x4
+	pager = less -x4 -F -X
 [push]
 	default = simple
 [alias]
