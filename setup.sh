@@ -2,7 +2,7 @@
 
 CWD=$PWD
 
-asdf_version=v0.7.6
+asdf_version=v0.7.7
 
 declare -A asdf_lang_versions
 asdf_lang_versions["python"]=3.8.1
