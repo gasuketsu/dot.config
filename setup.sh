@@ -2,12 +2,12 @@
 
 CWD=$PWD
 
-asdf_version=v0.7.7
+asdf_version=v0.7.8
 
 declare -A asdf_lang_versions
 asdf_lang_versions["python"]=3.8.2
-asdf_lang_versions["golang"]=1.14
-asdf_lang_versions["nodejs"]=12.16.1
+asdf_lang_versions["golang"]=1.14.2
+asdf_lang_versions["nodejs"]=12.16.2
 
 pip_packages=("pip" "pipenv" "black" "flake8" "python-language-server")
 
@@ -112,6 +112,13 @@ if [ -z $go_module ]; then
     echo "##### (go) setting GO111MODULE=on"
     go env -w GO111MODULE=on
 fi
+
+echo "##### (go) install must-have packages..."
+go get golang.org/x/tools/gopls@latest
+go get github.com/lemonade-command/lemonade
+
+# reshim again for enabling installed tools
+asdf reshim
 
 echo
 echo "######################################################"
