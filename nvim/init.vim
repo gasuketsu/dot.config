@@ -31,7 +31,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'rhysd/vim-clang-format'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'Yggdroot/indentLine'
-Plug 'ambv/black'
+Plug 'psf/black', { 'tag': '*' }
 Plug 'godlygeek/tabular' " required for vim polyglot
 Plug 'sheerun/vim-polyglot'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
