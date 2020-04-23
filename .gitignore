@@ -12,3 +12,4 @@ Pipfile.lock
 .venv/
 /go/*
 /lemonade.toml
+/TabNine/last_heartbeat
