@@ -5,11 +5,11 @@ CWD=$PWD
 asdf_version=v0.7.8
 
 declare -A asdf_lang_versions
-asdf_lang_versions["python"]=3.8.2
-asdf_lang_versions["golang"]=1.14.2
-asdf_lang_versions["nodejs"]=12.16.2
+asdf_lang_versions["python"]=3.8.3
+asdf_lang_versions["golang"]=1.14.3
+asdf_lang_versions["nodejs"]=12.17.0
 
-pip_packages=("pip" "pipenv" "black" "flake8" "python-language-server")
+pip_packages=("pip" "pipenv" "black" "flake8")
 
 # vim-plug (for neovim)
 if [ ! -f ~/.local/share/nvim/site/autoload/plug.vim ]; then
