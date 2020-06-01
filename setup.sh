@@ -111,7 +111,6 @@ fi
 
 echo "##### (go) install must-have packages..."
 go get golang.org/x/tools/gopls@latest
-go get github.com/lemonade-command/lemonade
 
 # reshim again for enabling installed tools
 asdf reshim
