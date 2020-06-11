@@ -240,13 +240,6 @@ let g:cpp_class_scope_highlight = 1
 " markdown
 let g:vim_markdown_conceal_code_blocks = 0
 
-"-----------------------------
-" coc.nvim
-"-----------------------------
-highlight link CocErrorSign GruvboxRed
-highlight link CocWarningSign GruvboxOrange
-highlight link CocInfoSign GruvboxAqua
-
 " use <c-n> for trigger completion
 inoremap <silent><expr> <C-n> pumvisible() ? "\<C-n>" : coc#refresh()
 
