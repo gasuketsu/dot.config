@@ -61,6 +61,12 @@ if [ ! -f ~/.config/lemonade.toml ]; then
     cp ~/.config/lemonade/default.toml ~/.config/lemonade.toml
 fi
 
+# install starship
+mkdir -p ~/.local/bin
+if [ ! -f ~/.local/bin/starship ]; then
+    curl -fsSL https://starship.rs/install.sh | bash -s -- -b ~/.local/bin -y
+fi
+
 source ~/.config/rc.sh
 
 # install languages
