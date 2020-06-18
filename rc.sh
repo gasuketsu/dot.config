@@ -1,7 +1,7 @@
 export TERM=xterm-256color
 export EDITOR="nvim"
 
-if [ -d $HOME/.local/bin ]; then
+if [ -d $HOME/.local/bin ] && ! echo $PATH | grep -q "$HOME/.local/bin"; then
     export PATH=$HOME/.local/bin:$PATH
 fi
 
