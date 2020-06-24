@@ -22,6 +22,9 @@ set -g fish_color_user brgreen
 set -g fish_color_valid_path --underline
 set -g fish_color_status red
 
+# suppress greeting message
+set fish_greeting
+
 if status --is-interactive
     type nvim >/dev/null 2>&1
     and set -gx EDITOR nvim
