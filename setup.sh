@@ -9,6 +9,7 @@ asdf_tool_versions["python"]=3.8.3
 asdf_tool_versions["golang"]=1.14.4
 asdf_tool_versions["nodejs"]=12.18.0
 asdf_tool_versions["bat"]=0.15.4
+asdf_tool_versions["neovim"]=0.4.3
 
 pip_packages=("pip" "pipenv" "black" "flake8" "jedi")
 
