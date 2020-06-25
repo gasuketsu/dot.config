@@ -4,10 +4,10 @@ CWD=$PWD
 
 asdf_version=v0.7.8
 
-declare -A asdf_lang_versions
-asdf_lang_versions["python"]=3.8.3
-asdf_lang_versions["golang"]=1.14.4
-asdf_lang_versions["nodejs"]=12.18.0
+declare -A asdf_tool_versions
+asdf_tool_versions["python"]=3.8.3
+asdf_tool_versions["golang"]=1.14.4
+asdf_tool_versions["nodejs"]=12.18.0
 
 pip_packages=("pip" "pipenv" "black" "flake8" "jedi")
 
@@ -69,18 +69,18 @@ fi
 
 source ~/.config/rc.sh
 
-# install languages
+# install tools
 if [ -d ~/.asdf ]; then
-    for lang in "${!asdf_lang_versions[@]}"; do
-        ver=${asdf_lang_versions[$lang]}
-        echo "#### (asdf) installing $lang $ver ..."
-        asdf plugin-add $lang
-        if [ $lang = "nodejs" ]; then
+    for tool in "${!asdf_tool_versions[@]}"; do
+        ver=${asdf_tool_versions[$tool]}
+        echo "#### (asdf) installing $tool $ver ..."
+        asdf plugin-add $tool
+        if [ $tool = "nodejs" ]; then
             # Import the Node.js release team's OpenPGP keys
             bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
         fi
-        asdf install $lang $ver
-        asdf global $lang $ver
+        asdf install $tool $ver
+        asdf global $tool $ver
     done
     # update installed plugins
     asdf plugin-update --all
