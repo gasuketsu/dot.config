@@ -27,6 +27,8 @@ set -g pure_color_prompt_on_success brgreen
 set -g pure_color_prompt_on_error brred
 set -g pure_color_git_branch brmagenta
 set -g pure_color_git_dirty brred
+set -g pure_color_git_unpulled_commits brred
+set -g pure_color_git_unpushed_commits brred
 set -g pure_color_ssh_hostname brgreen
 set -g pure_color_ssh_separator brgreen
 set -g pure_color_ssh_user_normal brgreen
