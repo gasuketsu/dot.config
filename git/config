@@ -5,3 +5,7 @@
 [alias]
     glog = log --graph --decorate --date=iso
     root = rev-parse --show-toplevel
+[mergetool "nvim"]
+    cmd = nvim -f -c \"Gdiffsplit!\" \"$MERGED\"
+[merge]
+    tool = nvim
