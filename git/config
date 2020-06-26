@@ -5,7 +5,13 @@
 [alias]
     glog = log --graph --decorate --date=iso
     root = rev-parse --show-toplevel
+[mergetool]
+    prompt = false
 [mergetool "nvim"]
     cmd = nvim -f -c \"Gdiffsplit!\" \"$MERGED\"
 [merge]
+    tool = nvim
+[difftool "nvim"]
+    cmd = nvim -R -d -c \"wincmd l\" -d \"$LOCAL\" \"$REMOTE\"
+[diff]
     tool = nvim
