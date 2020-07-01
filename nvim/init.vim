@@ -37,7 +37,7 @@ Plug 'godlygeek/tabular' " required for vim polyglot
 Plug 'sheerun/vim-polyglot'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Color Schemes
-Plug 'morhetz/gruvbox'
+Plug 'gruvbox-community/gruvbox'
 Plug 'sainnhe/gruvbox-material'
 call plug#end()
 
