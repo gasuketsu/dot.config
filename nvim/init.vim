@@ -244,6 +244,23 @@ let g:cpp_class_scope_highlight = 1
 " markdown
 let g:vim_markdown_conceal_code_blocks = 0
 
+"-----------------------------
+" coc.nvim
+"-----------------------------
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+    if (index(['vim','help'], &filetype) >= 0)
+        execute 'h '.expand('<cword>')
+    else
+        call CocAction('doHover')
+    endif
+endfunction
+
+" Symbol renaming
+nmap <leader>rn <Plug>(coc-rename)
+
 " use <c-n> for trigger completion
 inoremap <silent><expr> <C-n> pumvisible() ? "\<C-n>" : coc#refresh()
 
