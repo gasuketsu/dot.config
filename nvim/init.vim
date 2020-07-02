@@ -5,11 +5,11 @@ syntax enable
 
 " vim-plug
 let s:plug = {
-      \ "plugs": get(g:, 'plugs', {})
-      \ }
+            \ "plugs": get(g:, 'plugs', {})
+            \ }
 
 function! s:plug.is_installed(name)
-  return has_key(self.plugs, a:name) ? isdirectory(self.plugs[a:name].dir) : 0
+    return has_key(self.plugs, a:name) ? isdirectory(self.plugs[a:name].dir) : 0
 endfunction
 
 let s:plugged_dir = '~/.local/share/nvim/plugged'
@@ -312,5 +312,5 @@ autocmd FileType go nmap <silent> tx <Plug>(GoTagsClearTagLine)
 " (should be put at the last of this file)
 let s:local_rc = expand($HOME.'/.nvimrc_local')
 if filereadable(s:local_rc)
-  execute 'source' s:local_rc
+    execute 'source' s:local_rc
 endif
