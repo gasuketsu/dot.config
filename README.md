@@ -14,10 +14,11 @@ apt install ncurses-term
 
 ### openSUSE
 # Python build
-zypper install gcc automake xz bzip2 libbz2-devel openssl-devel ncurses-devel readline-devel zlib-devel libffi-devel sqlite3-devel
+zypper install -t pattern devel_basis
+zypper install xz bzip2 libbz2-devel openssl-devel readline-devel libffi-devel sqlite3-devel
 zypper install tk-devel    (if you also want to have GUI support)
 # tmux
-zypper install ncurses-term
+zypper install terminfo
 
 ### CentOS/Fedora 21 and below
 # Python build
