@@ -21,5 +21,6 @@
   "hide_deep_information_message": false,
   "enable_power_saving_mode": false,
   "rate_limit_interval_seconds": null,
-  "rate_limit_amount": null
+  "rate_limit_amount": null,
+  "generation": 0
 }
