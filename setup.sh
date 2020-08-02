@@ -5,9 +5,9 @@ CWD=$PWD
 asdf_version=v0.7.8
 
 declare -A asdf_tool_versions
-asdf_tool_versions["python"]=3.8.4
+asdf_tool_versions["python"]=3.8.5
 asdf_tool_versions["golang"]=1.14.6
-asdf_tool_versions["nodejs"]=12.18.2
+asdf_tool_versions["nodejs"]=12.18.3
 asdf_tool_versions["bat"]=0.15.4
 asdf_tool_versions["fd"]=8.1.1
 
@@ -28,7 +28,7 @@ if [ ! -e ~/.tmux.conf ]; then
     ln -s ~/.config/tmux/tmux.conf ~/.tmux.conf
 fi
 
-# tpgm
+# tpm
 if [ ! -d ~/.tmux/plugins/tpm ]; then
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 fi
@@ -97,7 +97,8 @@ asdf reshim
 
 # (python) venv for nvim python bindings
 cd ~/.config/nvim/py3nvim
-echo "##### (python) setting up virtualenv for neovim python bindings..."
+echo "##### (python) reinitialize virtualenv for neovim python bindings..."
+pipenv --rm
 pipenv install --dev
 
 py3nvim_venv=`pipenv --venv`
@@ -119,6 +120,7 @@ fi
 
 echo "##### (go) install must-have packages..."
 go get golang.org/x/tools/gopls@latest
+go get github.com/lemonade-command/lemonade
 
 # reshim again for enabling installed tools
 asdf reshim
