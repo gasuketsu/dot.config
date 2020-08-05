@@ -2,6 +2,8 @@
     pager = less -x4 -F -X
 [push]
     default = simple
+[pull]
+    rebase = false
 [alias]
     glog = log --graph --decorate --date=iso
     root = rev-parse --show-toplevel
