@@ -121,10 +121,11 @@ set ttimeout
 set timeoutlen=200
 
 " Default Indentation
+set expandtab
 set tabstop=4
 set shiftwidth=4
 set cindent
-set cino=l1,:0,N-s,g0,(0,W4,m1
+set cino=l1,:0,g0,(0,W4,m1
 
 " enable to delete newline
 set backspace=2
