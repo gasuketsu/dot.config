@@ -14,9 +14,9 @@ asdf_tool_versions["fd"]=8.1.1
 pip_packages=("pip" "pipenv" "black" "flake8" "jedi")
 
 
-function setup_win32yank () {
+function setup_neovim_clipboard_config () {
     # set .nvimrc_local if no clipboard configuration
-    if type win32yank.exe > /dev/null; then
+    if [ $(uname -r | grep -i "microsoft") != "" ] && type win32yank.exe > /dev/null; then
         if [ ! -f ~/.nvimrc_local ] || ! grep 'let :g:clipboard' ~/.nvimrc_local > /dev/null 2>&1; then
             echo "#### setting up neovim clipboard to use win32yank..."
             cat <<EOT >> ~/.nvimrc_local
@@ -148,8 +148,7 @@ if [ -z $go_module ]; then
     go env -w GO111MODULE=on
 fi
 
-echo "##### (go) install must-have packages..."
-setup_win32yank
+setup_neovim_clipboard_config
 
 # reshim again for enabling installed tools
 asdf reshim
