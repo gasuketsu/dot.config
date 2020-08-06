@@ -13,6 +13,31 @@ asdf_tool_versions["fd"]=8.1.1
 
 pip_packages=("pip" "pipenv" "black" "flake8" "jedi")
 
+
+function setup_win32yank () {
+    # set .nvimrc_local if no clipboard configuration
+    if type win32yank.exe > /dev/null; then
+        if [ ! -f ~/.nvimrc_local ] || ! grep 'let :g:clipboard' ~/.nvimrc_local > /dev/null 2>&1; then
+            echo "#### setting up neovim clipboard to use win32yank..."
+            cat <<EOT >> ~/.nvimrc_local
+let g:clipboard = {
+            \\    'name': 'win32yank',
+            \\    'copy': {
+            \\        '+': 'win32yank.exe -i',
+            \\        '*': 'win32yank.exe -i',
+            \\    },
+            \\   'paste': {
+            \\        '+': 'win32yank.exe -o',
+            \\        '*': 'win32yank.exe -o',
+            \\    },
+            \\    'cache_enabled': 1,
+            \\}
+EOT
+        fi
+    fi
+}
+
+
 # vim-plug (for neovim)
 if [ ! -f ~/.local/share/nvim/site/autoload/plug.vim ]; then
     curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -121,6 +146,8 @@ fi
 echo "##### (go) install must-have packages..."
 go get golang.org/x/tools/gopls@latest
 go get github.com/lemonade-command/lemonade
+
+setup_win32yank
 
 # reshim again for enabling installed tools
 asdf reshim
