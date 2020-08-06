@@ -6,7 +6,7 @@ asdf_version=v0.7.8
 
 declare -A asdf_tool_versions
 asdf_tool_versions["python"]=3.8.5
-asdf_tool_versions["golang"]=1.14.6
+asdf_tool_versions["golang"]=1.14.7
 asdf_tool_versions["nodejs"]=12.18.3
 asdf_tool_versions["bat"]=0.15.4
 asdf_tool_versions["fd"]=8.1.1
