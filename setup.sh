@@ -78,6 +78,11 @@ if [ ! -e ~/.editorconfig ]; then
     ln -s ~/.config/editorconfig/.editorconfig ~/.editorconfig
 fi
 
+# default golang packages (asdf-golang)
+if [ ! -e ~/.default-golang-pkgs ]; then
+    ln -s ~/.config/asdf/.default-golang-pkgs ~/.default-golang-pkgs
+fi
+
 # .gitconfig
 if [ ! -e ~/.gitconfig ]; then
     touch ~/.gitconfig
@@ -144,9 +149,6 @@ if [ -z $go_module ]; then
 fi
 
 echo "##### (go) install must-have packages..."
-go get golang.org/x/tools/gopls@latest
-go get github.com/lemonade-command/lemonade
-
 setup_win32yank
 
 # reshim again for enabling installed tools
