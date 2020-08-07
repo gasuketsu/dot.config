@@ -27,7 +27,7 @@ function set_default_key_bindings () {
 
 case "$(uname)" in
     "Linux")
-        if [ $(uname -r | grep -i "microsoft") != "" ]; then
+        if [ "$(uname -r | grep -i "microsoft")" != "" ]; then
             set_wsl_key_bindings
         else
             set_linux_key_bindings

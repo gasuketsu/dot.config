@@ -16,7 +16,7 @@ pip_packages=("pip" "pipenv" "black" "flake8" "jedi")
 
 function setup_neovim_clipboard_config () {
     # set .nvimrc_local if no clipboard configuration
-    if [ $(uname -r | grep -i "microsoft") != "" ] && type win32yank.exe > /dev/null; then
+    if [ "$(uname -r | grep -i "microsoft")" != "" ] && type win32yank.exe > /dev/null; then
         if [ ! -f ~/.nvimrc_local ] || ! grep 'let :g:clipboard' ~/.nvimrc_local > /dev/null 2>&1; then
             echo "#### setting up neovim clipboard to use win32yank..."
             cat <<EOT >> ~/.nvimrc_local
