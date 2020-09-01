@@ -1,0 +1,5 @@
+pipenv
+jedi
+flake8
+black
+pip-autoremove

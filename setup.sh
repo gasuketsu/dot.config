@@ -11,9 +11,6 @@ asdf_tool_versions["nodejs"]=12.18.3
 asdf_tool_versions["bat"]=0.15.4
 asdf_tool_versions["fd"]=8.1.1
 
-pip_packages=("pip" "pipenv" "black" "flake8" "jedi")
-
-
 function setup_neovim_clipboard_config () {
     # set .nvimrc_local if no clipboard configuration
     if [ "$(uname -r | grep -i "microsoft")" != "" ] && type win32yank.exe > /dev/null; then
@@ -78,6 +75,11 @@ if [ ! -e ~/.editorconfig ]; then
     ln -s ~/.config/editorconfig/.editorconfig ~/.editorconfig
 fi
 
+# default python packages (asdf-python)
+if [ ! -e ~/.default-python-packages ]; then
+    ln -s ~/.config/asdf/.default-python-packages ~/.default-python-packages
+fi
+
 # default golang packages (asdf-golang)
 if [ ! -e ~/.default-golang-pkgs ]; then
     ln -s ~/.config/asdf/.default-golang-pkgs ~/.default-golang-pkgs
@@ -119,11 +121,6 @@ if [ -d ~/.asdf ]; then
     # make sure shims are up to date
     asdf reshim
 fi
-
-# (python) pip
-echo "##### (python) install/update must-have packages..."
-pip install -U ${pip_packages[@]}
-asdf reshim
 
 # (python) venv for nvim python bindings
 cd ~/.config/nvim/py3nvim
