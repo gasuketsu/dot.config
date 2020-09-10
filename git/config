@@ -1,19 +1,19 @@
 [core]
-    pager = less -x4 -F -X
+	pager = less -x4 -F -X
 [push]
-    default = simple
+	default = simple
 [pull]
-    rebase = false
+	rebase = false
 [alias]
-    glog = log --graph --decorate --date=iso
-    root = rev-parse --show-toplevel
+	glog = log --graph --decorate --date=iso
+	root = rev-parse --show-toplevel
 [mergetool]
-    prompt = false
+	prompt = false
 [mergetool "nvim"]
-    cmd = nvim -f -c \"Gdiffsplit!\" \"$MERGED\"
+	cmd = nvim -f -c \"Gdiffsplit!\" \"$MERGED\"
 [merge]
-    tool = nvim
+	tool = nvim
 [difftool "nvim"]
-    cmd = nvim -R -d -c \"wincmd l\" -d \"$LOCAL\" \"$REMOTE\"
+	cmd = nvim -R -d -c \"wincmd l\" -d \"$LOCAL\" \"$REMOTE\"
 [diff]
-    tool = nvim
+	tool = nvim
