@@ -2,14 +2,27 @@
 
 CWD=$PWD
 
-asdf_version=v0.7.8
-
 declare -A asdf_tool_versions
 asdf_tool_versions["python"]=3.8.5
 asdf_tool_versions["golang"]=1.15
 asdf_tool_versions["nodejs"]=12.18.3
 asdf_tool_versions["bat"]=0.15.4
 asdf_tool_versions["fd"]=8.1.1
+
+asdf_plugins=(
+  "python"
+  "golang"
+  "nodejs"
+  "bat"
+  "fd"
+)
+
+golang_default_packages=(
+  "golang.org/x/tools/gopls@latest"
+  "github.com/lemonade-command/lemonade"
+  "github.com/swaggo/swag/cmd/swag"
+  "github.com/jstemmer/go-junit-report"
+)
 
 function setup_neovim_clipboard_config () {
   # set .nvimrc_local if no clipboard configuration
@@ -62,7 +75,7 @@ fi
 
 # asdf
 if [ ! -d ~/.asdf ]; then
-  git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch $asdf_version
+  git clone https://github.com/asdf-vm/asdf.git ~/.asdf
 fi
 
 if [ ! -e ~/.config/fish/completions/asdf.fish ]; then
@@ -103,18 +116,22 @@ fi
 
 source ~/.config/rc.sh
 
+# update asdf to latest stable release
+asdf update
+
 # install tools
 if [ -d ~/.asdf ]; then
-  for tool in "${!asdf_tool_versions[@]}"; do
-    ver=${asdf_tool_versions[$tool]}
-    echo "#### (asdf) installing $tool $ver ..."
-    asdf plugin-add $tool
-    if [ $tool = "nodejs" ]; then
+  for plugin in "${asdf_plugins[@]}"; do
+    echo "#### (asdf) installing plugin $plugin ..."
+    asdf plugin-add $plugin
+    if [ $plugin = "nodejs" ]; then
       # Import the Node.js release team's OpenPGP keys
       bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
     fi
-    asdf install $tool $ver
-    asdf global $tool $ver
+    version=$(asdf latest $plugin)
+    echo "#### (asdf) installing $plugin $version..."
+    asdf install $plugin $version
+    asdf global $plugin $version
   done
   # update installed plugins
   asdf plugin-update --all
@@ -144,6 +161,11 @@ if [ -z $go_module ]; then
   echo "##### (go) setting GO111MODULE=on"
   go env -w GO111MODULE=on
 fi
+
+echo "##### (go) install default packages..."
+for pkg in "${golang_default_packages[@]}"; do
+  go get $pkg
+done
 
 setup_neovim_clipboard_config
 
