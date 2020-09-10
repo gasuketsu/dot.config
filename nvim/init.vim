@@ -5,11 +5,11 @@ syntax enable
 
 " vim-plug
 let s:plug = {
-            \ "plugs": get(g:, 'plugs', {})
-            \ }
+      \ "plugs": get(g:, 'plugs', {})
+      \ }
 
 function! s:plug.is_installed(name)
-    return has_key(self.plugs, a:name) ? isdirectory(self.plugs[a:name].dir) : 0
+  return has_key(self.plugs, a:name) ? isdirectory(self.plugs[a:name].dir) : 0
 endfunction
 
 let s:plugged_dir = '~/.local/share/nvim/plugged'
@@ -34,6 +34,7 @@ Plug 'kien/rainbow_parentheses.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'psf/black', { 'tag': '*' }
 Plug 'godlygeek/tabular' " required for vim polyglot
+"Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'sheerun/vim-polyglot'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Color Schemes
@@ -66,7 +67,7 @@ let g:airline#extensions#tabline#enabled = 1
 " Provider configuration
 "-----------------------------
 if has('pyx')
-    set pyxversion=3
+  set pyxversion=3
 endif
 let g:loaded_python_provider = 1
 let g:python3_host_prog = $HOME.'/.config/nvim/py3nvim/.venv/bin/python'
@@ -122,8 +123,8 @@ set timeoutlen=200
 
 " Default Indentation
 set expandtab
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set cindent
 set cino=l1,:0,g0,(0,W4,m1
 
@@ -235,6 +236,7 @@ autocmd Syntax * RainbowParenthesesLoadBraces
 "-----------------------------
 " sheerun/vim-polyglot
 "-----------------------------
+"let g:polyglot_disabled = ['groovy']
 " go
 let g:go_highlight_types = 1
 let g:go_highlight_functions = 1
@@ -252,11 +254,11 @@ let g:vim_markdown_conceal_code_blocks = 0
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
-    if (index(['vim','help'], &filetype) >= 0)
-        execute 'h '.expand('<cword>')
-    else
-        call CocAction('doHover')
-    endif
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
 endfunction
 
 " Symbol renaming
@@ -313,5 +315,5 @@ autocmd FileType go nmap <silent> tx <Plug>(GoTagsClearTagLine)
 " (should be put at the last of this file)
 let s:local_rc = expand($HOME.'/.nvimrc_local')
 if filereadable(s:local_rc)
-    execute 'source' s:local_rc
+  execute 'source' s:local_rc
 endif

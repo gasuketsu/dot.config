@@ -26,22 +26,22 @@ set -g fish_color_status red
 set fish_greeting
 
 if status --is-interactive
-    type nvim >/dev/null 2>&1
-    and set -gx EDITOR nvim
-    type fish >/dev/null 2>&1
-    and set -gx PIPENV_SHELL (which fish)
-    set -gx VIRTUAL_ENV_DISABLE_PROMPT 1
+  type nvim >/dev/null 2>&1
+  and set -gx EDITOR nvim
+  type fish >/dev/null 2>&1
+  and set -gx PIPENV_SHELL (which fish)
+  set -gx VIRTUAL_ENV_DISABLE_PROMPT 1
 
-    test -d $HOME/.local/bin
-    and not contains $HOME/.local/bin $PATH
-    and set -gxp PATH $HOME/.local/bin
-    # fzf
-    test -d $HOME/.fzf/bin
-    and not contains $HOME/.fzf/bin $PATH
-    and set -gxp PATH $HOME/.fzf/bin
-    # asdf
-    test -f $HOME/.asdf/asdf.fish
-    and source $HOME/.asdf/asdf.fish
+  test -d $HOME/.local/bin
+  and not contains $HOME/.local/bin $PATH
+  and set -gxp PATH $HOME/.local/bin
+  # fzf
+  test -d $HOME/.fzf/bin
+  and not contains $HOME/.fzf/bin $PATH
+  and set -gxp PATH $HOME/.fzf/bin
+  # asdf
+  test -f $HOME/.asdf/asdf.fish
+  and source $HOME/.asdf/asdf.fish
 end
 
 test -f $HOME/.config/fish/post_config.fish

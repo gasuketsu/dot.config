@@ -12,11 +12,11 @@ asdf_tool_versions["bat"]=0.15.4
 asdf_tool_versions["fd"]=8.1.1
 
 function setup_neovim_clipboard_config () {
-    # set .nvimrc_local if no clipboard configuration
-    if [ "$(uname -r | grep -i "microsoft")" != "" ] && type win32yank.exe > /dev/null; then
-        if [ ! -f ~/.nvimrc_local ] || ! grep 'let g:clipboard' ~/.nvimrc_local > /dev/null 2>&1; then
-            echo "#### setting up neovim clipboard to use win32yank..."
-            cat <<EOT >> ~/.nvimrc_local
+  # set .nvimrc_local if no clipboard configuration
+  if [ "$(uname -r | grep -i "microsoft")" != "" ] && type win32yank.exe > /dev/null; then
+    if [ ! -f ~/.nvimrc_local ] || ! grep 'let g:clipboard' ~/.nvimrc_local > /dev/null 2>&1; then
+      echo "#### setting up neovim clipboard to use win32yank..."
+      cat <<EOT >> ~/.nvimrc_local
 let g:clipboard = {
             \\    'name': 'win32yank',
             \\    'copy': {
@@ -30,96 +30,96 @@ let g:clipboard = {
             \\    'cache_enabled': 1,
             \\}
 EOT
-        fi
     fi
+  fi
 }
 
 
 # vim-plug (for neovim)
 if [ ! -f ~/.local/share/nvim/site/autoload/plug.vim ]; then
-    curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
 
 # Fisherman
 if [ ! -f ~/.config/fish/functions/fisher.fish ]; then
-    curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
+  curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
 fi
 
 # tmux
 if [ ! -e ~/.tmux.conf ]; then
-    ln -s ~/.config/tmux/tmux.conf ~/.tmux.conf
+  ln -s ~/.config/tmux/tmux.conf ~/.tmux.conf
 fi
 
 # tpm
 if [ ! -d ~/.tmux/plugins/tpm ]; then
-    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 fi
 
 # clang-format
 if [ ! -e ~/.clang-format ]; then
-    ln -s ~/.config/clang-format/.clang-format ~/.clang-format
+  ln -s ~/.config/clang-format/.clang-format ~/.clang-format
 fi
 
 # asdf
 if [ ! -d ~/.asdf ]; then
-    git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch $asdf_version
+  git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch $asdf_version
 fi
 
 if [ ! -e ~/.config/fish/completions/asdf.fish ]; then
-    mkdir -p ~/.config/fish/completions
-    ln -s ~/.asdf/completions/asdf.fish ~/.config/fish/completions
+  mkdir -p ~/.config/fish/completions
+  ln -s ~/.asdf/completions/asdf.fish ~/.config/fish/completions
 fi
 
 # EditorConfig
 if [ ! -e ~/.editorconfig ]; then
-    ln -s ~/.config/editorconfig/.editorconfig ~/.editorconfig
+  ln -s ~/.config/editorconfig/.editorconfig ~/.editorconfig
 fi
 
 # default python packages (asdf-python)
 if [ ! -e ~/.default-python-packages ]; then
-    ln -s ~/.config/asdf/.default-python-packages ~/.default-python-packages
+  ln -s ~/.config/asdf/.default-python-packages ~/.default-python-packages
 fi
 
 # default golang packages (asdf-golang)
 if [ ! -e ~/.default-golang-pkgs ]; then
-    ln -s ~/.config/asdf/.default-golang-pkgs ~/.default-golang-pkgs
+  ln -s ~/.config/asdf/.default-golang-pkgs ~/.default-golang-pkgs
 fi
 
 # .gitconfig
 if [ ! -e ~/.gitconfig ]; then
-    touch ~/.gitconfig
+  touch ~/.gitconfig
 fi
 
 # lemonade
 if [ ! -f ~/.config/lemonade.toml ]; then
-    cp ~/.config/lemonade/default.toml ~/.config/lemonade.toml
+  cp ~/.config/lemonade/default.toml ~/.config/lemonade.toml
 fi
 
 # install starship
 mkdir -p ~/.local/bin
 if [ ! -f ~/.local/bin/starship ]; then
-    curl -fsSL https://starship.rs/install.sh | bash -s -- -b ~/.local/bin -y
+  curl -fsSL https://starship.rs/install.sh | bash -s -- -b ~/.local/bin -y
 fi
 
 source ~/.config/rc.sh
 
 # install tools
 if [ -d ~/.asdf ]; then
-    for tool in "${!asdf_tool_versions[@]}"; do
-        ver=${asdf_tool_versions[$tool]}
-        echo "#### (asdf) installing $tool $ver ..."
-        asdf plugin-add $tool
-        if [ $tool = "nodejs" ]; then
-            # Import the Node.js release team's OpenPGP keys
-            bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
-        fi
-        asdf install $tool $ver
-        asdf global $tool $ver
-    done
-    # update installed plugins
-    asdf plugin-update --all
-    # make sure shims are up to date
-    asdf reshim
+  for tool in "${!asdf_tool_versions[@]}"; do
+    ver=${asdf_tool_versions[$tool]}
+    echo "#### (asdf) installing $tool $ver ..."
+    asdf plugin-add $tool
+    if [ $tool = "nodejs" ]; then
+      # Import the Node.js release team's OpenPGP keys
+      bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
+    fi
+    asdf install $tool $ver
+    asdf global $tool $ver
+  done
+  # update installed plugins
+  asdf plugin-update --all
+  # make sure shims are up to date
+  asdf reshim
 fi
 
 # (python) venv for nvim python bindings
@@ -130,19 +130,19 @@ pipenv install --dev
 
 py3nvim_venv=`pipenv --venv`
 if [ ! -f ~/.nvimrc_local ]; then
-    echo "let g:python3_host_prog = "\'"${py3nvim_venv}/bin/python"\' >> ~/.nvimrc_local
+  echo "let g:python3_host_prog = "\'"${py3nvim_venv}/bin/python"\' >> ~/.nvimrc_local
 else
-    if ! grep 'let g:python3_host_prog' ~/.nvimrc_local > /dev/null 2>&1; then
-        echo "let g:python3_host_prog = "\'"${py3nvim_venv}/bin/python"\' >> ~/.nvimrc_local
-    fi
+  if ! grep 'let g:python3_host_prog' ~/.nvimrc_local > /dev/null 2>&1; then
+    echo "let g:python3_host_prog = "\'"${py3nvim_venv}/bin/python"\' >> ~/.nvimrc_local
+  fi
 fi
 cd $CWD
 
 # (go) enable GO111MODULE if not set
 go_module=`go env GO111MODULE`
 if [ -z $go_module ]; then
-    echo "##### (go) setting GO111MODULE=on"
-    go env -w GO111MODULE=on
+  echo "##### (go) setting GO111MODULE=on"
+  go env -w GO111MODULE=on
 fi
 
 setup_neovim_clipboard_config
