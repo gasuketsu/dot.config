@@ -86,11 +86,6 @@ if [ ! -e ~/.default-python-packages ]; then
   ln -s ~/.config/asdf/.default-python-packages ~/.default-python-packages
 fi
 
-# default golang packages (asdf-golang)
-if [ ! -e ~/.default-golang-pkgs ]; then
-  ln -s ~/.config/asdf/.default-golang-pkgs ~/.default-golang-pkgs
-fi
-
 # .gitconfig
 if [ ! -e ~/.gitconfig ]; then
   touch ~/.gitconfig
