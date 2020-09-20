@@ -58,7 +58,7 @@ fi
 
 # clang-format
 if [ ! -e ~/.clang-format ]; then
-  ln -s ~/.config/clang-format/.clang-format ~/.clang-format
+  ln -s ~/.config/clang-format/clang-format ~/.clang-format
 fi
 
 # asdf
@@ -73,12 +73,12 @@ fi
 
 # EditorConfig
 if [ ! -e ~/.editorconfig ]; then
-  ln -s ~/.config/editorconfig/.editorconfig ~/.editorconfig
+  ln -s ~/.config/editorconfig/editorconfig ~/.editorconfig
 fi
 
 # default python packages (asdf-python)
 if [ ! -e ~/.default-python-packages ]; then
-  ln -s ~/.config/asdf/.default-python-packages ~/.default-python-packages
+  ln -s ~/.config/asdf/default-python-packages ~/.default-python-packages
 fi
 
 # .gitconfig
