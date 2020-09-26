@@ -24,17 +24,17 @@ function setup_neovim_clipboard_config () {
       echo "#### setting up neovim clipboard to use win32yank..."
       cat <<EOT >> ~/.nvimrc_local
 let g:clipboard = {
-            \\    'name': 'win32yank',
-            \\    'copy': {
-            \\        '+': 'win32yank.exe -i',
-            \\        '*': 'win32yank.exe -i',
-            \\    },
-            \\   'paste': {
-            \\        '+': 'win32yank.exe -o',
-            \\        '*': 'win32yank.exe -o',
-            \\    },
-            \\    'cache_enabled': 1,
-            \\}
+      \\   'name': 'win32yank',
+      \\   'copy': {
+      \\     '+': 'win32yank.exe -i',
+      \\     '*': 'win32yank.exe -i',
+      \\   },
+      \\   'paste': {
+      \\     '+': 'win32yank.exe -o',
+      \\     '*': 'win32yank.exe -o',
+      \\   },
+      \\   'cache_enabled': 1,
+      \\ }
 EOT
     fi
   fi
