@@ -247,6 +247,8 @@ let g:cpp_class_scope_highlight = 1
 " markdown
 let g:vim_markdown_conceal = 0
 let g:vim_markdown_conceal_code_blocks = 0
+" csv
+let g:csv_no_conceal = 1
 
 "-----------------------------
 " coc.nvim
