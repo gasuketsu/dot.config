@@ -1,5 +1,4 @@
 [directory]
-prefix = ""
 fish_style_pwd_dir_length = 1
 
 [package]
