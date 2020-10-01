@@ -1,6 +1,15 @@
 [directory]
 fish_style_pwd_dir_length = 1
 
+[username]
+format = "[$user]($style) "
+
+[hostname]
+format = "[$hostname]($style) "
+
+[git_branch]
+format = "[$symbol$branch]($style) "
+
 [package]
 disabled = true
 
