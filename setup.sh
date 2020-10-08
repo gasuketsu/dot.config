@@ -6,6 +6,7 @@ asdf_plugins=(
   "python"
   "golang"
   "nodejs"
+  "starship"
   "bat"
   "fd"
 )
@@ -91,12 +92,6 @@ if [ ! -f ~/.config/lemonade.toml ]; then
   cp ~/.config/lemonade/default.toml ~/.config/lemonade.toml
 fi
 
-# install starship
-mkdir -p ~/.local/bin
-if [ ! -f ~/.local/bin/starship ]; then
-  curl -fsSL https://starship.rs/install.sh | bash -s -- -b ~/.local/bin -y
-fi
-
 source ~/.config/rc.sh
 
 # update asdf to latest stable release
@@ -126,7 +121,7 @@ fi
 cd ~/.config/nvim/py3nvim
 echo "##### (python) reinitialize virtualenv for neovim python bindings..."
 pipenv --rm
-pipenv install --dev
+pipenv install
 
 py3nvim_venv=`pipenv --venv`
 if [ ! -f ~/.nvimrc_local ]; then

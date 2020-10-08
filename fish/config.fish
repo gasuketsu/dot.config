@@ -45,5 +45,4 @@ if status --is-interactive
   and source $HOME/.asdf/asdf.fish
 end
 
-test -f $HOME/.config/fish/post_config.fish
-and source $HOME/.config/fish/post_config.fish
+starship init fish | source
