@@ -1,3 +1,5 @@
+[init]
+	defaultBranch = main
 [core]
 	pager = less -x4 -F -X
 [push]
