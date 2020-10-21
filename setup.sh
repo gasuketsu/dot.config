@@ -7,6 +7,7 @@ asdf_plugins=(
   "golang"
   "nodejs"
   "starship"
+  "tmux"
   "bat"
   "fd"
 )

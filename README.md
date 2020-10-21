@@ -10,7 +10,7 @@ Manages configurations stored under your `~/.config`.
 apt install build-essential zlib1g-dev libffi-dev libssl-dev libbz2-dev libncursesw5-dev libgdbm-dev liblzma-dev libsqlite3-dev uuid-dev libreadline-dev
 apt install tk-dev    (if you also want to have GUI support)
 # tmux
-apt install ncurses-term
+apt install automake pkg-config bison ncurses-term
 
 ### openSUSE
 # Python build
@@ -18,21 +18,21 @@ zypper install -t pattern devel_basis
 zypper install xz bzip2 libbz2-devel libopenssl-devel readline-devel libffi-devel sqlite3-devel
 zypper install tk-devel    (if you also want to have GUI support)
 # tmux
-zypper install terminfo
+zypper install terminfo pkg-config bison
 
 ### CentOS/Fedora 21 and below
 # Python build
 yum install gcc xz zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel libffi-devel
 yum install tk-devel    (if you also want to have GUI support)
 # tmux
-yum install ncurses-term
+yum install pkgconfig bison automake ncurses-term
 
 ### Fedora 22 and above
 # Python build
 dnf install make gcc xz zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel libffi-devel
 dnf install tk-devel    (if you also want to have GUI support)
 # tmux
-dnf install ncurses-term
+dnf install pkgconfig bison automake ncurses-term
 ```
 
 ## Installation and setup
