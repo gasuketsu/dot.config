@@ -11,5 +11,3 @@ black = "==20.8b1"
 
 [requires]
 
-[pipenv]
-allow_prereleases = true
