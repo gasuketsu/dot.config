@@ -6,6 +6,7 @@ asdf_plugins=(
   "python"
   "golang"
   "nodejs"
+  "neovim"
   "starship"
   "tmux"
   "bat"
