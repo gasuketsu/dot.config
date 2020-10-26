@@ -46,7 +46,8 @@ $ git clone https://github.com/gasuketsu/dot.config ~/.config
 $ ~/.config/setup.sh
 ```
 
-Make sure to source `~/.config/rc.sh` in your `.bashrc` after running setup script.
+To enable configuration in bash, make sure to source `~/.config/bash/config.bash`
+in your `.profile` or `.bashrc` after running setup script.
 
 ### Language servers
 

@@ -94,7 +94,7 @@ if [ ! -f ~/.config/lemonade.toml ]; then
   cp ~/.config/lemonade/default.toml ~/.config/lemonade.toml
 fi
 
-source ~/.config/rc.sh
+source "~/.config/bash/config.bash"
 
 # update asdf to latest stable release
 asdf update
@@ -157,5 +157,5 @@ echo "######################################################"
 echo " Finished setup"
 echo
 echo " Make sure to add following line into your ~/.bashrc"
-echo " source ~/.config/rc.sh"
+echo " source ~/.config/bash/config.bash"
 echo "######################################################"
