@@ -20,10 +20,23 @@ golang_default_packages=(
   "github.com/jstemmer/go-junit-report"
 )
 
+function install_win32yank () {
+  if [ "$(uname -r | grep -i "microsoft")" != "" ] && ! type win32yank.exe >& /dev/null; then
+    local download_url="https://github.com/equalsraf/win32yank/releases/download/v0.0.4/win32yank-x64.zip"
+    local download_dir="/tmp/$USER"
+    mkdir -p $download_dir
+    mkdir -p "$HOME/.local/bin"
+    curl -fLo "$download_dir/win32yank.zip" $download_url
+    unzip "$download_dir/win32yank.zip" "win32yank.exe" -d "$HOME/.local/bin"
+    chmod 755 "$HOME/.local/bin/win32yank.exe"
+    rm -f "$download_dir/win32yank.zip"
+  fi
+}
+
 function setup_neovim_clipboard_config () {
   # set .nvimrc_local if no clipboard configuration
-  if [ "$(uname -r | grep -i "microsoft")" != "" ] && type win32yank.exe > /dev/null; then
-    if [ ! -f "$HOME/.nvimrc_local" ] || ! grep 'let g:clipboard' "$HOME/.nvimrc_local" > /dev/null 2>&1; then
+  if [ "$(uname -r | grep -i "microsoft")" != "" ] && type win32yank.exe >& /dev/null; then
+    if [ ! -f "$HOME/.nvimrc_local" ] || ! grep 'let g:clipboard' "$HOME/.nvimrc_local" >& /dev/null; then
       echo "#### setting up neovim clipboard to use win32yank..."
       cat <<EOT >> "$HOME/.nvimrc_local"
 let g:clipboard = {
@@ -61,7 +74,7 @@ fi
 
 # clang-format
 if [ ! -e "$HOME/.clang-format" ]; then
-  ln -s "$HOME/.config/clang-format/clang-format" $"HOME/.clang-format"
+  ln -s "$HOME/.config/clang-format/clang-format" "$HOME/.clang-format"
 fi
 
 # asdf
@@ -129,7 +142,7 @@ py3nvim_venv=`pipenv --venv`
 if [ ! -f "$HOME/.nvimrc_local" ]; then
   echo "let g:python3_host_prog = "\'"${py3nvim_venv}/bin/python"\' >> "$HOME/.nvimrc_local"
 else
-  if ! grep 'let g:python3_host_prog' "$HOME/.nvimrc_local" > /dev/null 2>&1; then
+  if ! grep 'let g:python3_host_prog' "$HOME/.nvimrc_local" >& /dev/null; then
     echo "let g:python3_host_prog = "\'"${py3nvim_venv}/bin/python"\' >> "$HOME/.nvimrc_local"
   fi
 fi
@@ -147,6 +160,7 @@ for pkg in "${golang_default_packages[@]}"; do
   go get $pkg
 done
 
+install_win32yank
 setup_neovim_clipboard_config
 
 # reshim again for enabling installed tools
