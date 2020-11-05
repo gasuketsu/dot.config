@@ -2,10 +2,12 @@
 
 CWD=$PWD
 
+# You can specify dict value as filter to install
+# latest version in given filter
 declare -A asdf_plugins=(
   ["python"]=""
   ["golang"]=""
-  ["nodejs"]="14.15.0"
+  ["nodejs"]="14.*"
   ["neovim"]=""
   ["starship"]=""
   ["tmux"]=""
@@ -122,10 +124,8 @@ if [ -d "$HOME/.asdf" ]; then
       # Import the Node.js release team's OpenPGP keys
       bash "$HOME/.asdf/plugins/nodejs/bin/import-release-team-keyring"
     fi
-    version="${asdf_plugins[$plugin]}"
-    if [ "$version" = "" ]; then
-      version=$(asdf latest $plugin)
-    fi
+    filter="${asdf_plugins[$plugin]}"
+    version=$(asdf latest $plugin "$filter")
     echo "#### (asdf) installing $plugin $version..."
     asdf install $plugin $version
     asdf global $plugin $version
