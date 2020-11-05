@@ -22,6 +22,7 @@ golang_default_packages=(
 
 function install_win32yank () {
   if [ "$(uname -r | grep -i "microsoft")" != "" ] && ! type win32yank.exe >& /dev/null; then
+    echo "#### installing win32yank..."
     local download_url="https://github.com/equalsraf/win32yank/releases/download/v0.0.4/win32yank-x64.zip"
     local download_dir="/tmp/$USER"
     mkdir -p $download_dir
