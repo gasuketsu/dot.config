@@ -2,15 +2,15 @@
 
 CWD=$PWD
 
-asdf_plugins=(
-  "python"
-  "golang"
-  "nodejs"
-  "neovim"
-  "starship"
-  "tmux"
-  "bat"
-  "fd"
+declare -A asdf_plugins=(
+  ["python"]=""
+  ["golang"]=""
+  ["nodejs"]="14.15.0"
+  ["neovim"]=""
+  ["starship"]=""
+  ["tmux"]=""
+  ["bat"]=""
+  ["fd"]=""
 )
 
 golang_default_packages=(
@@ -115,14 +115,17 @@ asdf update
 
 # install tools
 if [ -d "$HOME/.asdf" ]; then
-  for plugin in "${asdf_plugins[@]}"; do
+  for plugin in "${!asdf_plugins[@]}"; do
     echo "#### (asdf) installing plugin $plugin ..."
     asdf plugin-add $plugin
     if [ $plugin = "nodejs" ]; then
       # Import the Node.js release team's OpenPGP keys
       bash "$HOME/.asdf/plugins/nodejs/bin/import-release-team-keyring"
     fi
-    version=$(asdf latest $plugin)
+    version="${asdf_plugins[$plugin]}"
+    if [ "$version" = "" ]; then
+      version=$(asdf latest $plugin)
+    fi
     echo "#### (asdf) installing $plugin $version..."
     asdf install $plugin $version
     asdf global $plugin $version
