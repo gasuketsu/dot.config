@@ -14,3 +14,5 @@ Pipfile.lock
 /go/*
 /lemonade.toml
 /TabNine/last_heartbeat
+/TabNine/defaults/
+/TabNine/monitoring/
