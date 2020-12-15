@@ -33,12 +33,8 @@ function install_win32yank () {
     unzip "$download_dir/win32yank.zip" "win32yank.exe" -d "$HOME/.local/bin"
     chmod 755 "$HOME/.local/bin/win32yank.exe"
     rm -f "$download_dir/win32yank.zip"
-  fi
-}
 
-function setup_neovim_clipboard_config () {
-  # set .nvimrc_local if no clipboard configuration
-  if [ "$(uname -r | grep -i "microsoft")" != "" ] && type win32yank.exe >& /dev/null; then
+    # set .nvimrc_local if no clipboard configuration
     if [ ! -f "$HOME/.nvimrc_local" ] || ! grep 'let g:clipboard' "$HOME/.nvimrc_local" >& /dev/null; then
       echo "#### setting up neovim clipboard to use win32yank..."
       cat <<EOT >> "$HOME/.nvimrc_local"
@@ -165,7 +161,6 @@ for pkg in "${golang_default_packages[@]}"; do
 done
 
 install_win32yank
-setup_neovim_clipboard_config
 
 # reshim again for enabling installed tools
 asdf reshim
