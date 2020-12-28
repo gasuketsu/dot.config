@@ -17,7 +17,6 @@ declare -A asdf_plugins=(
 
 golang_default_packages=(
   "golang.org/x/tools/gopls@latest"
-  "github.com/lemonade-command/lemonade"
   "github.com/swaggo/swag/cmd/swag"
   "github.com/jstemmer/go-junit-report"
 )
@@ -133,19 +132,10 @@ if [ -d "$HOME/.asdf" ]; then
 fi
 
 # (python) venv for nvim python bindings
-cd "$HOME/.config/nvim/py3nvim"
 echo "##### (python) reinitialize virtualenv for neovim python bindings..."
+cd "$HOME/.config/nvim/py3nvim"
 pipenv --rm
 pipenv install
-
-py3nvim_venv=`pipenv --venv`
-if [ ! -f "$HOME/.nvimrc_local" ]; then
-  echo "let g:python3_host_prog = "\'"${py3nvim_venv}/bin/python"\' >> "$HOME/.nvimrc_local"
-else
-  if ! grep 'let g:python3_host_prog' "$HOME/.nvimrc_local" >& /dev/null; then
-    echo "let g:python3_host_prog = "\'"${py3nvim_venv}/bin/python"\' >> "$HOME/.nvimrc_local"
-  fi
-fi
 cd $CWD
 
 # (go) enable GO111MODULE if not set
