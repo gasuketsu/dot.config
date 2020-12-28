@@ -69,10 +69,10 @@ let g:airline#extensions#tabline#enabled = 1
 if has('pyx')
   set pyxversion=3
 endif
-let g:loaded_python_provider = 1
+let g:loaded_python_provider = 0
 let g:python3_host_prog = $HOME.'/.config/nvim/py3nvim/.venv/bin/python'
-let g:loaded_ruby_provider = 1
-let g:loaded_node_provider = 1
+let g:loaded_ruby_provider = 0
+let g:loaded_node_provider = 0
 
 "-----------------------------
 " Display configuration
