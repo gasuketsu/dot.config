@@ -100,11 +100,6 @@ if [ ! -e "$HOME/.gitconfig" ]; then
   touch "$HOME/.gitconfig"
 fi
 
-# lemonade
-if [ ! -f "$HOME/.config/lemonade.toml" ]; then
-  cp "$HOME/.config/lemonade/default.toml" "$HOME/.config/lemonade.toml"
-fi
-
 source "$HOME/.config/bash/config.bash"
 
 # update asdf to latest stable release
