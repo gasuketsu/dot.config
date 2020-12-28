@@ -3,14 +3,16 @@
 function set_wsl_key_bindings () {
   if type win32yank.exe > /dev/null; then
     tmux bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "cat | win32yank.exe -i"
+    tmux bind-key p run "win32yank.exe -o | tmux load-buffer - ; tmux paste-buffer"
   else
     tmux bind-key -T copy-mode-vi y send -X copy-selection
   fi
 }
 
 function set_linux_key_bindings () {
-  if type lemonade > /dev/null; then
-    tmux bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "lemonade copy"
+  if type xclip > /dev/null; then
+    tmux bind-key -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "xclip -i -sel clip > /dev/null"
+    tmux bind-key p run "xclip -o -sel clip | tmux load-buffer - ; tmux paste-buffer"
   else
     tmux bind-key -T copy-mode-vi y send -X copy-selection
   fi
