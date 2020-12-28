@@ -49,20 +49,6 @@ $ ~/.config/setup.sh
 To enable configuration in bash, make sure to source `~/.config/bash/config.bash`
 in your `.profile` or `.bashrc` after running setup script.
 
-### Language servers
-
-Install language servers for Python and Go.
-
-* python-language-server
-```
-pip install python-language-server
-```
-
-* gopls
-```
-go get golang.org/x/tools/gopls@latest
-```
-
 ### Vim/Neovim plugins
 
 Install plugins by running ``PlugInstall`` command in your vim/neovim.
