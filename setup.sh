@@ -15,12 +15,6 @@ declare -A asdf_plugins=(
   ["fd"]=""
 )
 
-golang_default_packages=(
-  "golang.org/x/tools/gopls@latest"
-  "github.com/swaggo/swag/cmd/swag"
-  "github.com/jstemmer/go-junit-report"
-)
-
 function install_win32yank () {
   if [ "$(uname -r | grep -i "microsoft")" != "" ] && ! type win32yank.exe >& /dev/null; then
     echo "#### installing win32yank..."
@@ -95,6 +89,11 @@ if [ ! -e "$HOME/.default-python-packages" ]; then
   ln -s "$HOME/.config/asdf/default-python-packages" "$HOME/.default-python-packages"
 fi
 
+# default golang packages (asdf-golang)
+if [ ! -e "$HOME/.default-golang-pkgs" ]; then
+  ln -s "$HOME/.config/asdf/default-golang-pkgs" "$HOME/.default-golang-pkgs"
+fi
+
 # .gitconfig
 if [ ! -e "$HOME/.gitconfig" ]; then
   touch "$HOME/.gitconfig"
@@ -107,6 +106,9 @@ asdf update
 
 # install tools
 if [ -d "$HOME/.asdf" ]; then
+  # update installed plugins
+  asdf plugin-update --all
+
   for plugin in "${!asdf_plugins[@]}"; do
     echo "#### (asdf) installing plugin $plugin ..."
     asdf plugin-add $plugin
@@ -120,10 +122,6 @@ if [ -d "$HOME/.asdf" ]; then
     asdf install $plugin $version
     asdf global $plugin $version
   done
-  # update installed plugins
-  asdf plugin-update --all
-  # make sure shims are up to date
-  asdf reshim
 fi
 
 # (python) venv for nvim python bindings
@@ -140,15 +138,7 @@ if [ -z $go_module ]; then
   go env -w GO111MODULE=on
 fi
 
-echo "##### (go) install default packages..."
-for pkg in "${golang_default_packages[@]}"; do
-  go get $pkg
-done
-
 install_win32yank
-
-# reshim again for enabling installed tools
-asdf reshim
 
 echo
 echo "######################################################"
