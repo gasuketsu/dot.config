@@ -15,39 +15,6 @@ declare -A asdf_plugins=(
   ["fd"]=""
 )
 
-function install_win32yank () {
-  if [ "$(uname -r | grep -i "microsoft")" != "" ] && ! type win32yank.exe >& /dev/null; then
-    echo "#### installing win32yank..."
-    local download_url="https://github.com/equalsraf/win32yank/releases/download/v0.0.4/win32yank-x64.zip"
-    local download_dir="/tmp/$USER"
-    mkdir -p $download_dir
-    mkdir -p "$HOME/.local/bin"
-    curl -fLo "$download_dir/win32yank.zip" $download_url
-    unzip "$download_dir/win32yank.zip" "win32yank.exe" -d "$HOME/.local/bin"
-    chmod 755 "$HOME/.local/bin/win32yank.exe"
-    rm -f "$download_dir/win32yank.zip"
-
-    # set .nvimrc_local if no clipboard configuration
-    if [ ! -f "$HOME/.nvimrc_local" ] || ! grep 'let g:clipboard' "$HOME/.nvimrc_local" >& /dev/null; then
-      echo "#### setting up neovim clipboard to use win32yank..."
-      cat <<EOT >> "$HOME/.nvimrc_local"
-let g:clipboard = {
-      \\   'name': 'win32yank',
-      \\   'copy': {
-      \\     '+': 'win32yank.exe -i',
-      \\     '*': 'win32yank.exe -i',
-      \\   },
-      \\   'paste': {
-      \\     '+': 'win32yank.exe -o',
-      \\     '*': 'win32yank.exe -o',
-      \\   },
-      \\   'cache_enabled': 1,
-      \\ }
-EOT
-    fi
-  fi
-}
-
 
 # vim-plug (for neovim)
 if [ ! -f "$HOME/.local/share/nvim/site/autoload/plug.vim" ]; then
@@ -137,8 +104,6 @@ if [ -z $go_module ]; then
   echo "##### (go) setting GO111MODULE=on"
   go env -w GO111MODULE=on
 fi
-
-install_win32yank
 
 echo
 echo "######################################################"
