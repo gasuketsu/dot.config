@@ -17,3 +17,4 @@ Pipfile.lock
 /TabNine/last_heartbeat
 /TabNine/defaults/
 /TabNine/monitoring/
+/TabNine/metrics.db
