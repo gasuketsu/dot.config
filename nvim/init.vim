@@ -19,7 +19,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'romainl/vim-qf'
-Plug 'junegunn/fzf', { 'tag': '*', 'dir': '~/.fzf', 'do': './install --no-update-rc' }
+Plug 'junegunn/fzf', {'tag': '*', 'dir': '~/.fzf', 'do': './install --no-update-rc'}
 Plug 'junegunn/fzf.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
@@ -32,7 +32,7 @@ Plug 'junegunn/gv.vim'
 Plug 'rhysd/vim-clang-format'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'Yggdroot/indentLine'
-Plug 'psf/black', { 'tag': '*' }
+Plug 'psf/black', {'tag': '*'}
 Plug 'godlygeek/tabular' " required for vim polyglot
 "Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'sheerun/vim-polyglot'
