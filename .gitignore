@@ -14,7 +14,5 @@ Pipfile.lock
 .venv/
 /go/*
 /lemonade.toml
-/TabNine/last_heartbeat
-/TabNine/defaults/
-/TabNine/monitoring/
-/TabNine/metrics.db
+!/TabNine/tabnine_config.json
+/TabNine/*
