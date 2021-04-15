@@ -21,9 +21,9 @@ if [ ! -f "$HOME/.local/share/nvim/site/autoload/plug.vim" ]; then
   curl -fLo "$HOME/.local/share/nvim/site/autoload/plug.vim" --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
 
-# Fisherman
-if [ ! -f "$HOME/.config/fish/functions/fisher.fish" ]; then
-  curl -Lo "$HOME/.config/fish/functions/fisher.fish" --create-dirs https://git.io/fisher
+# Fisher
+if type fish > /dev/null 2>&1 && ! fish -c "type fisher" > /dev/null 2>&1; then
+  fish -c "curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher"
 fi
 
 # tpm
