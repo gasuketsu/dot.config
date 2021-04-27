@@ -6,7 +6,6 @@
 /fisher/*
 /htop/*
 /pudb/*
-Pipfile.lock
 /lxc/*
 /coc/*
 /tmux/plugins/

@@ -95,7 +95,7 @@ fi
 echo "##### (python) reinitialize virtualenv for neovim python bindings..."
 cd "$HOME/.config/nvim/py3nvim"
 pipenv --rm
-pipenv install
+pipenv sync
 cd $CWD
 
 # (go) enable GO111MODULE if not set

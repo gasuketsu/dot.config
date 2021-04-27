@@ -5,7 +5,7 @@ name = "pypi"
 
 [packages]
 neovim = "*"
-black = "==21.4b0"
+black = "==21.4b1"
 
 [dev-packages]
 
