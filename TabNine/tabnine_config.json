@@ -15,6 +15,7 @@
   "cloud_whitelist": [],
   "num_of_suggestions": null,
   "multiline_suggestions": null,
+  "omit_prefix_suggestions": null,
   "api_key": null,
   "api_base_url": null,
   "binary_update_interval_seconds": null,
@@ -28,5 +29,11 @@
   "local_model_size": null,
   "model_hash_override": null,
   "local_indexing": null,
-  "heartbeat_interval_seconds": null
+  "heartbeat_interval_seconds": null,
+  "last_service_level": null,
+  "override_beams": null,
+  "override_context_length": null,
+  "onboarding": null,
+  "has_git_repos": null,
+  "gusr": null
 }
