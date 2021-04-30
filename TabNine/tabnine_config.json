@@ -35,5 +35,7 @@
   "override_context_length": null,
   "onboarding": null,
   "has_git_repos": null,
-  "gusr": null
+  "gusr": {
+    "dgc": "6eb444d79ac8a2e15d4ae221943abc8b97e8f228462daf34c00fbbac718d3995"
+  }
 }
