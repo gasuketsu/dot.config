@@ -34,7 +34,7 @@ Plug 'kien/rainbow_parentheses.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'psf/black', {'tag': '*'}
 Plug 'godlygeek/tabular' " required for vim polyglot
-"Plug 'martinda/Jenkinsfile-vim-syntax'
+Plug 'jsfaint/gen_tags.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Color Schemes
