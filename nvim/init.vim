@@ -33,9 +33,8 @@ Plug 'rhysd/vim-clang-format'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'psf/black', {'tag': '*'}
-Plug 'godlygeek/tabular' " required for vim polyglot
 Plug 'jsfaint/gen_tags.vim'
-Plug 'sheerun/vim-polyglot'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Color Schemes
 Plug 'gruvbox-community/gruvbox'
@@ -231,22 +230,19 @@ autocmd Syntax * RainbowParenthesesLoadBraces
 "-----------------------------
 let g:black_virtualenv = '~/.config/nvim/py3nvim/.venv'
 
-"-----------------------------
-" sheerun/vim-polyglot
-"-----------------------------
-"let g:polyglot_disabled = ['groovy']
-" go
-let g:go_highlight_types = 1
-let g:go_highlight_functions = 1
-let g:go_highlight_function_calls = 1
-" cpp
-let g:cpp_class_decl_highlight = 1
-let g:cpp_class_scope_highlight = 1
-" markdown
-let g:vim_markdown_conceal = 0
-let g:vim_markdown_conceal_code_blocks = 0
-" csv
-let g:csv_no_conceal = 1
+"----------------------------
+" nvim-treesitter
+"----------------------------
+lua << EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  ignore_install = {}, -- List of parsers to ignore installing
+  highlight = {
+    enable = true, -- false will disable the whole extension
+    disable = {}, -- list of language that will be disabled
+  },
+}
+EOF
 
 "-----------------------------
 " coc.nvim
