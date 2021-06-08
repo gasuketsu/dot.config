@@ -1,7 +1,6 @@
 /fish/completions/
 /fish/conf.d/
 /fish/fish_variables
-/fish/fish_plugins
 /fish/functions/
 /fisherman/*
 /fisher/*

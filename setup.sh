@@ -15,13 +15,6 @@ declare -A asdf_plugins=(
   ["fd"]=""
 )
 
-# "must-have" fisher plugins
-fish_plugins=(
-  "edc/bass"
-  "0rax/fish-bd"
-  "fisherman/z"
-)
-
 # vim-plug (for neovim)
 if [ ! -f "$HOME/.local/share/nvim/site/autoload/plug.vim" ]; then
   curl -fLo "$HOME/.local/share/nvim/site/autoload/plug.vim" --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -29,10 +22,7 @@ fi
 
 # Fisher
 if type fish > /dev/null 2>&1 && ! fish -c "type fisher" > /dev/null 2>&1; then
-  fish -c "curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher"
-  for p in "${fish_plugins[@]}"; do
-    fish -c "fisher install $p"
-  done
+  fish -c "curl -sL https://git.io/fisher | source && fisher update"
 fi
 
 # tpm
