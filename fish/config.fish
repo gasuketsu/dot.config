@@ -43,4 +43,6 @@ if status --is-interactive
   and source $HOME/.asdf/asdf.fish
 end
 
-starship init fish | source
+if status --is-interactive
+  starship init fish | source
+end
