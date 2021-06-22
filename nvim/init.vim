@@ -30,11 +30,11 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
 Plug 'rhysd/vim-clang-format'
-Plug 'kien/rainbow_parentheses.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'psf/black', {'tag': '*'}
 Plug 'jsfaint/gen_tags.vim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'p00f/nvim-ts-rainbow'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Color Schemes
 Plug 'gruvbox-community/gruvbox'
@@ -217,15 +217,6 @@ autocmd FileType c,cpp,objc vnoremap <buffer><Leader>Cf :ClangFormat<CR>
 nmap <Leader>Ct :ClangFormatAutoToggle<CR>
 
 "-----------------------------
-" rainbow parentheses
-"-----------------------------
-" Always enable Rainbow Parentheses
-autocmd VimEnter * RainbowParenthesesToggle
-autocmd Syntax * RainbowParenthesesLoadRound
-autocmd Syntax * RainbowParenthesesLoadSquare
-autocmd Syntax * RainbowParenthesesLoadBraces
-
-"-----------------------------
 " black
 "-----------------------------
 let g:black_virtualenv = '~/.config/nvim/py3nvim/.venv'
@@ -240,6 +231,11 @@ require'nvim-treesitter.configs'.setup {
   highlight = {
     enable = true, -- false will disable the whole extension
     disable = {}, -- list of language that will be disabled
+  },
+  rainbow = {
+    enable = true,
+    extended_mode = true,
+    max_file_lines = 10000,
   },
 }
 EOF
