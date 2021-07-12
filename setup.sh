@@ -100,7 +100,7 @@ curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/install-
 echo "##### (python) reinitialize virtualenv for neovim python bindings..."
 cd "$HOME/.config/nvim/py3nvim"
 rm -fr .venv
-poetry install
+$HOME/.local/bin/poetry install
 cd $CWD
 
 # (go) enable GO111MODULE if not set
