@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "py3nvim"
+version = "0.1.0"
+description = ""
+authors = ["Tomoyuki Harada <harada.tomoyuki03@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+neovim = "^0.3.1"
+black = "^21.6b0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
