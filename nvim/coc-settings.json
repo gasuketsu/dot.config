@@ -1,14 +1,7 @@
 {
-  "python.jediEnabled": true,
-  "python.linting.pylintEnabled": false,
-  "python.linting.flake8Enabled": true,
   "python.linting.enabled": true,
+  "python.linting.flake8Enabled": true,
   "python.formatting.provider": "black",
-  "python.analysis.diagnosticPublishDelay": 500,
-  "python.venvFolders": [
-    ".venv"
-  ],
-
   "coc.preferences.formatOnSaveFiletypes": [
     "python",
     "go"
