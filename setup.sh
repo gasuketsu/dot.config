@@ -90,6 +90,12 @@ if [ -d "$HOME/.asdf" ]; then
   done
 fi
 
+# (python) Setup Poetry
+if [ -f "$HOME/.local/bin/poetry" ]; then
+  curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py | python - --uninstall
+fi
+curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py | python -
+
 # (python) venv for nvim python bindings
 echo "##### (python) reinitialize virtualenv for neovim python bindings..."
 cd "$HOME/.config/nvim/py3nvim"
