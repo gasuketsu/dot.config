@@ -19,7 +19,6 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'romainl/vim-qf'
-Plug 'junegunn/fzf', {'tag': '*', 'dir': '~/.fzf', 'do': './install --no-update-rc'}
 Plug 'junegunn/fzf.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
