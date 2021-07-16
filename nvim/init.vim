@@ -31,7 +31,6 @@ Plug 'junegunn/gv.vim'
 Plug 'rhysd/vim-clang-format'
 Plug 'Yggdroot/indentLine'
 Plug 'psf/black', {'tag': '*'}
-Plug 'jsfaint/gen_tags.vim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'p00f/nvim-ts-rainbow'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
