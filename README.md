@@ -82,10 +82,6 @@ Install following extentions by running ``CocInstall`` command in your neovim.
 Find and install [coc.nvim extentions](https://github.com/neoclide/coc.nvim#extensions) depends on your need.
 
 ```
-:CocInstall coc-json
-:CocInstall coc-python
-:CocInstall coc-git
-:CocInstall coc-prettier
-:CocInstall coc-go
+:CocInstall coc-json coc-yaml coc-git coc-vimlsp coc-pyright coc-jedi coc-go coc-tabnine coc-prettier
 ```
 
