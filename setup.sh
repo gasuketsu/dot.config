@@ -13,7 +13,6 @@ declare -A asdf_plugins=(
   ["tmux"]=""
   ["bat"]=""
   ["fd"]=""
-  ["fzf"]=""
 )
 
 # vim-plug (for neovim)

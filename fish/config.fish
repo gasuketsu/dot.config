@@ -34,7 +34,10 @@ if status --is-interactive
   test -d $HOME/.local/bin
   and not contains $HOME/.local/bin $PATH
   and set -gxp PATH $HOME/.local/bin
-
+  # fzf
+  test -d $HOME/.fzf/bin
+  and not contains $HOME/.fzf/bin $PATH
+  and set -gxp PATH $HOME/.fzf/bin
   # asdf
   test -f $HOME/.asdf/asdf.fish
   and source $HOME/.asdf/asdf.fish
