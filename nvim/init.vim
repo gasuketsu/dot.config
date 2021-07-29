@@ -76,7 +76,7 @@ let g:loaded_perl_provider = 0
 "-----------------------------
 " Display configuration
 "-----------------------------
-set shortmess+=I
+set shortmess+=cI
 set shellslash
 set encoding=utf-8
 set fileencodings=utf-8,euc-jp,sjis,cp932,iso-2022-jp
@@ -91,7 +91,7 @@ set cmdheight=2
 set laststatus=2
 set showcmd
 set display=lastline
-set updatetime=100
+set updatetime=300
 set signcolumn=yes
 
 "-----------------------------
@@ -99,6 +99,7 @@ set signcolumn=yes
 "-----------------------------
 set mouse=a
 set nobackup
+set nowritebackup
 set noswapfile
 set viminfo=
 set noundofile
@@ -220,6 +221,7 @@ nmap <Leader>Ct :ClangFormatAutoToggle<CR>
 " black
 "-----------------------------
 let g:black_virtualenv = '~/.config/nvim/py3nvim/.venv'
+autocmd BufWritePost *.py execute ':Black'
 
 "----------------------------
 " nvim-treesitter
