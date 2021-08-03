@@ -221,7 +221,6 @@ nmap <Leader>Ct :ClangFormatAutoToggle<CR>
 " black
 "-----------------------------
 let g:black_virtualenv = '~/.config/nvim/py3nvim/.venv'
-autocmd BufWritePost *.py execute ':Black'
 
 "----------------------------
 " nvim-treesitter
@@ -255,6 +254,13 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
+
+" Format on save
+let format_on_save_filetypes = [
+      \ 'python',
+      \ ]
+autocmd BufWritePre * if index(format_on_save_filetypes, &ft) >= 0 |
+      \ call CocAction('format')
 
 " Symbol renaming
 nmap <leader>rn <Plug>(coc-rename)
