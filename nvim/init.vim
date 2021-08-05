@@ -32,6 +32,7 @@ Plug 'junegunn/gv.vim'
 Plug 'rhysd/vim-clang-format'
 Plug 'Yggdroot/indentLine'
 Plug 'psf/black', {'tag': '*'}
+Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'p00f/nvim-ts-rainbow'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
