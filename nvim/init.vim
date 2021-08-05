@@ -217,11 +217,6 @@ autocmd FileType c,cpp,objc vnoremap <buffer><Leader>Cf :ClangFormat<CR>
 " Toggle auto formatting:
 nmap <Leader>Ct :ClangFormatAutoToggle<CR>
 
-"-----------------------------
-" black
-"-----------------------------
-let g:black_virtualenv = '~/.config/nvim/py3nvim/.venv'
-
 "----------------------------
 " nvim-treesitter
 "----------------------------
