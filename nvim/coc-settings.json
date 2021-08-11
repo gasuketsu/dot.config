@@ -3,8 +3,8 @@
   "python.linting.flake8Enabled": true,
   "python.formatting.provider": "black",
   "python.formatting.blackArgs": ["--diff", "--quiet", "--fast"],
-  "coc.preferences.formatOnSaveFiletypes": [
-    "go"
-  ],
+  "go.goplsOptions": {
+    "gofumpt": true
+  },
   "coc.preferences.extensionUpdateCheck": "daily"
 }

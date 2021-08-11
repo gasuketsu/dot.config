@@ -254,6 +254,7 @@ endfunction
 " Format on save
 let format_on_save_filetypes = [
       \ 'python',
+      \ 'go',
       \ ]
 autocmd BufWritePre * if index(format_on_save_filetypes, &ft) >= 0 |
       \ call CocAction('format')
