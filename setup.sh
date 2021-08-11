@@ -103,12 +103,6 @@ rm -fr .venv
 $HOME/.local/bin/poetry install
 cd $CWD
 
-# (go) enable GO111MODULE if not set
-go_module=`go env GO111MODULE`
-if [ -z $go_module ]; then
-  echo "##### (go) setting GO111MODULE=on"
-  go env -w GO111MODULE=on
-fi
 
 echo
 echo "######################################################"
