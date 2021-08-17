@@ -15,21 +15,21 @@ apt install automake pkg-config bison ncurses-term
 ### openSUSE
 # Python build
 zypper install -t pattern devel_basis
-zypper install gcc-c++ xz bzip2 libbz2-devel libopenssl-devel readline-devel libffi-devel sqlite3-devel xclip
+zypper install dirmngr gcc-c++ xz bzip2 libbz2-devel libopenssl-devel readline-devel libffi-devel sqlite3-devel xclip
 zypper install tk-devel    (if you also want to have GUI support)
 # tmux
 zypper install terminfo pkg-config bison
 
 ### CentOS/Fedora 21 and below
 # Python build
-yum install gcc gcc-c++ xz zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel libffi-devel xclip
+yum install dirmnger gcc gcc-c++ xz zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel libffi-devel xclip
 yum install tk-devel    (if you also want to have GUI support)
 # tmux
 yum install pkgconfig bison automake ncurses-term
 
 ### Fedora 22 and above
 # Python build
-dnf install make gcc gcc-c++ xz zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel libffi-devel xclip
+dnf install dirmnger make gcc gcc-c++ xz zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel libffi-devel xclip
 dnf install tk-devel    (if you also want to have GUI support)
 # tmux
 dnf install pkgconfig bison automake ncurses-term
