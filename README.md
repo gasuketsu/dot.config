@@ -74,14 +74,16 @@ Install plugins by running ``PlugInstall`` command in your vim/neovim.
 Install following extentions by running ``CocInstall`` command in your neovim.
 
 * [coc-json](https://github.com/neoclide/coc-json)
-* [coc-python](https://github.com/neoclide/coc-python)
+* [coc-pyright](https://gitub.com/fannheyward/coc-pyrighth)
 * [coc-git](https://github.com/neoclide/coc-git)
 * [coc-prettier](https://github.com/neoclide/coc-prettier)
 * [coc-go](https://github.com/josa42/coc-go)
+* [coc-tabnine](https://github.com/neoclide/coc-tabnine)
+* [coc-yaml](https://github.com/neoclide/coc-yaml)
 
 Find and install [coc.nvim extentions](https://github.com/neoclide/coc.nvim#extensions) depends on your need.
 
 ```
-:CocInstall coc-json coc-yaml coc-git coc-vimlsp coc-pyright coc-jedi coc-go coc-tabnine coc-prettier
+:CocInstall coc-json coc-yaml coc-git coc-pyright coc-go coc-tabnine coc-prettier
 ```
 
