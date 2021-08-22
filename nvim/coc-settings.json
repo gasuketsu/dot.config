@@ -2,9 +2,6 @@
   "python.linting.enabled": true,
   "python.linting.flake8Enabled": true,
   "python.formatting.provider": "black",
-  "python.formatting.blackArgs": ["--diff", "--quiet", "--fast"],
-  "go.goplsOptions": {
-    "gofumpt": true
-  },
+  "python.formatting.blackArgs": ["--quiet", "--fast"],
   "coc.preferences.extensionUpdateCheck": "daily"
 }
