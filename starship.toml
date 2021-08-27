@@ -10,6 +10,9 @@ format = "[$hostname]($style) "
 [git_branch]
 format = "[$symbol$branch]($style) "
 
+[git_commit]
+tag_disabled = false
+
 [package]
 disabled = true
 
