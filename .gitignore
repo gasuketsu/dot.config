@@ -16,3 +16,4 @@
 !/TabNine/tabnine_config.json
 /TabNine/*
 /pulse/*
+/asdf/asdf_plugins

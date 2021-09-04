@@ -4,16 +4,14 @@ CWD=$PWD
 
 # You can specify dict value as filter to install
 # latest version in given filter
-declare -A asdf_plugins=(
-  ["python"]=""
-  ["golang"]=""
-  ["nodejs"]="14.*"
-  ["neovim"]=""
-  ["starship"]=""
-  ["tmux"]=""
-  ["bat"]=""
-  ["fd"]=""
-)
+if [ ! -f "$HOME/.config/asdf/asdf_plugins" ]; then
+  cp "$HOME/.config/asdf/asdf_plugins.default" "$HOME/.config/asdf/asdf_plugins"
+fi
+
+declare -A asdf_plugins
+while IFS='=' read -r key value; do
+  asdf_plugins["$key"]="$value"
+done < "$HOME/.config/asdf/asdf_plugins"
 
 # vim-plug (for neovim)
 if [ ! -f "$HOME/.local/share/nvim/site/autoload/plug.vim" ]; then
@@ -94,7 +92,7 @@ fi
 echo "##### (python) reinitialize virtualenv for neovim python bindings..."
 cd "$HOME/.config/nvim/py3nvim"
 rm -fr .venv
-$HOME/.local/bin/poetry install
+poetry install
 cd $CWD
 
 
