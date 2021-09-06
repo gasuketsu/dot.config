@@ -20,7 +20,7 @@ fi
 
 # Fisher
 if type fish > /dev/null 2>&1 && ! fish -c "type fisher" > /dev/null 2>&1; then
-  fish -c "curl -sL https://git.io/fisher | source && fisher update"
+  fish -c "curl -skL https://git.io/fisher | source && fisher update"
 fi
 
 # tpm
