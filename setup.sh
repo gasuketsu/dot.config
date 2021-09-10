@@ -15,7 +15,8 @@ done < "$HOME/.config/asdf/asdf_plugins"
 
 # vim-plug (for neovim)
 if [ ! -f "$HOME/.local/share/nvim/site/autoload/plug.vim" ]; then
-  curl -fLo "$HOME/.local/share/nvim/site/autoload/plug.vim" --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  curl -fLo "$HOME/.local/share/nvim/site/autoload/plug.vim" \
+    --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
 
 # Fisher
