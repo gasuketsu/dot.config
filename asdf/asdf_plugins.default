@@ -1,4 +1,5 @@
 python=
+poetry=
 golang=
 nodejs=14.*
 neovim=

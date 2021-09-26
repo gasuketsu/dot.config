@@ -1,5 +1,4 @@
 pipenv
-poetry
 flake8
 black
 pip-autoremove
