@@ -1,3 +1,5 @@
+command_timeout = 800
+
 [directory]
 fish_style_pwd_dir_length = 1
 
