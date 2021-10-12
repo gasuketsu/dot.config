@@ -89,6 +89,15 @@ if [ -d "$HOME/.asdf" ]; then
   done
 fi
 
+# (python) install pipx packages
+echo "##### (python) (re)install pipx packages..."
+if [ ! -f "$HOME/.config/pipx/pipx_packages" ]; then
+  cp "$HOME/.config/pipx/pipx_packages.default" "$HOME/.config/pipx/pipx_packages"
+fi
+while read -r pkg; do
+  pipx install --force $pkg
+done < "$HOME/.config/pipx/pipx_packages"
+
 # (python) venv for nvim python bindings
 echo "##### (python) reinitialize virtualenv for neovim python bindings..."
 cd "$HOME/.config/nvim/py3nvim"
