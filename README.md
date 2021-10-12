@@ -61,6 +61,16 @@ export DISPLAY=localhost:0.0
 export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
 ```
 
+### Python CLI applications
+
+Install Python CLI applications with ``pipx``
+
+```
+pipx install pipenv
+pipx install poetry
+...
+```
+
 ### Vim/Neovim plugins
 
 Install plugins by running ``PlugInstall`` command in your vim/neovim.
