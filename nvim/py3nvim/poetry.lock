@@ -47,7 +47,7 @@ test = ["pytest (>=3.4.0)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "471f52f257c7848b9d1575bb47cb88db3f6c27c150c3d9ece591313c69d8c342"
+content-hash = "d5f591bcd1998fb4f9d44d62b6be9d124b874d39009388916f9193e29a0ecde2"
 
 [metadata.files]
 greenlet = [
