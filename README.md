@@ -7,7 +7,7 @@ Manages configurations stored under your `~/.config`.
 ```
 ### Debian/Ubuntu
 # Python build
-apt install build-essential zlib1g-dev libffi-dev libssl-dev libbz2-dev libncursesw5-dev libgdbm-dev liblzma-dev libsqlite3-dev uuid-dev libreadline-dev xclip
+apt install build-essential zlib1g-dev libffi-dev libssl-dev libbz2-dev libncursesw5-dev libgdbm-dev liblzma-dev libsqlite3-dev uuid-dev libreadline-dev xclip curl
 apt install tk-dev    (if you also want to have GUI support)
 # tmux
 apt install automake pkg-config bison ncurses-term
@@ -15,21 +15,21 @@ apt install automake pkg-config bison ncurses-term
 ### openSUSE
 # Python build
 zypper install -t pattern devel_basis
-zypper install dirmngr gcc-c++ xz bzip2 libbz2-devel libopenssl-devel readline-devel libffi-devel sqlite3-devel xclip
+zypper install dirmngr gcc-c++ xz bzip2 libbz2-devel libopenssl-devel readline-devel libffi-devel sqlite3-devel xclip curl
 zypper install tk-devel    (if you also want to have GUI support)
 # tmux
 zypper install terminfo pkg-config bison
 
 ### CentOS/Fedora 21 and below
 # Python build
-yum install dirmnger gcc gcc-c++ xz zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel libffi-devel xclip
+yum install dirmnger gcc gcc-c++ xz zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel libffi-devel xclip curl
 yum install tk-devel    (if you also want to have GUI support)
 # tmux
 yum install pkgconfig bison automake ncurses-term
 
 ### Fedora 22 and above
 # Python build
-dnf install dirmnger make gcc gcc-c++ xz zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel libffi-devel xclip
+dnf install dirmnger make gcc gcc-c++ xz zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel libffi-devel xclip curl
 dnf install tk-devel    (if you also want to have GUI support)
 # tmux
 dnf install pkgconfig bison automake ncurses-term
