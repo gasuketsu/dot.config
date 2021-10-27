@@ -91,6 +91,7 @@ fi
 
 # (python) install pipx packages
 echo "##### (python) (re)install pipx packages..."
+export PATH="$HOME/.local/bin:$PATH"
 if [ ! -f "$HOME/.config/pipx/pipx_packages" ]; then
   cp "$HOME/.config/pipx/pipx_packages.default" "$HOME/.config/pipx/pipx_packages"
 fi
