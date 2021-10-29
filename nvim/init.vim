@@ -38,7 +38,6 @@ Plug 'p00f/nvim-ts-rainbow'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Color Schemes
 Plug 'sainnhe/gruvbox-material'
-Plug 'sainnhe/everforest'
 call plug#end()
 
 "-----------------------------
