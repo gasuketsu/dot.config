@@ -18,3 +18,4 @@
 /pulse/*
 /asdf/asdf_plugins
 /pipx/pipx_packages
+Pipfile.lock
