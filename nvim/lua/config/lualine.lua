@@ -10,19 +10,19 @@ require 'lualine'.setup {
         'diff',
         colored = true,
         diff_color = {
-          added = { fg = '#b8bb26' },
-          modified = { fg = '#83a598' },
-          removed = { fg = '#fb4934' },
+          added = { fg = '#b0b846' },
+          modified = { fg = '#80aa9e' },
+          removed = { fg = '#f2594b' },
         }
       },
       {
         'diagnostics',
         colored = true,
         diagnostics_color = {
-          error = { fg = '#fb4934' },
-          warn = { fg = '#fe8019' },
-          info = { fg = '#8ec07c' },
-          hint = { fg = '#83a598' },
+          error = { fg = '#f2594b' },
+          warn = { fg = '#f28534' },
+          info = { fg = '#8bba7f' },
+          hint = { fg = '#80aa9e' },
         },
         sources = {'coc'}
       },
