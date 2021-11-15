@@ -7,7 +7,7 @@ require 'lualine'.setup {
     lualine_b = {
       {'branch'},
       {'diff', colored = false},
-      {'diagnostics', sources={'coc'}},
+      {'diagnostics', colored = false, sources = {'coc'}},
     },
   },
 }
