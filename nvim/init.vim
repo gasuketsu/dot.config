@@ -25,7 +25,6 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'vim-airline/vim-airline'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
@@ -36,7 +35,9 @@ Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'p00f/nvim-ts-rainbow'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Color Schemes
+" Statusline
+Plug 'nvim-lualine/lualine.nvim'
+" ColorSchemes
 Plug 'sainnhe/gruvbox-material'
 call plug#end()
 
@@ -57,10 +58,21 @@ let g:gruvbox_material_enable_bold = 1
 set background=dark
 colorscheme gruvbox-material
 
-" statusline (airline)
-let g:airline_theme = 'gruvbox_material'
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
+" Statusline (lualine)
+lua << EOF
+require 'lualine'.setup {
+  options = {
+    theme = 'gruvbox-material',
+  },
+  sections = {
+    lualine_b = {
+      {'branch'},
+      {'diff', colored = false},
+      {'diagnostics', sources={'coc'}},
+    },
+  },
+}
+EOF
 
 "-----------------------------
 " Provider configuration
