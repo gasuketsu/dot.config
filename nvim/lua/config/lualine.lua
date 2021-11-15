@@ -21,8 +21,8 @@ require 'lualine'.setup {
         diagnostics_color = {
           error = { fg = '#fb4934' },
           warn = { fg = '#fe8019' },
-          info = { fg = '#ebdbb2' },
-          hint = { fg = '#8ec07c' },
+          info = { fg = '#8ec07c' },
+          hint = { fg = '#83a598' },
         },
         sources = {'coc'}
       },
