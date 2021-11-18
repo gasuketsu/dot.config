@@ -1,30 +1,32 @@
 -- statusline (lualine)
-require 'lualine'.setup {
+local get_color = require"lualine.utils.utils".extract_highlight_colors
+
+require "lualine".setup {
   options = {
-    theme = 'gruvbox-material',
+    theme = "gruvbox-material",
   },
   sections = {
     lualine_b = {
-      {'branch'},
+      {"branch"},
       {
-        'diff',
+        "diff",
         colored = true,
         diff_color = {
-          added = { fg = '#b0b846' },
-          modified = { fg = '#80aa9e' },
-          removed = { fg = '#f2594b' },
+          added = {fg = get_color("GitSignsAdd", "fg")},
+          modified = {fg = get_color("GitSignsChange", "fg")},
+          removed = {fg = get_color("GitSignsDelete", "fg")},
         }
       },
       {
-        'diagnostics',
+        "diagnostics",
         colored = true,
         diagnostics_color = {
-          error = { fg = '#f2594b' },
-          warn = { fg = '#f28534' },
-          info = { fg = '#8bba7f' },
-          hint = { fg = '#80aa9e' },
+          error = {fg = get_color("DiagnosticSignError", "fg")},
+          warn = {fg = get_color("DiagnosticSignWarning", "fg")},
+          info = {fg = get_color("DiagnosticSignInfo", "fg")},
+          hint = {fg = get_color("DiagnosticSignHint", "fg")},
         },
-        sources = {'coc'}
+        sources = {"coc"}
       },
     },
   },
