@@ -17,7 +17,6 @@ let s:plugged_dir = '~/.local/share/nvim/plugged'
 call plug#begin(expand(s:plugged_dir))
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
-Plug 'jeetsukumaran/vim-buffergator'
 Plug 'romainl/vim-qf'
 Plug 'junegunn/fzf', {'tag': '*', 'dir': '~/.fzf', 'do': './install --bin'}
 Plug 'junegunn/fzf.vim'
@@ -32,6 +31,8 @@ Plug 'rhysd/vim-clang-format'
 Plug 'Yggdroot/indentLine'
 Plug 'psf/black', {'tag': '*'}
 Plug 'Vimjas/vim-python-pep8-indent'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'akinsho/bufferline.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'p00f/nvim-ts-rainbow'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -61,9 +62,6 @@ lua require('config.lualine')
 "-----------------------------
 " Provider configuration
 "-----------------------------
-if has('pyx')
-  set pyxversion=3
-endif
 let g:loaded_python_provider = 0
 let g:python3_host_prog = $HOME.'/.config/nvim/py3nvim/.venv/bin/python'
 let g:loaded_ruby_provider = 0
@@ -153,11 +151,6 @@ map q <Nop>
 set tags+=tags;~/
 
 "-----------------------------
-" Buffergator
-"-----------------------------
-let g:buffergator_viewport_split_policy = 'T'
-
-"-----------------------------
 " vim-qf
 "-----------------------------
 nmap <Leader>qq <Plug>(qf_qf_toggle)
@@ -218,6 +211,13 @@ nmap <Leader>Ct :ClangFormatAutoToggle<CR>
 " nvim-treesitter
 "----------------------------
 lua require('config.nvim-treesitter')
+
+"----------------------------
+" Bufferline
+"----------------------------
+lua require("config.bufferline")
+nnoremap <silent> ]b :BufferLineCycleNext<CR>
+nnoremap <silent> [b :BufferLineCyclePrev<CR>
 
 "-----------------------------
 " coc.nvim
