@@ -145,6 +145,9 @@ nnoremap <silent> <F6> :<C-u>lcd %:h<CR>
 
 map q <Nop>
 
+" NERDCommenter
+let g:NERDDefaultAlign = 'left'
+
 " nvim-tree
 lua require('config.nvim-tree')
 nnoremap <leader>et :NvimTreeToggle<CR>
