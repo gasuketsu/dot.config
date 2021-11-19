@@ -150,9 +150,9 @@ let g:NERDDefaultAlign = 'left'
 
 " nvim-tree
 lua require('config.nvim-tree')
-nnoremap <leader>et :NvimTreeToggle<CR>
-nnoremap <leader>ef :NvimTreeFindFileToggle<CR>
-nnoremap <leader>er :NvimTreeRefresh<CR>
+nnoremap <silent> <leader>et :NvimTreeToggle<CR>
+nnoremap <silent> <leader>ef :NvimTreeFindFileToggle<CR>
+nnoremap <silent> <leader>er :NvimTreeRefresh<CR>
 
 " Bufferline
 lua require("config.bufferline")
