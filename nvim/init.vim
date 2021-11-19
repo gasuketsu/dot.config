@@ -15,8 +15,10 @@ endfunction
 let s:plugged_dir = '~/.local/share/nvim/plugged'
 
 call plug#begin(expand(s:plugged_dir))
-Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree'
+Plug 'preservim/nerdcommenter'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'kyazdani42/nvim-tree.lua'
+Plug 'akinsho/bufferline.nvim'
 Plug 'romainl/vim-qf'
 Plug 'junegunn/fzf', {'tag': '*', 'dir': '~/.fzf', 'do': './install --bin'}
 Plug 'junegunn/fzf.vim'
@@ -31,8 +33,6 @@ Plug 'rhysd/vim-clang-format'
 Plug 'Yggdroot/indentLine'
 Plug 'psf/black', {'tag': '*'}
 Plug 'Vimjas/vim-python-pep8-indent'
-Plug 'kyazdani42/nvim-web-devicons'
-Plug 'akinsho/bufferline.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'p00f/nvim-ts-rainbow'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -145,6 +145,17 @@ nnoremap <silent> <F6> :<C-u>lcd %:h<CR>
 
 map q <Nop>
 
+" nvim-tree
+lua require('config.nvim-tree')
+nnoremap <leader>et :NvimTreeToggle<CR>
+nnoremap <leader>ef :NvimTreeFindFileToggle<CR>
+nnoremap <leader>er :NvimTreeRefresh<CR>
+
+" Bufferline
+lua require("config.bufferline")
+nnoremap <silent> ]b :BufferLineCycleNext<CR>
+nnoremap <silent> [b :BufferLineCyclePrev<CR>
+
 "-----------------------------
 " Ctags
 "-----------------------------
@@ -166,16 +177,6 @@ nmap <silent> ]l <Plug>(qf_loc_next)
 nnoremap <silent> <leader>ff :Files<CR>
 nnoremap <silent> <leader>fg :GFiles<CR>
 nnoremap <silent> <leader>fb :Buffers<CR>
-
-"-----------------------------
-" NERDCommenter
-"-----------------------------
-let g:NERDDefaultAlign = 'left'
-
-"-----------------------------
-" NERDTree
-"-----------------------------
-nnoremap <silent> <F3> :NERDTreeToggle<CR>
 
 "-----------------------------
 " vim-better-whitespace
@@ -211,13 +212,6 @@ nmap <Leader>Ct :ClangFormatAutoToggle<CR>
 " nvim-treesitter
 "----------------------------
 lua require('config.nvim-treesitter')
-
-"----------------------------
-" Bufferline
-"----------------------------
-lua require("config.bufferline")
-nnoremap <silent> ]b :BufferLineCycleNext<CR>
-nnoremap <silent> [b :BufferLineCyclePrev<CR>
 
 "-----------------------------
 " coc.nvim
