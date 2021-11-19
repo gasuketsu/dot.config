@@ -17,8 +17,8 @@ let s:plugged_dir = '~/.local/share/nvim/plugged'
 call plug#begin(expand(s:plugged_dir))
 Plug 'preservim/nerdcommenter'
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'kyazdani42/nvim-tree.lua'
-Plug 'akinsho/bufferline.nvim'
+Plug 'kyazdani42/nvim-tree.lua' " depends on nvim-web-devicons
+Plug 'akinsho/bufferline.nvim' " depends on nvim-web-devicons
 Plug 'romainl/vim-qf'
 Plug 'junegunn/fzf', {'tag': '*', 'dir': '~/.fzf', 'do': './install --bin'}
 Plug 'junegunn/fzf.vim'
@@ -28,6 +28,9 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'tpope/vim-fugitive'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'lewis6991/gitsigns.nvim' " depends on pelenary.nvim
+Plug 'sindrets/diffview.nvim' " depends on pelenary.nvim
 Plug 'junegunn/gv.vim'
 Plug 'rhysd/vim-clang-format'
 Plug 'Yggdroot/indentLine'
@@ -211,6 +214,12 @@ autocmd FileType c,cpp,objc vnoremap <buffer><Leader>Cf :ClangFormat<CR>
 " Toggle auto formatting:
 nmap <Leader>Ct :ClangFormatAutoToggle<CR>
 
+" gitsigns.nvim
+lua require("config.gitsigns")
+
+" diffview.nvim
+lua require("config.diffview")
+
 "----------------------------
 " nvim-treesitter
 "----------------------------
@@ -261,10 +270,6 @@ nmap <silent> gr <Plug>(coc-references)
 " Remap for format selected region
 xmap <leader>cf <Plug>(coc-format-selected)
 nmap <leader>cf <Plug>(coc-format)
-
-" Use `[g` and `]g` to navigate git chunks
-nmap <silent> [g <Plug>(coc-git-prevchunk)
-nmap <silent> ]g <Plug>(coc-git-nextchunk)
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 nnoremap <silent> <leader>cp :Prettier<CR>
