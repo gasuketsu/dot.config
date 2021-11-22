@@ -33,7 +33,7 @@ Plug 'lewis6991/gitsigns.nvim' " depends on pelenary.nvim
 Plug 'sindrets/diffview.nvim' " depends on pelenary.nvim
 Plug 'junegunn/gv.vim'
 Plug 'rhysd/vim-clang-format'
-Plug 'Yggdroot/indentLine'
+Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'psf/black', {'tag': '*'}
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
