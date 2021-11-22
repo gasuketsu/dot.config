@@ -22,7 +22,7 @@ require "lualine".setup {
         colored = true,
         diagnostics_color = {
           error = {fg = get_color("DiagnosticSignError", "fg")},
-          warn = {fg = get_color("DiagnosticSignWarning", "fg")},
+          warn = {fg = get_color("DiagnosticSignWarn", "fg")},
           info = {fg = get_color("DiagnosticSignInfo", "fg")},
           hint = {fg = get_color("DiagnosticSignHint", "fg")},
         },
