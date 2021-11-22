@@ -214,6 +214,9 @@ autocmd FileType c,cpp,objc vnoremap <buffer><Leader>Cf :ClangFormat<CR>
 " Toggle auto formatting:
 nmap <Leader>Ct :ClangFormatAutoToggle<CR>
 
+" indent-blankline.nvim
+lua require("config.indent-blankline")
+
 " gitsigns.nvim
 lua require("config.gitsigns")
 
