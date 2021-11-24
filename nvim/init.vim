@@ -19,6 +19,7 @@ Plug 'preservim/nerdcommenter'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua' " depends on nvim-web-devicons
 Plug 'akinsho/bufferline.nvim' " depends on nvim-web-devicons
+Plug 'sbdchd/neoformat'
 Plug 'romainl/vim-qf'
 Plug 'junegunn/fzf', {'tag': '*', 'dir': '~/.fzf', 'do': './install --bin'}
 Plug 'junegunn/fzf.vim'
@@ -162,6 +163,9 @@ lua require("config.bufferline")
 nnoremap <silent> ]b :BufferLineCycleNext<CR>
 nnoremap <silent> [b :BufferLineCyclePrev<CR>
 
+" Neoformat
+let g:neofomat_try_formatprg = 1
+
 "-----------------------------
 " Ctags
 "-----------------------------
@@ -241,14 +245,6 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
-
-" Format on save
-let format_on_save_filetypes = [
-      \ 'python',
-      \ 'go',
-      \ ]
-autocmd BufWritePre * if index(format_on_save_filetypes, &ft) >= 0 |
-      \ call CocAction('format')
 
 " Symbol renaming
 nmap <leader>rn <Plug>(coc-rename)
