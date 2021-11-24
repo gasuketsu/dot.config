@@ -165,6 +165,7 @@ nnoremap <silent> [b :BufferLineCyclePrev<CR>
 
 " Neoformat
 let g:neofomat_try_formatprg = 1
+nnoremap <silent> <space>f :<C-u>Neoformat<CR>
 
 "-----------------------------
 " Ctags
