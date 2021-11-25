@@ -1,8 +1,0 @@
-{
-  "coc.preferences.extensionUpdateCheck": "daily",
-  "diagnostic.errorSign": " ",
-  "diagnostic.warningSign": " ",
-  "diagnostic.infoSign": " ",
-  "diagnostic.hintSign": " ",
-  "svelte.enable-ts-plugin": true
-}
