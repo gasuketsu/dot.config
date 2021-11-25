@@ -161,9 +161,6 @@ map q <Nop>
 " NERDCommenter
 let g:NERDDefaultAlign = 'left'
 
-" nvim-tree
-lua require('config.nvim-tree')
-
 " Neoformat
 let g:neofomat_try_formatprg = 1
 nnoremap <silent> <space>f :<C-u>Neoformat<CR>
@@ -201,6 +198,9 @@ let g:multiple_cursor_next_key='<C-n>'
 let g:multiple_cursor_prev_key='<C-h>'
 let g:multiple_cursor_skip_key='<C-x>'
 let g:multiple_cursor_quit_key='<Esc>'
+
+" nvim-tree
+lua require('config.nvim-tree')
 
 " indent-blankline.nvim
 lua require("config.indent-blankline")
