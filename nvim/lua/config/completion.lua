@@ -1,6 +1,13 @@
 -- Setup nvim-cmp.
 local cmp = require("cmp")
 local lspkind = require("lspkind")
+local source_map = {
+  nvim_lsp = "[LSP]",
+  buffer = "[Buffer]",
+  path = "[Path]",
+  vsnip = "[Snippet]",
+  cmdline = "[Command]",
+}
 
 cmp.setup({
 	snippet = {
@@ -10,7 +17,7 @@ cmp.setup({
 		end,
 	},
 	formatting = {
-		format = lspkind.cmp_format({ with_text = true, maxwidth = 50 }),
+		format = lspkind.cmp_format({ with_text = true, menu = source_map, maxwidth = 50 }),
 	},
 	mapping = {
 		["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
