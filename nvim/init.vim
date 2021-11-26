@@ -172,9 +172,12 @@ nmap <silent> ]l <Plug>(qf_loc_next)
 
 " fzf
 " ---
-nnoremap <silent> <leader>ff :Files<CR>
-nnoremap <silent> <leader>fg :GFiles<CR>
-nnoremap <silent> <leader>fb :Buffers<CR>
+nmap <leader>f [fzf]
+xmap <leader>f [fzf]
+nnoremap <silent> [fzf]f :Files<CR>
+nnoremap <silent> [fzf]gf :GFiles<CR>
+nnoremap <silent> [fzf]gc :Commits<CR>
+nnoremap <silent> [fzf]b :Buffers<CR>
 
 " vim-better-whitespace
 " ---------------------
