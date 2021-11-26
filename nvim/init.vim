@@ -223,11 +223,19 @@ endfunction
 nmap <leader>rn <Plug>(coc-rename)
 
 " use <c-n> for trigger completion
-inoremap <silent><expr> <C-n> pumvisible() ? "\<C-n>" : coc#refresh()
+inoremap <silent> <expr> <C-n> pumvisible() ? "\<C-n>" : coc#refresh()
 
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
 " Coc only does snippet and additional edit on confirm.
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" Remap <C-f> and <C-b> for scroll float windows/popups.
+nnoremap <silent> <nowait> <expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+nnoremap <silent> <nowait> <expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+inoremap <silent> <nowait> <expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+inoremap <silent> <nowait> <expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+vnoremap <silent> <nowait> <expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+vnoremap <silent> <nowait> <expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
 
 " Use `[d` and `]d` to navigate diagnostics
 nmap <silent> [d <Plug>(coc-diagnostic-prev)
