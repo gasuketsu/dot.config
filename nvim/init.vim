@@ -236,18 +236,11 @@ nmap <silent> gt <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
-" Remap for format selected region
-xmap <leader>cf <Plug>(coc-format-selected)
-nmap <leader>cf <Plug>(coc-format)
-
 " coc-git
 nmap <silent> [g <Plug>(coc-git-prevchunk)
 nmap <silent> ]g <Plug>(coc-git-nextchunk)
 nmap <silent> [c <Plug>(coc-git-prevconflict)
 nmap <silent> ]c <Plug>(coc-git-nextconflict)
-
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
-nnoremap <silent> <leader>cp :Prettier<CR>
 
 " CocList
 nnoremap <silent> <nowait> <leader>ld :<C-u>CocList diagnostics<CR>
