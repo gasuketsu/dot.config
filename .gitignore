@@ -12,7 +12,6 @@
 /configstore/
 .venv/
 /go/*
-/lemonade.toml
 !/TabNine/tabnine_config.json
 /TabNine/*
 /pulse/*
