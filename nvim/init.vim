@@ -31,7 +31,6 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'sindrets/diffview.nvim' " depends on pelenary.nvim
 Plug 'junegunn/gv.vim'
 Plug 'lukas-reineke/indent-blankline.nvim'
-Plug 'psf/black', {'tag': '*'}
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'p00f/nvim-ts-rainbow'
