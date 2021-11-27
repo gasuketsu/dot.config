@@ -217,6 +217,7 @@ lua require('config.treesitter')
 " LSP
 lua require("config.lsp")
 autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics({ focusable = false })
+autocmd CursorHoldI * lua vim.lsp.buf.signature_help()
 
 " Completion
 lua require("config.completion")
