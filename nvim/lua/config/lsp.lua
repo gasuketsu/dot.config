@@ -41,3 +41,9 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 		signs = true,
 	}
 )
+
+-- Sign Definition
+vim.fn.sign_define("LspDiagnosticsSignError", { text = "" })
+vim.fn.sign_define("LspDiagnosticsSignWarning", { text = "" })
+vim.fn.sign_define("LspDiagnosticsSignInformation", { text = ""})
+vim.fn.sign_define("LspDiagnosticsSignHint", { text = "" })
