@@ -2,11 +2,11 @@
 local cmp = require("cmp")
 local lspkind = require("lspkind")
 local source_map = {
-  nvim_lsp = "[LSP]",
-  buffer = "[Buffer]",
-  path = "[Path]",
-  vsnip = "[Snippet]",
-  cmdline = "[Command]",
+	nvim_lsp = "[LSP]",
+	buffer = "[Buffer]",
+	path = "[Path]",
+	vsnip = "[Snippet]",
+	cmdline = "[Command]",
 }
 
 cmp.setup({
@@ -30,10 +30,7 @@ cmp.setup({
 			end
 		end, { "i", "c" }),
 		["<C-y>"] = cmp.config.disable,
-		["<C-e>"] = cmp.mapping({
-			i = cmp.mapping.abort(),
-			c = cmp.mapping.close(),
-		}),
+		["<C-e>"] = cmp.mapping(cmp.mapping.abort(), { "i", "c" }),
 		["<CR>"] = cmp.mapping(
 			cmp.mapping.confirm({
 				behavior = cmp.ConfirmBehavior.Replace,
