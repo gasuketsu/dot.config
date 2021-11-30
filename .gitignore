@@ -7,6 +7,7 @@
 /htop/*
 /pudb/*
 /lxc/*
+/coc/*
 /tmux/plugins/
 /configstore/
 .venv/

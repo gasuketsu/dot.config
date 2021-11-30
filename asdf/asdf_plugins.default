@@ -1,6 +1,6 @@
 python=
 golang=
-nodejs=16.*
+nodejs=14.*
 neovim=
 starship=
 tmux=

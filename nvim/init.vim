@@ -4,9 +4,7 @@ filetype plugin indent on
 syntax enable
 
 " vim-plug
-let s:plug = {
-      \ "plugs": get(g:, 'plugs', {})
-      \ }
+let s:plug = {"plugs": get(g:, 'plugs', {})}
 
 function! s:plug.is_installed(name)
   return has_key(self.plugs, a:name) ? isdirectory(self.plugs[a:name].dir) : 0
@@ -30,38 +28,18 @@ Plug 'tpope/vim-surround'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'tpope/vim-fugitive'
 Plug 'nvim-lua/plenary.nvim'
-Plug 'lewis6991/gitsigns.nvim' " depends on pelenary.nvim
 Plug 'sindrets/diffview.nvim' " depends on pelenary.nvim
 Plug 'junegunn/gv.vim'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'p00f/nvim-ts-rainbow'
-" LSP
-Plug 'neovim/nvim-lspconfig'
-Plug 'williamboman/nvim-lsp-installer'
-" Completion
-Plug 'hrsh7th/nvim-cmp'
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/cmp-cmdline'
-Plug 'hrsh7th/cmp-vsnip'
-Plug 'hrsh7th/vim-vsnip'
-Plug 'onsails/lspkind-nvim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Statusline
 Plug 'nvim-lualine/lualine.nvim'
 " ColorSchemes
 Plug 'sainnhe/gruvbox-material'
 call plug#end()
-
-" Provider configuration
-" ----------------------
-let g:loaded_python_provider = 0
-let g:python3_host_prog = $HOME.'/.config/nvim/py3nvim/.venv/bin/python'
-let g:loaded_ruby_provider = 0
-let g:loaded_node_provider = 0
-let g:loaded_perl_provider = 0
 
 " Visual configuration
 " --------------------
@@ -76,11 +54,16 @@ let g:gruvbox_material_enable_bold = 1
 set background=dark
 colorscheme gruvbox-material
 
-" Statusline
-lua require('config.statusline')
+" Statusline (lualine)
+lua require('config.lualine')
 
-" Bufferline
-lua require("config.bufferline")
+" Provider configuration
+" ----------------------
+let g:loaded_python_provider = 0
+let g:python3_host_prog = $HOME.'/.config/nvim/py3nvim/.venv/bin/python'
+let g:loaded_ruby_provider = 0
+let g:loaded_node_provider = 0
+let g:loaded_perl_provider = 0
 
 " Display configuration
 " ---------------------
@@ -160,6 +143,17 @@ map q <Nop>
 " NERDCommenter
 let g:NERDDefaultAlign = 'left'
 
+" nvim-tree
+lua require('config.nvim-tree')
+nnoremap <silent> <leader>et :NvimTreeToggle<CR>
+nnoremap <silent> <leader>ef :NvimTreeFindFileToggle<CR>
+nnoremap <silent> <leader>er :NvimTreeRefresh<CR>
+
+" Bufferline
+lua require("config.bufferline")
+nnoremap <silent> ]b :BufferLineCycleNext<CR>
+nnoremap <silent> [b :BufferLineCyclePrev<CR>
+
 " Neoformat
 let g:neofomat_try_formatprg = 1
 nnoremap <silent> <space>f :<C-u>Neoformat<CR>
@@ -168,6 +162,7 @@ nnoremap <silent> <space>f :<C-u>Neoformat<CR>
 set tags+=tags;~/
 
 " vim-qf
+" ------
 nmap <Leader>qq <Plug>(qf_qf_toggle)
 nmap <Leader>ql <Plug>(qf_loc_toggle)
 nmap <silent> [q <Plug>(qf_qf_previous)
@@ -176,14 +171,18 @@ nmap <silent> [l <Plug>(qf_loc_previous)
 nmap <silent> ]l <Plug>(qf_loc_next)
 
 " fzf
-nnoremap <silent> <leader>ff :Files<CR>
-nnoremap <silent> <leader>fg :GFiles<CR>
-nnoremap <silent> <leader>fb :Buffers<CR>
+" ---
+nmap <leader>f [fzf]
+xmap <leader>f [fzf]
+nnoremap <silent> [fzf]f :Files<CR>
+nnoremap <silent> [fzf]gf :GFiles<CR>
+nnoremap <silent> [fzf]gc :Commits<CR>
+nnoremap <silent> [fzf]b :Buffers<CR>
 
 " vim-better-whitespace
 " ---------------------
-"  disable highlighting trailing whitespace by default.
-"  (perform :ToggleWhitespace to enable highlighting)
+" disable highlighting trailing whitespace by default.
+" (perform :ToggleWhitespace to enable highlighting)
 let g:better_whitespace_guicolor = '#fb4934'
 let g:better_whitespace_ctermcolor = 167
 nnoremap <silent> <leader>w :ToggleWhitespace<CR>
@@ -191,32 +190,82 @@ vnoremap <silent> <leader>sw :StripWhitespace<CR>
 nnoremap <silent> <leader>sw :StripWhitespace<CR>
 
 " multiple cursors
-" ----------------
+"-----------------
 let g:multiple_cursor_use_default_mapping=0
 let g:multiple_cursor_next_key='<C-n>'
 let g:multiple_cursor_prev_key='<C-h>'
 let g:multiple_cursor_skip_key='<C-x>'
 let g:multiple_cursor_quit_key='<Esc>'
 
-" nvim-tree
-lua require('config.nvim-tree')
-
 " indent-blankline.nvim
 lua require("config.indent-blankline")
-
-" gitsigns.nvim
-lua require("config.gitsigns")
 
 " diffview.nvim
 lua require("config.diffview")
 
-" Treesitter
-lua require('config.treesitter')
+" nvim-treesitter
+lua require('config.nvim-treesitter')
 
-" LSP
-lua require("config.lsp")
-autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics({ focusable = false })
-autocmd CursorHoldI * lua vim.lsp.buf.signature_help({ focusable = false })
+" coc.nvim
+" --------
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
 
-" Completion
-lua require("config.completion")
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+" Symbol renaming
+nmap <leader>rn <Plug>(coc-rename)
+
+" use <c-n> for trigger completion
+inoremap <silent> <expr> <C-n> pumvisible() ? "\<C-n>" : coc#refresh()
+
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
+" Coc only does snippet and additional edit on confirm.
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" Remap <C-f> and <C-b> for scroll float windows/popups.
+nnoremap <silent> <nowait> <expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+nnoremap <silent> <nowait> <expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+inoremap <silent> <nowait> <expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+inoremap <silent> <nowait> <expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+vnoremap <silent> <nowait> <expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+vnoremap <silent> <nowait> <expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+
+" Use `[d` and `]d` to navigate diagnostics
+nmap <silent> [d <Plug>(coc-diagnostic-prev)
+nmap <silent> ]d <Plug>(coc-diagnostic-next)
+
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gt <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" coc-git
+nmap <silent> [g <Plug>(coc-git-prevchunk)
+nmap <silent> ]g <Plug>(coc-git-nextchunk)
+nmap <silent> [c <Plug>(coc-git-prevconflict)
+nmap <silent> ]c <Plug>(coc-git-nextconflict)
+
+" CocList
+nnoremap <silent> <nowait> <leader>ld :<C-u>CocList diagnostics<CR>
+nnoremap <silent> <nowait> <leader>le :<C-u>CocList extensions<CR>
+nnoremap <silent> <nowait> <leader>lc :<C-u>CocList commands<CR>
+nnoremap <silent> <nowait> <leader>lr :<C-u>CocListResume<CR>
+nnoremap <silent> <nowait> <space>j :<C-u>CocNext<CR>
+nnoremap <silent> <nowait> <space>k :<C-u>CocPrev<CR>
+
+" Language specific configuration
+" Remap keys for tagging in go
+nnoremap <Plug>(GoTagsAddLine) :<C-u>CocCommand go.tags.add.line<CR>
+nnoremap <Plug>(GoTagsRemoveLine) :<C-u>CocCommand go.tags.remove.line<CR>
+nnoremap <Plug>(GoTagsClearTagLine) :<C-u>CocCommand go.tags.clear.line<CR>
+autocmd FileType go nmap <silent> tj <Plug>(GoTagsAddLine)
+autocmd FileType go nmap <silent> tr <Plug>(GoTagsRemoveLine)
+autocmd FileType go nmap <silent> tx <Plug>(GoTagsClearTagLine)
