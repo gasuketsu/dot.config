@@ -32,5 +32,6 @@
   "diagnostic.warningSign": " ",
   "diagnostic.infoSign": " ",
   "diagnostic.hintSign": " ",
+  "pyright.completion.importSupport": false,
   "svelte.enable-ts-plugin": true
 }
