@@ -135,7 +135,7 @@ nnoremap Y y$
 " turn off search highlighting until the next search
 nnoremap <silent> <C-l> :nohl<CR>
 " change current directory when changing buffer
-nnoremap <silent> <F6> <cmd>lcd %:h<CR>
+nnoremap <silent> CD <cmd>lcd %:h<CR>
 
 map q <Nop>
 
