@@ -19,8 +19,6 @@ Plug 'kyazdani42/nvim-tree.lua' " depends on nvim-web-devicons
 Plug 'akinsho/bufferline.nvim' " depends on nvim-web-devicons
 Plug 'sbdchd/neoformat'
 Plug 'romainl/vim-qf'
-Plug 'junegunn/fzf', {'tag': '*', 'dir': '~/.fzf', 'do': './install --bin'}
-Plug 'junegunn/fzf.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'tpope/vim-repeat'
@@ -29,6 +27,7 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'tpope/vim-fugitive'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'sindrets/diffview.nvim' " depends on pelenary.nvim
+Plug 'nvim-telescope/telescope.nvim' " depends on pelenary.nvim
 Plug 'junegunn/gv.vim'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'Vimjas/vim-python-pep8-indent'
@@ -136,7 +135,7 @@ nnoremap Y y$
 " turn off search highlighting until the next search
 nnoremap <silent> <C-l> :nohl<CR>
 " change current directory when changing buffer
-nnoremap <silent> <F6> :<C-u>lcd %:h<CR>
+nnoremap <silent> <F6> <cmd>lcd %:h<CR>
 
 map q <Nop>
 
@@ -156,27 +155,27 @@ nnoremap <silent> [b :BufferLineCyclePrev<CR>
 
 " Neoformat
 let g:neofomat_try_formatprg = 1
-nnoremap <silent> <space>f :<C-u>Neoformat<CR>
+nnoremap <silent> <space>f <cmd>Neoformat<CR>
 
 " Ctags
 set tags+=tags;~/
 
 " vim-qf
 " ------
-nmap <Leader>qq <Plug>(qf_qf_toggle)
-nmap <Leader>ql <Plug>(qf_loc_toggle)
+nmap <leader>qq <Plug>(qf_qf_toggle)
+nmap <leader>ql <Plug>(qf_loc_toggle)
 nmap <silent> [q <Plug>(qf_qf_previous)
 nmap <silent> ]q <Plug>(qf_qf_next)
 nmap <silent> [l <Plug>(qf_loc_previous)
 nmap <silent> ]l <Plug>(qf_loc_next)
 
-" fzf
+" Telescope
 " ---
-nmap <leader>f [fzf]
-xmap <leader>f [fzf]
-nnoremap <silent> [fzf]f :Files<CR>
-nnoremap <silent> [fzf]g :GFiles<CR>
-nnoremap <silent> [fzf]b :Buffers<CR>
+nnoremap <silent> <leader>ff <cmd>Telescope find_files<CR>
+nnoremap <silent> <leader>fg <cmd>Telescope git_files<CR>
+nnoremap <silent> <leader>fb <cmd>Telescope buffers<CR>
+nnoremap <silent> <leader>fG <cmd>Telescope live_grep<CR>
+nnoremap <silent> <leader>fh <cmd>Telescope help_tags<CR>
 
 " vim-better-whitespace
 " ---------------------
@@ -184,9 +183,9 @@ nnoremap <silent> [fzf]b :Buffers<CR>
 " (perform :ToggleWhitespace to enable highlighting)
 let g:better_whitespace_guicolor = '#fb4934'
 let g:better_whitespace_ctermcolor = 167
-nnoremap <silent> <leader>w :ToggleWhitespace<CR>
-vnoremap <silent> <leader>sw :StripWhitespace<CR>
-nnoremap <silent> <leader>sw :StripWhitespace<CR>
+nnoremap <silent> <leader>w <cmd>ToggleWhitespace<CR>
+vnoremap <silent> <leader>sw <cmd>StripWhitespace<CR>
+nnoremap <silent> <leader>sw <cmd>StripWhitespace<CR>
 
 " multiple cursors
 "-----------------
@@ -253,18 +252,18 @@ nmap <silent> [c <Plug>(coc-git-prevconflict)
 nmap <silent> ]c <Plug>(coc-git-nextconflict)
 
 " CocList
-nnoremap <silent> <nowait> <leader>ld :<C-u>CocList diagnostics<CR>
-nnoremap <silent> <nowait> <leader>le :<C-u>CocList extensions<CR>
-nnoremap <silent> <nowait> <leader>lc :<C-u>CocList commands<CR>
-nnoremap <silent> <nowait> <leader>lr :<C-u>CocListResume<CR>
-nnoremap <silent> <nowait> <space>j :<C-u>CocNext<CR>
-nnoremap <silent> <nowait> <space>k :<C-u>CocPrev<CR>
+nnoremap <silent> <nowait> <leader>ld <cmd>CocList diagnostics<CR>
+nnoremap <silent> <nowait> <leader>le <cmd>CocList extensions<CR>
+nnoremap <silent> <nowait> <leader>lc <cmd>CocList commands<CR>
+nnoremap <silent> <nowait> <leader>lr <cmd>CocListResume<CR>
+nnoremap <silent> <nowait> <space>j <cmd>CocNext<CR>
+nnoremap <silent> <nowait> <space>k <cmd>CocPrev<CR>
 
 " Language specific configuration
 " Remap keys for tagging in go
-nnoremap <Plug>(GoTagsAddLine) :<C-u>CocCommand go.tags.add.line<CR>
-nnoremap <Plug>(GoTagsRemoveLine) :<C-u>CocCommand go.tags.remove.line<CR>
-nnoremap <Plug>(GoTagsClearTagLine) :<C-u>CocCommand go.tags.clear.line<CR>
+nnoremap <Plug>(GoTagsAddLine) <cmd>CocCommand go.tags.add.line<CR>
+nnoremap <Plug>(GoTagsRemoveLine) <cmd>CocCommand go.tags.remove.line<CR>
+nnoremap <Plug>(GoTagsClearTagLine) <cmd>CocCommand go.tags.clear.line<CR>
 autocmd FileType go nmap <silent> tj <Plug>(GoTagsAddLine)
 autocmd FileType go nmap <silent> tr <Plug>(GoTagsRemoveLine)
 autocmd FileType go nmap <silent> tx <Plug>(GoTagsClearTagLine)
