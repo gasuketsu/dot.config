@@ -201,6 +201,9 @@ lua require("config.indent-blankline")
 " diffview.nvim
 lua require("config.diffview")
 
+" telescope.nvim
+lua require("config.telescope")
+
 " nvim-treesitter
 lua require('config.nvim-treesitter')
 
