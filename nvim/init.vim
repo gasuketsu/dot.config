@@ -144,18 +144,18 @@ let g:NERDDefaultAlign = 'left'
 
 " nvim-tree
 lua require('config.nvim-tree')
-nnoremap <silent> <leader>et :NvimTreeToggle<CR>
-nnoremap <silent> <leader>ef :NvimTreeFindFileToggle<CR>
-nnoremap <silent> <leader>er :NvimTreeRefresh<CR>
+nnoremap <silent> <leader>et <cmd>NvimTreeToggle<CR>
+nnoremap <silent> <leader>ef <cmd>NvimTreeFindFileToggle<CR>
+nnoremap <silent> <leader>er <cmd>NvimTreeRefresh<CR>
 
 " Bufferline
 lua require("config.bufferline")
-nnoremap <silent> ]b :BufferLineCycleNext<CR>
-nnoremap <silent> [b :BufferLineCyclePrev<CR>
+nnoremap <silent> <A-.> <cmd>BufferLineCycleNext<CR>
+nnoremap <silent> <A-,> <cmd>BufferLineCyclePrev<CR>
 
 " Neoformat
 let g:neofomat_try_formatprg = 1
-nnoremap <silent> <space>f <cmd>Neoformat<CR>
+nnoremap <silent> <A-f> <cmd>Neoformat<CR>
 
 " Ctags
 set tags+=tags;~/
