@@ -7,6 +7,10 @@ end_of_line = lf
 charset = utf-8
 trim_trailing_whitespace = true
 
+[*.lua]
+indent_style = tab
+indent_size = 4
+
 [git/config]
 indent_style = tab
 indent_size = 4
