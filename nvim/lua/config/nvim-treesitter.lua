@@ -1,5 +1,5 @@
 -- nvim-treesitter
-require"nvim-treesitter.configs".setup {
+require("nvim-treesitter.configs").setup({
   ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   ignore_install = {}, -- List of parsers to ignore installing
   highlight = {
@@ -11,4 +11,4 @@ require"nvim-treesitter.configs".setup {
     extended_mode = true,
     max_file_lines = 10000,
   },
-}
+})

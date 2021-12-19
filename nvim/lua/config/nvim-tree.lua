@@ -1,5 +1,5 @@
-require("nvim-tree").setup {
+require("nvim-tree").setup({
   view = {
-    auto_resize = true
-  }
-}
+    auto_resize = true,
+  },
+})
