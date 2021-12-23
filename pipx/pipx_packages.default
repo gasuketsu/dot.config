@@ -2,4 +2,4 @@ pipenv
 poetry
 black
 flake8
-httpx
+httpx[cli]
