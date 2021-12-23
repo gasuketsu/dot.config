@@ -6,6 +6,7 @@ return {
 
   default_prog = { "wsl", "~" },
   font = wezterm.font_with_fallback({ "PlemolJP Console NF" }),
+  font_size = 12,
   window_background_opacity = 0.95,
   color_scheme = "Gruvbox",
   color_schemes = {
