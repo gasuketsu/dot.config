@@ -1,11 +1,11 @@
-local wezterm = require "wezterm";
+local wezterm = require("wezterm")
 
 return {
   initial_rows = 40,
   initial_cols = 180,
 
-  default_prog = {"wsl", "~"},
-  font = wezterm.font("PlemolJP Console NF"),
+  default_prog = { "wsl", "~" },
+  font = wezterm.font_with_fallback({ "PlemolJP Console NF" }),
   window_background_opacity = 0.95,
   color_scheme = "Gruvbox",
   color_schemes = {
@@ -36,6 +36,6 @@ return {
         "#8EC07C", -- BrightCyan
         "#FBF1C7", -- BrightWhite
       },
-    }
-  }
+    },
+  },
 }
