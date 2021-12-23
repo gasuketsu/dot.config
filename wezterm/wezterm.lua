@@ -20,20 +20,12 @@ if wezterm.target_triple == "x86_64-pc-windows-msvc" then
     if idx > 1 then
       -- Remove the "(Default)" marker from the default line to arrive
       -- at the distribution name on its own
-      local distro = line:gsub(" %(Default%)", "")
+      local distro = line:gsub(" %(既定%)", "")
 
       -- Add an entry that will spawn into the distro with the default shell
       table.insert(launch_menu, {
-        label = distro .. " (WSL default shell)",
+        label = distro
         args = { "wsl.exe", "--distribution", distro },
-      })
-
-      -- Here's how to jump directly into some other program; in this example
-      -- its a shell that probably isn't the default, but it could also be
-      -- any other program that you want to run in that environment
-      table.insert(launch_menu, {
-        label = distro .. " (WSL zsh login shell)",
-        args = { "wsl.exe", "--distribution", distro, "--exec", "/bin/zsh", "-l" },
       })
     end
   end
