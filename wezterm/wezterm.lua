@@ -24,7 +24,7 @@ if wezterm.target_triple == "x86_64-pc-windows-msvc" then
 
       -- Add an entry that will spawn into the distro with the default shell
       table.insert(launch_menu, {
-        label = distro
+        label = distro,
         args = { "wsl.exe", "--distribution", distro },
       })
     end
@@ -70,6 +70,13 @@ return {
         "#8EC07C", -- BrightCyan
         "#FBF1C7", -- BrightWhite
       },
+    },
+  },
+  keys = {
+    {
+      key = "w",
+      mods = "ALT|SHIFT",
+      action = wezterm.action({ CloseCurrentPane = { confirm = true } }),
     },
   },
 }
