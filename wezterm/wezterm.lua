@@ -41,6 +41,7 @@ return {
   font = wezterm.font_with_fallback({ "PlemolJP Console NF" }),
   font_size = 12,
   window_background_opacity = 0.95,
+  adjust_window_size_when_changing_font_size = false,
   color_scheme = "Gruvbox",
   color_schemes = {
     ["Gruvbox"] = {
