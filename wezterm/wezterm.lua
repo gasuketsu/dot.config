@@ -39,7 +39,7 @@ return {
   launch_menu = launch_menu,
 
   font = wezterm.font_with_fallback({ "PlemolJP Console NF" }),
-  font_size = 12,
+  font_size = 12.5,
   freetype_load_target = "Light",
   freetype_load_flag = "DEFAULT",
   window_background_opacity = 0.95,
