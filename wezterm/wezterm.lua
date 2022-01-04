@@ -32,8 +32,8 @@ if wezterm.target_triple == "x86_64-pc-windows-msvc" then
 end
 
 return {
-  initial_rows = 40,
-  initial_cols = 180,
+  initial_rows = 32,
+  initial_cols = 130,
 
   default_prog = { "wsl", "~" },
   launch_menu = launch_menu,
