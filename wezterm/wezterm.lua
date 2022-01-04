@@ -45,6 +45,10 @@ return {
   window_background_opacity = 0.95,
   adjust_window_size_when_changing_font_size = false,
   color_scheme = "Gruvbox",
+  window_frame = {
+    active_titlebar_bg = "#1d2021",
+    inactive_titlebar_bg = "#1e2021",
+  },
   colors = {
     tab_bar = {
       active_tab = {
@@ -52,7 +56,7 @@ return {
         fg_color = "#fbf1c7",
       },
       inactive_tab = {
-        bg_color = "#1d2021",
+        bg_color = "#282828",
         fg_color = "#a89984",
       },
     },
