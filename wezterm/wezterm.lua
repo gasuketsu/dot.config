@@ -45,33 +45,45 @@ return {
   window_background_opacity = 0.95,
   adjust_window_size_when_changing_font_size = false,
   color_scheme = "Gruvbox",
+  colors = {
+    tab_bar = {
+      active_tab = {
+        bg_color = "#3c3836",
+        fg_color = "#fbf1c7",
+      },
+      inactive_tab = {
+        bg_color = "#1d2021",
+        fg_color = "#a89984",
+      },
+    },
+  },
   color_schemes = {
     ["Gruvbox"] = {
       background = "#282828",
-      foreground = "#BDAE93",
-      cursor_bg = "#FE8019",
-      cursor_border = "#FE8019",
+      foreground = "#bdae93",
+      cursor_bg = "#fe8019",
+      cursor_border = "#fe8019",
       selection_bg = "#928374",
-      split = "#FBF1C7",
+      split = "#fbf1c7",
       ansi = {
-        "#3C3836", -- Black
-        "#CC241D", -- Red
-        "#98971A", -- Green
-        "#D79921", -- Yellow
+        "#3c3836", -- Black
+        "#cc241d", -- Red
+        "#98971a", -- Green
+        "#d79921", -- Yellow
         "#458588", -- Blue
-        "#B16286", -- Purple
-        "#689D6A", -- Cyan
-        "#EBDBB2", -- White
+        "#b16286", -- Purple
+        "#689d6a", -- Cyan
+        "#ebdbb2", -- White
       },
       brights = {
         "#504945", -- BrightBlack
-        "#FB4934", -- BrightRed
-        "#B8BB26", -- BrightGreen
-        "#FABD2F", -- BrightYellow
-        "#83A598", -- BrightBlue
-        "#D3869B", -- BrightPurple
-        "#8EC07C", -- BrightCyan
-        "#FBF1C7", -- BrightWhite
+        "#fb4934", -- BrightRed
+        "#b8bb26", -- BrightGreen
+        "#fabd2f", -- BrightYellow
+        "#83a598", -- BrightBlue
+        "#d3869b", -- BrightPurple
+        "#8ec07c", -- BrightCyan
+        "#fbf1c7", -- BrightWhite
       },
     },
   },
