@@ -61,6 +61,7 @@ return {
       },
     },
   },
+  audible_bell = "Disabled",
   color_schemes = {
     ["Gruvbox"] = {
       background = "#282828",
