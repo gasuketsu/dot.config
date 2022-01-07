@@ -59,11 +59,6 @@ if [ ! -e "$HOME/.default-npm-packages" ]; then
   ln -s "$HOME/.config/asdf/default-npm-packages" "$HOME/.default-npm-packages"
 fi
 
-# default golang packages (asdf-golang)
-if [ ! -e "$HOME/.default-golang-pkgs" ]; then
-  ln -s "$HOME/.config/asdf/default-golang-pkgs" "$HOME/.default-golang-pkgs"
-fi
-
 # .gitconfig
 if [ ! -e "$HOME/.gitconfig" ]; then
   touch "$HOME/.gitconfig"
@@ -110,6 +105,12 @@ cd "$HOME/.config/nvim/py3nvim"
 pipenv --rm
 pipenv install
 cd $CWD
+
+# (golang) set go env configuration
+if [ -z `go env GOBIN` ]; then
+  echo "##### (golang) set GOBIN where 'go install' installs binaries"
+  go env -w GOBIN="$HOME/.local/bin"
+fi
 
 
 echo
