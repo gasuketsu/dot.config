@@ -26,6 +26,7 @@ Plug 'tpope/vim-surround'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'tpope/vim-fugitive'
 Plug 'nvim-lua/plenary.nvim'
+Plug 'lewis6991/gitsigns.nvim'
 Plug 'sindrets/diffview.nvim' " depends on pelenary.nvim
 Plug 'nvim-telescope/telescope.nvim' " depends on pelenary.nvim
 Plug 'junegunn/gv.vim'
@@ -198,6 +199,9 @@ let g:multiple_cursor_quit_key='<Esc>'
 " indent-blankline.nvim
 lua require("config.indent-blankline")
 
+" gitsigns
+lua require("config.gitsigns")
+
 " diffview.nvim
 lua require("config.diffview")
 
@@ -249,12 +253,6 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gt <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-
-" coc-git
-nmap <silent> [g <Plug>(coc-git-prevchunk)
-nmap <silent> ]g <Plug>(coc-git-nextchunk)
-nmap <silent> [c <Plug>(coc-git-prevconflict)
-nmap <silent> ]c <Plug>(coc-git-nextconflict)
 
 " CocList
 nnoremap <silent> <nowait> <leader>ld <cmd>CocList diagnostics<CR>
