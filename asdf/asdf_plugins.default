@@ -1,9 +1,8 @@
 python=
 golang=
-nodejs=16.*
+nodejs=lts
 neovim=
 starship=
-tmux=
 bat=
 fd=
 fzf=
