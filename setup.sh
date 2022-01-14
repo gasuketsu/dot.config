@@ -2,12 +2,6 @@
 
 CWD=$PWD
 
-# You can specify dict value as filter to install
-# latest version in given filter
-if [ ! -f "$HOME/.config/asdf/asdf_plugins" ]; then
-  cp "$HOME/.config/asdf/asdf_plugins.default" "$HOME/.config/asdf/asdf_plugins"
-fi
-
 declare -A asdf_plugins
 while IFS='=' read -r key value; do
   asdf_plugins["$key"]="$value"
@@ -92,9 +86,6 @@ fi
 # (python) install pipx packages
 echo "##### (python) (re)install pipx packages..."
 export PATH="$HOME/.local/bin:$PATH"
-if [ ! -f "$HOME/.config/pipx/pipx_packages" ]; then
-  cp "$HOME/.config/pipx/pipx_packages.default" "$HOME/.config/pipx/pipx_packages"
-fi
 while read -r pkg; do
   pipx install --force $pkg
 done < "$HOME/.config/pipx/pipx_packages"
