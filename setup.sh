@@ -87,7 +87,7 @@ fi
 echo "##### (python) (re)install pipx packages..."
 export PATH="$HOME/.local/bin:$PATH"
 while read -r pkg; do
-  pipx install --force $pkg
+  pipx reinstall $pkg
 done < "$HOME/.config/pipx/pipx_packages"
 
 # (python) venv for nvim python bindings
