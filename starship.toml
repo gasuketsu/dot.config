@@ -9,6 +9,9 @@ format = "[$user]($style) "
 [hostname]
 format = "[$hostname]($style) "
 
+[localip]
+disabled = true
+
 [git_branch]
 format = "[$symbol$branch]($style) "
 
