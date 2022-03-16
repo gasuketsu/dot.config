@@ -39,6 +39,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'nvim-lualine/lualine.nvim'
 " ColorSchemes
 Plug 'sainnhe/gruvbox-material'
+Plug 'sainnhe/everforest'
 call plug#end()
 
 " Visual configuration
@@ -51,8 +52,11 @@ let g:gruvbox_material_palette = 'original'
 let g:gruvbox_material_background = 'medium'
 let g:gruvbox_material_enable_bold = 1
 
+let g:everforest_background = 'hard'
+let g:everforest_diagnostic_virtual_text = 'colored'
+
 set background=dark
-colorscheme gruvbox-material
+colorscheme everforest
 
 " Statusline (lualine)
 lua require('config.lualine')
