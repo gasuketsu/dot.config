@@ -3,7 +3,7 @@ local get_color = require("lualine.utils.utils").extract_highlight_colors
 
 require("lualine").setup({
   options = {
-    theme = "everforest",
+    theme = "gruvbox-material",
   },
   sections = {
     lualine_b = {
