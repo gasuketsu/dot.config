@@ -92,7 +92,7 @@ return {
       },
     },
     ["Gruvbox-Material(Mix)"] = {
-      background = "#282828",
+      background = "#1d2021",
       foreground = "#bdae93",
       cursor_bg = "#f28534",
       cursor_border = "#f28534",
