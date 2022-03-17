@@ -44,7 +44,7 @@ return {
   freetype_load_flags = "DEFAULT",
   window_background_opacity = 0.95,
   adjust_window_size_when_changing_font_size = false,
-  color_scheme = "Gruvbox",
+  color_scheme = "Gruvbox-Material(Mix)",
   window_frame = {
     active_titlebar_bg = "#1d2021",
     inactive_titlebar_bg = "#1e2021",
@@ -89,6 +89,34 @@ return {
         "#d3869b", -- BrightPurple
         "#8ec07c", -- BrightCyan
         "#fbf1c7", -- BrightWhite
+      },
+    },
+    ["Gruvbox-Material(Mix)"] = {
+      background = "#282828",
+      foreground = "#bdae93",
+      cursor_bg = "#f28534",
+      cursor_border = "#f28534",
+      selection_bg = "#928374",
+      split = "#fbf1c7",
+      ansi = {
+        "#3c3836", -- Black
+        "#f2594b", -- Red
+        "#b0b846", -- Green
+        "#e9b143", -- Yellow
+        "#80aa9e", -- Blue
+        "#d3869b", -- Purple
+        "#8bba7f", -- Cyan
+        "#ebdbb2", -- White
+      },
+      brights = {
+        "#504945", -- BrightBlack
+        "#f2594b", -- BrightRed
+        "#b0b846", -- BrightGreen
+        "#e9b143", -- BrightYellow
+        "#80aa9e", -- BrightBlue
+        "#d3869b", -- BrightPurple
+        "#8bba7f", -- BrightCyan
+        "#f9f5d7", -- BrightWhite
       },
     },
   },
