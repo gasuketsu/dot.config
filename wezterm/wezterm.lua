@@ -68,6 +68,7 @@ return {
       foreground = "#bdae93",
       cursor_bg = "#fe8019",
       cursor_border = "#fe8019",
+      compose_cursor = "#f9f1c7",
       selection_bg = "#928374",
       split = "#fbf1c7",
       ansi = {
@@ -96,6 +97,7 @@ return {
       foreground = "#bdae93",
       cursor_bg = "#f28534",
       cursor_border = "#f28534",
+      compose_cursor = "#f9f5d7",
       selection_bg = "#928374",
       split = "#fbf1c7",
       ansi = {
