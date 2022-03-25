@@ -3,3 +3,4 @@ poetry
 black
 flake8
 httpx[cli]
+podman-compose
