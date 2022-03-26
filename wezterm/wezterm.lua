@@ -44,7 +44,7 @@ return {
   freetype_load_flags = "DEFAULT",
   window_background_opacity = 0.95,
   adjust_window_size_when_changing_font_size = false,
-  color_scheme = "Gruvbox-Material(Mix)",
+  color_scheme = "Gruvbox",
   window_frame = {
     active_titlebar_bg = "#1d2021",
     inactive_titlebar_bg = "#1e2021",
