@@ -11,8 +11,7 @@
 /configstore/
 .venv/
 /go/*
-!/TabNine/tabnine_config.json
-/TabNine/*
+/TabNine/
 /pulse/*
 Pipfile.lock
 /cni/
