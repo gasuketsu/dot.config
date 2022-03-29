@@ -34,6 +34,7 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'p00f/nvim-ts-rainbow'
+Plug 'ray-x/go.nvim'
 " LSP
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
@@ -227,7 +228,10 @@ lua require("config.diffview")
 lua require("config.telescope")
 
 " nvim-treesitter
-lua require('config.nvim-treesitter')
+lua require("config.nvim-treesitter")
+
+" go.nvim
+lua require("config.go")
 
 " LSP
 lua require("config.lsp")
