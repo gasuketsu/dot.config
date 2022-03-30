@@ -64,7 +64,7 @@ return {
   audible_bell = "Disabled",
   color_schemes = {
     ["Gruvbox"] = {
-      background = "#282828",
+      background = "#1d2021",
       foreground = "#bdae93",
       cursor_bg = "#fe8019",
       cursor_border = "#fe8019",
@@ -72,7 +72,7 @@ return {
       selection_bg = "#928374",
       split = "#fbf1c7",
       ansi = {
-        "#3c3836", -- Black
+        "#504945", -- Black
         "#cc241d", -- Red
         "#98971a", -- Green
         "#d79921", -- Yellow
@@ -82,7 +82,7 @@ return {
         "#ebdbb2", -- White
       },
       brights = {
-        "#504945", -- BrightBlack
+        "#665c54", -- BrightBlack
         "#fb4934", -- BrightRed
         "#b8bb26", -- BrightGreen
         "#fabd2f", -- BrightYellow
@@ -101,7 +101,7 @@ return {
       selection_bg = "#928374",
       split = "#fbf1c7",
       ansi = {
-        "#3c3836", -- Black
+        "#504945", -- Black
         "#f2594b", -- Red
         "#b0b846", -- Green
         "#e9b143", -- Yellow
@@ -111,7 +111,7 @@ return {
         "#ebdbb2", -- White
       },
       brights = {
-        "#504945", -- BrightBlack
+        "#665c54", -- BrightBlack
         "#f2594b", -- BrightRed
         "#b0b846", -- BrightGreen
         "#e9b143", -- BrightYellow
