@@ -213,24 +213,17 @@ let g:multiple_cursor_quit_key='<Esc>'
 
 " indent-blankline.nvim
 lua require("config.indent-blankline")
-
 " gitsigns
 lua require("config.gitsigns")
-
 " diffview.nvim
 lua require("config.diffview")
-
 " telescope.nvim
 lua require("config.telescope")
-
 " nvim-treesitter
 lua require("config.nvim-treesitter")
-
 " go.nvim
 lua require("config.go")
-
 " LSP
 lua require("config.lsp")
-
 " Completion
 lua require("config.completion")
