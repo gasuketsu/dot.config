@@ -52,7 +52,6 @@ Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
 Plug 'nvim-lualine/lualine.nvim'
 " ColorSchemes
 Plug 'sainnhe/gruvbox-material'
-Plug 'sainnhe/everforest'
 call plug#end()
 
 " Visual configuration
@@ -66,9 +65,6 @@ let g:gruvbox_material_statusline_style = 'mix'
 let g:gruvbox_material_background = 'hard'
 let g:gruvbox_material_enable_bold = 1
 let g:gruvbox_material_diagnostic_virtual_text = 'colored'
-
-let g:everforest_background = 'hard'
-let g:everforest_diagnostic_virtual_text = 'colored'
 
 set background=dark
 colorscheme gruvbox-material
