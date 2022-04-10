@@ -27,8 +27,8 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'tpope/vim-fugitive'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'lewis6991/gitsigns.nvim'
-Plug 'sindrets/diffview.nvim' " depends on pelenary.nvim
-Plug 'nvim-telescope/telescope.nvim' " depends on pelenary.nvim
+Plug 'sindrets/diffview.nvim' " depends on plenary.nvim
+Plug 'nvim-telescope/telescope.nvim' " depends on plenary.nvim
 Plug 'junegunn/gv.vim'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'Vimjas/vim-python-pep8-indent'
