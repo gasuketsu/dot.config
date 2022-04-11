@@ -14,6 +14,7 @@ require("nvim-treesitter.configs").setup({
     "gomod",
     "html",
     "java",
+    "javascript",
     "json",
     "jsonc",
     "kotlin",
