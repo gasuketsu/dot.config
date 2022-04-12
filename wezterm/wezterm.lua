@@ -16,8 +16,23 @@ return {
   default_prog = { "wsl", "~" },
   launch_menu = launch_menu,
 
-  font = wezterm.font_with_fallback({ "PlemolJP Console NF" }),
-  font_size = 12.5,
+  font = wezterm.font("UDEV Gothic NF"),
+  font_rules = {
+    {
+      intensity = "Bold",
+      font = wezterm.font("UDEV Gothic NF", { bold = true }),
+    },
+    {
+      italic = true,
+      font = wezterm.font("UDEV Gothic NF", { italic = true }),
+    },
+    {
+      italic = true,
+      intensity = "Bold",
+      font = wezterm.font("UDEV Gothic NF", { italic = true, bold = true }),
+    },
+  },
+  font_size = 12,
   freetype_load_target = "Light",
   freetype_load_flags = "DEFAULT",
   window_background_opacity = 0.95,
