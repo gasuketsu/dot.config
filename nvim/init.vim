@@ -34,20 +34,7 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'p00f/nvim-ts-rainbow'
-Plug 'ray-x/go.nvim'
-" LSP
-Plug 'neovim/nvim-lspconfig'
-Plug 'williamboman/nvim-lsp-installer'
-Plug 'ray-x/lsp_signature.nvim'
-Plug 'onsails/lspkind-nvim'
-" Completion
-Plug 'hrsh7th/nvim-cmp'
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/cmp-vsnip'
-Plug 'hrsh7th/vim-vsnip'
-Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Statusline
 Plug 'nvim-lualine/lualine.nvim'
 " ColorSchemes
@@ -221,9 +208,63 @@ lua require("config.diffview")
 lua require("config.telescope")
 " nvim-treesitter
 lua require("config.nvim-treesitter")
-" go.nvim
-lua require("config.go")
-" LSP
-lua require("config.lsp")
-" Completion
-lua require("config.completion")
+
+" coc.nvim
+" --------
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
+endfunction
+
+" Symbol renaming
+nmap <leader>rn <Plug>(coc-rename)
+
+" use <c-n> for trigger completion
+inoremap <silent> <expr> <C-n> pumvisible() ? "\<C-n>" : coc#refresh()
+
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
+" Coc only does snippet and additional edit on confirm.
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" Remap <C-f> and <C-b> for scroll float windows/popups.
+nnoremap <silent> <nowait> <expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+nnoremap <silent> <nowait> <expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+inoremap <silent> <nowait> <expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+inoremap <silent> <nowait> <expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+vnoremap <silent> <nowait> <expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+vnoremap <silent> <nowait> <expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
+
+" Use `[d` and `]d` to navigate diagnostics
+nmap <silent> [d <Plug>(coc-diagnostic-prev)
+nmap <silent> ]d <Plug>(coc-diagnostic-next)
+
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gt <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" CocList
+nnoremap <silent> <nowait> <leader>ld <cmd>CocList diagnostics<CR>
+nnoremap <silent> <nowait> <leader>le <cmd>CocList extensions<CR>
+nnoremap <silent> <nowait> <leader>lc <cmd>CocList commands<CR>
+nnoremap <silent> <nowait> <leader>lr <cmd>CocListResume<CR>
+nnoremap <silent> <nowait> <space>j <cmd>CocNext<CR>
+nnoremap <silent> <nowait> <space>k <cmd>CocPrev<CR>
+
+" Language specific configuration
+" Remap keys for tagging in go
+nnoremap <Plug>(GoTagsAddLine) <cmd>CocCommand go.tags.add.line<CR>
+nnoremap <Plug>(GoTagsRemoveLine) <cmd>CocCommand go.tags.remove.line<CR>
+nnoremap <Plug>(GoTagsClearTagLine) <cmd>CocCommand go.tags.clear.line<CR>
+autocmd FileType go nmap <silent> ta <Plug>(GoTagsAddLine)
+autocmd FileType go nmap <silent> tr <Plug>(GoTagsRemoveLine)
+autocmd FileType go nmap <silent> tx <Plug>(GoTagsClearTagLine)
