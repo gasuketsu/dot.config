@@ -26,7 +26,7 @@ require("lualine").setup({
           info = { fg = get_color("DiagnosticSignInfo", "fg") },
           hint = { fg = get_color("DiagnosticSignHint", "fg") },
         },
-        sources = { "coc" },
+        sources = { "nvim_lsp" },
       },
     },
   },
