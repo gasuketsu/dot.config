@@ -34,6 +34,7 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'p00f/nvim-ts-rainbow'
+Plug 'ray-x/go.nvim'
 " LSP
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
@@ -47,10 +48,6 @@ Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
-" Golang specific
-Plug 'mattn/vim-goaddtags'
-Plug 'mattn/vim-goimports'
-Plug 'mattn/vim-goimpl'
 " Statusline
 Plug 'nvim-lualine/lualine.nvim'
 " ColorSchemes
@@ -224,6 +221,8 @@ lua require("config.diffview")
 lua require("config.telescope")
 " nvim-treesitter
 lua require("config.nvim-treesitter")
+" go.nvim
+lua require("config.go")
 " LSP
 lua require("config.lsp")
 " Completion
