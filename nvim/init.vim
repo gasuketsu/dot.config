@@ -170,7 +170,8 @@ nnoremap <silent> <A-.> <cmd>BufferLineCycleNext<CR>
 nnoremap <silent> <A-,> <cmd>BufferLineCyclePrev<CR>
 
 " Neoformat
-let g:neofomat_try_formatprg = 1
+let g:neoformat_try_formatprg = 1
+let g:neoformat_enabled_go = ['gofumpt', 'gofmt']
 nnoremap <silent> <A-f> <cmd>Neoformat<CR>
 
 " Ctags
