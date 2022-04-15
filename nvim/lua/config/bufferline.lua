@@ -1,1 +1,7 @@
-require("bufferline").setup()
+require("bufferline").setup({
+  highlights = {
+    buffer_selected = {
+      gui = "bold",
+    },
+  },
+})
