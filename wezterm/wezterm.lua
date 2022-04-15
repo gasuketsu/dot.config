@@ -16,20 +16,20 @@ return {
   default_prog = { "wsl", "~" },
   launch_menu = launch_menu,
 
-  font = wezterm.font("UDEV Gothic NF"),
+  font = wezterm.font("UDEV Gothic NF Regular"),
   font_rules = {
     {
       intensity = "Bold",
-      font = wezterm.font("UDEV Gothic NF", { bold = true }),
+      font = wezterm.font("UDEV Gothic NF Bold"),
     },
     {
       italic = true,
-      font = wezterm.font("UDEV Gothic NF", { italic = true }),
+      font = wezterm.font("UDEV Gothic NF Italic"),
     },
     {
       italic = true,
       intensity = "Bold",
-      font = wezterm.font("UDEV Gothic NF", { italic = true, bold = true }),
+      font = wezterm.font("UDEV Gothic NF Bold Italic"),
     },
   },
   font_size = 12,
