@@ -1,18 +1,5 @@
-" Be improved
-set nocompatible
-filetype plugin indent on
-syntax enable
-
 " vim-plug
-let s:plug = {"plugs": get(g:, 'plugs', {})}
-
-function! s:plug.is_installed(name)
-  return has_key(self.plugs, a:name) ? isdirectory(self.plugs[a:name].dir) : 0
-endfunction
-
-let s:plugged_dir = '~/.local/share/nvim/plugged'
-
-call plug#begin(expand(s:plugged_dir))
+call plug#begin()
 Plug 'preservim/nerdcommenter'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua' " depends on nvim-web-devicons
