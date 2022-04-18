@@ -74,11 +74,13 @@ lua require('config.lualine')
 
 " Provider configuration
 " ----------------------
-let g:loaded_python_provider = 0
 let g:python3_host_prog = $HOME.'/.config/nvim/py3nvim/.venv/bin/python'
 let g:loaded_ruby_provider = 0
 let g:loaded_node_provider = 0
 let g:loaded_perl_provider = 0
+
+ let g:do_filetype_lua = 1
+ let g:did_load_filetypes = 0
 
 " Display configuration
 " ---------------------
