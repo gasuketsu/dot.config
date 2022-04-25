@@ -32,7 +32,6 @@ cmp.setup({
     end, { "i", "c" }),
     ["<C-y>"] = cmp.config.disable,
     ["<C-e>"] = cmp.mapping(cmp.mapping.abort(), { "i", "c" }),
-    ["<esc>"] = cmp.mapping(cmp.mapping.abort(), { "i", "c" }),
     ["<CR>"] = cmp.mapping(
       cmp.mapping.confirm({
         behavior = cmp.ConfirmBehavior.Replace,
