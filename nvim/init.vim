@@ -175,14 +175,6 @@ nmap <silent> ]q <Plug>(qf_qf_next)
 nmap <silent> [l <Plug>(qf_loc_previous)
 nmap <silent> ]l <Plug>(qf_loc_next)
 
-" Telescope
-" ---
-nnoremap <silent> <leader>ff <cmd>Telescope find_files<CR>
-nnoremap <silent> <leader>fg <cmd>Telescope git_files<CR>
-nnoremap <silent> <leader>fb <cmd>Telescope buffers<CR>
-nnoremap <silent> <leader>fG <cmd>Telescope live_grep<CR>
-nnoremap <silent> <leader>fh <cmd>Telescope help_tags<CR>
-
 " vim-better-whitespace
 " ---------------------
 " disable highlighting trailing whitespace by default.
