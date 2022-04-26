@@ -5,7 +5,7 @@ local source_map = {
   nvim_lsp = "[LSP]",
   buffer = "[Buffer]",
   path = "[Path]",
-  vsnip = "[Snippet]",
+  luasnip = "[Snippet]",
   cmdline = "[Command]",
   cmp_tabnine = "[Tabnine]",
 }
@@ -14,7 +14,7 @@ cmp.setup({
   snippet = {
     -- REQUIRED - you must specify a snippet engine
     expand = function(args)
-      vim.fn["vsnip#anonymous"](args.body)
+      require("luasnip").lsp_extend(args.body)
     end,
   },
   formatting = {
@@ -42,7 +42,7 @@ cmp.setup({
   },
   sources = cmp.config.sources({
     { name = "nvim_lsp" },
-    { name = "vsnip" },
+    { name = "luasnip" },
   }, {
     { name = "cmp_tabnine" },
     { name = "buffer" },
