@@ -7,10 +7,10 @@ while IFS='=' read -r key value; do
   asdf_plugins["$key"]="$value"
 done < "$HOME/.config/asdf/asdf_plugins"
 
-# vim-plug (for neovim)
-if [ ! -f "$HOME/.local/share/nvim/site/autoload/plug.vim" ]; then
-  curl -fLo "$HOME/.local/share/nvim/site/autoload/plug.vim" \
-    --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+# packer.nvim (for neovim plugin management)
+if [ ! -f "$HOME/.local/share/nvim/site/pack/packer/start/packer.nvim" ]; then
+  git clone --depth 1 https://github.com/wbthomason/packer.nvim \
+    "$HOME/.local/share/nvim/site/pack/packer/start/packer.nvim"
 fi
 
 # Fisher
