@@ -1,0 +1,42 @@
+return require("packer").startup(function()
+  use("wbthomason/packer.nvim")
+  use("preservim/nerdcommenter")
+  use("kyazdani42/nvim-web-devicons")
+  use("kyazdani42/nvim-tree.lua") -- depends on nvim-web-devicons
+  use("akinsho/bufferline.nvim") -- depends on nvim-web-devicons
+  use("sbdchd/neoformat")
+  use("romainl/vim-qf")
+  use("editorconfig/editorconfig-vim")
+  use({ "mg979/vim-visual-multi", branch = "master" })
+  use("tpope/vim-repeat")
+  use("tpope/vim-surround")
+  use("ntpeters/vim-better-whitespace")
+  use("tpope/vim-fugitive")
+  use("nvim-lua/plenary.nvim")
+  use("lewis6991/gitsigns.nvim")
+  use("sindrets/diffview.nvim") -- depends on plenary.nvim
+  use("nvim-telescope/telescope.nvim") -- depends on plenary.nvim
+  use("junegunn/gv.vim")
+  use("lukas-reineke/indent-blankline.nvim")
+  use("Vimjas/vim-python-pep8-indent")
+  use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+  use("p00f/nvim-ts-rainbow")
+  use("ray-x/go.nvim")
+  -- LSP
+  use("neovim/nvim-lspconfig")
+  use("williamboman/nvim-lsp-installer")
+  use("ray-x/lsp_signature.nvim")
+  use("onsails/lspkind-nvim")
+  -- Completion
+  use("hrsh7th/nvim-cmp")
+  use("hrsh7th/cmp-nvim-lsp")
+  use("hrsh7th/cmp-buffer")
+  use("hrsh7th/cmp-path")
+  use("hrsh7th/cmp-vsnip")
+  use("hrsh7th/vim-vsnip")
+  use({ "tzachar/cmp-tabnine", run = "./install.sh" })
+  -- Statusline
+  use("nvim-lualine/lualine.nvim")
+  -- ColorSchemes
+  use("sainnhe/gruvbox-material")
+end)
