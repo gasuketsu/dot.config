@@ -1,9 +1,8 @@
 return require("packer").startup(function()
   use("wbthomason/packer.nvim")
   use("preservim/nerdcommenter")
-  use("kyazdani42/nvim-web-devicons")
-  use("kyazdani42/nvim-tree.lua") -- depends on nvim-web-devicons
-  use("akinsho/bufferline.nvim") -- depends on nvim-web-devicons
+  use({ "kyazdani42/nvim-tree.lua", requires = { "kyazdani42/nvim-web-devicons" } })
+  use({ "akinsho/bufferline.nvim", requires = { "kyazdani42/nvim-web-devicons" } })
   use("sbdchd/neoformat")
   use("romainl/vim-qf")
   use("editorconfig/editorconfig-vim")
@@ -12,10 +11,9 @@ return require("packer").startup(function()
   use("tpope/vim-surround")
   use("ntpeters/vim-better-whitespace")
   use("tpope/vim-fugitive")
-  use("nvim-lua/plenary.nvim")
   use("lewis6991/gitsigns.nvim")
-  use("sindrets/diffview.nvim") -- depends on plenary.nvim
-  use("nvim-telescope/telescope.nvim") -- depends on plenary.nvim
+  use({ "sindrets/diffview.nvim", requires = { "nvim-lua/plenary.nvim" } })
+  use({ "nvim-telescope/telescope.nvim", requires = { "nvim-lua/plenary.nvim" } })
   use("junegunn/gv.vim")
   use("lukas-reineke/indent-blankline.nvim")
   use("Vimjas/vim-python-pep8-indent")
