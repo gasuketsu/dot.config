@@ -1,9 +1,12 @@
 require("nvim-tree").setup({
   view = {
-    auto_resize = true,
     mappings = {
-      { key = "g?", action = "" },
-      { key = "?", action = "toggle_help" },
+      list = {
+        { key = "g?", action = "" },
+        { key = "?", action = "toggle_help" },
+      },
     },
   },
 })
+
+vim.keymap.set("n", "<leader>et", "<Cmd>NvimTreeToggle<CR>")
