@@ -121,5 +121,10 @@ return {
       mods = "ALT|SHIFT",
       action = wezterm.action({ CloseCurrentPane = { confirm = true } }),
     },
+    {
+      key = "l",
+      mods = "ALT|SHIFT",
+      action = "ShowLauncher",
+    },
   },
 }
