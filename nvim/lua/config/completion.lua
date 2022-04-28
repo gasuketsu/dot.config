@@ -29,11 +29,11 @@ cmp.setup({
     ["<C-e>"] = cmp.mapping.abort(),
     ["<CR>"] = cmp.mapping.confirm({
       behavior = cmp.ConfirmBehavior.Insert,
-      select = true,
+      select = false,
     }),
     ["<TAB>"] = cmp.mapping.confirm({
       behavior = cmp.ConfirmBehavior.Replace,
-      select = true,
+      select = false,
     }),
   },
   sources = cmp.config.sources({
