@@ -1,3 +1,19 @@
+-- Language servers to be installed
+local servers = {
+  "gopls",
+  "jsonls",
+  "pyright",
+  "svelte",
+  "tsserver",
+  "yamlls",
+  "zeta_note"
+}
+
+require("nvim-lsp-installer").setup({
+  ensure_installed = servers,
+  automatic_installation = true,
+})
+
 local on_attach = function(client, bufnr)
   -- Keymaps
   local function buf_set_keymap(...)
@@ -41,18 +57,18 @@ local on_attach = function(client, bufnr)
   )
 end
 
--- Register a handler that will be called for all installed servers.
--- Alternatively, you may also register handlers on specific server instances instead (see example below).
-local lsp_installer = require("nvim-lsp-installer")
-lsp_installer.on_server_ready(function(server)
-  local opts = {}
-  opts.capabilities = require("cmp_nvim_lsp").update_capabilities(
-    vim.lsp.protocol.make_client_capabilities()
-  )
-  opts.on_attach = on_attach
+local capabilities = require("cmp_nvim_lsp").update_capabilities(
+  vim.lsp.protocol.make_client_capabilities()
+)
 
-  server:setup(opts)
-end)
+-- setup servers and map buffer local keybindings when the language server attaches
+local lspconfig = require("lspconfig")
+for _, lsp in pairs(servers) do
+  lspconfig[lsp].setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+  })
+end
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics,
