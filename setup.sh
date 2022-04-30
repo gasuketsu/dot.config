@@ -48,7 +48,12 @@ if [ ! -e "$HOME/.default-python-packages" ]; then
   ln -s "$HOME/.config/asdf/default-python-packages" "$HOME/.default-python-packages"
 fi
 
-# default python packages (asdf-python)
+# default golang packages (asdf-golang)
+if [ ! -e "$HOME/.default-golang-pkgs" ]; then
+  ln -s "$HOME/.config/asdf/default-golang-pkgs" "$HOME/.default-golang-pkgs"
+fi
+
+# default npm packages (asdf-nodejs)
 if [ ! -e "$HOME/.default-npm-packages" ]; then
   ln -s "$HOME/.config/asdf/default-npm-packages" "$HOME/.default-npm-packages"
 fi
