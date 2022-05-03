@@ -15,6 +15,7 @@ vim.opt.shortmess:append({ c = true, I = true })
 vim.opt.shellslash = true
 vim.opt.encoding = "utf-8"
 vim.opt.fileencodings = "utf-8,euc-jp,sjis,cp932,iso-2022-jp"
+vim.opt.listchars= "trail:·"
 
 vim.opt.number = true
 vim.opt.cursorline = true
@@ -108,11 +109,10 @@ vim.keymap.set("n", "]l", "<Plug>(qf_loc_next)", { silent = true })
 -- vim-better-whitespace
 --  disable highlighting trailing whitespace by default.
 --  (perform :ToggleWhitespace to enable highlighting)
-vim.g.better_whitespace_guicolor = "#fb4934"
+vim.g.better_whitespace_guicolor = "OrangeRed"
 vim.g.better_whitespace_ctermcolor = 167
-vim.keymap.set("n", "<leader>w", "<cmd>ToggleWhitespace<CR>", { silent = true })
-vim.keymap.set("n", "<leader>sw", "<cmd>StripWhitespace<CR>", { silent = true })
-vim.keymap.set("n", "<leader>sw", "<cmd>StripWhitespace<CR>", { silent = true })
+vim.keymap.set("n", "<leader>wt", "<cmd>ToggleWhitespace<CR>", { silent = true })
+vim.keymap.set("n", "<leader>ws", "<cmd>StripWhitespace<CR>", { silent = true })
 
 -- multiple cursors
 vim.g.multiple_cursor_use_default_mapping = 0
