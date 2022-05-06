@@ -1,4 +1,4 @@
 golang.org/x/tools/cmd/goimports@latest
 mvdan.cc/gofumpt@latest
-fatih/gomodifytags@latest
+github.com/fatih/gomodifytags@latest
 github.com/josharian/impl@latest
