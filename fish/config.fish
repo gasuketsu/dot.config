@@ -37,4 +37,6 @@ test -f $HOME/.asdf/asdf.fish
 and source $HOME/.asdf/asdf.fish
 
 # starship
-starship init fish | source
+if status --is-interactive
+  starship init fish | source
+end
