@@ -6,7 +6,6 @@ local servers = {
   "svelte",
   "tsserver",
   "yamlls",
-  "zeta_note"
 }
 
 require("nvim-lsp-installer").setup({
