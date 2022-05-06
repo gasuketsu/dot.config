@@ -2,7 +2,6 @@ python=
 golang=
 nodejs=lts
 starship=
-neovim=
 bat=
 fd=
 fzf=
