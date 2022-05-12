@@ -102,13 +102,6 @@ pipenv --rm
 pipenv install
 cd $CWD
 
-# (golang) set go env configuration
-if [ -z `go env GOBIN` ]; then
-  echo "##### (golang) set GOBIN where 'go install' installs binaries"
-  go env -w GOBIN="$HOME/.local/bin"
-fi
-
-
 echo
 echo "######################################################"
 echo " Finished setup"
