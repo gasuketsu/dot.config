@@ -63,6 +63,11 @@ if [ ! -e "$HOME/.gitconfig" ]; then
   touch "$HOME/.gitconfig"
 fi
 
+# default go env (only when no env file exist)
+if [ ! -f "$HOME/.config/go/env" ]; then
+  echo "GOBIN=$HOME/.local/bin" > "$HOME/.config/go/env"
+fi
+
 source "$HOME/.config/bash/config.bash"
 
 # update asdf to latest stable release
