@@ -81,10 +81,6 @@ if [ -d "$HOME/.asdf" ]; then
   for plugin in "${!asdf_plugins[@]}"; do
     echo "#### (asdf) installing plugin $plugin ..."
     asdf plugin-add $plugin
-    if [ $plugin = "nodejs" ]; then
-      # Import the Node.js release team's OpenPGP keys
-      bash "$HOME/.asdf/plugins/nodejs/bin/import-release-team-keyring"
-    fi
     filter="${asdf_plugins[$plugin]}"
     version=$(asdf latest $plugin "$filter")
     echo "#### (asdf) installing $plugin $version..."
