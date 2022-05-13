@@ -8,7 +8,7 @@ while IFS='=' read -r key value; do
 done < "$HOME/.config/asdf/asdf_plugins"
 
 # packer.nvim (for neovim plugin management)
-if [ ! -f "$HOME/.local/share/nvim/site/pack/packer/start/packer.nvim" ]; then
+if [ ! -d "$HOME/.local/share/nvim/site/pack/packer/start/packer.nvim" ]; then
   git clone --depth 1 https://github.com/wbthomason/packer.nvim \
     "$HOME/.local/share/nvim/site/pack/packer/start/packer.nvim"
 fi
