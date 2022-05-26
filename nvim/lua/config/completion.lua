@@ -21,20 +21,20 @@ cmp.setup({
     format = lspkind.cmp_format({ with_text = true, menu = source_map, maxwidth = 50 }),
   },
   mapping = {
-    ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-    ["<C-f>"] = cmp.mapping.scroll_docs(4),
-    ["<C-n>"] = cmp.mapping.select_next_item(),
-    ["<C-p>"] = cmp.mapping.select_prev_item(),
-    ["<C-y>"] = cmp.config.disable,
-    ["<C-e>"] = cmp.mapping.abort(),
-    ["<CR>"] = cmp.mapping.confirm({
+    ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), {"i", "c"}),
+    ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), {"i", "c"}),
+    ["<C-n>"] = cmp.mapping(cmp.mapping.select_next_item(), {"i", "c"}),
+    ["<C-p>"] = cmp.mapping(cmp.mapping.select_prev_item(), {"i", "c"}),
+    ["<C-y>"] = cmp.mapping(cmp.config.disable, {"i", "c"}),
+    ["<C-e>"] = cmp.mapping(cmp.mapping.abort(), {"i", "c"}),
+    ["<CR>"] = cmp.mapping(cmp.mapping.confirm({
       behavior = cmp.ConfirmBehavior.Insert,
       select = false,
-    }),
-    ["<TAB>"] = cmp.mapping.confirm({
+    }), {"i", "c"}),
+    ["<TAB>"] = cmp.mapping(cmp.mapping.confirm({
       behavior = cmp.ConfirmBehavior.Replace,
       select = false,
-    }),
+    }), {"i"}),
   },
   sources = cmp.config.sources({
     { name = "nvim_lsp" },
