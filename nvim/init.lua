@@ -90,9 +90,6 @@ vim.keymap.set("n", "CD", "<cmd>lcd %:h<cr>", { silent = true })
 
 vim.keymap.set({ "n", "v", "o" }, "q", "<Nop>", { remap = true })
 
--- NERDCommenter
-vim.g.NERDDefaultAlign = "left"
-
 -- Neoformat
 vim.g.neoformat_try_formatprg = 1
 vim.g.neoformat_enabled_go = { "gofumpt", "gofmt" }
@@ -121,6 +118,7 @@ vim.g.multiple_cursor_prev_key = "<C-h>"
 vim.g.multiple_cursor_skip_key = "<C-x>"
 vim.g.multiple_cursor_quit_key = "<Esc>"
 
+require("config.Comment")
 require("config.lualine")
 require("config.bufferline")
 require("config.nvim-tree")
