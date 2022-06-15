@@ -15,7 +15,7 @@ vim.opt.shortmess:append({ c = true, I = true })
 vim.opt.shellslash = true
 vim.opt.encoding = "utf-8"
 vim.opt.fileencodings = "utf-8,euc-jp,sjis,cp932,iso-2022-jp"
-vim.opt.listchars.trail = "·"
+vim.opt.listchars = "tab:> ,trail:·,nbsp:+"
 
 vim.opt.number = true
 vim.opt.cursorline = true
