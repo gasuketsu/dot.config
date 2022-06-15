@@ -90,11 +90,6 @@ vim.keymap.set("n", "CD", "<cmd>lcd %:h<cr>", { silent = true })
 
 vim.keymap.set({ "n", "v", "o" }, "q", "<Nop>", { remap = true })
 
--- Neoformat
-vim.g.neoformat_try_formatprg = 1
-vim.g.neoformat_enabled_go = { "gofumpt", "gofmt" }
-vim.keymap.set("n", "<A-f>", "<cmd>Neoformat<CR>", { silent = true })
-
 -- vim-qf
 vim.keymap.set("n", "<leader>qq", "<Plug>(qf_qf_toggle)")
 vim.keymap.set("n", "<leader>ql", "<Plug>(qf_loc_toggle)")
@@ -118,9 +113,10 @@ vim.g.multiple_cursor_prev_key = "<C-h>"
 vim.g.multiple_cursor_skip_key = "<C-x>"
 vim.g.multiple_cursor_quit_key = "<Esc>"
 
-require("config.Comment")
 require("config.lualine")
 require("config.bufferline")
+require("config.Comment")
+require("config.formatter")
 require("config.nvim-tree")
 require("config.indent-blankline")
 require("config.gitsigns")
