@@ -98,25 +98,10 @@ vim.keymap.set("n", "]q", "<Plug>(qf_qf_next)", { silent = true })
 vim.keymap.set("n", "[l", "<Plug>(qf_loc_previous)", { silent = true })
 vim.keymap.set("n", "]l", "<Plug>(qf_loc_next)", { silent = true })
 
--- vim-better-whitespace
---  disable highlighting trailing whitespace by default.
---  (perform :ToggleWhitespace to enable highlighting)
-vim.g.better_whitespace_guicolor = "OrangeRed"
-vim.g.better_whitespace_ctermcolor = 167
-vim.keymap.set("n", "<leader>wt", "<cmd>ToggleWhitespace<CR>", { silent = true })
-vim.keymap.set("n", "<leader>ws", "<cmd>StripWhitespace<CR>", { silent = true })
-
--- multiple cursors
-vim.g.multiple_cursor_use_default_mapping = 0
-vim.g.multiple_cursor_next_key = "<C-n>"
-vim.g.multiple_cursor_prev_key = "<C-h>"
-vim.g.multiple_cursor_skip_key = "<C-x>"
-vim.g.multiple_cursor_quit_key = "<Esc>"
-
 require("config.lualine")
 require("config.bufferline")
-require("config.Comment")
 require("config.formatter")
+require("config.mini")
 require("config.nvim-tree")
 require("config.indent-blankline")
 require("config.gitsigns")
