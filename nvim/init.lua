@@ -90,17 +90,10 @@ vim.keymap.set("n", "CD", "<cmd>lcd %:h<cr>", { silent = true })
 
 vim.keymap.set({ "n", "v", "o" }, "q", "<Nop>", { remap = true })
 
--- vim-qf
-vim.keymap.set("n", "<leader>qq", "<Plug>(qf_qf_toggle)")
-vim.keymap.set("n", "<leader>ql", "<Plug>(qf_loc_toggle)")
-vim.keymap.set("n", "[q", "<Plug>(qf_qf_previous)", { silent = true })
-vim.keymap.set("n", "]q", "<Plug>(qf_qf_next)", { silent = true })
-vim.keymap.set("n", "[l", "<Plug>(qf_loc_previous)", { silent = true })
-vim.keymap.set("n", "]l", "<Plug>(qf_loc_next)", { silent = true })
-
 require("config.lualine")
 require("config.bufferline")
 require("config.formatter")
+require("config.qf_helper")
 require("config.mini")
 require("config.project")
 require("config.nvim-tree")
