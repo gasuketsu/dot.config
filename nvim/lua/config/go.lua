@@ -1,5 +1,6 @@
--- vim-goimports
-vim.g.goimports_cmd = "goimports"
-vim.g.goimports_simplify_cmd = "gofumpt"
--- vim-goaddtags
-vim.g.go_addtags_transform = "camelcase"
+require("go").setup({
+  auto_format = false,
+  auto_lint = false,
+  formatter = "gofumpt",
+  tags_transform = "camelcase",
+})
