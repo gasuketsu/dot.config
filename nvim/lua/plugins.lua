@@ -17,7 +17,7 @@ return require("packer").startup(function()
   use({"folke/trouble.nvim", requires = { "kyazdani42/nvim-web-devicons" } })
   -- Language specific
   use("Vimjas/vim-python-pep8-indent")
-  use("crispgm/nvim-go")
+  use("ray-x/go.nvim")
   -- LSP
   use("neovim/nvim-lspconfig")
   use("williamboman/nvim-lsp-installer")
