@@ -66,11 +66,11 @@ local capabilities = require("cmp_nvim_lsp").update_capabilities(
 -- setup servers and map buffer local keybindings when the language server attaches
 local lspconfig = require("lspconfig")
 for k, v in pairs(servers) do
-    lspconfig[k].setup({
-      on_attach = on_attach,
-      capabilities = capabilities,
-      settings = v.settings,
-    })
+  lspconfig[k].setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+    settings = v.settings,
+  })
 end
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
