@@ -3,7 +3,7 @@ require("lsp-colors").setup()
 
 -- Language servers to be installed
 local servers = {
-  gopls = {settings = {gopls = {gofumpt = true}}},
+  gopls = { settings = { gopls = { gofumpt = true } } },
   jsonls = {},
   pyright = {},
   svelte = {},
