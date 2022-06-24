@@ -15,6 +15,7 @@ return require("packer").startup(function()
   use("p00f/nvim-ts-rainbow")
   use({ "folke/trouble.nvim", requires = { "kyazdani42/nvim-web-devicons" } })
   use({ "jose-elias-alvarez/null-ls.nvim", requires = { "nvim-lua/plenary.nvim" } })
+  use("rcarriga/nvim-notify")
   -- Language specific
   use("Vimjas/vim-python-pep8-indent")
   use({ "crispgm/nvim-go", requires = { "nvim-lua/plenary.nvim" } })

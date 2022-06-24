@@ -18,3 +18,4 @@ vim.keymap.set("n", "<leader>fg", "<cmd>Telescope git_files<CR>", { silent = tru
 vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<CR>", { silent = true })
 vim.keymap.set("n", "<leader>fG", "<cmd>Telescope live_grep<CR>", { silent = true })
 vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", { silent = true })
+vim.keymap.set("n", "<leader>fn", "<cmd>Telescope notify<CR>", { silent = true })
