@@ -14,10 +14,10 @@ return require("packer").startup(function()
   use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
   use("p00f/nvim-ts-rainbow")
   use({ "folke/trouble.nvim", requires = { "kyazdani42/nvim-web-devicons" } })
-  use({ "jose-elias-alvarez/null-ls.nvim", reqquires = { "nvim-lua/plenary.nvim" } })
+  use({ "jose-elias-alvarez/null-ls.nvim", requires = { "nvim-lua/plenary.nvim" } })
   -- Language specific
   use("Vimjas/vim-python-pep8-indent")
-  use("ray-x/go.nvim")
+  use({ "crispgm/nvim-go", requires = { "nvim-lua/plenary.nvim" } })
   -- LSP
   use("neovim/nvim-lspconfig")
   use("williamboman/nvim-lsp-installer")
