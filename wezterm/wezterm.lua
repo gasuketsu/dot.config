@@ -16,6 +16,7 @@ return {
   default_prog = { "wsl", "~" },
   launch_menu = launch_menu,
 
+  ime_preedit_rendering = "System",
   font = wezterm.font("UDEV Gothic NF Regular"),
   font_rules = {
     {
