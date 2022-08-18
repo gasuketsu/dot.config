@@ -7,9 +7,6 @@ vim.g.loaded_ruby_provider = 0
 vim.g.loaded_node_provider = 0
 vim.g.loaded_perl_provider = 0
 
-vim.g.do_filetype_lua = 1
-vim.g.did_load_filetypes = 0
-
 -- Display configuration
 vim.opt.shortmess:append({ c = true, I = true })
 vim.opt.shellslash = true
