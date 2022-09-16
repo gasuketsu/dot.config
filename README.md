@@ -1,9 +1,11 @@
 # dot.config
+
 Manages configurations stored under your `~/.config`.
 
 ## Prerequisites
 
-* Prerequisites
+- Prerequisites
+
 ```
 ### Debian/Ubuntu
 # Python build
@@ -20,14 +22,7 @@ zypper install tk-devel    (if you also want to have GUI support)
 # tmux
 zypper install terminfo pkg-config bison
 
-### CentOS/Fedora 21 and below
-# Python build
-yum install dirmnger gcc gcc-c++ xz zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel libffi-devel xclip curl
-yum install tk-devel    (if you also want to have GUI support)
-# tmux
-yum install pkgconfig bison automake ncurses-term
-
-### Fedora 22 and above
+### Fedora
 # Python build
 dnf install dirmnger make gcc gcc-c++ xz zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel libffi-devel xclip curl
 dnf install tk-devel    (if you also want to have GUI support)
@@ -61,39 +56,10 @@ export DISPLAY=localhost:0.0
 export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
 ```
 
-### Python CLI applications
+### Neovim plugins
 
-Install Python CLI applications with ``pipx``
-
-```
-pipx install pipenv
-pipx install poetry
-...
-```
-
-### Vim/Neovim plugins
-
-Install plugins by running ``PlugInstall`` command in your vim/neovim.
+Install plugins by running `PackerSync` command in your vim/neovim.
 
 ```
-:PlugInstall
+:PackerSync
 ```
-
-### coc.nvim extentions
-
-Install following extentions by running ``CocInstall`` command in your neovim.
-
-* [coc-json](https://github.com/neoclide/coc-json)
-* [coc-pyright](https://gitub.com/fannheyward/coc-pyrighth)
-* [coc-git](https://github.com/neoclide/coc-git)
-* [coc-prettier](https://github.com/neoclide/coc-prettier)
-* [coc-go](https://github.com/josa42/coc-go)
-* [coc-tabnine](https://github.com/neoclide/coc-tabnine)
-* [coc-yaml](https://github.com/neoclide/coc-yaml)
-
-Find and install [coc.nvim extentions](https://github.com/neoclide/coc.nvim#extensions) depends on your need.
-
-```
-:CocInstall coc-json coc-yaml coc-git coc-pyright coc-go coc-tabnine coc-prettier
-```
-
