@@ -36,7 +36,7 @@ return {
   },
   font_size = 12,
   freetype_load_target = "Light",
-  freetype_load_flags = "NO_HINTING",
+  freetype_load_flags = "DEFAULT",
   window_background_opacity = 0.95,
   adjust_window_size_when_changing_font_size = false,
   color_scheme = "Gruvbox",
