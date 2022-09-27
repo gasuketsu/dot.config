@@ -1,4 +1,5 @@
 local wezterm = require("wezterm")
+local act = wezterm.action
 
 local launch_menu = {}
 
@@ -126,6 +127,16 @@ return {
       key = "l",
       mods = "ALT|SHIFT",
       action = "ShowLauncher",
+    },
+    {
+      key = "l",
+      mods = "CTRL|ALT",
+      action = act.SendKey({ key = "l", mods = "CTRL|ALT" }),
+    },
+    {
+      key = "f",
+      mods = "CTRL|ALT",
+      action = act.SendKey({ key = "f", mods = "CTRL|ALT" }),
     },
   },
 }
