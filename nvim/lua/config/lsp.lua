@@ -9,6 +9,7 @@ local servers = {
   svelte = {},
   tsserver = {},
   yamlls = {},
+  rust_analyzer = {},
 }
 
 require("nvim-lsp-installer").setup({
@@ -59,9 +60,8 @@ local on_attach = function(client, bufnr)
   )
 end
 
-local capabilities = require("cmp_nvim_lsp").update_capabilities(
-  vim.lsp.protocol.make_client_capabilities()
-)
+local capabilities =
+  require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 -- setup servers and map buffer local keybindings when the language server attaches
 local lspconfig = require("lspconfig")
@@ -73,14 +73,12 @@ for k, v in pairs(servers) do
   })
 end
 
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-  vim.lsp.diagnostic.on_publish_diagnostics,
-  {
+vim.lsp.handlers["textDocument/publishDiagnostics"] =
+  vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
     virtual_text = false,
     underline = true,
     signs = true,
-  }
-)
+  })
 
 -- Sign Definition
 vim.fn.sign_define("DiagnosticSignError", { text = "", texthl = "DiagnosticSignError" })

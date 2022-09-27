@@ -17,7 +17,10 @@ return require("packer").startup(function()
   use({ "jose-elias-alvarez/null-ls.nvim", requires = { "nvim-lua/plenary.nvim" } })
   -- Language specific
   use("Vimjas/vim-python-pep8-indent")
-  use({ "crispgm/nvim-go", requires = { "nvim-lua/plenary.nvim" } })
+  use({
+    "olexsmir/gopher.nvim",
+    requires = { "nvim-lua/plenary.nvim", "nvim-treesitter/nvim-treesitter" },
+  })
   -- LSP
   use("neovim/nvim-lspconfig")
   use("williamboman/nvim-lsp-installer")

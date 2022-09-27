@@ -1,8 +1,9 @@
-require("go").setup({
-  auto_format = false,
-  auto_lint = false,
-  formatter = "gofumpt",
-  tags_name = nil,
-  tags_options = {},
-  tags_transform = "camelcase",
+require("gopher").setup({
+  commands = {
+    go = "go",
+    gomodifytags = "gomodifytags",
+    gotests = "gotests",
+    impl = "impl",
+    iferr = "iferr",
+  },
 })
