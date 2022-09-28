@@ -11,15 +11,24 @@ return require("packer").startup(function()
   use({ "nvim-telescope/telescope.nvim", requires = { "nvim-lua/plenary.nvim" } })
   use("ahmedkhalf/project.nvim")
   use("lukas-reineke/indent-blankline.nvim")
-  use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
-  use("p00f/nvim-ts-rainbow")
+  use({
+    "nvim-treesitter/nvim-treesitter",
+    run = function()
+      require("nvim-treesitter.install").update({ with_sync = true })
+    end,
+  })
+  use({ "p00f/nvim-ts-rainbow", requires = { "nvim-treesitter/nvim-treesitter" } })
   use({ "folke/trouble.nvim", requires = { "kyazdani42/nvim-web-devicons" } })
   use({ "jose-elias-alvarez/null-ls.nvim", requires = { "nvim-lua/plenary.nvim" } })
   -- Language specific
   use("Vimjas/vim-python-pep8-indent")
   use({
     "olexsmir/gopher.nvim",
-    requires = { "nvim-lua/plenary.nvim", "nvim-treesitter/nvim-treesitter" },
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "mfussenegger/nvim-dap",
+    },
   })
   -- LSP
   use("neovim/nvim-lspconfig")

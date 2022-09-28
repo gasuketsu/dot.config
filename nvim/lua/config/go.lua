@@ -7,3 +7,5 @@ require("gopher").setup({
     iferr = "iferr",
   },
 })
+
+require("gopher.dap").setup()
