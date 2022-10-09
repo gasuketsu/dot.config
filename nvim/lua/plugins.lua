@@ -48,4 +48,5 @@ return require("packer").startup(function()
   use("nvim-lualine/lualine.nvim")
   -- ColorSchemes
   use("sainnhe/gruvbox-material")
+  use("sainnhe/everforest")
 end)
