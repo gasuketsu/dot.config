@@ -39,7 +39,7 @@ return {
   freetype_load_flags = "DEFAULT",
   window_background_opacity = 0.95,
   adjust_window_size_when_changing_font_size = false,
-  color_scheme = "Gruvbox",
+  color_scheme = "Gruvbox-Mix",
   window_frame = {
     active_titlebar_bg = "#1d2021",
     inactive_titlebar_bg = "#1e2021",
@@ -87,7 +87,36 @@ return {
         "#fbf1c7", -- BrightWhite
       },
     },
-    ["Gruvbox-Material(Mix)"] = {
+    ["Gruvbox-Mix"] = {
+      background = "#1d2021",
+      foreground = "#bdae93",
+      cursor_bg = "#fe8019",
+      cursor_border = "#fe8019",
+      compose_cursor = "#f9f1c7",
+      selection_bg = "#928374",
+      split = "#fbf1c7",
+      ansi = {
+        "#504945", -- Black
+        "#db4740", -- Red
+        "#98971a", -- Green
+        "#d79921", -- Yellow
+        "#458588", -- Blue
+        "#b16286", -- Purple
+        "#689d6a", -- Cyan
+        "#ebdbb2", -- White
+      },
+      brights = {
+        "#665c54", -- BrightBlack
+        "#f2594b", -- BrightRed
+        "#b8bb26", -- BrightGreen
+        "#fabd2f", -- BrightYellow
+        "#83a598", -- BrightBlue
+        "#d3869b", -- BrightPurple
+        "#8ec07c", -- BrightCyan
+        "#fbf1c7", -- BrightWhite
+      },
+    },
+    ["Gruvbox-Material"] = {
       background = "#1d2021",
       foreground = "#bdae93",
       cursor_bg = "#f28534",
@@ -97,7 +126,7 @@ return {
       split = "#fbf1c7",
       ansi = {
         "#504945", -- Black
-        "#f2594b", -- Red
+        "#db4740", -- Red
         "#b0b846", -- Green
         "#e9b143", -- Yellow
         "#80aa9e", -- Blue
