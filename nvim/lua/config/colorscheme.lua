@@ -1,7 +1,7 @@
 vim.opt.termguicolors = true
 
-vim.g.gruvbox_material_palette = "material"
-vim.g.gruvbox_material_statusline_style = "material"
+vim.g.gruvbox_material_palette = "mix"
+vim.g.gruvbox_material_statusline_style = "mix"
 vim.g.gruvbox_material_background = "medium"
 vim.g.gruvbox_material_enable_bold = 1
 vim.g.gruvbox_material_diagnostic_virtual_text = "colored"
