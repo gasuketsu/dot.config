@@ -1,7 +1,7 @@
 [init]
 	defaultBranch = main
 [core]
-	pager = less -x4 -F -X
+	pager = bat -p
 [push]
 	default = simple
 [pull]
@@ -12,10 +12,10 @@
 [mergetool]
 	prompt = false
 [mergetool "nvim"]
-	cmd = nvim -f -c \"Gdiffsplit!\" \"$MERGED\"
+	cmd = nvim -f -c \"DiffviewOpen\"
 [merge]
 	tool = nvim
 [difftool "nvim"]
-	cmd = nvim -R -d -c \"wincmd l\" -d \"$LOCAL\" \"$REMOTE\"
+	cmd = nvim -c \"DiffviewOpen\"
 [diff]
 	tool = nvim
