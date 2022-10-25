@@ -15,7 +15,9 @@
 	cmd = nvim -f -c \"DiffviewOpen\"
 [merge]
 	tool = nvim
+[difftool]
+	prompt = true
 [difftool "nvim"]
-	cmd = nvim -c \"DiffviewOpen\"
+	cmd = nvim -d \"$LOCAL\" \"$REMOTE\"
 [diff]
 	tool = nvim
