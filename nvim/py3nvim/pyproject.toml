@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "py3nvim"
+version = "0.1.0"
+description = ""
+authors = ["HARADA Tomoyuki <harada.tomoyuki03@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+neovim = "^0.3.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

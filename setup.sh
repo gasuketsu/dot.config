@@ -99,8 +99,8 @@ done < "$HOME/.config/pipx/pipx_packages"
 # (python) venv for nvim python bindings
 echo "##### (python) reinitialize virtualenv for neovim python bindings..."
 cd "$HOME/.config/nvim/py3nvim"
-pipenv --rm
-pipenv install
+rm -fr .venv
+poetry install
 cd $CWD
 
 echo
