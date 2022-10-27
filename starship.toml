@@ -38,8 +38,7 @@ format = "[$symbol$version]($style) "
 format = "[${symbol}${pyenv_prefix}${version}( \\($virtualenv\\))]($style) "
 
 [rust]
-format = "[$symbol$version]($style) "
-disabled = true
+format = "[$symbol]($style) "
 
 [lua]
 format = "[$symbol$version]($style) "
