@@ -12,6 +12,7 @@ require("nvim-treesitter.configs").setup({
     "fish",
     "go",
     "gomod",
+    "help",
     "html",
     "java",
     "javascript",
