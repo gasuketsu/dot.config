@@ -70,7 +70,7 @@ vim.opt.cindent = true
 vim.opt.cino = "l1,:0,g0,(0,W4,m1"
 
 -- Copy&Paste
-vim.opt.clipboard = "unnamed"
+vim.opt.clipboard = "unnamedplus"
 
 -- Search behavior
 vim.opt.ignorecase = true
