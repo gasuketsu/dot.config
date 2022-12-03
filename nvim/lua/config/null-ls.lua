@@ -2,7 +2,9 @@ require("null-ls").setup({
   sources = {
     require("null-ls").builtins.formatting.black,
     require("null-ls").builtins.formatting.golines,
-    require("null-ls").builtins.formatting.prettier,
+    require("null-ls").builtins.formatting.prettierd.with({
+      extra_filetypes = { "svelte" },
+    }),
     require("null-ls").builtins.formatting.stylua,
     require("null-ls").builtins.formatting.rustfmt,
   },
@@ -49,4 +51,4 @@ local on_attach = function(client, bufnr)
   end
 end
 
-vim.keymap.set("n", "<A-f>", lsp_formatting, { silent = true })
+vim.keymap.set("n", "<A-f>", vim.lsp.buf.format, { silent = true })
