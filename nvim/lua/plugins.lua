@@ -21,7 +21,7 @@ return require("packer").startup(function()
   })
   use({ "p00f/nvim-ts-rainbow", requires = { "nvim-treesitter/nvim-treesitter" } })
   use({ "folke/trouble.nvim", requires = { "kyazdani42/nvim-web-devicons" } })
-  use({ "jose-elias-alvarez/null-ls.nvim", requires = { "nvim-lua/plenary.nvim" } })
+  use({ "mhartington/formatter.nvim" })
   -- Language specific
   use("Vimjas/vim-python-pep8-indent")
   use({
