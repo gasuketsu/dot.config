@@ -12,7 +12,7 @@ local servers = {
   rust_analyzer = {},
 }
 
-require("nvim-lsp-installer").setup({
+require("mason-lspconfig").setup({
   ensure_installed = servers,
   automatic_installation = true,
 })

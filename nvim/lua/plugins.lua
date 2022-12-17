@@ -33,8 +33,9 @@ return require("packer").startup(function()
     },
   })
   -- LSP
+  use("williamboman/mason.nvim")
+  use("williamboman/mason-lspconfig.nvim")
   use("neovim/nvim-lspconfig")
-  use("williamboman/nvim-lsp-installer")
   use("ray-x/lsp_signature.nvim")
   use("onsails/lspkind-nvim")
   use("folke/lsp-colors.nvim")
