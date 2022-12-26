@@ -41,3 +41,9 @@ require("nvim-treesitter.configs").setup({
     max_file_lines = nil,
   },
 })
+
+vim.api.nvim_create_augroup( 'TSRainbowRefresh', {} )
+vim.api.nvim_create_autocmd({ "BufWritePost", "FocusGained" }, {
+  group = "TSRainbowRefresh",
+  command = "TSDisable rainbow | TSEnable rainbow",
+})
