@@ -9,7 +9,6 @@ local servers = {
   svelte = {},
   tsserver = {},
   yamlls = {},
-  rust_analyzer = {},
 }
 
 require("mason-lspconfig").setup({
