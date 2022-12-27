@@ -1,56 +1,55 @@
-return require("packer").startup(function()
-  use("wbthomason/packer.nvim")
-  use({ "kyazdani42/nvim-tree.lua", requires = { "kyazdani42/nvim-web-devicons" } })
-  use({ "akinsho/bufferline.nvim", requires = { "kyazdani42/nvim-web-devicons" } })
-  use("stevearc/qf_helper.nvim")
-  use("kevinhwang91/nvim-bqf")
-  use("gpanders/editorconfig.nvim")
-  use("numToStr/Comment.nvim")
-  use("kylechui/nvim-surround")
-  use({ "TimUntersberger/neogit", requires = "nvim-lua/plenary.nvim" })
-  use("zakharykaplan/nvim-retrail")
-  use("lewis6991/gitsigns.nvim")
-  use({ "sindrets/diffview.nvim", requires = { "nvim-lua/plenary.nvim" } })
-  use({ "nvim-telescope/telescope.nvim", requires = { "nvim-lua/plenary.nvim" } })
-  use("ahmedkhalf/project.nvim")
-  use("lukas-reineke/indent-blankline.nvim")
-  use({
+require("lazy").setup({
+  { "kyazdani42/nvim-tree.lua", dependencies = { "kyazdani42/nvim-web-devicons" } },
+  { "akinsho/bufferline.nvim", dependencies = { "kyazdani42/nvim-web-devicons" } },
+  "stevearc/qf_helper.nvim",
+  "kevinhwang91/nvim-bqf",
+  "gpanders/editorconfig.nvim",
+  "numToStr/Comment.nvim",
+  "kylechui/nvim-surround",
+  { "TimUntersberger/neogit", dependencies = "nvim-lua/plenary.nvim" },
+  "zakharykaplan/nvim-retrail",
+  "lewis6991/gitsigns.nvim",
+  { "sindrets/diffview.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
+  { "nvim-telescope/telescope.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
+  "ahmedkhalf/project.nvim",
+  "lukas-reineke/indent-blankline.nvim",
+  {
     "nvim-treesitter/nvim-treesitter",
-    run = function()
+    build = function()
       require("nvim-treesitter.install").update({ with_sync = true })
     end,
-  })
-  use({ "p00f/nvim-ts-rainbow", requires = { "nvim-treesitter/nvim-treesitter" } })
-  use({ "folke/trouble.nvim", requires = { "kyazdani42/nvim-web-devicons" } })
-  use({ "mhartington/formatter.nvim" })
+  },
+  { "p00f/nvim-ts-rainbow", dependencies = { "nvim-treesitter/nvim-treesitter" } },
+  { "folke/trouble.nvim", dependencies = { "kyazdani42/nvim-web-devicons" } },
+  { "mhartington/formatter.nvim" },
   -- Language specific
-  use("Vimjas/vim-python-pep8-indent")
-  use({
+  "Vimjas/vim-python-pep8-indent",
+  {
     "olexsmir/gopher.nvim",
-    requires = {
+    dependencies = {
       "nvim-lua/plenary.nvim",
       "nvim-treesitter/nvim-treesitter",
       "mfussenegger/nvim-dap",
     },
-  })
+  },
   -- LSP
-  use("williamboman/mason.nvim")
-  use("williamboman/mason-lspconfig.nvim")
-  use("neovim/nvim-lspconfig")
-  use("ray-x/lsp_signature.nvim")
-  use("onsails/lspkind-nvim")
-  use("folke/lsp-colors.nvim")
+  "williamboman/mason.nvim",
+  "williamboman/mason-lspconfig.nvim",
+  "neovim/nvim-lspconfig",
+  "ray-x/lsp_signature.nvim",
+  "onsails/lspkind-nvim",
+  "folke/lsp-colors.nvim",
   -- Completion
-  use("hrsh7th/nvim-cmp")
-  use("hrsh7th/cmp-nvim-lsp")
-  use("hrsh7th/cmp-buffer")
-  use("hrsh7th/cmp-path")
-  use("hrsh7th/cmp-cmdline")
-  use({ "saadparwaiz1/cmp_luasnip", requires = { "L3MON4D3/LuaSnip" } })
-  use({ "tzachar/cmp-tabnine", run = "./install.sh" })
+  "hrsh7th/nvim-cmp",
+  "hrsh7th/cmp-nvim-lsp",
+  "hrsh7th/cmp-buffer",
+  "hrsh7th/cmp-path",
+  "hrsh7th/cmp-cmdline",
+  { "saadparwaiz1/cmp_luasnip", dependencies = { "L3MON4D3/LuaSnip" } },
+  { "tzachar/cmp-tabnine", build = "./install.sh" },
   -- Statusline
-  use("nvim-lualine/lualine.nvim")
+  "nvim-lualine/lualine.nvim",
   -- ColorSchemes
-  use("sainnhe/gruvbox-material")
-  use("sainnhe/everforest")
-end)
+  "sainnhe/gruvbox-material",
+  "sainnhe/everforest",
+})
