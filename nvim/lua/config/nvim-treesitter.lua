@@ -26,6 +26,7 @@ require("nvim-treesitter.configs").setup({
     "rust",
     "svelte",
     "toml",
+    "tsx",
     "typescript",
     "vim",
     "yaml",
