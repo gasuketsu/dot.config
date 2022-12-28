@@ -4,21 +4,29 @@ Manages configurations stored under `~/.config`.
 
 ## Prerequisites
 
-```
 ### Debian/Ubuntu
-# Python build
-apt install build-essential zlib1g-dev libffi-dev libssl-dev libbz2-dev libncursesw5-dev libgdbm-dev liblzma-dev libsqlite3-dev uuid-dev libreadline-dev liblzma-dev xclip curl zip unzip
-apt install tk-dev    (if you also want to have GUI support)
-# tmux build (optional)
-apt install automake pkg-config bison ncurses-term
+
+```
+sudo apt install build-essential zlib1g-dev libffi-dev libssl-dev libbz2-dev libncursesw5-dev libgdbm-dev liblzma-dev libsqlite3-dev uuid-dev libreadline-dev liblzma-dev tk-dev xclip curl zip unzip
+```
+
+Following is optional for tmux build
+
+```
+sudo apt install automake pkg-config bison ncurses-term
+```
 
 ### openSUSE
-# Python build
-zypper install -t pattern devel_basis
-zypper install dirmngr gcc-c++ xz bzip2 libbz2-devel libopenssl-devel readline-devel libffi-devel sqlite3-devel xz-devel xclip curl zip unzip
-zypper install tk-devel    (if you also want to have GUI support)
-# tmux build (optional)
-zypper install terminfo pkg-config bison
+
+```
+sudo zypper install -t pattern devel_basis
+sudo zypper install dirmngr gcc-c++ xz bzip2 libbz2-devel libopenssl-devel readline-devel libffi-devel sqlite3-devel xz-devel tk-devel xclip curl zip unzip
+```
+
+Following is optional for tmux build
+
+```
+sudo zypper install terminfo pkg-config bison
 ```
 
 ## Installation and setup
@@ -28,8 +36,8 @@ zypper install terminfo pkg-config bison
 Run `setup.sh` after cloning this respository into `~/.config` as below:
 
 ```
-$ git clone https://github.com/gasuketsu/dot.config ~/.config
-$ ~/.config/setup.sh
+git clone https://github.com/gasuketsu/dot.config ~/.config
+~/.config/setup.sh
 ```
 
 To enable configuration in bash, make sure to source `~/.config/bash/config.bash`
