@@ -21,7 +21,6 @@ zypper install tk-devel    (if you also want to have GUI support)
 zypper install terminfo pkg-config bison
 ```
 
-
 ## Installation and setup
 
 ### Initial setup
