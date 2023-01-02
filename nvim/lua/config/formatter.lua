@@ -27,6 +27,9 @@ require("formatter").setup({
     javascript = {
       require("formatter.filetypes.javascript").prettierd,
     },
+    javascriptreact = {
+      require("formatter.filetypes.javascriptreact").prettierd,
+    },
     json = {
       require("formatter.filetypes.json").prettierd,
     },
@@ -50,6 +53,9 @@ require("formatter").setup({
     },
     typescript = {
       require("formatter.filetypes.typescript").prettierd,
+    },
+    typescriptreact = {
+      require("formatter.filetypes.typescriptreact").prettierd,
     },
     yaml = {
       require("formatter.filetypes.yaml").prettierd,
