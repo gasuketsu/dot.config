@@ -21,6 +21,7 @@ require("lazy").setup({
   },
   { "p00f/nvim-ts-rainbow", dependencies = { "nvim-treesitter/nvim-treesitter" } },
   { "folke/trouble.nvim", dependencies = { "kyazdani42/nvim-web-devicons" } },
+  { "folke/which-key.nvim" },
   { "mhartington/formatter.nvim" },
   -- Language specific
   "Vimjas/vim-python-pep8-indent",

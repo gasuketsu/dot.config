@@ -72,9 +72,9 @@ vim.opt.wildignore:append({
 })
 
 -- timeout
-vim.opt.timeout = false
-vim.opt.ttimeout = true
-vim.opt.timeoutlen = 200
+-- vim.opt.timeout = false
+-- vim.opt.ttimeout = true
+vim.opt.timeoutlen = 0
 
 -- Default Indentation
 vim.opt.expandtab = true
@@ -111,7 +111,7 @@ require("config.indent-blankline")
 require("config.comment")
 require("config.formatter")
 require("config.retrail")
-require("config.surround")
+-- require("config.surround")
 require("config.neogit")
 require("config.gitsigns")
 require("config.diffview")
@@ -122,3 +122,4 @@ require("config.go")
 require("config.mason")
 require("config.lsp")
 require("config.completion")
+require("config.which-key")

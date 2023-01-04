@@ -6,5 +6,3 @@ require("retrail").setup({
     blanklines = true,
   },
 })
-
-vim.keymap.set("n", "<leader>W", "<Cmd>RetrailTrimWhitespace<CR>")
