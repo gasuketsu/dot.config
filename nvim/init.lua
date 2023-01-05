@@ -72,7 +72,7 @@ vim.opt.wildignore:append({
 })
 
 -- timeout
-vim.opt.timeoutlen = 300
+vim.opt.timeoutlen = 500
 
 -- Default Indentation
 vim.opt.expandtab = true

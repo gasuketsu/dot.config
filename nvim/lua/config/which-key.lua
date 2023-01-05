@@ -24,6 +24,7 @@ wk.register({
       i = { "<cmd>Gitsigns diffthis<cr>", "View diff from index" },
       h = { "<cmd>Gitsigns diffthis HEAD<cr>", "View diff from HEAD" },
     },
+    g = { "<cmd>Neogit<cr>", "Open Neogit" },
     h = {
       name = "hunk",
       R = { "<cmd>Gitsigns reset_buffer<cr>", "Reset hunks in buffer" },
