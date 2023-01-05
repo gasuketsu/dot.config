@@ -21,8 +21,8 @@ wk.register({
     b = { "<cmd>Gitsigns blame_line<cr>", "Blame current line" },
     d = {
       name = "diff",
-      i = { "<cmd>Gitsigns diffthis<cr>", "Diff from index" },
-      t = { "<cmd>Gitsigns diffthis HEAD<cr>", "Diff from HEAD" },
+      i = { "<cmd>Gitsigns diffthis<cr>", "View diff from index" },
+      h = { "<cmd>Gitsigns diffthis HEAD<cr>", "View diff from HEAD" },
     },
     h = {
       name = "hunk",
