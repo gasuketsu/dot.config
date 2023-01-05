@@ -62,5 +62,3 @@ require("formatter").setup({
     },
   },
 })
-
-vim.keymap.set("n", "<A-f>", "<cmd>Format<CR>", { silent = true })

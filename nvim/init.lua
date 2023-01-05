@@ -72,9 +72,7 @@ vim.opt.wildignore:append({
 })
 
 -- timeout
--- vim.opt.timeout = false
--- vim.opt.ttimeout = true
-vim.opt.timeoutlen = 0
+vim.opt.timeoutlen = 300
 
 -- Default Indentation
 vim.opt.expandtab = true
@@ -92,15 +90,6 @@ vim.opt.smartcase = true
 vim.opt.wrapscan = true
 vim.opt.inccommand = "split"
 
--- Yank to end of line
-vim.keymap.set("n", "Y", "y$")
--- turn off search highlighting until the next search
-vim.keymap.set("n", "<C-l>", ":nohl<cr>", { silent = true })
--- change current directory when changing buffer
-vim.keymap.set("n", "CD", "<cmd>lcd %:h<cr>", { silent = true })
-
-vim.keymap.set({ "n", "v", "o" }, "q", "<Nop>", { remap = true })
-
 require("config.lualine")
 require("config.bufferline")
 require("config.qf_helper")
@@ -111,7 +100,7 @@ require("config.indent-blankline")
 require("config.comment")
 require("config.formatter")
 require("config.retrail")
--- require("config.surround")
+require("config.surround")
 require("config.neogit")
 require("config.gitsigns")
 require("config.diffview")
