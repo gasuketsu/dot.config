@@ -7,12 +7,6 @@ while IFS='=' read -r key value; do
   asdf_plugins["$key"]="$value"
 done < "$HOME/.config/asdf/asdf_plugins"
 
-# packer.nvim (for neovim plugin management)
-if [ ! -d "$HOME/.local/share/nvim/site/pack/packer/start/packer.nvim" ]; then
-  git clone --depth 1 https://github.com/wbthomason/packer.nvim \
-    "$HOME/.local/share/nvim/site/pack/packer/start/packer.nvim"
-fi
-
 # Fisher
 if type fish > /dev/null 2>&1 && ! fish -c "type fisher" > /dev/null 2>&1; then
   fish -c "curl -skL https://git.io/fisher | source && fisher update"
