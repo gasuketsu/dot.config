@@ -19,7 +19,7 @@ require("lazy").setup({
       require("nvim-treesitter.install").update({ with_sync = true })
     end,
   },
-  { "p00f/nvim-ts-rainbow", dependencies = { "nvim-treesitter/nvim-treesitter" } },
+  { "mrjones2014/nvim-ts-rainbow", dependencies = { "nvim-treesitter/nvim-treesitter" } },
   { "folke/trouble.nvim", dependencies = { "kyazdani42/nvim-web-devicons" } },
   { "folke/which-key.nvim" },
   { "mhartington/formatter.nvim" },
