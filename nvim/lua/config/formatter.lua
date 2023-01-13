@@ -13,7 +13,7 @@ require("formatter").setup({
       require("formatter.filetypes.cpp").clangformat,
     },
     css = {
-      require("formatter.filetypes.css").prettierd,
+      require("formatter.filetypes.css").prettier,
     },
     fish = {
       require("formatter.filetypes.fish").fishindent,
@@ -22,22 +22,22 @@ require("formatter").setup({
       require("formatter.filetypes.go").gofumpt,
     },
     html = {
-      require("formatter.filetypes.html").prettierd,
+      require("formatter.filetypes.html").prettier,
     },
     javascript = {
-      require("formatter.filetypes.javascript").prettierd,
+      require("formatter.filetypes.javascript").prettier,
     },
     javascriptreact = {
-      require("formatter.filetypes.javascriptreact").prettierd,
+      require("formatter.filetypes.javascriptreact").prettier,
     },
     json = {
-      require("formatter.filetypes.json").prettierd,
+      require("formatter.filetypes.json").prettier,
     },
     lua = {
       require("formatter.filetypes.lua").stylua,
     },
     markdown = {
-      require("formatter.filetypes.markdown").prettierd,
+      require("formatter.filetypes.markdown").prettier,
     },
     python = {
       require("formatter.filetypes.python").black,
@@ -52,13 +52,13 @@ require("formatter").setup({
       require("formatter.filetypes.svelte").prettier,
     },
     typescript = {
-      require("formatter.filetypes.typescript").prettierd,
+      require("formatter.filetypes.typescript").prettier,
     },
     typescriptreact = {
-      require("formatter.filetypes.typescriptreact").prettierd,
+      require("formatter.filetypes.typescriptreact").prettier,
     },
     yaml = {
-      require("formatter.filetypes.yaml").prettierd,
+      require("formatter.filetypes.yaml").prettier,
     },
   },
 })
