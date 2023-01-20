@@ -1,11 +1,3 @@
-require("gopher").setup({
-  commands = {
-    go = "go",
-    gomodifytags = "gomodifytags",
-    gotests = "gotests",
-    impl = "impl",
-    iferr = "iferr",
-  },
+require("go").setup({
+  formatter = "lsp",
 })
-
-require("gopher.dap").setup()

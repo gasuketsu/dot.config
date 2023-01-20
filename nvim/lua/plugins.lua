@@ -26,11 +26,9 @@ require("lazy").setup({
   -- Language specific
   "Vimjas/vim-python-pep8-indent",
   {
-    "olexsmir/gopher.nvim",
+    "crispgm/nvim-go",
     dependencies = {
       "nvim-lua/plenary.nvim",
-      "nvim-treesitter/nvim-treesitter",
-      "mfussenegger/nvim-dap",
     },
   },
   -- LSP
