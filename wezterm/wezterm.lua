@@ -88,32 +88,32 @@ return {
       },
     },
     ["Gruvbox-Mix"] = {
-      background = "#1d2021",
-      foreground = "#bdae93",
-      cursor_bg = "#fe8019",
-      cursor_border = "#fe8019",
+      background = "#282828",
+      foreground = "#c0ac8d",
+      cursor_bg = "#f28534",
+      cursor_border = "#f28534",
       compose_cursor = "#f9f1c7",
       selection_bg = "#928374",
       split = "#fbf1c7",
       ansi = {
-        "#504945", -- Black
-        "#db4740", -- Red
-        "#98971a", -- Green
-        "#d79921", -- Yellow
-        "#458588", -- Blue
-        "#b16286", -- Purple
-        "#689d6a", -- Cyan
-        "#ebdbb2", -- White
+        "#32302f", -- Black
+        "#cd4538", -- Red
+        "#959c36", -- Green
+        "#c69431", -- Yellow
+        "#6b9085", -- Blue
+        "#b36e81", -- Purple
+        "#749e69", -- Cyan
+        "#e5d5ad", -- White
       },
       brights = {
-        "#665c54", -- BrightBlack
+        "#45403d", -- BrightBlack
         "#f2594b", -- BrightRed
-        "#b8bb26", -- BrightGreen
-        "#fabd2f", -- BrightYellow
-        "#83a598", -- BrightBlue
+        "#b0b846", -- BrightGreen
+        "#e9b143", -- BrightYellow
+        "#80aa9e", -- BrightBlue
         "#d3869b", -- BrightPurple
-        "#8ec07c", -- BrightCyan
-        "#fbf1c7", -- BrightWhite
+        "#8bba7f", -- BrightCyan
+        "#f2e5bc", -- BrightWhite
       },
     },
     ["Gruvbox-Material"] = {
