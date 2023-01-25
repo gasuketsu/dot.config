@@ -92,9 +92,9 @@ return {
       foreground = "#c0ac8d",
       cursor_bg = "#f28534",
       cursor_border = "#f28534",
-      compose_cursor = "#f9f1c7",
+      compose_cursor = "#f2e5bc",
       selection_bg = "#928374",
-      split = "#fbf1c7",
+      split = "#f2e5bc",
       ansi = {
         "#32302f", -- Black
         "#cd4538", -- Red
@@ -113,7 +113,7 @@ return {
         "#80aa9e", -- BrightBlue
         "#d3869b", -- BrightPurple
         "#8bba7f", -- BrightCyan
-        "#f2e5bc", -- BrightWhite
+        "#f4e8be", -- BrightWhite
       },
     },
     ["Gruvbox-Material"] = {
