@@ -19,7 +19,16 @@ require("lazy").setup({
       require("nvim-treesitter.install").update({ with_sync = true })
     end,
   },
+  {
+    "nvim-treesitter/nvim-treesitter-context",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+  },
   { "mrjones2014/nvim-ts-rainbow", dependencies = { "nvim-treesitter/nvim-treesitter" } },
+  { "windwp/nvim-ts-autotag", dependencies = { "nvim-treesitter/nvim-treesitter" } },
+  {
+    "JoosepAlviste/nvim-ts-context-commentstring",
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
+  },
   { "folke/trouble.nvim", dependencies = { "kyazdani42/nvim-web-devicons" } },
   { "folke/which-key.nvim" },
   { "mhartington/formatter.nvim" },
