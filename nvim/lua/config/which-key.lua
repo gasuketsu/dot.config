@@ -59,6 +59,16 @@ wk.register({
     q = { vim.diagnostic.setqflist, "Add all diagnostics to quickfix list" },
     s = { "<cmd>Telescope lsp_document_symbols<cr>", "Find symbols in current buffer" },
   },
+  s = {
+    name = "treesitter",
+    c = {
+      name = "context",
+      d = { "<cmd>TSContextDisable<cr>", "Disable treesitter context" },
+      e = { "<cmd>TSContextEnable<cr>", "Enable treesitter context" },
+      t = { "<cmd>TSContextToggle<cr>", "Toggle treesitter context" },
+    },
+    u = { "<cmd>TSUpdate<cr>", "Update treesitter parsers" },
+  },
   t = {
     name = "toggle",
     e = { "<cmd>NvimTreeToggle<cr>", "Toggle file explorer" },
@@ -68,7 +78,7 @@ wk.register({
   },
   w = {
     name = "whitespace",
-    t = { "<cmd>RetrailTrimWhitespace<cr>", "Trim whitespace" },
+    x = { "<cmd>RetrailTrimWhitespace<cr>", "Trim whitespace" },
   },
   x = {
     name = "trouble",
