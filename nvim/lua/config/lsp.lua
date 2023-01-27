@@ -1,18 +1,16 @@
 -- LSP-colors
 require("lsp-colors").setup()
 
--- Language servers to be installed
-local servers = {
-  gopls = { settings = { gopls = { gofumpt = true } } },
-  jsonls = {},
-  pyright = {},
-  svelte = {},
-  tsserver = {},
-  yamlls = {},
-}
-
 require("mason-lspconfig").setup({
-  ensure_installed = servers,
+  ensure_installed = {
+    "denols",
+    "gopls",
+    "jsonls",
+    "pyright",
+    "svelte",
+    "tsserver",
+    "yamlls",
+  },
   automatic_installation = true,
 })
 
@@ -24,15 +22,36 @@ end
 local capabilities =
   require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
--- setup servers and map buffer local keybindings when the language server attaches
 local lspconfig = require("lspconfig")
-for k, v in pairs(servers) do
-  lspconfig[k].setup({
-    on_attach = on_attach,
-    capabilities = capabilities,
-    settings = v.settings,
-  })
-end
+require("mason-lspconfig").setup_handlers({
+  function(server_name)
+    lspconfig[server_name].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+    })
+  end,
+  ["gopls"] = function()
+    lspconfig.gopls.setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+      settings = { gopls = { gofumpt = true } },
+    })
+  end,
+  ["denols"] = function()
+    lspconfig.denols.setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+      root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
+    })
+  end,
+  ["tsserver"] = function()
+    lspconfig.tsserver.setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+      root_dir = lspconfig.util.root_pattern("package.json", "node_modules"),
+    })
+  end,
+})
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] =
   vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
