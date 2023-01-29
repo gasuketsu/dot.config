@@ -48,7 +48,8 @@ require("mason-lspconfig").setup_handlers({
     lspconfig.tsserver.setup({
       capabilities = capabilities,
       on_attach = on_attach,
-      root_dir = lspconfig.util.root_pattern("package.json", "node_modules"),
+      root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", "jsconfig.json"),
+      single_file_support = false,
     })
   end,
 })
