@@ -23,7 +23,7 @@ require("lazy").setup({
     "nvim-treesitter/nvim-treesitter-context",
     dependencies = { "nvim-treesitter/nvim-treesitter" },
   },
-  { "mrjones2014/nvim-ts-rainbow", dependencies = { "nvim-treesitter/nvim-treesitter" } },
+  { "HiPhish/nvim-ts-rainbow2", dependencies = { "nvim-treesitter/nvim-treesitter" } },
   { "windwp/nvim-ts-autotag", dependencies = { "nvim-treesitter/nvim-treesitter" } },
   {
     "JoosepAlviste/nvim-ts-context-commentstring",

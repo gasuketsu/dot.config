@@ -42,6 +42,16 @@ require("nvim-treesitter.configs").setup({
     enable = true,
     extended_mode = true,
     max_file_lines = nil,
+    hlgroups = {
+      "Red",
+      "Orange",
+      "Yellow",
+      "Green",
+      "Aqua",
+      "Blue",
+      "Purple",
+    },
+    strategy = require("ts-rainbow.strategy.global"),
   },
   autotag = {
     enable = true,
