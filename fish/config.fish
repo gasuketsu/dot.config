@@ -32,11 +32,7 @@ set -gx VIRTUAL_ENV_DISABLE_PROMPT 1
 fish_add_path $HOME/bin
 fish_add_path $HOME/.local/bin
 
-# asdf
-test -f $HOME/.asdf/asdf.fish
-and source $HOME/.asdf/asdf.fish
-
-# starship
 if status --is-interactive
+  rtx activate fish | source
   starship init fish | source
 end
