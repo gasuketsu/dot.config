@@ -2,86 +2,65 @@
 
 CWD=$PWD
 
-declare -A asdf_plugins
-while IFS='=' read -r key value; do
-  asdf_plugins["$key"]="$value"
-done < "$HOME/.config/asdf/asdf_plugins"
+mkdir -p "$HOME/.local/bin"
 
 # Fisher
 if type fish > /dev/null 2>&1 && ! fish -c "type fisher" > /dev/null 2>&1; then
   fish -c "curl -skL https://git.io/fisher | source && fisher update"
 fi
-
 # tpm
 if [ ! -d "$HOME/.config/tmux/plugins/tpm" ]; then
   git clone https://github.com/tmux-plugins/tpm "$HOME/.config/tmux/plugins/tpm"
 fi
-
 # clang-format
 if [ ! -e "$HOME/.clang-format" ]; then
   ln -s "$HOME/.config/clang-format/clang-format" "$HOME/.clang-format"
 fi
-
-# asdf
-if [ ! -d "$HOME/.asdf" ]; then
-  git clone https://github.com/asdf-vm/asdf.git "$HOME/.asdf"
+# .gitconfig
+if [ ! -e "$HOME/.gitconfig" ]; then
+  touch "$HOME/.gitconfig"
 fi
-
-if [ ! -e "$HOME/.config/fish/completions/asdf.fish" ]; then
-  mkdir -p "$HOME/.config/fish/completions"
-  ln -s "$HOME/.asdf/completions/asdf.fish" "$HOME/.config/fish/completions"
-fi
-
 # EditorConfig
 if [ ! -e "$HOME/.editorconfig" ]; then
   ln -s "$HOME/.config/editorconfig/editorconfig" "$HOME/.editorconfig"
 fi
 
+# rtx
+if ! type rtx > /dev/null 2>&1; then
+  curl https://rtx.pub/install.sh | sh
+fi
+
+if [ ! -e "$HOME/.local/bin/rtx" ]; then
+  ln -s "$HOME/.local/share/rtx/bin/rtx" "$HOME/.local/bin/rtx"
+fi
+
+if [ ! -e "$HOME/.rtx.toml" ]; then
+  ln -s "$HOME/.config/rtx/rtx.toml" "$HOME/.rtx.toml"
+fi
+
 # default python packages (asdf-python)
 if [ ! -e "$HOME/.default-python-packages" ]; then
-  ln -s "$HOME/.config/asdf/default-python-packages" "$HOME/.default-python-packages"
+  ln -s "$HOME/.config/rtx/default-python-packages" "$HOME/.default-python-packages"
 fi
-
 # default golang packages (asdf-golang)
 if [ ! -e "$HOME/.default-golang-pkgs" ]; then
-  ln -s "$HOME/.config/asdf/default-golang-pkgs" "$HOME/.default-golang-pkgs"
+  ln -s "$HOME/.config/rtx/default-golang-pkgs" "$HOME/.default-golang-pkgs"
 fi
-
 # default npm packages (asdf-nodejs)
 if [ ! -e "$HOME/.default-npm-packages" ]; then
-  ln -s "$HOME/.config/asdf/default-npm-packages" "$HOME/.default-npm-packages"
+  ln -s "$HOME/.config/rtx/default-npm-packages" "$HOME/.default-npm-packages"
 fi
-
-# .gitconfig
-if [ ! -e "$HOME/.gitconfig" ]; then
-  touch "$HOME/.gitconfig"
-fi
-
 # default go env (only when no env file exist)
 if [ ! -f "$HOME/.config/go/env" ]; then
+  mkdir -p "$HOME/.config/go"
   echo "GOBIN=$HOME/.local/bin" > "$HOME/.config/go/env"
 fi
 
-source "$HOME/.config/bash/config.bash"
-
-# update asdf to latest stable release
-asdf update
-
+source "$HOME/.config/bash/rc.bash"
 # install tools
-if [ -d "$HOME/.asdf" ]; then
-  # update installed plugins
-  asdf plugin-update --all
-
-  for plugin in "${!asdf_plugins[@]}"; do
-    echo "#### (asdf) installing plugin $plugin ..."
-    asdf plugin-add $plugin
-    filter="${asdf_plugins[$plugin]}"
-    version=$(asdf latest $plugin "$filter")
-    echo "#### (asdf) installing $plugin $version..."
-    asdf install $plugin $version
-    asdf global $plugin $version
-  done
-fi
+rtx install
+# generate completions
+rtx completion fish > ~/.config/fish/completions/rtx.fish
 
 # (python) install pipx packages
 echo "##### (python) (re)install pipx packages..."
