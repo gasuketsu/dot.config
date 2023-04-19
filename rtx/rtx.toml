@@ -1,7 +1,7 @@
 [tools]
 python = 'latest'
 golang = 'latest'
-nodejs = '18'
+nodejs = '20'
 starship = 'latest'
 bat = 'latest'
 fd = 'latest'
