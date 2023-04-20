@@ -38,15 +38,15 @@ if [ ! -f "$HOME/.tool-versions" ]; then
   cp "$HOME/.config/rtx/default-tool-versions" "$HOME/.tool-versions"
 fi
 
-# default python packages (asdf-python)
+# default python packages
 if [ ! -e "$HOME/.default-python-packages" ]; then
   ln -s "$HOME/.config/rtx/default-python-packages" "$HOME/.default-python-packages"
 fi
-# default golang packages (asdf-golang)
+# default golang packages
 if [ ! -e "$HOME/.default-golang-pkgs" ]; then
   ln -s "$HOME/.config/rtx/default-golang-pkgs" "$HOME/.default-golang-pkgs"
 fi
-# default npm packages (asdf-nodejs)
+# default npm packages
 if [ ! -e "$HOME/.default-npm-packages" ]; then
   ln -s "$HOME/.config/rtx/default-npm-packages" "$HOME/.default-npm-packages"
 fi
@@ -66,14 +66,14 @@ rtx completion fish > ~/.config/fish/completions/rtx.fish
 echo "##### (python) (re)install pipx packages..."
 export PATH="$HOME/.local/bin:$PATH"
 while read -r pkg; do
-  pipx install --force $pkg
+  rtx exec python --command "pipx install --force $pkg"
 done < "$HOME/.config/pipx/pipx_packages"
 
 # (python) venv for nvim python bindings
 echo "##### (python) reinitialize virtualenv for neovim python bindings..."
 cd "$HOME/.config/nvim/py3nvim"
-pipenv --rm
-pipenv install
+rtx exec python --command "pipenv --rm"
+rtx exec python --command "pipenv install"
 cd $CWD
 
 echo
