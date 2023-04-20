@@ -34,8 +34,8 @@ if [ ! -e "$HOME/.local/bin/rtx" ]; then
   ln -s "$HOME/.local/share/rtx/bin/rtx" "$HOME/.local/bin/rtx"
 fi
 
-if [ ! -e "$HOME/.rtx.toml" ]; then
-  ln -s "$HOME/.config/rtx/rtx.toml" "$HOME/.rtx.toml"
+if [ ! -f "$HOME/.tool-versions" ]; then
+  cp "$HOME/.config/rtx/default-tool-versions" "$HOME/.tool-versions"
 fi
 
 # default python packages (asdf-python)
@@ -82,5 +82,5 @@ echo " Finished setup"
 echo
 echo " To enable configuration in bash, make sure to add"
 echo " following line into your ~/.profile or ~/.bashrc"
-echo " source ~/.config/bash/config.bash"
+echo " source ~/.config/bash/rc.bash"
 echo "######################################################"
