@@ -5,6 +5,4 @@ if [ -d $HOME/.local/bin ] && ! echo $PATH | grep -q "$HOME/.local/bin"; then
   export PATH=$HOME/.local/bin:$PATH
 fi
 
-# asdf
-# [ -f "$HOME/.asdf/asdf.sh" ] && source "$HOME/.asdf/asdf.sh"
-[ -x "$HOME/.local/bin/rtx" ] && eval "$(rtx activate bash)"
+eval "$(rtx activate bash)"
