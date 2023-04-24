@@ -63,9 +63,3 @@ require("nvim-treesitter.configs").setup({
 })
 
 require("treesitter-context").setup()
-
-vim.api.nvim_create_augroup("TSRainbowRefresh", {})
-vim.api.nvim_create_autocmd({ "BufWritePost", "FocusGained" }, {
-  group = "TSRainbowRefresh",
-  command = "TSDisable rainbow | TSEnable rainbow",
-})
