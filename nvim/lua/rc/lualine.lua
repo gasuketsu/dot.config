@@ -32,14 +32,9 @@ require("lualine").setup({
         sources = { "nvim_lsp" },
       },
     },
-    lualine_x = {
-      {
-        require("noice").api.statusline.mode.get,
-        cond = require("noice").api.statusline.mode.has,
-      },
-      "encoding",
-      "fileformat",
-      "filetype",
+    lualine_c = {
+      { require("recorder").recordingStatus },
+      "filename",
     },
   },
 })
