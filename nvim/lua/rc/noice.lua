@@ -20,6 +20,15 @@ require("noice").setup({
       ["cmp.entry.get_documentation"] = true,
     },
   },
+  views = {
+    mini = {
+      align = "message-left",
+      size = {
+        width = "40%",
+        height = "auto",
+      },
+    },
+  },
 })
 
 require("telescope").load_extension("noice")
