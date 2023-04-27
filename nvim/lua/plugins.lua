@@ -31,6 +31,7 @@ require("lazy").setup({
   },
   { "folke/trouble.nvim", dependencies = { "kyazdani42/nvim-web-devicons" } },
   { "folke/which-key.nvim" },
+  { "folke/noice.nvim", dependencies = { "MunifTanjim/nui.nvim" } },
   { "mhartington/formatter.nvim" },
   -- Language specific
   "Vimjas/vim-python-pep8-indent",

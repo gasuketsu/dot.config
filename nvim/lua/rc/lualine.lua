@@ -4,6 +4,9 @@ local get_color = require("lualine.utils.utils").extract_highlight_colors
 require("lualine").setup({
   options = {
     theme = "gruvbox-material",
+    refresh = {
+      statusline = 500,
+    },
   },
   sections = {
     lualine_b = {
@@ -28,6 +31,15 @@ require("lualine").setup({
         },
         sources = { "nvim_lsp" },
       },
+    },
+    lualine_x = {
+      {
+        require("noice").api.statusline.mode.get,
+        cond = require("noice").api.statusline.mode.has,
+      },
+      "encoding",
+      "fileformat",
+      "filetype",
     },
   },
 })

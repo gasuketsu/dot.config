@@ -14,6 +14,7 @@ wk.register({
     f = { "<cmd>Telescope find_files<cr>", "Find files" },
     g = { "<cmd>Telescope git_files<cr>", "Find git files" },
     h = { "<cmd>Telescope help_tags<cr>", "Find help tags" },
+    n = { "<cmd>Telescope noice<cr>", "Find noice message history" },
     p = { "<cmd>Telescope projects<cr>", "Find projects" },
   },
   g = {
