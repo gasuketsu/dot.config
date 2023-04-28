@@ -7,26 +7,26 @@ Manages configurations stored under `~/.config`.
 ### Debian/Ubuntu
 
 ```
-sudo apt install build-essential zlib1g-dev libffi-dev libssl-dev libbz2-dev libncursesw5-dev libgdbm-dev liblzma-dev libsqlite3-dev uuid-dev libreadline-dev liblzma-dev tk-dev xclip curl zip unzip
+sudo apt install git fish tmux build-essential zlib1g-dev libffi-dev libssl-dev libbz2-dev libncursesw5-dev libgdbm-dev liblzma-dev libsqlite3-dev uuid-dev libreadline-dev liblzma-dev tk-dev xclip curl zip unzip ncurses-term
 ```
 
 Following is optional for tmux build
 
 ```
-sudo apt install automake pkg-config bison ncurses-term
+sudo apt install automake pkg-config bison
 ```
 
 ### openSUSE
 
 ```
 sudo zypper install -t pattern devel_basis
-sudo zypper install dirmngr gcc-c++ xz bzip2 libbz2-devel libopenssl-devel readline-devel libffi-devel sqlite3-devel xz-devel tk-devel xclip curl zip unzip
+sudo zypper install git fish tmux dirmngr gcc-c++ xz bzip2 libbz2-devel libopenssl-devel readline-devel libffi-devel sqlite3-devel xz-devel tk-devel xclip curl zip unzip terminfo
 ```
 
 Following is optional for tmux build
 
 ```
-sudo zypper install terminfo pkg-config bison
+sudo zypper install pkg-config bison
 ```
 
 ## Installation and setup
@@ -40,7 +40,7 @@ git clone https://github.com/gasuketsu/dot.config ~/.config
 ~/.config/setup.sh
 ```
 
-To enable configuration in bash, make sure to source `~/.config/bash/config.bash`
+To enable configuration in bash, make sure to source `~/.config/bash/rc.bash`
 in your `.profile` or `.bashrc` after running setup script.
 
 In WSL environment, you also need to set `DISPLAY` for sharing clipboard
