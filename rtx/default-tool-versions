@@ -6,7 +6,6 @@ bat latest
 fd latest
 fzf latest
 ripgrep latest
-gitui latest
 jq latest
 stylua latest
 xh latest
