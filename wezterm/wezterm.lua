@@ -167,5 +167,25 @@ return {
       mods = "CTRL|ALT",
       action = act.SendKey({ key = "f", mods = "CTRL|ALT" }),
     },
+    {
+      key = "|",
+      mods = "CTRL|ALT|SHIFT",
+      action = wezterm.action({ SplitHorizontal = { domain = "CurrentPaneDomain" }}),
+    },
+    {
+      key = "_",
+      mods = "CTRL|ALT|SHIFT",
+      action = wezterm.action({ SplitVertical = { domain = "CurrentPaneDomain" }}),
+    },
+    {
+      key = "%",
+      mods = "CTRL|ALT|SHIFT",
+      action = act.SendKey({ key = "%", mods = "CTRL|ALT" }),
+    },
+    {
+      key = "\"",
+      mods = "CTRL|ALT|SHIFT",
+      action = act.SendKey({ key = "\"", mods = "CTRL|ALT" }),
+    },
   },
 }
