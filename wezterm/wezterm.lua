@@ -37,7 +37,8 @@ return {
   font_size = 12,
   freetype_load_target = "Normal",
   freetype_load_flags = "DEFAULT",
-  window_background_opacity = 0.99,
+  window_background_opacity = 0.95,
+  text_background_opacity = 0.95,
   adjust_window_size_when_changing_font_size = false,
   color_scheme = "Gruvbox-Mix",
   window_frame = {
