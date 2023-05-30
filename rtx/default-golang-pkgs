@@ -3,3 +3,5 @@ mvdan.cc/gofumpt@latest
 github.com/fatih/gomodifytags@latest
 github.com/josharian/impl@latest
 github.com/segmentio/golines@latest
+github.com/brimdata/zed/cmd/zed@latest
+github.com/brimdata/zed/cmd/zq@latest
