@@ -6,7 +6,6 @@ bat latest
 fd latest
 fzf latest
 ripgrep latest
-jq latest
 stylua latest
 xh latest
 neovim latest
