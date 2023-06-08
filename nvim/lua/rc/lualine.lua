@@ -27,6 +27,7 @@ require("lualine").setup({
           hint = { fg = get_color("DiagnosticSignHint", "fg") },
         },
         sources = { "nvim_lsp" },
+        symbols = { error = " ", warn = " ", info = " ", hint = " " },
       },
     },
     lualine_c = {
