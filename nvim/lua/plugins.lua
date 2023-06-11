@@ -37,10 +37,13 @@ require("lazy").setup({
   -- Language specific
   "Vimjas/vim-python-pep8-indent",
   {
-    "crispgm/nvim-go",
+    "ray-x/go.nvim",
     dependencies = {
-      "nvim-lua/plenary.nvim",
+      "ray-x/guihua.lua",
     },
+    build = function()
+      require("go.install").update_all_sync()
+    end,
   },
   -- LSP
   "williamboman/mason.nvim",
