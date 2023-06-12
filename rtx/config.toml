@@ -1,2 +1,15 @@
 [settings]
 experimental = true
+
+[tools]
+bat = "latest"
+fd = "latest"
+fzf = "latest"
+golang = "latest"
+neovim = "latest"
+nodejs = "20"
+python = "latest"
+ripgrep = "latest"
+starship = "latest"
+stylua = "latest"
+xh = "latest"

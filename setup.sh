@@ -34,10 +34,6 @@ if [ ! -e "$HOME/.local/bin/rtx" ]; then
   ln -s "$HOME/.local/share/rtx/bin/rtx" "$HOME/.local/bin/rtx"
 fi
 
-if [ ! -f "$HOME/.tool-versions" ]; then
-  cp "$HOME/.config/rtx/default-tool-versions" "$HOME/.tool-versions"
-fi
-
 # default python packages
 if [ ! -e "$HOME/.default-python-packages" ]; then
   ln -s "$HOME/.config/rtx/default-python-packages" "$HOME/.default-python-packages"
