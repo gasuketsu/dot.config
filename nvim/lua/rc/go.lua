@@ -1,15 +1,13 @@
 require("go").setup({
-  auto_lint = false,
-  formatter = "lsp",
-  tags_options = {},
+  lsp_gofumpt = true,
 })
 
--- Treat *.mod files as gomod file
-vim.api.nvim_clear_autocmds({
-  event = { "BufRead", "BufNewFile" },
-  pattern = { "*.mod", "*.MOD" },
-})
-vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-  pattern = { "*.mod", "*.MOD" },
-  command = "set filetype=gomod",
+-- Run gofmt on save
+local format_sync_grp = vim.api.nvim_create_augroup("GoFormat", {})
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*.go",
+  callback = function()
+    require("go.format").gofmt()
+  end,
+  group = format_sync_grp,
 })
