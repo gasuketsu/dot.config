@@ -2,6 +2,7 @@ local wezterm = require("wezterm")
 local act = wezterm.action
 
 local launch_menu = {}
+local font_family = "UDEV Gothic NF"
 
 if wezterm.target_triple == "x86_64-pc-windows-msvc" then
   table.insert(launch_menu, {
@@ -18,20 +19,20 @@ return {
   launch_menu = launch_menu,
 
   ime_preedit_rendering = "System",
-  font = wezterm.font("UDEV Gothic NF Regular"),
+  font = wezterm.font({ family = font_family }),
   font_rules = {
     {
       intensity = "Bold",
-      font = wezterm.font("UDEV Gothic NF Bold"),
+      font = wezterm.font({ family = font_family, weight = "Bold" }),
     },
     {
       italic = true,
-      font = wezterm.font("UDEV Gothic NF Italic"),
+      font = wezterm.font({ family = font_family, style = "Italic" }),
     },
     {
       italic = true,
       intensity = "Bold",
-      font = wezterm.font("UDEV Gothic NF Bold Italic"),
+      font = wezterm.font({ family = font_family, weight = "Bold", style = "Italic" }),
     },
   },
   font_size = 12,
@@ -171,12 +172,12 @@ return {
     {
       key = "|",
       mods = "CTRL|ALT|SHIFT",
-      action = wezterm.action({ SplitHorizontal = { domain = "CurrentPaneDomain" }}),
+      action = wezterm.action({ SplitHorizontal = { domain = "CurrentPaneDomain" } }),
     },
     {
       key = "_",
       mods = "CTRL|ALT|SHIFT",
-      action = wezterm.action({ SplitVertical = { domain = "CurrentPaneDomain" }}),
+      action = wezterm.action({ SplitVertical = { domain = "CurrentPaneDomain" } }),
     },
     {
       key = "%",
@@ -184,9 +185,9 @@ return {
       action = act.SendKey({ key = "%", mods = "CTRL|ALT" }),
     },
     {
-      key = "\"",
+      key = '"',
       mods = "CTRL|ALT|SHIFT",
-      action = act.SendKey({ key = "\"", mods = "CTRL|ALT" }),
+      action = act.SendKey({ key = '"', mods = "CTRL|ALT" }),
     },
   },
 }
