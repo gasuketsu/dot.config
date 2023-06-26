@@ -98,7 +98,7 @@ return {
       selection_bg = "#928374",
       split = "#f2e5bc",
       ansi = {
-        "#32302f", -- Black
+        "#5a524c", -- Black
         "#cd4538", -- Red
         "#959c36", -- Green
         "#c69431", -- Yellow
@@ -108,7 +108,7 @@ return {
         "#e5d5ad", -- White
       },
       brights = {
-        "#45403d", -- BrightBlack
+        "#665c54", -- BrightBlack
         "#f2594b", -- BrightRed
         "#b0b846", -- BrightGreen
         "#e9b143", -- BrightYellow
