@@ -33,7 +33,6 @@ require("lazy").setup({
   { "folke/trouble.nvim", dependencies = { "kyazdani42/nvim-web-devicons" } },
   { "folke/which-key.nvim" },
   { "folke/noice.nvim", dependencies = { "MunifTanjim/nui.nvim" } },
-  { "mhartington/formatter.nvim" },
   -- Language specific
   "Vimjas/vim-python-pep8-indent",
   {
@@ -51,6 +50,7 @@ require("lazy").setup({
   "ray-x/lsp_signature.nvim",
   "onsails/lspkind-nvim",
   "folke/lsp-colors.nvim",
+  { "jose-elias-alvarez/null-ls.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
   -- Completion
   "hrsh7th/nvim-cmp",
   "hrsh7th/cmp-nvim-lsp",
