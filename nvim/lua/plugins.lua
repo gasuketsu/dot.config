@@ -7,7 +7,7 @@ require("lazy").setup({
   "numToStr/Comment.nvim",
   "kylechui/nvim-surround",
   "chrisgrieser/nvim-recorder",
-  { "TimUntersberger/neogit", dependencies = "nvim-lua/plenary.nvim" },
+  { "NeogitOrg/neogit", dependencies = "nvim-lua/plenary.nvim" },
   "zakharykaplan/nvim-retrail",
   "lewis6991/gitsigns.nvim",
   { "sindrets/diffview.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
