@@ -29,7 +29,7 @@ require("noice").setup({
       size = {
         width = "50%",
         height = "auto",
-        max_height = 10,
+        max_height = 8,
       },
     },
   },
