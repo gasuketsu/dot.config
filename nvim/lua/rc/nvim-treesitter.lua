@@ -39,21 +39,6 @@ require("nvim-treesitter.configs").setup({
     enable = true, -- false will disable the whole extension
     disable = { "elixir" }, -- list of language that will be disabled
   },
-  rainbow = {
-    enable = true,
-    extended_mode = true,
-    max_file_lines = nil,
-    hlgroups = {
-      "Red",
-      "Orange",
-      "Yellow",
-      "Green",
-      "Aqua",
-      "Blue",
-      "Purple",
-    },
-    strategy = require("ts-rainbow.strategy.global"),
-  },
   autotag = {
     enable = true,
   },
@@ -64,9 +49,3 @@ require("nvim-treesitter.configs").setup({
 })
 
 require("treesitter-context").setup()
-
-vim.api.nvim_create_augroup("TSRainbowRefresh", {})
-vim.api.nvim_create_autocmd({ "BufWritePost", "FocusGained" }, {
-  group = "TSRainbowRefresh",
-  command = "TSDisable rainbow | TSEnable rainbow",
-})

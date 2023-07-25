@@ -24,12 +24,12 @@ require("lazy").setup({
     "nvim-treesitter/nvim-treesitter-context",
     dependencies = { "nvim-treesitter/nvim-treesitter" },
   },
-  { "HiPhish/nvim-ts-rainbow2", dependencies = { "nvim-treesitter/nvim-treesitter" } },
   { "windwp/nvim-ts-autotag", dependencies = { "nvim-treesitter/nvim-treesitter" } },
   {
     "JoosepAlviste/nvim-ts-context-commentstring",
     dependencies = { "nvim-treesitter/nvim-treesitter" },
   },
+  "HiPhish/rainbow-delimiters.nvim",
   { "folke/trouble.nvim", dependencies = { "kyazdani42/nvim-web-devicons" } },
   { "folke/which-key.nvim" },
   { "folke/noice.nvim", dependencies = { "MunifTanjim/nui.nvim" } },
