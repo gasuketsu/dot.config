@@ -1,7 +1,5 @@
 [init]
 	defaultBranch = main
-[core]
-	pager = bat -p
 [push]
 	default = simple
 [pull]
