@@ -1,5 +1,2 @@
-black
-flake8
 httpie
 podman-compose
-ruff
