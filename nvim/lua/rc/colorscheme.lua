@@ -16,4 +16,4 @@ vim.g.everforest_transparent_background = 0
 vim.g.everforest_better_performance = 1
 
 vim.opt.background = "dark"
-vim.cmd("colorscheme gruvbox-material")
+vim.cmd("colorscheme everforest")

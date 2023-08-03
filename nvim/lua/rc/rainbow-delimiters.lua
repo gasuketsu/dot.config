@@ -8,7 +8,6 @@ vim.g.rainbow_delimiters = {
   },
   query = {
     [""] = "rainbow-delimiters",
-    lua = "rainbow-blocks",
   },
   highlight = {
     "Red",
