@@ -14,7 +14,7 @@ if [ ! -d "$HOME/.config/tmux/plugins/tpm" ]; then
 fi
 # clang-format
 if [ ! -e "$HOME/.clang-format" ]; then
-  ln -s "$HOME/.config/clang-format/clang-format" "$HOME/.clang-format"
+  cp "$HOME/.config/clang-format/clang-format" "$HOME/.clang-format"
 fi
 # .gitconfig
 if [ ! -e "$HOME/.gitconfig" ]; then
@@ -22,7 +22,7 @@ if [ ! -e "$HOME/.gitconfig" ]; then
 fi
 # EditorConfig
 if [ ! -e "$HOME/.editorconfig" ]; then
-  ln -s "$HOME/.config/editorconfig/editorconfig" "$HOME/.editorconfig"
+  cp "$HOME/.config/editorconfig/editorconfig" "$HOME/.editorconfig"
 fi
 
 # rtx
@@ -36,15 +36,15 @@ fi
 
 # default python packages
 if [ ! -e "$HOME/.default-python-packages" ]; then
-  ln -s "$HOME/.config/rtx/default-python-packages" "$HOME/.default-python-packages"
+  cp "$HOME/.config/rtx/default-python-packages" "$HOME/.default-python-packages"
 fi
 # default golang packages
 if [ ! -e "$HOME/.default-go-packages" ]; then
-  ln -s "$HOME/.config/rtx/default-go-packages" "$HOME/.default-go-packages"
+  cp "$HOME/.config/rtx/default-go-packages" "$HOME/.default-go-packages"
 fi
 # default npm packages
 if [ ! -e "$HOME/.default-npm-packages" ]; then
-  ln -s "$HOME/.config/rtx/default-npm-packages" "$HOME/.default-npm-packages"
+  cp "$HOME/.config/rtx/default-npm-packages" "$HOME/.default-npm-packages"
 fi
 # default go env (only when no env file exist)
 if [ ! -f "$HOME/.config/go/env" ]; then
