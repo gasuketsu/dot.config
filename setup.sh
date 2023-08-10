@@ -39,8 +39,8 @@ if [ ! -e "$HOME/.default-python-packages" ]; then
   ln -s "$HOME/.config/rtx/default-python-packages" "$HOME/.default-python-packages"
 fi
 # default golang packages
-if [ ! -e "$HOME/.default-golang-pkgs" ]; then
-  ln -s "$HOME/.config/rtx/default-golang-pkgs" "$HOME/.default-golang-pkgs"
+if [ ! -e "$HOME/.default-go-packages" ]; then
+  ln -s "$HOME/.config/rtx/default-go-packages" "$HOME/.default-go-packages"
 fi
 # default npm packages
 if [ ! -e "$HOME/.default-npm-packages" ]; then
