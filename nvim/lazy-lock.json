@@ -45,7 +45,7 @@
   "plenary.nvim": { "branch": "master", "commit": "0dbe561ae023f02c2fb772b879e905055b939ce3" },
   "project.nvim": { "branch": "main", "commit": "8c6bad7d22eef1b71144b401c9f74ed01526a4fb" },
   "qf_helper.nvim": { "branch": "master", "commit": "39480c33624c78a596a33adce86bee019725b687" },
-  "rainbow-delimiters.nvim": { "branch": "master", "commit": "adfb780b356d7538c576f782350f2488a73d9cd6" },
+  "rainbow-delimiters.nvim": { "branch": "master", "commit": "f30dd6c58eddca41ed9a9b112aa4be4828939c4d" },
   "telescope.nvim": { "branch": "master", "commit": "2d92125620417fbea82ec30303823e3cd69e90e8" },
   "trouble.nvim": { "branch": "main", "commit": "40aad004f53ae1d1ba91bcc5c29d59f07c5f01d3" },
   "vim-python-pep8-indent": { "branch": "master", "commit": "60ba5e11a61618c0344e2db190210145083c91f8" },

@@ -27,7 +27,7 @@ require("noice").setup({
     mini = {
       align = "message-left",
       size = {
-        width = "50%",
+        width = "40%",
         height = "auto",
         max_height = 8,
       },
