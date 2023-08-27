@@ -33,6 +33,7 @@ require("lazy").setup({
   { "folke/trouble.nvim", dependencies = { "kyazdani42/nvim-web-devicons" } },
   { "folke/which-key.nvim" },
   { "folke/noice.nvim", dependencies = { "MunifTanjim/nui.nvim" } },
+  { "stevearc/dressing.nvim" },
   { "mhartington/formatter.nvim" },
   { "mfussenegger/nvim-dap" },
   { "rcarriga/nvim-dap-ui" },
