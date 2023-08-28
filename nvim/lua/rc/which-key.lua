@@ -56,12 +56,7 @@ wk.register({
     a = { vim.lsp.buf.code_action, "Code Action" },
     d = { vim.lsp.buf.type_definition, "Display type Definition" },
     e = { vim.diagnostic.open_float, "Show diagnostics in floating window" },
-    l = {
-      name = "CodeLens",
-      a = { vim.lsp.codelens.run, "Run CodeLens action" },
-      c = { vim.lsp.codelens.clear, "Clear CodeLens" },
-      r = { vim.lsp.codelens.refresh, "Refresh CodeLens" },
-    },
+    l = { vim.lsp.codelens.run, "Run CodeLens action" },
     r = { vim.lsp.buf.rename, "Rename symbol" },
     q = { vim.diagnostic.setqflist, "Add all diagnostics to quickfix list" },
     s = { "<cmd>Telescope lsp_document_symbols<cr>", "Find symbols in current buffer" },
