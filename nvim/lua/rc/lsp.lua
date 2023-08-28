@@ -14,17 +14,9 @@ require("mason-lspconfig").setup({
   automatic_installation = true,
 })
 
-vim.api.nvim_create_autocmd("User", {
-  pattern = "LspAttached",
-  once = true,
-  callback = vim.lsp.codelens.refresh,
-})
-
 local on_attach = function(client, bufnr)
   -- things to be done only when LSP server attached
   require("lsp_signature").on_attach({ hint_prefix = " " })
-
-  vim.api.nvim_exec_autocmds("User", { pattern = "LspAttached" })
 end
 
 local capabilities =
@@ -74,3 +66,8 @@ vim.fn.sign_define("DiagnosticSignError", { text = " ", texthl = "DiagnosticS
 vim.fn.sign_define("DiagnosticSignWarn", { text = " ", texthl = "DiagnosticSignWarn" })
 vim.fn.sign_define("DiagnosticSignInfo", { text = " ", texthl = "DiagnosticSignInfo" })
 vim.fn.sign_define("DiagnosticSignHint", { text = " ", texthl = "DiagnosticSignHint" })
+
+-- Autocommands
+vim.api.nvim_create_autocmd({ "CursorHold", "InsertLeave" }, {
+  callback = vim.lsp.codelens.refresh,
+})
