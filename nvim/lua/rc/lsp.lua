@@ -14,9 +14,17 @@ require("mason-lspconfig").setup({
   automatic_installation = true,
 })
 
+vim.api.nvim_create_autocmd("User", {
+  pattern = "LspAttached",
+  once = true,
+  callback = vim.lsp.codelens.refresh,
+})
+
 local on_attach = function(client, bufnr)
   -- things to be done only when LSP server attached
   require("lsp_signature").on_attach({ hint_prefix = " " })
+
+  vim.api.nvim_exec_autocmds("User", { pattern = "LspAttached" })
 end
 
 local capabilities =
