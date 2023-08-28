@@ -58,9 +58,9 @@ wk.register({
     e = { vim.diagnostic.open_float, "Show diagnostics in floating window" },
     l = {
       name = "CodeLens",
+      a = { vim.lsp.codelens.run, "Run CodeLens action" },
       c = { vim.lsp.codelens.clear, "Clear CodeLens" },
       r = { vim.lsp.codelens.refresh, "Refresh CodeLens" },
-      x = { vim.lsp.codelens.run, "Run CodeLens" },
     },
     r = { vim.lsp.buf.rename, "Rename symbol" },
     q = { vim.diagnostic.setqflist, "Add all diagnostics to quickfix list" },
