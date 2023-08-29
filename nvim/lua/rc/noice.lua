@@ -12,6 +12,9 @@ require("noice").setup({
   popupmenu = {
     backend = "cmp",
   },
+  notify = {
+    backend = "mini",
+  },
   lsp = {
     -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
     override = {
@@ -22,14 +25,31 @@ require("noice").setup({
     signature = {
       enabled = false,
     },
+    presets = {
+      lsp_doc_border = true,
+    },
   },
   views = {
     mini = {
       align = "message-left",
+      position = {
+        row = -2,
+        col = "100%",
+      },
       size = {
         width = "40%",
         height = "auto",
         max_height = 8,
+      },
+      win_options = {
+        winblend = 20,
+        winhighlight = {
+          Normal = "NormalFloat",
+          FloatBorder = "NormalFloat",
+        },
+      },
+      border = {
+        style = "rounded",
       },
     },
   },
