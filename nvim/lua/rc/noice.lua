@@ -49,7 +49,7 @@ require("noice").setup({
         },
       },
       border = {
-        style = "rounded",
+        style = "none",
       },
     },
   },
