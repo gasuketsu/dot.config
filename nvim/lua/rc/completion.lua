@@ -11,16 +11,6 @@ local source_map = {
 }
 
 cmp.setup({
-  window = {
-    completion = cmp.config.window.bordered({
-      border = "rounded",
-      winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,CursorLine:PmenuSel,Search:None",
-    }),
-    documentation = cmp.config.window.bordered({
-      border = "rounded",
-      winhighlight = "FloatBorder:NormalFloat",
-    }),
-  },
   snippet = {
     -- REQUIRED - you must specify a snippet engine
     expand = function(args)
