@@ -44,8 +44,8 @@ require("noice").setup({
       win_options = {
         winblend = 10,
         winhighlight = {
-          Normal = "NormalFloat",
-          FloatBorder = "NormalFloat",
+          Normal = "Normal",
+          FloatBorder = "Normal",
         },
       },
       border = {
