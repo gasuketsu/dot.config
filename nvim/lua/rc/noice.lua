@@ -42,14 +42,14 @@ require("noice").setup({
         max_height = 8,
       },
       win_options = {
-        winblend = 20,
+        winblend = 10,
         winhighlight = {
           Normal = "NormalFloat",
           FloatBorder = "NormalFloat",
         },
       },
       border = {
-        style = "none",
+        style = "rounded",
       },
     },
   },
