@@ -66,6 +66,7 @@ require("lazy").setup({
   -- Statusline
   "nvim-lualine/lualine.nvim",
   -- ColorSchemes
-  "sainnhe/gruvbox-material",
-  "sainnhe/everforest",
+  "rebelot/kanagawa.nvim",
+  { "sainnhe/gruvbox-material", enabled = false },
+  { "sainnhe/everforest", enabled = false },
 })
