@@ -23,7 +23,6 @@ vim.g.loaded_perl_provider = 0
 
 -- Display configuration
 vim.opt.shortmess:append({ c = true, I = true })
-vim.opt.shellslash = true
 vim.opt.encoding = "utf-8"
 vim.opt.fileencodings = "utf-8,euc-jp,sjis,cp932,iso-2022-jp"
 vim.opt.listchars = "tab:> ,trail:·,nbsp:+"
