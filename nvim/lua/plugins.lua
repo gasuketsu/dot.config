@@ -34,7 +34,7 @@ require("lazy").setup({
   { "folke/which-key.nvim" },
   { "folke/noice.nvim", dependencies = { "MunifTanjim/nui.nvim" } },
   { "stevearc/dressing.nvim" },
-  { "mhartington/formatter.nvim" },
+  { "nvimdev/guard.nvim" },
   { "mfussenegger/nvim-dap" },
   { "rcarriga/nvim-dap-ui" },
   { "theHamsta/nvim-dap-virtual-text" },

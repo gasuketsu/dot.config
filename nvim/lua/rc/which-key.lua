@@ -117,7 +117,7 @@ wk.register({
     l = { "<cmd>LLNext<cr>", "Next loclist" },
     q = { "<cmd>QFNext<cr>", "Next quickfix" },
   },
-  ["<M-f>"] = { "<cmd>Format<CR>", "Format file" },
+  ["<M-f>"] = { "<cmd>GuardFmt<CR>", "Format file" },
   ["<M-[>"] = { "<cmd>BufferLineCyclePrev<cr>", "Prev Buffer" },
   ["<M-]>"] = { "<cmd>BufferLineCycleNext<cr>", "Next Buffer" },
   ["<C-l>"] = { "<cmd>nohl<cr>", "Clear highlight" },
