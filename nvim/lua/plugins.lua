@@ -1,6 +1,6 @@
 require("lazy").setup({
-  { "kyazdani42/nvim-tree.lua", dependencies = { "kyazdani42/nvim-web-devicons" } },
-  { "akinsho/bufferline.nvim", dependencies = { "kyazdani42/nvim-web-devicons" } },
+  { "nvim-tree/nvim-tree.lua", dependencies = { "nvim-tree/nvim-web-devicons" } },
+  { "akinsho/bufferline.nvim", dependencies = { "nvim-tree/nvim-web-devicons" } },
   "stevearc/qf_helper.nvim",
   "kevinhwang91/nvim-bqf",
   "gpanders/editorconfig.nvim",
@@ -30,7 +30,7 @@ require("lazy").setup({
     dependencies = { "nvim-treesitter/nvim-treesitter" },
   },
   "HiPhish/rainbow-delimiters.nvim",
-  { "folke/trouble.nvim", dependencies = { "kyazdani42/nvim-web-devicons" } },
+  { "folke/trouble.nvim", dependencies = { "nvim-tree/nvim-web-devicons" } },
   { "folke/which-key.nvim" },
   { "folke/noice.nvim", dependencies = { "MunifTanjim/nui.nvim" } },
   { "stevearc/dressing.nvim" },
