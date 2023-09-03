@@ -55,6 +55,7 @@ require("lazy").setup({
   "ray-x/lsp_signature.nvim",
   "onsails/lspkind-nvim",
   "folke/lsp-colors.nvim",
+  "simrat39/symbols-outline.nvim",
   -- Completion
   "hrsh7th/nvim-cmp",
   "hrsh7th/cmp-nvim-lsp",

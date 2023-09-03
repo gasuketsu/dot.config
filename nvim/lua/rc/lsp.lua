@@ -1,5 +1,5 @@
--- LSP-colors
 require("lsp-colors").setup()
+require("symbols-outline").setup()
 
 require("mason-lspconfig").setup({
   ensure_installed = {

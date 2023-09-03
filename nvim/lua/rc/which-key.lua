@@ -57,6 +57,7 @@ wk.register({
     d = { vim.lsp.buf.type_definition, "Display type Definition" },
     e = { vim.diagnostic.open_float, "Show diagnostics in floating window" },
     l = { vim.lsp.codelens.run, "Run CodeLens action" },
+    o = { "<cmd>SymbolsOutline<cr>", "Toggle Symbol Outline" },
     r = { vim.lsp.buf.rename, "Rename symbol" },
     q = { vim.diagnostic.setqflist, "Add all diagnostics to quickfix list" },
     s = { "<cmd>Telescope lsp_document_symbols<cr>", "Find symbols in current buffer" },
