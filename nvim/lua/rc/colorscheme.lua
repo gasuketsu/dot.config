@@ -1,13 +1,12 @@
 vim.opt.termguicolors = true
 
-require("kanagawa").setup({
-  compile = false,
-  keywordStyle = { italic = false },
-  theme = "dragon",
-  background = {
-    dark = "dragon",
-    light = "lotus",
+require("nightfox").setup({
+  options = {
+    styles = {
+      comments = "italic",
+      types = "bold",
+    },
   },
 })
 
-vim.cmd("colorscheme kanagawa")
+vim.cmd("colorscheme nordfox")

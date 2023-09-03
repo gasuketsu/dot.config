@@ -66,5 +66,5 @@ require("lazy").setup({
   -- Statusline
   "nvim-lualine/lualine.nvim",
   -- ColorSchemes
-  "rebelot/kanagawa.nvim",
+  { "EdenEast/nightfox.nvim" },
 })

@@ -13,7 +13,6 @@ vim.opt.runtimepath:prepend(lazypath)
 vim.g.mapleader = " "
 
 require("plugins")
-require("rc.colorscheme")
 
 -- Provider configuration
 vim.g.python3_host_prog = vim.fn.expand("~/.config/nvim/py3nvim/.venv/bin/python")
@@ -89,6 +88,7 @@ vim.opt.smartcase = true
 vim.opt.wrapscan = true
 vim.opt.inccommand = "split"
 
+require("rc.colorscheme")
 require("rc.lualine")
 require("rc.bufferline")
 require("rc.qf_helper")

@@ -2,9 +2,6 @@
 local get_color = require("lualine.utils.utils").extract_highlight_colors
 
 require("lualine").setup({
-  options = {
-    theme = "kanagawa",
-  },
   sections = {
     lualine_b = {
       { "branch" },
