@@ -43,10 +43,6 @@ require("noice").setup({
       },
       win_options = {
         winblend = 20,
-        winhighlight = {
-          Normal = "NormalFloat",
-          FloatBorder = "NormalFloat",
-        },
       },
       border = {
         style = "none",
