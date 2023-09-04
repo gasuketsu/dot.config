@@ -1,14 +1,5 @@
 vim.opt.termguicolors = true
 
-require("nightfox").setup({
-  options = {
-    styles = {
-      comments = "italic",
-      types = "bold",
-    },
-  },
-})
-
 require("kanagawa").setup({
   keywordStyle = { italic = false },
   colors = {
@@ -16,9 +7,10 @@ require("kanagawa").setup({
       samuraiRed = "#c34043", -- apply autumnRed
     },
   },
-  theme = "dragon",
+  terminalColors = false,
+  theme = "wave",
   background = {
-    dark = "dragon",
+    dark = "wave",
     light = "lotus",
   },
 })
