@@ -13,7 +13,7 @@ require("kanagawa").setup({
   keywordStyle = { italic = false },
   colors = {
     palette = {
-      samuraiRed = "#d7474b",
+      samuraiRed = "#c34043", -- apply autumnRed
     },
   },
   theme = "dragon",
