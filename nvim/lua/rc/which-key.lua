@@ -77,6 +77,7 @@ wk.register({
     e = { "<cmd>NvimTreeToggle<cr>", "Toggle file explorer" },
     l = { "<cmd>LLToggle!<cr>", "Toggle loclist" },
     q = { "<cmd>QFToggle!<cr>", "Toggle quickfix" },
+    t = { "<cmd>ToggleTerm<cr>", "Toggle Terminal" },
     x = { "<cmd>TroubleToggle<cr>", "Toggle Trouble" },
   },
   w = {

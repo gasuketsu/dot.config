@@ -37,6 +37,7 @@ require("lazy").setup({
   { "mfussenegger/nvim-dap" },
   { "rcarriga/nvim-dap-ui" },
   { "theHamsta/nvim-dap-virtual-text" },
+  { "akinsho/toggleterm.nvim" },
   -- Language specific
   "Vimjas/vim-python-pep8-indent",
   {
