@@ -11,6 +11,11 @@ require("nightfox").setup({
 
 require("kanagawa").setup({
   keywordStyle = { italic = false },
+  colors = {
+    palette = {
+      samuraiRed = "#d7474b",
+    },
+  },
   theme = "dragon",
   background = {
     dark = "dragon",
