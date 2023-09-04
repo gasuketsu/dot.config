@@ -29,7 +29,7 @@ vim.opt.number = true
 vim.opt.cursorline = true
 vim.opt.wrap = true
 vim.opt.list = true
-vim.opt.listchars:append("trail:⋅")
+vim.opt.listchars:append("trail:·")
 vim.opt.ambiwidth = "single"
 
 vim.opt.cmdheight = 2
