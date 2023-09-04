@@ -29,7 +29,6 @@ require("lazy").setup({
     "JoosepAlviste/nvim-ts-context-commentstring",
     dependencies = { "nvim-treesitter/nvim-treesitter" },
   },
-  "HiPhish/rainbow-delimiters.nvim",
   { "folke/trouble.nvim", dependencies = { "nvim-tree/nvim-web-devicons" } },
   { "folke/which-key.nvim" },
   { "folke/noice.nvim", dependencies = { "MunifTanjim/nui.nvim" } },
@@ -68,4 +67,5 @@ require("lazy").setup({
   "nvim-lualine/lualine.nvim",
   -- ColorSchemes
   { "EdenEast/nightfox.nvim" },
+  { "rebelot/kanagawa.nvim" },
 })

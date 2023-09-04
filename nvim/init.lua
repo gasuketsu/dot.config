@@ -24,12 +24,12 @@ vim.g.loaded_perl_provider = 0
 vim.opt.shortmess:append({ c = true, I = true })
 vim.opt.encoding = "utf-8"
 vim.opt.fileencodings = "utf-8,euc-jp,sjis,cp932,iso-2022-jp"
-vim.opt.listchars = "tab:> ,trail:·,nbsp:+"
 
 vim.opt.number = true
 vim.opt.cursorline = true
 vim.opt.wrap = true
 vim.opt.list = true
+vim.opt.listchars:append("trail:⋅")
 vim.opt.ambiwidth = "single"
 
 vim.opt.cmdheight = 2
@@ -105,7 +105,6 @@ require("rc.gitsigns")
 require("rc.diffview")
 require("rc.telescope")
 require("rc.nvim-treesitter")
-require("rc.rainbow-delimiters")
 require("rc.comment")
 require("rc.trouble")
 require("rc.noice")

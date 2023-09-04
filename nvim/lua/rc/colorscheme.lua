@@ -9,4 +9,14 @@ require("nightfox").setup({
   },
 })
 
-vim.cmd("colorscheme nordfox")
+require("kanagawa").setup({
+  keywordStyle = { italic = false },
+  theme = "dragon",
+  background = {
+    dark = "dragon",
+    light = "lotus",
+  },
+})
+vim.g.kanagawa_lualine_bold = true
+
+vim.cmd("colorscheme kanagawa")
