@@ -2,6 +2,11 @@ vim.opt.termguicolors = true
 
 require("kanagawa").setup({
   keywordStyle = { italic = false },
+  colors = {
+    palette = {
+      samuraiRed = "#c34043", -- apply autumnRed
+    },
+  },
   terminalColors = false,
   theme = "wave",
   background = {
