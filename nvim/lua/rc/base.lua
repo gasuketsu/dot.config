@@ -5,6 +5,7 @@ vim.g.loaded_node_provider = 0
 vim.g.loaded_perl_provider = 0
 
 -- Display configuration
+vim.opt.termguicolors = true
 vim.opt.shortmess:append({ c = true, I = true })
 vim.opt.encoding = "utf-8"
 vim.opt.fileencodings = "utf-8,euc-jp,sjis,cp932,iso-2022-jp"
