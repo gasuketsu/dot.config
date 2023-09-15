@@ -7,9 +7,7 @@ return {
       require("kanagawa").setup({
         keywordStyle = { italic = false },
         colors = {
-          palette = {
-            samuraiRed = "#c34043", -- apply autumnRed
-          },
+          palette = {},
         },
         terminalColors = false,
         theme = "wave",
