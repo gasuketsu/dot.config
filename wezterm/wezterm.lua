@@ -148,7 +148,7 @@ return {
       },
     },
     ["Kanagawa"] = {
-      foreground = "#dcd7ba",
+      foreground = "#a7ac9c",
       background = "#181616",
       cursor_bg = "#ffa066",
       cursor_fg = "#ffa066",
@@ -165,7 +165,7 @@ return {
         "#4d699b", -- Blue
         "#766b90", -- Purple
         "#6a9589", -- Cyan
-        "#e5ddb0", -- White
+        "#dcd7ba", -- White
       },
       brights = {
         "#625e5a", -- BrightBlack
