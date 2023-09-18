@@ -8,7 +8,7 @@ return {
         keywordStyle = { italic = false },
         colors = {
           palette = {
-            -- samuraiRed = "#ff5d62", -- peachRed
+            samuraiRed = "#ff5d62", -- peachRed
           },
         },
         terminalColors = false,
