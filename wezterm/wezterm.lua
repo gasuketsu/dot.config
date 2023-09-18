@@ -41,7 +41,7 @@ return {
   window_background_opacity = 0.95,
   text_background_opacity = 0.95,
   adjust_window_size_when_changing_font_size = false,
-  color_scheme = "Gruvbox-Mix",
+  color_scheme = "Kanagawa",
   window_frame = {
     active_titlebar_bg = "#1d2021",
     inactive_titlebar_bg = "#1e2021",
@@ -146,6 +146,38 @@ return {
         "#8bba7f", -- BrightCyan
         "#f9f5d7", -- BrightWhite
       },
+    },
+    ["Kanagawa"] = {
+      foreground = "#dcd7ba",
+      background = "#181616",
+      cursor_bg = "#ffa066",
+      cursor_fg = "#ffa066",
+      cursor_border = "#ffa066",
+      selection_fg = "#c8c093",
+      selection_bg = "#2d4f67",
+      scrollbar_thumb = "#393836",
+      split = "#727169",
+      ansi = {
+        "#181616", -- Black
+        "#c34043", -- Red
+        "#6f894e", -- Green
+        "#dca561", -- Yellow
+        "#4d699b", -- Blue
+        "#766b90", -- Purple
+        "#6a9589", -- Cyan
+        "#e5ddb0", -- White
+      },
+      brights = {
+        "#625e5a", -- BrightBlack
+        "#ff5d62", -- BrightRed
+        "#98bb6c", -- BrightGreen
+        "#e6c384", -- BrightYellow
+        "#7fb4ca", -- BrightBlue
+        "#938aa9", -- BrightPurple
+        "#7aa89f", -- BrightCyan
+        "#f2ecbc", -- BrightWhite
+      },
+      indexed = { [16] = "#ffa066", [17] = "#ff5d62" },
     },
   },
   keys = {
