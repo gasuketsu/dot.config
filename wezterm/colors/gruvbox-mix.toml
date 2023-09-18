@@ -1,0 +1,16 @@
+[colors]
+foreground = "#c0ac8d"
+background = "#282828"
+cursor_bg = "#f28534"
+cursor_fg = "#282828"
+cursor_border = "#f28534"
+compose_cursor = "#f2e5bc"
+selection_bg = "#928374"
+selection_fg = "#282828"
+scrollbar_thumb = "#5a524c"
+split = "#f2e5bc"
+ansi = ["#32302f", "#cd4538", "#959c36", "#c69431", "#6b9085", "#b36e81", "#749e69", "#e5d5ad"]
+brights = ["#45403d", "#f2594b", "#b0b846", "#e9b143", "#80aa9e", "#d3869b", "#8bba7f", "#f4e8be"]
+
+[metadata]
+name = "gruvbox-mix"

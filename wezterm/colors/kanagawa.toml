@@ -1,0 +1,16 @@
+[colors]
+foreground = "#a7ac9c"
+background = "#181616"
+cursor_bg = "#ffa066"
+cursor_fg = "#282727"
+cursor_border = "#ffa066"
+compose_cursor = "#e6c384"
+selection_bg = "#2d4f67"
+selection_fg = "#dcd7ba"
+scrollbar_thumb = "#393836"
+split = "#727169"
+ansi = ["#181616", "#c34043", "#6f894e", "#dca561", "#4d699b", "#766b90", "#6a9589", "#dcd7ba"]
+brights = ["#625e5a", "#ff5d62", "#98bb6c", "#e6c384", "#7fb4ca", "#938aa9", "#7aa89f", "#f2ecbc"]
+
+[metadata]
+name = "kanagawa"
