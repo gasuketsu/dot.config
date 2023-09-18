@@ -43,52 +43,23 @@ return {
   adjust_window_size_when_changing_font_size = false,
   color_scheme = "Kanagawa",
   window_frame = {
-    active_titlebar_bg = "#1d2021",
-    inactive_titlebar_bg = "#1e2021",
+    active_titlebar_bg = "#181616",
+    inactive_titlebar_bg = "#181616",
   },
   colors = {
     tab_bar = {
       active_tab = {
-        bg_color = "#3c3836",
-        fg_color = "#fbf1c7",
+        bg_color = "#282727",
+        fg_color = "#dcd7ba",
       },
       inactive_tab = {
-        bg_color = "#282828",
-        fg_color = "#a89984",
+        bg_color = "#0d0c0c",
+        fg_color = "#a7ac9c",
       },
     },
   },
   audible_bell = "Disabled",
   color_schemes = {
-    ["Gruvbox"] = {
-      background = "#1d2021",
-      foreground = "#bdae93",
-      cursor_bg = "#fe8019",
-      cursor_border = "#fe8019",
-      compose_cursor = "#f9f1c7",
-      selection_bg = "#928374",
-      split = "#fbf1c7",
-      ansi = {
-        "#504945", -- Black
-        "#cc241d", -- Red
-        "#98971a", -- Green
-        "#d79921", -- Yellow
-        "#458588", -- Blue
-        "#b16286", -- Purple
-        "#689d6a", -- Cyan
-        "#ebdbb2", -- White
-      },
-      brights = {
-        "#665c54", -- BrightBlack
-        "#fb4934", -- BrightRed
-        "#b8bb26", -- BrightGreen
-        "#fabd2f", -- BrightYellow
-        "#83a598", -- BrightBlue
-        "#d3869b", -- BrightPurple
-        "#8ec07c", -- BrightCyan
-        "#fbf1c7", -- BrightWhite
-      },
-    },
     ["Gruvbox-Mix"] = {
       background = "#282828",
       foreground = "#c0ac8d",
@@ -118,42 +89,11 @@ return {
         "#f4e8be", -- BrightWhite
       },
     },
-    ["Gruvbox-Material"] = {
-      background = "#1d2021",
-      foreground = "#bdae93",
-      cursor_bg = "#f28534",
-      cursor_border = "#f28534",
-      compose_cursor = "#f9f5d7",
-      selection_bg = "#928374",
-      split = "#fbf1c7",
-      ansi = {
-        "#504945", -- Black
-        "#db4740", -- Red
-        "#b0b846", -- Green
-        "#e9b143", -- Yellow
-        "#80aa9e", -- Blue
-        "#d3869b", -- Purple
-        "#8bba7f", -- Cyan
-        "#ebdbb2", -- White
-      },
-      brights = {
-        "#665c54", -- BrightBlack
-        "#f2594b", -- BrightRed
-        "#b0b846", -- BrightGreen
-        "#e9b143", -- BrightYellow
-        "#80aa9e", -- BrightBlue
-        "#d3869b", -- BrightPurple
-        "#8bba7f", -- BrightCyan
-        "#f9f5d7", -- BrightWhite
-      },
-    },
     ["Kanagawa"] = {
       foreground = "#a7ac9c",
       background = "#181616",
       cursor_bg = "#ffa066",
-      cursor_fg = "#ffa066",
       cursor_border = "#ffa066",
-      selection_fg = "#c8c093",
       selection_bg = "#2d4f67",
       scrollbar_thumb = "#393836",
       split = "#727169",
