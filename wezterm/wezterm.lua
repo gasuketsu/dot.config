@@ -41,7 +41,7 @@ return {
   window_background_opacity = 0.95,
   text_background_opacity = 0.95,
   adjust_window_size_when_changing_font_size = false,
-  color_scheme = "Kanagawa",
+  color_scheme = "kanagawa",
   window_frame = {
     active_titlebar_bg = "#181616",
     inactive_titlebar_bg = "#181616",
@@ -59,67 +59,6 @@ return {
     },
   },
   audible_bell = "Disabled",
-  color_schemes = {
-    ["Gruvbox-Mix"] = {
-      background = "#282828",
-      foreground = "#c0ac8d",
-      cursor_bg = "#f28534",
-      cursor_border = "#f28534",
-      compose_cursor = "#f2e5bc",
-      selection_bg = "#928374",
-      split = "#f2e5bc",
-      ansi = {
-        "#32302f", -- Black
-        "#cd4538", -- Red
-        "#959c36", -- Green
-        "#c69431", -- Yellow
-        "#6b9085", -- Blue
-        "#b36e81", -- Purple
-        "#749e69", -- Cyan
-        "#e5d5ad", -- White
-      },
-      brights = {
-        "#45403d", -- BrightBlack
-        "#f2594b", -- BrightRed
-        "#b0b846", -- BrightGreen
-        "#e9b143", -- BrightYellow
-        "#80aa9e", -- BrightBlue
-        "#d3869b", -- BrightPurple
-        "#8bba7f", -- BrightCyan
-        "#f4e8be", -- BrightWhite
-      },
-    },
-    ["Kanagawa"] = {
-      foreground = "#a7ac9c",
-      background = "#181616",
-      cursor_bg = "#ffa066",
-      cursor_border = "#ffa066",
-      selection_bg = "#2d4f67",
-      scrollbar_thumb = "#393836",
-      split = "#727169",
-      ansi = {
-        "#181616", -- Black
-        "#c34043", -- Red
-        "#6f894e", -- Green
-        "#dca561", -- Yellow
-        "#4d699b", -- Blue
-        "#766b90", -- Purple
-        "#6a9589", -- Cyan
-        "#dcd7ba", -- White
-      },
-      brights = {
-        "#625e5a", -- BrightBlack
-        "#ff5d62", -- BrightRed
-        "#98bb6c", -- BrightGreen
-        "#e6c384", -- BrightYellow
-        "#7fb4ca", -- BrightBlue
-        "#938aa9", -- BrightPurple
-        "#7aa89f", -- BrightCyan
-        "#f2ecbc", -- BrightWhite
-      },
-      indexed = { [16] = "#ffa066", [17] = "#ff5d62" },
-    },
-  },
   keys = {
     {
       key = "w",
