@@ -252,12 +252,25 @@ themes {
     white   "#e5d5ad"
     orange  "#fe8019"
   }
+  kanagawa {
+    fg      "#a7ac9c"
+    bg      "#181616"
+    black   "#181616"
+    red     "#c34043"
+    green   "#6f894e"
+    yellow  "#dca561"
+    blue    "#4d699b"
+    magenta "#766b90"
+    cyan    "#6a9589"
+    white   "#dcd7ba"
+    orange  "#ffa066"
+  }
 }
 
 // Choose the theme that is specified in the themes section.
 // Default: default
 //
-theme "gruvbox_material_mix"
+theme "kanagawa"
 
 // The name of the default layout to load on startup
 // Default: "default"
