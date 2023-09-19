@@ -60,6 +60,14 @@ return {
         bg_color = "#737c73",
         fg_color = "#dcd7ba",
       },
+      new_tab = {
+        bg_color = "#c5c9c5",
+        fg_color = "#393836",
+      },
+      new_tab_hover = {
+        bg_color = "#737c73",
+        fg_color = "#dcd7ba",
+      },
     },
   },
   audible_bell = "Disabled",
