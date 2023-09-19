@@ -38,23 +38,27 @@ return {
   font_size = 12,
   freetype_load_target = "Normal",
   freetype_load_flags = "DEFAULT",
-  window_background_opacity = 0.95,
-  text_background_opacity = 0.95,
+  -- window_background_opacity = 0.95,
+  -- text_background_opacity = 0.95,
   adjust_window_size_when_changing_font_size = false,
   color_scheme = "kanagawa",
   window_frame = {
-    active_titlebar_bg = "#181616",
-    inactive_titlebar_bg = "#181616",
+    active_titlebar_bg = "#737c73",
+    inactive_titlebar_bg = "#737c73",
   },
   colors = {
     tab_bar = {
       active_tab = {
-        bg_color = "#282727",
+        bg_color = "#181616",
         fg_color = "#dcd7ba",
       },
       inactive_tab = {
-        bg_color = "#0d0c0c",
-        fg_color = "#a7ac9c",
+        bg_color = "#737c73",
+        fg_color = "#393836",
+      },
+      inactive_tab_hover = {
+        bg_color = "#393836",
+        fg_color = "#dcd7ba",
       },
     },
   },
