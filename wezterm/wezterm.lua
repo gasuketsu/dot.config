@@ -43,8 +43,8 @@ return {
   adjust_window_size_when_changing_font_size = false,
   color_scheme = "kanagawa",
   window_frame = {
-    active_titlebar_bg = "#737c73",
-    inactive_titlebar_bg = "#737c73",
+    active_titlebar_bg = "#c5c9c5",
+    inactive_titlebar_bg = "#c5c9c5",
   },
   colors = {
     tab_bar = {
@@ -53,11 +53,11 @@ return {
         fg_color = "#dcd7ba",
       },
       inactive_tab = {
-        bg_color = "#737c73",
+        bg_color = "#c5c9c5",
         fg_color = "#393836",
       },
       inactive_tab_hover = {
-        bg_color = "#393836",
+        bg_color = "#737c73",
         fg_color = "#dcd7ba",
       },
     },
