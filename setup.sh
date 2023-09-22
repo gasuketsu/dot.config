@@ -8,10 +8,6 @@ mkdir -p "$HOME/.local/bin"
 if type fish > /dev/null 2>&1 && ! fish -c "type fisher" > /dev/null 2>&1; then
   fish -c "curl -skL https://git.io/fisher | source && fisher update"
 fi
-# tpm
-if [ ! -d "$HOME/.config/tmux/plugins/tpm" ]; then
-  git clone https://github.com/tmux-plugins/tpm "$HOME/.config/tmux/plugins/tpm"
-fi
 # clang-format
 if [ ! -e "$HOME/.clang-format" ]; then
   cp "$HOME/.config/clang-format/clang-format" "$HOME/.clang-format"

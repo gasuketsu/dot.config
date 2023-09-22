@@ -7,26 +7,14 @@ Manages configurations stored under `~/.config`.
 ### Debian/Ubuntu
 
 ```
-sudo apt install git fish tmux build-essential zlib1g-dev libffi-dev libssl-dev libbz2-dev libncursesw5-dev libgdbm-dev liblzma-dev libsqlite3-dev uuid-dev libreadline-dev liblzma-dev tk-dev xclip curl zip unzip ncurses-term
-```
-
-Following is optional for tmux build
-
-```
-sudo apt install automake pkg-config bison
+sudo apt install git fish build-essential zlib1g-dev libffi-dev libssl-dev libbz2-dev libncursesw5-dev libgdbm-dev liblzma-dev libsqlite3-dev uuid-dev libreadline-dev liblzma-dev tk-dev xclip curl zip unzip ncurses-term
 ```
 
 ### openSUSE
 
 ```
 sudo zypper install -t pattern devel_basis
-sudo zypper install git fish tmux dirmngr gcc-c++ xz bzip2 libbz2-devel libopenssl-devel readline-devel libffi-devel sqlite3-devel xz-devel tk-devel xclip curl zip unzip terminfo
-```
-
-Following is optional for tmux build
-
-```
-sudo zypper install pkg-config bison
+sudo zypper install git fish dirmngr gcc-c++ xz bzip2 libbz2-devel libopenssl-devel readline-devel libffi-devel sqlite3-devel xz-devel tk-devel xclip curl zip unzip terminfo
 ```
 
 ## Installation and setup
