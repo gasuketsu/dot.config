@@ -4,7 +4,6 @@ return {
     dependencies = {
       { "williamboman/mason.nvim" },
       { "neovim/nvim-lspconfig" },
-      { "ray-x/lsp_signature.nvim" },
       { "simrat39/symbols-outline.nvim" },
     },
     config = function()
@@ -24,7 +23,6 @@ return {
 
       local on_attach = function(client, bufnr)
         -- things to be done only when LSP server attached
-        require("lsp_signature").on_attach({ hint_prefix = " " })
       end
 
       local capabilities =
@@ -68,7 +66,6 @@ return {
 
       vim.lsp.handlers["textDocument/publishDiagnostics"] =
         vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-          virtual_text = false,
           underline = true,
           signs = true,
         })
