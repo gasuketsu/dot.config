@@ -5,19 +5,24 @@ return {
   },
   -- golang
   {
-    "ray-x/go.nvim",
+    "crispgm/nvim-go",
     dependencies = {
-      { "ray-x/guihua.lua" },
+      { "nvim-lua/plenary.nvim" },
       { "neovim/nvim-lspconfig" },
-      { "nvim-treesitter/nvim-treesitter" },
-      { "mfussenegger/nvim-dap" },
-      { "rcarriga/nvim-dap-ui" },
-      { "theHamsta/nvim-dap-virtual-text" },
     },
     config = function()
       require("go").setup({
-        lsp_gofumpt = true,
-        lsp_codelens = false,
+        auto_format = false,
+      })
+      vim.api.nvim_clear_autocmds({
+        event = { "BufRead", "BufNewFile" },
+        pattern = { "*.mod", "*.MOD" },
+      })
+      vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+        pattern = { "*.mod", "*.MOD" },
+        callback = function(ev)
+          vim.cmd("set filetype=gomod")
+        end,
       })
     end,
   },
