@@ -8,7 +8,7 @@ return {
           cpp = { "clang-format" },
           css = { "pretter" },
           fish = { "fish_indent" },
-          go = { "gofumpt", "goimports" },
+          go = { "goimports" },
           html = { "prettier" },
           javascript = { "prettier" },
           javascriptreact = { "prettier" },
@@ -24,7 +24,7 @@ return {
           ["_"] = { "trim_whitespace" },
         },
         format_on_save = {
-          lsp_fallback = "always",
+          lsp_fallback = true,
           timeout_ms = 1000,
         },
       })

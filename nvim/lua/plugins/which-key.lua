@@ -126,7 +126,7 @@ return {
         ["<M-f>"] = {
           function()
             require("conform").format({
-              lsp_fallback = "always",
+              lsp_fallback = true,
             })
           end,
           "Format file",
