@@ -13,6 +13,7 @@ return {
     config = function()
       require("go").setup({
         auto_format = false,
+        auto_lint = false,
       })
       vim.api.nvim_clear_autocmds({
         event = { "BufRead", "BufNewFile" },

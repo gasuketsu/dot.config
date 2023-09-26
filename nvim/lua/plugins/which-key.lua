@@ -1,6 +1,9 @@
 return {
   {
     "folke/which-key.nvim",
+    dependencies = {
+      { "stevearc/conform.nvim" },
+    },
     config = function()
       local wk = require("which-key")
       wk.setup()
@@ -120,7 +123,14 @@ return {
           l = { "<cmd>LLNext<cr>", "Next loclist" },
           q = { "<cmd>QFNext<cr>", "Next quickfix" },
         },
-        ["<M-f>"] = { "<cmd>GuardFmt<CR>", "Format file" },
+        ["<M-f>"] = {
+          function()
+            require("conform").format({
+              lsp_fallback = "always",
+            })
+          end,
+          "Format file",
+        },
         ["<M-[>"] = { "<cmd>BufferLineCyclePrev<cr>", "Prev Buffer" },
         ["<M-]>"] = { "<cmd>BufferLineCycleNext<cr>", "Next Buffer" },
         ["<C-l>"] = { "<cmd>nohl<cr>", "Clear highlight" },
