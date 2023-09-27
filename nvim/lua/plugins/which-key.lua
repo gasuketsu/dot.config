@@ -85,10 +85,6 @@ return {
           t = { "<cmd>ToggleTerm<cr>", "Toggle Terminal" },
           x = { "<cmd>TroubleToggle<cr>", "Toggle Trouble" },
         },
-        w = {
-          name = "whitespace",
-          x = { "<cmd>RetrailTrimWhitespace<cr>", "Trim whitespace" },
-        },
         x = {
           name = "trouble",
           d = { "<cmd>Trouble document_diagnostics<cr>", "Trouble document_diagnostics" },
