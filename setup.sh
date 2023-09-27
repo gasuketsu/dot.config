@@ -5,7 +5,7 @@ CWD=$PWD
 mkdir -p "$HOME/.local/bin"
 
 # Fisher
-if type fish > /dev/null 2>&1 && ! fish -c "type fisher" > /dev/null 2>&1; then
+if type fish >/dev/null 2>&1 && ! fish -c "type fisher" >/dev/null 2>&1; then
   fish -c "curl -skL https://git.io/fisher | source && fisher update"
 fi
 # clang-format
@@ -22,7 +22,7 @@ if [ ! -e "$HOME/.editorconfig" ]; then
 fi
 
 # rtx
-if ! type rtx > /dev/null 2>&1; then
+if ! type rtx >/dev/null 2>&1; then
   curl https://rtx.pub/install.sh | sh
 fi
 
@@ -45,21 +45,21 @@ fi
 # default go env (only when no env file exist)
 if [ ! -f "$HOME/.config/go/env" ]; then
   mkdir -p "$HOME/.config/go"
-  echo "GOBIN=$HOME/.local/bin" > "$HOME/.config/go/env"
+  echo "GOBIN=$HOME/.local/bin" >"$HOME/.config/go/env"
 fi
 
 source "$HOME/.config/bash/rc.bash"
 # install tools
-rtx install
+rtx install -y
 # generate completions
-rtx completion fish > ~/.config/fish/completions/rtx.fish
+rtx completion fish >~/.config/fish/completions/rtx.fish
 
 # (python) install pipx packages
 echo "##### (python) (re)install pipx packages..."
 export PATH="$HOME/.local/bin:$PATH"
 while read -r pkg; do
   rtx exec python --command "pipx install --force $pkg"
-done < "$HOME/.config/pipx/pipx_packages"
+done <"$HOME/.config/pipx/pipx_packages"
 
 # (python) venv for nvim python bindings
 echo "##### (python) reinitialize virtualenv for neovim python bindings..."
