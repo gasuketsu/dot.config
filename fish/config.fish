@@ -33,6 +33,6 @@ fish_add_path $HOME/bin
 fish_add_path $HOME/.local/bin
 
 if status --is-interactive
-  rtx activate fish | source
-  rtx exec starship --command "starship init fish" | source
+    rtx activate fish | source
+    rtx exec starship --command "starship init fish" | source
 end

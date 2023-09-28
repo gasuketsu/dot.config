@@ -1,8 +1,8 @@
 return {
-  {
-    "chrisgrieser/nvim-recorder",
-    -- config = function()
-    --   require("recorder").setup()
-    -- end,
-  },
+    {
+        "chrisgrieser/nvim-recorder",
+        -- config = function()
+        --   require("recorder").setup()
+        -- end,
+    },
 }

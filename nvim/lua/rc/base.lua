@@ -38,20 +38,20 @@ vim.opt.hidden = true
 -- wildmode(complement)
 vim.opt.wildmode = "list:longest"
 vim.opt.wildignore:append({
-  "*.o",
-  "*.obj",
-  "*.a",
-  "*.pyc",
-  "*.DS_Store",
-  "*.db",
-  "*/tmp/*",
-  "*.swp",
-  "*.zip",
-  "*.exe",
-  "*.dll",
-  "*.so",
-  "NTUSER*",
-  "ntuser*",
+    "*.o",
+    "*.obj",
+    "*.a",
+    "*.pyc",
+    "*.DS_Store",
+    "*.db",
+    "*/tmp/*",
+    "*.swp",
+    "*.zip",
+    "*.exe",
+    "*.dll",
+    "*.so",
+    "NTUSER*",
+    "ntuser*",
 })
 
 -- timeout
