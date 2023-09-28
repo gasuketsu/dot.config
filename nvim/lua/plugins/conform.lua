@@ -6,7 +6,7 @@ return {
                 formatters_by_ft = {
                     c = { "clang-format" },
                     cpp = { "clang-format" },
-                    css = { "pretter" },
+                    css = { "prettier" },
                     fish = { "fish_indent" },
                     go = { "goimports" },
                     html = { "prettier" },
