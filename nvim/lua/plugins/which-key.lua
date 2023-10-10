@@ -59,8 +59,7 @@ return {
                     R = { "<cmd>Telescope lsp_references<cr>", "Find references" },
                     S = { "<cmd>Telescope lsp_workspace_symbols<cr>", "Find symbols in workspace" },
                     a = { vim.lsp.buf.code_action, "Code Action" },
-                    d = { vim.lsp.buf.type_definition, "Display type Definition" },
-                    e = { vim.diagnostic.open_float, "Show diagnostics in floating window" },
+                    d = { vim.diagnostic.open_float, "Show diagnostics in floating window" },
                     l = { vim.lsp.codelens.run, "Run CodeLens action" },
                     o = { "<cmd>SymbolsOutline<cr>", "Toggle Symbol Outline" },
                     r = { vim.lsp.buf.rename, "Rename symbol" },
@@ -114,14 +113,24 @@ return {
                 ["["] = {
                     name = "prev",
                     c = { "<cmd>Gitsign prev_hunk<cr>", "Prev git hunk" },
-                    d = { "<cmd>lua vim.diagnostic.goto_prev()<CR>", "Prev diagnostic" },
+                    d = {
+                        function()
+                            vim.diagnostic.goto_prev({ float = false })
+                        end,
+                        "Prev diagnostic",
+                    },
                     l = { "<cmd>LLPrev<cr>", "Prev loclist" },
                     q = { "<cmd>QFPrev<cr>", "Prev quickfix" },
                 },
                 ["]"] = {
                     name = "next",
                     c = { "<cmd>Gitsign next_hunk<cr>", "Next git hunk" },
-                    d = { "<cmd>lua vim.diagnostic.goto_next()<CR>", "Next diagnostic" },
+                    d = {
+                        function()
+                            vim.diagnostic.goto_next({ float = false })
+                        end,
+                        "Next diagnostic",
+                    },
                     l = { "<cmd>LLNext<cr>", "Next loclist" },
                     q = { "<cmd>QFNext<cr>", "Next quickfix" },
                 },
