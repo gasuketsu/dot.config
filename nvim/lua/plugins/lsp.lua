@@ -88,11 +88,6 @@ return {
                 "DiagnosticSignHint",
                 { text = " ", texthl = "DiagnosticSignHint" }
             )
-
-            -- Autocommands
-            vim.api.nvim_create_autocmd({ "CursorHold", "InsertLeave" }, {
-                callback = vim.lsp.codelens.refresh,
-            })
         end,
     },
 }
