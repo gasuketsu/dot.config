@@ -1,4 +1,2 @@
-github.com/brimdata/zed/cmd/zed@latest
-github.com/brimdata/zed/cmd/zq@latest
 google.golang.org/protobuf/cmd/protoc-gen-go@latest
 github.com/abice/go-enum@latest
