@@ -9,7 +9,7 @@ return {
         config = function()
             require("aerial").setup({
                 layout = {
-                    min_width = { 10, 0.1 },
+                    min_width = { 15, 0.1 },
                 },
                 on_attach = function(bufnr)
                     -- Jump forwards/backwards with '{' and '}'
