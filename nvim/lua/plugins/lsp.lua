@@ -4,40 +4,8 @@ return {
         dependencies = {
             { "williamboman/mason.nvim" },
             { "neovim/nvim-lspconfig" },
-            { "simrat39/symbols-outline.nvim" },
         },
         config = function()
-            require("symbols-outline").setup({
-                symbols = {
-                    File = { icon = "󰈙" },
-                    Module = { icon = "" },
-                    Namespace = { icon = "{}" },
-                    Package = { icon = "" },
-                    Class = { icon = "󰠱" },
-                    Method = { icon = "󰆧" },
-                    Property = { icon = "󰜢" },
-                    Field = { icon = "󰜢" },
-                    Constructor = { icon = "" },
-                    Enum = { icon = "" },
-                    Interface = { icon = "" },
-                    Function = { icon = "󰊕" },
-                    Variable = { icon = "󰀫" },
-                    Constant = { icon = "󰏿" },
-                    String = { icon = "󰉿" },
-                    Number = { icon = "󰎠" },
-                    Boolean = { icon = "" },
-                    Array = { icon = "[]" },
-                    Key = { icon = "󰌋" },
-                    Null = { icon = "󰟢" },
-                    EnumMember = { icon = "" },
-                    Struct = { icon = "󰙅" },
-                    Event = { icon = "" },
-                    Operator = { icon = "󰆕" },
-                    TypeParameter = { icon = "" },
-                    Component = { icon = "" },
-                    Fragment = { icon = "󰕰" },
-                },
-            })
             require("mason-lspconfig").setup({
                 ensure_installed = {
                     "denols",

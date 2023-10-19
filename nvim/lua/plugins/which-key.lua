@@ -21,6 +21,7 @@ return {
                     h = { "<cmd>Telescope help_tags<cr>", "Find help tags" },
                     n = { "<cmd>Telescope noice<cr>", "Find noice message history" },
                     p = { "<cmd>Telescope projects<cr>", "Find projects" },
+                    s = { "<cmd>Telescope aerial<cr>", "Find symbol in this buffer" },
                 },
                 g = {
                     name = "git",
@@ -61,7 +62,6 @@ return {
                     a = { vim.lsp.buf.code_action, "Code Action" },
                     d = { vim.diagnostic.open_float, "Show diagnostics in floating window" },
                     l = { vim.lsp.codelens.run, "Run CodeLens action" },
-                    o = { "<cmd>SymbolsOutline<cr>", "Toggle Symbol Outline" },
                     r = { vim.lsp.buf.rename, "Rename symbol" },
                     q = { vim.diagnostic.setqflist, "Add all diagnostics to quickfix list" },
                     s = {
@@ -83,6 +83,7 @@ return {
                     name = "toggle",
                     e = { "<cmd>NvimTreeToggle<cr>", "Toggle file explorer" },
                     l = { "<cmd>LLToggle!<cr>", "Toggle loclist" },
+                    o = { "<cmd>AerialToggle!<cr>", "Toggle outline" },
                     q = { "<cmd>QFToggle!<cr>", "Toggle quickfix" },
                     t = { "<cmd>ToggleTerm<cr>", "Toggle Terminal" },
                     x = { "<cmd>TroubleToggle<cr>", "Toggle Trouble" },
