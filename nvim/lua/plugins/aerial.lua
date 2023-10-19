@@ -8,9 +8,11 @@ return {
         },
         config = function()
             require("aerial").setup({
+                backends = { "lsp", "treesitter", "markdown", "man" },
                 layout = {
                     min_width = { 15, 0.1 },
                 },
+                filter_kind = false,
                 on_attach = function(bufnr)
                     -- Jump forwards/backwards with '{' and '}'
                     vim.keymap.set("n", "{", "<cmd>AerialPrev<CR>", { buffer = bufnr })
