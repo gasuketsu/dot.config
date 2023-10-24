@@ -40,6 +40,7 @@ return {
                         capabilities = capabilities,
                         on_attach = on_attach,
                         settings = { gopls = { gofumpt = true } },
+                        root_dir = lspconfig.util.root_pattern("go.mod"),
                     })
                 end,
                 ["denols"] = function()
