@@ -28,8 +28,14 @@ format = "[$symbol$version]($style) "
 [golang]
 format = "[$symbol$version]($style) "
 
+[gradle]
+symbol = " "
+
 [java]
 format = "[${symbol}${version}]($style) "
+
+[kotlin]
+symbol = "󱈙 "
 
 [nodejs]
 format = "[$symbol$version]($style) "
