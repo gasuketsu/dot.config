@@ -19,6 +19,7 @@ return {
     launch_menu = launch_menu,
 
     ime_preedit_rendering = "System",
+    warn_about_missing_glyphs = false,
     font = wezterm.font({ family = font_family }),
     font_rules = {
         {
