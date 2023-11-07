@@ -15,7 +15,7 @@ return {
                     json = { "prettier" },
                     lua = { "stylua" },
                     markdown = { "prettier" },
-                    python = { "black" },
+                    python = { "ruff_format" },
                     rust = { "rustfmt" },
                     sh = { "shfmt" },
                     typescript = { "prettier" },
