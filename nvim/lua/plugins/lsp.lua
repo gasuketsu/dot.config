@@ -10,7 +10,10 @@ return {
                 ensure_installed = {
                     "denols",
                     "gopls",
+                    "gradle_ls",
+                    "jdtls",
                     "jsonls",
+                    "kotlin_language_server",
                     "pyright",
                     "svelte",
                     "tsserver",
