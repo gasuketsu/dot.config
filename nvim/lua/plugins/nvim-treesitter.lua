@@ -23,6 +23,7 @@ return {
                     "fish",
                     "go",
                     "gomod",
+                    "groovy",
                     "html",
                     "java",
                     "javascript",
