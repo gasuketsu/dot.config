@@ -13,6 +13,7 @@ return {
                     javascript = { "prettier" },
                     javascriptreact = { "prettier" },
                     json = { "prettier" },
+                    kotlin = { "ktlint" },
                     lua = { "stylua" },
                     markdown = { "prettier" },
                     python = { "ruff_format" },
