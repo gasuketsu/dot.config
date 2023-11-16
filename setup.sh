@@ -6,46 +6,46 @@ mkdir -p "$HOME/.local/bin"
 
 # Fisher
 if type fish >/dev/null 2>&1 && ! fish -c "type fisher" >/dev/null 2>&1; then
-  fish -c "curl -skL https://git.io/fisher | source && fisher update"
+    fish -c "curl -skL https://git.io/fisher | source && fisher update"
 fi
 # clang-format
 if [ ! -e "$HOME/.clang-format" ]; then
-  cp "$HOME/.config/clang-format/clang-format" "$HOME/.clang-format"
+    cp "$HOME/.config/clang-format/clang-format" "$HOME/.clang-format"
 fi
 # .gitconfig
 if [ ! -e "$HOME/.gitconfig" ]; then
-  touch "$HOME/.gitconfig"
+    touch "$HOME/.gitconfig"
 fi
 # EditorConfig
 if [ ! -e "$HOME/.editorconfig" ]; then
-  cp "$HOME/.config/editorconfig/editorconfig" "$HOME/.editorconfig"
+    cp "$HOME/.config/editorconfig/editorconfig" "$HOME/.editorconfig"
 fi
 
 # rtx
 if ! type rtx >/dev/null 2>&1; then
-  curl https://rtx.pub/install.sh | sh
+    curl https://rtx.pub/install.sh | sh
 fi
 
 if [ ! -e "$HOME/.local/bin/rtx" ]; then
-  ln -s "$HOME/.local/share/rtx/bin/rtx" "$HOME/.local/bin/rtx"
+    ln -s "$HOME/.local/share/rtx/bin/rtx" "$HOME/.local/bin/rtx"
 fi
 
 # default python packages
 if [ ! -e "$HOME/.default-python-packages" ]; then
-  cp "$HOME/.config/rtx/default-python-packages" "$HOME/.default-python-packages"
+    cp "$HOME/.config/rtx/default-python-packages" "$HOME/.default-python-packages"
 fi
 # default golang packages
 if [ ! -e "$HOME/.default-go-packages" ]; then
-  cp "$HOME/.config/rtx/default-go-packages" "$HOME/.default-go-packages"
+    cp "$HOME/.config/rtx/default-go-packages" "$HOME/.default-go-packages"
 fi
 # default npm packages
 if [ ! -e "$HOME/.default-npm-packages" ]; then
-  cp "$HOME/.config/rtx/default-npm-packages" "$HOME/.default-npm-packages"
+    cp "$HOME/.config/rtx/default-npm-packages" "$HOME/.default-npm-packages"
 fi
 # default go env (only when no env file exist)
 if [ ! -f "$HOME/.config/go/env" ]; then
-  mkdir -p "$HOME/.config/go"
-  echo "GOBIN=$HOME/.local/bin" >"$HOME/.config/go/env"
+    mkdir -p "$HOME/.config/go"
+    echo "GOBIN=$HOME/.local/bin" >"$HOME/.config/go/env"
 fi
 
 source "$HOME/.config/bash/rc.bash"
@@ -58,7 +58,7 @@ rtx completion fish >~/.config/fish/completions/rtx.fish
 echo "##### (python) (re)install pipx packages..."
 export PATH="$HOME/.local/bin:$PATH"
 while read -r pkg; do
-  rtx exec python --command "pipx install --force $pkg"
+    rtx exec python --command "pipx install --force $pkg"
 done <"$HOME/.config/pipx/pipx_packages"
 
 # (python) venv for nvim python bindings
