@@ -54,13 +54,12 @@ return {
                 autotag = {
                     enable = true,
                 },
-                context_commentstring = {
-                    enable = true,
-                    enable_autocmd = false,
-                },
             })
 
             require("treesitter-context").setup()
+            require("ts_context_commentstring").setup({
+                enable_autocmd = false,
+            })
         end,
     },
 }
