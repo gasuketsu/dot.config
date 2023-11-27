@@ -38,6 +38,13 @@ return {
                         on_attach = on_attach,
                     })
                 end,
+                ["denols"] = function()
+                    lspconfig.denols.setup({
+                        capabilities = capabilities,
+                        on_attach = on_attach,
+                        root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
+                    })
+                end,
                 ["gopls"] = function()
                     lspconfig.gopls.setup({
                         capabilities = capabilities,
@@ -46,11 +53,11 @@ return {
                         root_dir = lspconfig.util.root_pattern("go.mod"),
                     })
                 end,
-                ["denols"] = function()
-                    lspconfig.denols.setup({
-                        capabilities = capabilities,
-                        on_attach = on_attach,
-                        root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
+                ["kotlin_language_server"] = function()
+                    lspconfig.kotlin_language_server.setup({
+                        settings = {
+                            kotlin = { compiler = { jvm = { target = "17" } } },
+                        },
                     })
                 end,
                 ["tsserver"] = function()
