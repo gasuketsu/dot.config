@@ -54,17 +54,22 @@ rtx install -y
 # generate completions
 rtx completion fish >~/.config/fish/completions/rtx.fish
 
-# (python) install pipx packages
-echo "##### (python) (re)install pipx packages..."
+# (python) reinstall existing pipx packages
+echo "##### (python) reinstall existing pipx packages..."
+rtx exec python --command "pipx reinstall-all"
+
+# (python) install default pipx packages
+echo "##### (python) install default pipx packages..."
 export PATH="$HOME/.local/bin:$PATH"
 while read -r pkg; do
-    rtx exec python --command "pipx install --force $pkg"
+    rtx exec python --command "pipx install $pkg"
 done <"$HOME/.config/pipx/pipx_packages"
 
 # (python) venv for nvim python bindings
 echo "##### (python) reinitialize virtualenv for neovim python bindings..."
 cd "$HOME/.config/nvim/py3nvim"
 rtx exec python --command "pipenv --rm"
+rtx exec python --command "pipenv lock"
 rtx exec python --command "pipenv install"
 cd $CWD
 
