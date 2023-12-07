@@ -12,9 +12,9 @@ return {
                     },
                 },
                 terminalColors = false,
-                theme = "wave",
+                theme = "dragon",
                 background = {
-                    dark = "wave",
+                    dark = "dragon",
                     light = "lotus",
                 },
             })
