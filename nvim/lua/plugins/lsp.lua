@@ -56,7 +56,7 @@ return {
                 ["kotlin_language_server"] = function()
                     lspconfig.kotlin_language_server.setup({
                         settings = {
-                            kotlin = { compiler = { jvm = { target = "17" } } },
+                            kotlin = { compiler = { jvm = { target = "21" } } },
                         },
                     })
                 end,
