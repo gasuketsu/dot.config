@@ -23,7 +23,7 @@ return {
                 automatic_installation = true,
             })
 
-            local on_attach = function(client, bufnr)
+            local on_attach = function(_, _) -- client, bufnr
                 -- things to be done only when LSP server attached
             end
 
