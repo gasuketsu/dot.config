@@ -14,6 +14,7 @@ return {
                     "jdtls",
                     "jsonls",
                     "kotlin_language_server",
+                    "lua_ls",
                     "pyright",
                     "svelte",
                     "tsserver",
@@ -57,6 +58,23 @@ return {
                     lspconfig.kotlin_language_server.setup({
                         settings = {
                             kotlin = { compiler = { jvm = { target = "21" } } },
+                        },
+                    })
+                end,
+                ["lua_ls"] = function()
+                    lspconfig.lua_ls.setup({
+                        settings = {
+                            Lua = {
+                                runtime = {
+                                    version = "LuaJIT",
+                                },
+                                workspace = {
+                                    checkThirdParty = false,
+                                    library = {
+                                        vim.env.VIMRUNTIME,
+                                    },
+                                },
+                            },
                         },
                     })
                 end,
