@@ -5,26 +5,16 @@ return {
     },
     -- golang
     {
-        "crispgm/nvim-go",
+        "ray-x/go.nvim",
         dependencies = {
-            { "nvim-lua/plenary.nvim" },
-            { "neovim/nvim-lspconfig" },
+            "ray-x/guihua.lua",
+            "nvim-treesitter/nvim-treesitter",
         },
         config = function()
             require("go").setup({
-                auto_format = false,
-                auto_lint = false,
-            })
-            vim.api.nvim_clear_autocmds({
-                event = { "BufRead", "BufNewFile" },
-                pattern = { "*.mod", "*.MOD" },
-            })
-            vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-                pattern = { "*.mod", "*.MOD" },
-                callback = function(ev)
-                    vim.cmd("set filetype=gomod")
-                end,
+                tag_transform = "snakecase",
             })
         end,
+        ft = { "go", "gomod" },
     },
 }
