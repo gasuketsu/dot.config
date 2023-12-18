@@ -73,6 +73,10 @@ rtx exec python --command "pipenv lock"
 rtx exec python --command "pipenv install"
 cd $CWD
 
+# (bat) rebuild cache
+echo "##### (bat) rebuild cache..."
+rtx exec bat --command "bat cache --build"
+
 echo
 echo "######################################################"
 echo " Finished setup"
