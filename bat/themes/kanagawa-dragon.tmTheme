@@ -121,7 +121,9 @@
         <key>settings</key>
         <dict>
           <key>foreground</key>
-          <string>#949fb5</string>
+          <string>#b6927b</string>
+          <key>fontStyle</key>
+          <string>bold</string>
         </dict>
       </dict>
       <dict>
@@ -873,7 +875,18 @@
         <key>name</key>
         <string>[Golang] Import</string>
         <key>scope</key>
-        <string>source.go keyword.other.import.go</string>
+        <string>keyword.other.import.go</string>
+        <key>settings</key>
+        <dict>
+          <key>foreground</key>
+          <string>#c4746e</string>
+        </dict>
+      </dict>
+      <dict>
+        <key>name</key>
+        <string>[Keyword] Other</string>
+        <key>scope</key>
+        <string>keyword.other.package.go</string>
         <key>settings</key>
         <dict>
           <key>foreground</key>
@@ -884,7 +897,7 @@
         <key>name</key>
         <string>[Golang] Package</string>
         <key>scope</key>
-        <string>source.go keyword.declaration.namespace.go</string>
+        <string>keyword.declaration.namespace.go</string>
         <key>settings</key>
         <dict>
           <key>foreground</key>
