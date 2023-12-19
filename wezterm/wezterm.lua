@@ -113,5 +113,15 @@ return {
             mods = "CTRL|ALT|SHIFT",
             action = act.SendKey({ key = '"', mods = "CTRL|ALT" }),
         },
+        {
+            key = "UpArrow",
+            mods = "SHIFT",
+            action = act.ScrollByLine(-1),
+        },
+        {
+            key = "DownArrow",
+            mods = "SHIFT",
+            action = act.ScrollByLine(1),
+        },
     },
 }
