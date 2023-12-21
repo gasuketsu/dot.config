@@ -7,14 +7,14 @@ Manages configurations stored under `~/.config`.
 ### Debian/Ubuntu
 
 ```
-sudo apt install git fish build-essential zlib1g-dev libffi-dev libssl-dev libbz2-dev libncursesw5-dev libgdbm-dev liblzma-dev libsqlite3-dev uuid-dev libreadline-dev liblzma-dev tk-dev xclip curl zip unzip ncurses-term
+sudo apt install git fish build-essential zlib1g-dev libffi-dev libssl-dev libbz2-dev libncursesw5-dev libgdbm-dev liblzma-dev libsqlite3-dev uuid-dev libreadline-dev liblzma-dev tk-dev wl-cpipboard curl zip unzip ncurses-term
 ```
 
 ### openSUSE
 
 ```
 sudo zypper install -t pattern devel_basis
-sudo zypper install git fish dirmngr gcc-c++ xz bzip2 libbz2-devel libopenssl-devel readline-devel libffi-devel sqlite3-devel xz-devel tk-devel xclip curl zip unzip terminfo
+sudo zypper install git fish dirmngr gcc-c++ xz bzip2 libbz2-devel libopenssl-devel readline-devel libffi-devel sqlite3-devel xz-devel tk-devel wl-clipboard curl zip unzip terminfo
 ```
 
 ## Installation and setup
@@ -31,9 +31,8 @@ git clone https://github.com/gasuketsu/dot.config ~/.config
 To enable configuration in bash, make sure to source `~/.config/bash/rc.bash`
 in your `.profile` or `.bashrc` after running setup script.
 
-In WSL environment, you also need to set `DISPLAY` for sharing clipboard
-between Windows host and WSL with X server such as [VcXsrv](https://sourceforge.net/projects/vcxsrv/).
-If you use WSLg, `DISPLAY` should be set automatically so you don't need to set `DISPLAY` explicitly.
+In WSL environment, make sure to enable WSLg (i.e. `guiApplication = true` in .wslconfig)
+for sharing clipboard between Windows host and WSL.
 
 ```
 # WSL
