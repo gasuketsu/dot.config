@@ -44,6 +44,7 @@ return {
                     "tsx",
                     "typescript",
                     "vim",
+                    "vimdoc",
                     "yaml",
                 },
                 ignore_install = {}, -- List of parsers to ignore installing
