@@ -21,26 +21,26 @@ if [ ! -e "$HOME/.editorconfig" ]; then
     cp "$HOME/.config/editorconfig/editorconfig" "$HOME/.editorconfig"
 fi
 
-# rtx
-if ! type rtx >/dev/null 2>&1; then
-    curl https://rtx.pub/install.sh | sh
+# mise
+if ! type mise >/dev/null 2>&1; then
+    curl https://mise.jdx.dev/install.sh | sh
 fi
 
-if [ ! -e "$HOME/.local/bin/rtx" ]; then
-    ln -s "$HOME/.local/share/rtx/bin/rtx" "$HOME/.local/bin/rtx"
+if [ ! -e "$HOME/.local/bin/mise" ]; then
+    ln -s "$HOME/.local/share/mise/bin/mise" "$HOME/.local/bin/mise"
 fi
 
 # default python packages
 if [ ! -e "$HOME/.default-python-packages" ]; then
-    cp "$HOME/.config/rtx/default-python-packages" "$HOME/.default-python-packages"
+    cp "$HOME/.config/mise/default-python-packages" "$HOME/.default-python-packages"
 fi
 # default golang packages
 if [ ! -e "$HOME/.default-go-packages" ]; then
-    cp "$HOME/.config/rtx/default-go-packages" "$HOME/.default-go-packages"
+    cp "$HOME/.config/mise/default-go-packages" "$HOME/.default-go-packages"
 fi
 # default npm packages
 if [ ! -e "$HOME/.default-npm-packages" ]; then
-    cp "$HOME/.config/rtx/default-npm-packages" "$HOME/.default-npm-packages"
+    cp "$HOME/.config/mise/default-npm-packages" "$HOME/.default-npm-packages"
 fi
 # default go env (only when no env file exist)
 if [ ! -f "$HOME/.config/go/env" ]; then
@@ -50,32 +50,32 @@ fi
 
 source "$HOME/.config/bash/rc.bash"
 # install tools
-rtx install -y
+mise install -y
 # generate completions
-rtx completion fish >~/.config/fish/completions/rtx.fish
+mise completion fish >~/.config/fish/completions/mise.fish
 
 # (python) reinstall existing pipx packages
 echo "##### (python) reinstall existing pipx packages..."
-rtx exec python --command "pipx reinstall-all"
+mise exec python --command "pipx reinstall-all"
 
 # (python) install default pipx packages
 echo "##### (python) install default pipx packages..."
 export PATH="$HOME/.local/bin:$PATH"
 while read -r pkg; do
-    rtx exec python --command "pipx install $pkg"
+    mise exec python --command "pipx install $pkg"
 done <"$HOME/.config/pipx/pipx_packages"
 
 # (python) venv for nvim python bindings
 echo "##### (python) reinitialize virtualenv for neovim python bindings..."
 cd "$HOME/.config/nvim/py3nvim"
-rtx exec python --command "pipenv --rm"
-rtx exec python --command "pipenv lock"
-rtx exec python --command "pipenv install"
+mise exec python --command "pipenv --rm"
+mise exec python --command "pipenv lock"
+mise exec python --command "pipenv install"
 cd $CWD
 
 # (bat) rebuild cache
 echo "##### (bat) rebuild cache..."
-rtx exec bat --command "bat cache --build"
+mise exec bat --command "bat cache --build"
 
 echo
 echo "######################################################"

@@ -33,7 +33,7 @@ fish_add_path $HOME/bin
 fish_add_path $HOME/.local/bin
 
 if status --is-interactive
-    rtx activate fish | source
-    rtx exec zoxide --command "zoxide init fish" | source
-    rtx exec starship --command "starship init fish" | source
+    mise activate fish | source
+    mise exec zoxide --command "zoxide init fish" | source
+    mise exec starship --command "starship init fish" | source
 end
