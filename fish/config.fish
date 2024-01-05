@@ -31,7 +31,6 @@ set -gx VIRTUAL_ENV_DISABLE_PROMPT 1
 
 fish_add_path $HOME/bin
 fish_add_path $HOME/.local/bin
-fish_add_path $HOME/.local/share/mise/bin
 
 if status --is-interactive
     mise activate fish | source
