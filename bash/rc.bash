@@ -6,4 +6,8 @@ if [ -d $HOME/.local/bin ] && ! echo $PATH | grep -q "$HOME/.local/bin"; then
     export PATH=$HOME/.local/bin:$PATH
 fi
 
+if [ -d $HOME/.local/share/mise/bin ] && ! echo $PATH | grep -q "$HOME/.local/share/mise/bin"; then
+    export PATH=$HOME/.local/share/mise/bin:$PATH
+fi
+
 eval "$(mise activate bash)"

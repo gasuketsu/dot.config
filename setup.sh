@@ -26,10 +26,6 @@ if ! type mise >/dev/null 2>&1; then
     curl https://mise.jdx.dev/install.sh | sh
 fi
 
-if [ ! -e "$HOME/.local/bin/mise" ]; then
-    ln -s "$HOME/.local/share/mise/bin/mise" "$HOME/.local/bin/mise"
-fi
-
 # default python packages
 if [ ! -e "$HOME/.default-python-packages" ]; then
     cp "$HOME/.config/mise/default-python-packages" "$HOME/.default-python-packages"
