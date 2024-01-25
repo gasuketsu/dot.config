@@ -5,6 +5,7 @@ return {
         lazy = false,
         config = function()
             require("kanagawa").setup({
+                compile = true,
                 keywordStyle = { italic = false },
                 colors = {
                     palette = {
