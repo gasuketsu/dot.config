@@ -15,6 +15,5 @@ return {
                 tag_transform = "snakecase",
             })
         end,
-        ft = { "go", "gomod" },
     },
 }
