@@ -43,7 +43,7 @@ return {
     -- window_background_opacity = 0.95,
     -- text_background_opacity = 0.95,
     adjust_window_size_when_changing_font_size = false,
-    color_scheme = "kanagawa",
+    color_scheme = "kanagawa-wave",
     window_frame = {
         active_titlebar_bg = "#c5c9c5",
         inactive_titlebar_bg = "#c5c9c5",
@@ -51,23 +51,23 @@ return {
     colors = {
         tab_bar = {
             active_tab = {
-                bg_color = "#181616",
+                bg_color = "#1f1f28",
                 fg_color = "#dcd7ba",
             },
             inactive_tab = {
                 bg_color = "#c5c9c5",
-                fg_color = "#393836",
+                fg_color = "#363646",
             },
             inactive_tab_hover = {
-                bg_color = "#737c73",
+                bg_color = "#717c7c",
                 fg_color = "#dcd7ba",
             },
             new_tab = {
                 bg_color = "#c5c9c5",
-                fg_color = "#393836",
+                fg_color = "#363646",
             },
             new_tab_hover = {
-                bg_color = "#737c73",
+                bg_color = "#717c7c",
                 fg_color = "#dcd7ba",
             },
         },
