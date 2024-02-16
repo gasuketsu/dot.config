@@ -1,7 +1,7 @@
 # color
 set -g fish_color_autosuggestion 555 brblack
 set -g fish_color_cancel -r
-set -g fish_color_command --bold
+set -g fish_color_command white --bold
 set -g fish_color_comment yellow
 set -g fish_color_cwd green
 set -g fish_color_cwd_root red
