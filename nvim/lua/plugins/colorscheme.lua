@@ -8,9 +8,7 @@ return {
                 compile = true,
                 keywordStyle = { italic = false },
                 colors = {
-                    palette = {
-                        samuraiRed = "#ff5d62", -- peachRed
-                    },
+                    palette = {},
                 },
                 terminalColors = false,
                 theme = "wave",
