@@ -45,6 +45,11 @@ mise install -y
 # generate completions
 mise completion fish >~/.config/fish/completions/mise.fish
 
+# update fish completions
+if type fish >/dev/null 2>&1; then
+    fish -c "fish_update_completions"
+fi
+
 # (python) reinstall existing pipx packages
 echo "##### (python) reinstall existing pipx packages..."
 mise exec python --command "pipx reinstall-all"
