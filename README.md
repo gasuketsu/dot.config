@@ -7,7 +7,7 @@ Manages configurations stored under `~/.config`.
 ### Debian/Ubuntu
 
 ```
-sudo apt install git fish build-essential zlib1g-dev libffi-dev libssl-dev libbz2-dev libncursesw5-dev libgdbm-dev liblzma-dev libsqlite3-dev uuid-dev libreadline-dev liblzma-dev tk-dev wl-cpipboard curl zip unzip ncurses-term
+sudo apt install git fish build-essential zlib1g-dev libffi-dev libssl-dev libbz2-dev libncursesw5-dev libgdbm-dev liblzma-dev libsqlite3-dev uuid-dev libreadline-dev liblzma-dev tk-dev wl-clipboard curl zip unzip ncurses-term
 ```
 
 ### openSUSE
