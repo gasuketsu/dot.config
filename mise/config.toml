@@ -22,3 +22,6 @@ stylua = "latest"
 usage = "latest"
 zellij = "latest"
 zoxide = "latest"
+
+[settings]
+python_compile = true
