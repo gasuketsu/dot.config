@@ -254,8 +254,8 @@ themes {
   }
   kanagawa {
     fg      "#a7ac9c"
-    bg      "#181616"
-    black   "#181616"
+    bg      "#1f1f28"
+    black   "#181820"
     red     "#c34043"
     green   "#6f894e"
     yellow  "#dca561"
