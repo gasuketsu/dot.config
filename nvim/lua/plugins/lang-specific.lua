@@ -13,6 +13,7 @@ return {
         config = function()
             require("go").setup({
                 tag_transform = "snakecase",
+                tag_options = "",
             })
         end,
     },
