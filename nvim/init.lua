@@ -13,5 +13,6 @@ vim.opt.runtimepath:prepend(lazypath)
 vim.g.mapleader = " "
 
 require("rc.base")
+require("rc.filetype")
 
 require("lazy").setup("plugins")

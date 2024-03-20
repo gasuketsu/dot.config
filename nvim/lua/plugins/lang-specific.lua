@@ -5,16 +5,19 @@ return {
     },
     -- golang
     {
-        "ray-x/go.nvim",
+        "olexsmir/gopher.nvim",
         dependencies = {
-            "ray-x/guihua.lua",
+            "nvim-lua/plenary.nvim",
             "nvim-treesitter/nvim-treesitter",
+            "mfussenegger/nvim-dap",
         },
         config = function()
-            require("go").setup({
-                tag_transform = "snakecase",
-                tag_options = "",
+            require("gopher").setup({
+                gotests = {
+                    template = "default",
+                },
             })
+            require("gopher.dap").setup()
         end,
     },
 }

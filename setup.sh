@@ -38,6 +38,11 @@ fi
 if [ ! -e "$HOME/.default-npm-packages" ]; then
     cp "$HOME/.config/mise/default-npm-packages" "$HOME/.default-npm-packages"
 fi
+# default go env (only when no env file exist)
+if [ ! -f "$HOME/.config/go/env" ]; then
+    mkdir -p "$HOME/.config/go"
+    echo "GOBIN=$HOME/.local/bin" >"$HOME/.config/go/env"
+fi
 
 source "$HOME/.config/bash/rc.bash"
 # install tools

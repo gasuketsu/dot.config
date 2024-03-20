@@ -8,7 +8,7 @@ return {
                     cpp = { "clang-format" },
                     css = { "prettier" },
                     fish = { "fish_indent" },
-                    go = { "goimports" },
+                    go = { "gofumpt", "goimports" },
                     html = { "prettier" },
                     javascript = { "prettier" },
                     javascriptreact = { "prettier" },

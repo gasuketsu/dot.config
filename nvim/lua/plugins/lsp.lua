@@ -24,12 +24,18 @@ return {
             })
 
             local on_attach = function(_, _) -- client, bufnr
-                -- things to be done only when LSP server attached
+                vim.lsp.codelens.refresh()
             end
 
             local capabilities = require("cmp_nvim_lsp").default_capabilities(
                 vim.lsp.protocol.make_client_capabilities()
             )
+            if not capabilities.workspace then
+                capabilities.workspace = {}
+            end
+            capabilities.workspace.didChangeWatchedFiles = {
+                dynamicRegistration = true,
+            }
 
             local lspconfig = require("lspconfig")
             require("mason-lspconfig").setup_handlers({
@@ -50,7 +56,20 @@ return {
                     lspconfig.gopls.setup({
                         capabilities = capabilities,
                         on_attach = on_attach,
-                        settings = { gopls = { gofumpt = true } },
+                        settings = {
+                            gopls = {
+                                gofumpt = true,
+                                codelenses = {
+                                    generate = true,
+                                    gc_details = true,
+                                    test = true,
+                                    tidy = true,
+                                    vendor = false,
+                                    regenerate_cgo = true,
+                                    upgrade_dependency = true,
+                                },
+                            },
+                        },
                         root_dir = lspconfig.util.root_pattern("go.mod"),
                     })
                 end,

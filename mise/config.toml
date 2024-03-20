@@ -25,3 +25,4 @@ zoxide = "latest"
 
 [settings]
 python_compile = true
+go_set_gobin = false
