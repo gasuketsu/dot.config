@@ -13,11 +13,13 @@ return {
         config = function()
             require("mason-tool-installer").setup({
                 ensure_installed = {
+                    -- golang
                     "gofumpt",
                     "goimports",
                     "gomodifytags",
                     "gotests",
-                    "revive",
+                    "iferr",
+                    "impl",
                 },
             })
         end,
