@@ -15,7 +15,9 @@ return {
                 ensure_installed = {
                     "gofumpt",
                     "goimports",
+                    "gomodifytags",
                     "gotests",
+                    "revive",
                 },
             })
         end,
