@@ -1,8 +1,4 @@
 return {
-    -- python
-    {
-        "Vimjas/vim-python-pep8-indent",
-    },
     -- golang
     {
         "crispgm/nvim-go",
