@@ -2,3 +2,4 @@ google.golang.org/protobuf/cmd/protoc-gen-go@latest
 google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
 github.com/abice/go-enum@latest
 github.com/x-motemen/ghq@latest
+github.com/google/yamlfmt/cmd/yamlfmt@latest
