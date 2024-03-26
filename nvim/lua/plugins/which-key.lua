@@ -3,12 +3,24 @@ return {
         "folke/which-key.nvim",
         dependencies = {
             { "stevearc/conform.nvim" },
+            { "nvim-neotest/neotest" },
         },
         config = function()
             local wk = require("which-key")
+            local conform = require("conform")
+            local neotest = require("neotest")
             wk.setup()
             -- normal mode keymaps with <leader>
             wk.register({
+                ["<space>"] = {
+                    name = "toggle",
+                    e = { "<cmd>NvimTreeToggle<cr>", "Toggle file explorer" },
+                    l = { "<cmd>LLToggle!<cr>", "Toggle loclist" },
+                    o = { "<cmd>AerialToggle!<cr>", "Toggle outline" },
+                    q = { "<cmd>QFToggle!<cr>", "Toggle quickfix" },
+                    t = { "<cmd>ToggleTerm<cr>", "Toggle Terminal" },
+                    x = { "<cmd>TroubleToggle<cr>", "Toggle Trouble" },
+                },
                 f = {
                     name = "find",
                     D = { "<cmd>Telescope lsp_definitions<cr>", "Find definitions" },
@@ -25,6 +37,11 @@ return {
                 },
                 g = {
                     name = "git",
+                    ["<space>"] = {
+                        name = "toggle",
+                        b = { "<cmd>Gitsigns toggle_current_line<cr>", "Toggle current line blame" },
+                        d = { "<cmd>Gitsigns toggle_deleted<cr>", "Toggle deleted" },
+                    },
                     b = { "<cmd>Gitsigns blame_line<cr>", "Blame current line" },
                     d = {
                         name = "diff",
@@ -41,17 +58,15 @@ return {
                         s = { "<cmd>Gitsigns stage_hunk<cr>", "Stage hunk" },
                         u = { "<cmd>Gitsigns undo_stage_hunk<cr>", "Undo last stage" },
                     },
-                    t = {
-                        name = "toggle",
-                        b = { "<cmd>Gitsigns toggle_current_line<cr>", "Toggle current line blame" },
-                        d = { "<cmd>Gitsigns toggle_deleted<cr>", "Toggle deleted" },
-                    },
                     v = {
                         name = "diffView",
+                        ["<space>"] = {
+                            "<cmd>DiffviewToggleFiles<cr>",
+                            "Toggle DiffView file tree",
+                        },
                         c = { "<cmd>DiffviewClose<cr>", "Close DiffView" },
                         o = { "<cmd>DiffviewOpen<cr>", "Open DiffView" },
                         r = { "<cmd>DiffviewRefresh<cr>", "Refresh DiffView" },
-                        t = { "<cmd>DiffviewToggleFiles<cr>", "Toggle DiffView file tree" },
                     },
                 },
                 l = {
@@ -73,28 +88,43 @@ return {
                     name = "treesitter",
                     c = {
                         name = "context",
+                        ["<space>"] = { "<cmd>TSContextToggle<cr>", "Toggle treesitter context" },
                         d = { "<cmd>TSContextDisable<cr>", "Disable treesitter context" },
                         e = { "<cmd>TSContextEnable<cr>", "Enable treesitter context" },
-                        t = { "<cmd>TSContextToggle<cr>", "Toggle treesitter context" },
                     },
                     u = { "<cmd>TSUpdate<cr>", "Update treesitter parsers" },
                 },
                 t = {
-                    name = "toggle",
-                    e = { "<cmd>NvimTreeToggle<cr>", "Toggle file explorer" },
-                    l = { "<cmd>LLToggle!<cr>", "Toggle loclist" },
-                    o = { "<cmd>AerialToggle!<cr>", "Toggle outline" },
-                    q = { "<cmd>QFToggle!<cr>", "Toggle quickfix" },
-                    t = { "<cmd>ToggleTerm<cr>", "Toggle Terminal" },
-                    x = { "<cmd>TroubleToggle<cr>", "Toggle Trouble" },
+                    name = "test",
+                    c = { neotest.output_panel.clear, "Clear test output panel" },
+                    o = { neotest.output_panel.toggle, "Toggle test output panel" },
+                    r = {
+                        name = "run",
+                        s = {
+                            function()
+                                neotest.run.run(vim.fn.getcwd())
+                            end,
+                            "Run suite test",
+                        },
+                        f = {
+                            function()
+                                neotest.run.run(vim.fn.expand("%"))
+                            end,
+                            "Run file test",
+                        },
+                        l = { neotest.run.run_last, "Run last test" },
+                        n = { neotest.run.run, "Run nearest test" },
+                    },
+                    s = { neotest.summary.toggle, "Toggle test summary window" },
+                    S = { neotest.stop, "Stop test" },
                 },
                 x = {
                     name = "trouble",
+                    ["<space>"] = { "<cmd>TroubleToggle<cr>", "Trouble toggle" },
                     d = { "<cmd>Trouble document_diagnostics<cr>", "Trouble document_diagnostics" },
                     l = { "<cmd>Trouble loclist<cr>", "Trouble loclist" },
                     q = { "<cmd>Trouble quickfix<cr>", "Trouble quickfix" },
                     r = { "<cmd>Trouble lsp_references<cr>", "Trouble lsp_references" },
-                    t = { "<cmd>TroubleToggle<cr>", "Trouble toggle" },
                     w = {
                         "<cmd>Trouble workspace_diagnostics<cr>",
                         "Trouble workspace_diagnostics",
@@ -104,6 +134,7 @@ return {
             -- normal mode keymaps without <leader>
             wk.register({
                 K = { vim.lsp.buf.hover, "Display hover info" },
+                T = { neotest.output.open, "Display output of test" },
                 Y = { "y$", "Yank to end of the line" },
                 g = {
                     name = "goto/comments",
@@ -122,6 +153,7 @@ return {
                     },
                     l = { "<cmd>LLPrev<cr>", "Prev loclist" },
                     q = { "<cmd>QFPrev<cr>", "Prev quickfix" },
+                    t = { neotest.jump.prev, "Prev test" },
                 },
                 ["]"] = {
                     name = "next",
@@ -134,10 +166,11 @@ return {
                     },
                     l = { "<cmd>LLNext<cr>", "Next loclist" },
                     q = { "<cmd>QFNext<cr>", "Next quickfix" },
+                    t = { neotest.jump.next, "Next test" },
                 },
                 ["<M-f>"] = {
                     function()
-                        require("conform").format({
+                        conform.format({
                             lsp_fallback = true,
                         })
                     end,

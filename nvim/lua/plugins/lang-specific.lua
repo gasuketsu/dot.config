@@ -1,18 +1,13 @@
 return {
     -- golang
     {
-        "crispgm/nvim-go",
+        "olexsmir/gopher.nvim",
         dependencies = {
             "nvim-lua/plenary.nvim",
+            "nvim-treesitter/nvim-treesitter",
         },
         config = function()
-            require("go").setup({
-                auto_format = false,
-                auto_lint = false,
-                linter = "golangci-lint",
-                linter_prompt_style = "vt",
-                tags_options = {},
-            })
+            require("gopher").setup()
         end,
     },
 }
