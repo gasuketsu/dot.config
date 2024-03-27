@@ -13,13 +13,14 @@ return {
         config = function()
             require("mason-tool-installer").setup({
                 ensure_installed = {
-                    -- golang
+                    "biome",
                     "gofumpt",
                     "goimports",
                     "gomodifytags",
                     "gotests",
                     "iferr",
                     "impl",
+                    "yamlfmt",
                 },
             })
         end,
