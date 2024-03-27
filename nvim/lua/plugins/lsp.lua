@@ -16,6 +16,7 @@ return {
                     "kotlin_language_server",
                     "lua_ls",
                     "pyright",
+                    "rust_analyzer",
                     "svelte",
                     "tsserver",
                     "yamlls",
@@ -97,6 +98,7 @@ return {
                         },
                     })
                 end,
+                ["rust_analyzer"] = function() end,
                 ["tsserver"] = function()
                     lspconfig.tsserver.setup({
                         capabilities = capabilities,
