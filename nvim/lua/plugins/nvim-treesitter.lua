@@ -24,6 +24,7 @@ return {
                     "go",
                     "gomod",
                     "groovy",
+                    "hjson",
                     "html",
                     "java",
                     "javascript",
