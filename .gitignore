@@ -19,4 +19,4 @@ Pipfile.lock
 /nvim/plugin/packer_compiled.lua
 /neofetch/
 /containers/
-/systemd/
+/systemd/user/*.wants/
