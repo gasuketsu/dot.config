@@ -23,7 +23,7 @@ fi
 
 # mise
 if ! type mise >/dev/null 2>&1; then
-    curl https://mise.jdx.dev/install.sh | sh
+    curl https://mise.run | sh
 fi
 
 # default python packages
