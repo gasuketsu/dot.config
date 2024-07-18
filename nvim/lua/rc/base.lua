@@ -70,8 +70,8 @@ vim.opt.shiftwidth = 2
 vim.opt.cindent = true
 vim.opt.cino = "l1,:0,g0,(0,W4,m1"
 
--- Copy&Paste
-vim.opt.clipboard = "unnamedplus"
+-- Clipboard
+vim.opt.clipboard:append({ "unnamedplus" })
 
 -- Search behavior
 vim.opt.ignorecase = true
