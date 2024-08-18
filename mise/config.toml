@@ -23,5 +23,5 @@ zellij = "latest"
 zoxide = "latest"
 
 [settings]
-python_compile = true
+python_compile = false
 go_set_gobin = false
