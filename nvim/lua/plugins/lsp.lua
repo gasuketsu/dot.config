@@ -15,7 +15,7 @@ return {
                     "pyright",
                     "rust_analyzer",
                     "svelte",
-                    "tsserver",
+                    "ts_ls",
                     "yamlls",
                 },
                 automatic_installation = true,
