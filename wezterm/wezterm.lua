@@ -2,7 +2,7 @@ local wezterm = require("wezterm")
 local act = wezterm.action
 
 local launch_menu = {}
-local font_family = "UDEV Gothic NF"
+local font_family = "PlemolJP Console NF"
 
 if wezterm.target_triple == "x86_64-pc-windows-msvc" then
     table.insert(launch_menu, {
@@ -21,7 +21,7 @@ return {
     front_end = "WebGpu",
     ime_preedit_rendering = "System",
     warn_about_missing_glyphs = false,
-    font = wezterm.font({ family = font_family }),
+    font = wezterm.font({ family = font_family, weight = 450 }),
     font_rules = {
         {
             intensity = "Bold",
