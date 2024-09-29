@@ -96,8 +96,8 @@ return {
                     })
                 end,
                 ["rust_analyzer"] = function() end,
-                ["tsserver"] = function()
-                    lspconfig.tsserver.setup({
+                ["ts_ls"] = function()
+                    lspconfig.ts_ls.setup({
                         capabilities = capabilities,
                         on_attach = on_attach,
                         root_dir = lspconfig.util.root_pattern(
