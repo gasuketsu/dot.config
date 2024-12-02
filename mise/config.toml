@@ -1,12 +1,12 @@
 [tools]
 bat = "latest"
+bun = "latest"
 deno = "latest"
 difftastic = "latest"
 fd = "latest"
 go = "latest"
 jless = "latest"
 neovim = "latest"
-node = "lts"
 protoc = "latest"
 python = "latest"
 ripgrep = "latest"
