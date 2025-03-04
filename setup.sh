@@ -26,11 +26,6 @@ if ! type mise >/dev/null 2>&1; then
     curl https://mise.run | sh
 fi
 
-# use bun instead of npm
-if [ ! -e "$HOME/.local/bin/npm" ]; then
-    cp "$HOME/.config/skel/.local/bin/npm" "$HOME/.local/bin"
-fi
-
 # default python packages
 if [ ! -e "$HOME/.default-python-packages" ]; then
     cp "$HOME/.config/mise/default-python-packages" "$HOME/.default-python-packages"
