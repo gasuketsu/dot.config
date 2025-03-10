@@ -31,7 +31,7 @@ return {
                         ["cmp.entry.get_documentation"] = true,
                     },
                     signature = {
-                        enabled = true,
+                        enabled = false,
                     },
                     presets = {
                         lsp_doc_border = true,

@@ -151,7 +151,7 @@ return {
             })
             -- normal mode keymaps without <leader>
             wk.add({
-                { "K", vim.lsp.buf.hover, desc = "Display hover info" },
+                -- { "K", vim.lsp.buf.hover, desc = "Display hover info" },
                 { "T", neotest.output.open, desc = "Display output of test" },
                 { "Y", "y$", desc = "Yank to end of the line" },
                 -- group "goto/comment"
