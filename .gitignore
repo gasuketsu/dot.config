@@ -20,3 +20,4 @@ Pipfile.lock
 /neofetch/
 /containers/
 /systemd/user/*.wants/
+/github-copilot/apps.json
