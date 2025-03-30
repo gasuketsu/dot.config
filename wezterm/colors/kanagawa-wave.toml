@@ -1,9 +1,9 @@
 [colors]
 foreground = "#a7ac9c"
 background = "#1f1f28"
-cursor_bg = "#ffa066"
+cursor_bg = "#dcd7ba"
 cursor_fg = "#282727"
-cursor_border = "#ffa066"
+cursor_border = "#dcd7ba"
 compose_cursor = "#e6c384"
 selection_bg = "#2d4f67"
 selection_fg = "#dcd7ba"
