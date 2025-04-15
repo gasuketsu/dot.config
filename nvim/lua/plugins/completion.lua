@@ -4,21 +4,8 @@ return {
         version = "*",
         opts = {
             keymap = {
-                preset = "none",
-                ["<C-i>"] = { "show", "show_documentation", "hide_documentation" },
-                ["<Esc>"] = {
-                    function(cmp)
-                        if cmp.is_visible() then
-                            return cmp.hide()
-                        end
-                    end,
-                    "fallback",
-                },
-                ["<C-e>"] = { "hide", "fallback" },
-                ["<CR>"] = { "accept", "fallback" },
-                ["<Up>"] = { "select_prev", "fallback" },
-                ["<Down>"] = { "select_next", "fallback" },
-                ["<C-p>"] = { "select_prev", "fallback_to_mappings" },
+                preset = "enter",
+                ["<C-space>"] = {},
                 ["<C-n>"] = {
                     function(cmp)
                         if not cmp.is_visible() then
@@ -28,11 +15,17 @@ return {
                     "select_next",
                     "fallback_to_mappings",
                 },
-                ["<C-b>"] = { "scroll_documentation_up", "fallback" },
-                ["<C-f>"] = { "scroll_documentation_down", "fallback" },
-                ["<Tab>"] = { "snippet_forward", "fallback" },
-                ["<S-Tab>"] = { "snippet_backward", "fallback" },
+                ["<C-i>"] = { "show", "show_documentation", "hide_documentation" },
+                ["<Esc>"] = {
+                    function(cmp)
+                        if cmp.is_visible() then
+                            return cmp.hide()
+                        end
+                    end,
+                    "fallback",
+                },
                 ["<C-k>"] = { "show_signature", "hide_signature", "fallback" },
+                ["<Tab>"] = { "snippet_forward", "fallback" },
             },
             cmdline = {
                 keymap = {
