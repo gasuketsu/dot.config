@@ -4,7 +4,6 @@ return {
         dependencies = {
             { "williamboman/mason.nvim" },
             { "neovim/nvim-lspconfig" },
-            { "saghen/blink.cmp" },
         },
         config = function()
             require("mason-lspconfig").setup({
@@ -26,7 +25,9 @@ return {
                 vim.lsp.codelens.refresh()
             end
 
-            local capabilities = require("blink.cmp").get_lsp_capabilities()
+            local capabilities = require("cmp_nvim_lsp").default_capabilities(
+                vim.lsp.protocol.make_client_capabilities()
+            )
             if not capabilities.workspace then
                 capabilities.workspace = {}
             end
