@@ -21,12 +21,12 @@ return {
                 ["<Esc>"] = {
                     function(cmp)
                         if cmp.is_visible() then
-                            return cmp.cancel()
+                            return cmp.hide()
                         end
                     end,
                     "fallback",
                 },
-                ["<C-e>"] = { "cancel", "fallback" },
+                ["<C-e>"] = { "hide", "fallback" },
                 ["<CR>"] = { "accept", "fallback" },
                 ["<Up>"] = { "select_prev", "fallback" },
                 ["<Down>"] = { "select_next", "fallback" },
@@ -58,7 +58,6 @@ return {
                         "accept",
                     },
                     ["<CR>"] = { "select_and_accept", "fallback" },
-                    ["<C-e>"] = { "cancel", "fallback" },
                 },
                 completion = {
                     ghost_text = {
