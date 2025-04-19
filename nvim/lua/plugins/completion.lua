@@ -6,15 +6,17 @@ return {
             { "hrsh7th/cmp-buffer" },
             { "hrsh7th/cmp-path" },
             { "hrsh7th/cmp-cmdline" },
-            { "onsails/lspkind-nvim" },
+            { "onsails/lspkind.nvim" },
             { "L3MON4D3/LuaSnip" },
             { "saadparwaiz1/cmp_luasnip" },
-            { "tzachar/cmp-tabnine", build = "./install.sh" },
+            { "brenoprata10/nvim-highlight-colors" },
+            { "zbirenbaum/copilot-cmp" },
         },
         config = function()
             local cmp = require("cmp")
             local lspkind = require("lspkind")
             local luasnip = require("luasnip")
+            local hlcolors = require("nvim-highlight-colors")
 
             local has_words_before = function()
                 unpack = unpack or table.unpack
@@ -27,15 +29,6 @@ return {
                         == nil
             end
 
-            local source_map = {
-                nvim_lsp = "[LSP]",
-                buffer = "[Buffer]",
-                path = "[Path]",
-                vsnip = "[Snippet]",
-                cmdline = "[Command]",
-                cmp_tabnine = "[Tabnine]",
-            }
-
             cmp.setup({
                 snippet = {
                     -- REQUIRED - you must specify a snippet engine
@@ -44,18 +37,33 @@ return {
                     end,
                 },
                 formatting = {
-                    format = lspkind.cmp_format({
-                        with_text = true,
-                        menu = source_map,
-                        maxwidth = 50,
-                    }),
+                    format = function(entry, item)
+                        local color_item = hlcolors.format(entry, { kind = item.kind })
+                        item = lspkind.cmp_format({
+                            mode = "symbol_text",
+                            maxwidth = {
+                                menu = 50,
+                                abbr = 50,
+                            },
+                            ellipsis_char = "...",
+                            show_labelDetails = true,
+                            symbol_map = {
+                                Copilot = "",
+                            },
+                        })(entry, item)
+                        if color_item.abbr_hl_group then
+                            item.kind_hl_group = color_item.abbr_hl_group
+                            item.kind = color_item.abbr
+                        end
+                        return item
+                    end,
                 },
                 mapping = {
                     ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
                     ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
                     ["<C-n>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }),
                     ["<C-p>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
-                    ["<C-y>"] = cmp.mapping(cmp.config.disable, { "i", "c" }),
+                    ["<C-y>"] = cmp.mapping(cmp.mapping.confirm({ select = false }), { "i", "c" }),
                     ["<C-e>"] = cmp.mapping(cmp.mapping.abort(), { "i", "c" }),
                     ["<CR>"] = cmp.mapping(
                         cmp.mapping.confirm({
@@ -91,7 +99,7 @@ return {
                     { name = "nvim_lsp" },
                     { name = "luasnip" },
                 }, {
-                    { name = "cmp_tabnine" },
+                    { name = "copilot" },
                     { name = "buffer" },
                     { name = "path" },
                 }),
