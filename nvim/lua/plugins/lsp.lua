@@ -4,7 +4,6 @@ return {
         dependencies = {
             { "williamboman/mason.nvim" },
             { "neovim/nvim-lspconfig" },
-            { "hrsh7th/cmp-nvim-lsp" },
         },
         config = function()
             require("mason-lspconfig").setup({
@@ -26,20 +25,19 @@ return {
                 vim.lsp.codelens.refresh()
             end
 
-            local capabilities = require("cmp_nvim_lsp").default_capabilities(
-                vim.lsp.protocol.make_client_capabilities()
-            )
-            if not capabilities.workspace then
-                capabilities.workspace = {}
-            end
-            capabilities.workspace.didChangeWatchedFiles = {
-                dynamicRegistration = true,
-            }
+            -- local capabilities = require("cmp_nvim_lsp").default_capabilities(
+            --     vim.lsp.protocol.make_client_capabilities()
+            -- )
+            -- if not capabilities.workspace then
+            --     capabilities.workspace = {}
+            -- end
+            -- capabilities.workspace.didChangeWatchedFiles = {
+            --     dynamicRegistration = true,
+            -- }
 
             -- local lspconfig = require("lspconfig")
             vim.lsp.config("*", {
                 root_markers = { ".git", ".hg" },
-                capabilities = capabilities,
                 on_attach = on_attach,
             })
             vim.lsp.config("gopls", {
