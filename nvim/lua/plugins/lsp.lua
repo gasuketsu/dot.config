@@ -4,6 +4,7 @@ return {
         dependencies = {
             { "williamboman/mason.nvim" },
             { "neovim/nvim-lspconfig" },
+            { "hrsh7th/cmp-nvim-lsp" },
         },
         config = function()
             require("mason-lspconfig").setup({
@@ -35,79 +36,47 @@ return {
                 dynamicRegistration = true,
             }
 
-            local lspconfig = require("lspconfig")
-            require("mason-lspconfig").setup_handlers({
-                function(server_name)
-                    lspconfig[server_name].setup({
-                        capabilities = capabilities,
-                        on_attach = on_attach,
-                    })
-                end,
-                ["denols"] = function()
-                    lspconfig.denols.setup({
-                        capabilities = capabilities,
-                        on_attach = on_attach,
-                        root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
-                    })
-                end,
-                ["gopls"] = function()
-                    lspconfig.gopls.setup({
-                        capabilities = capabilities,
-                        on_attach = on_attach,
-                        settings = {
-                            gopls = {
-                                gofumpt = true,
-                                codelenses = {
-                                    generate = true,
-                                    gc_details = true,
-                                    test = true,
-                                    tidy = true,
-                                    vendor = false,
-                                    regenerate_cgo = true,
-                                    upgrade_dependency = true,
-                                },
+            -- local lspconfig = require("lspconfig")
+            vim.lsp.config("*", {
+                root_markers = { ".git", ".hg" },
+                capabilities = capabilities,
+                on_attach = on_attach,
+            })
+            vim.lsp.config("gopls", {
+                settings = {
+                    gopls = {
+                        gofumpt = true,
+                        codelenses = {
+                            generate = true,
+                            gc_details = true,
+                            test = true,
+                            tidy = true,
+                            vendor = false,
+                            regenerate_cgo = true,
+                            upgrade_dependency = true,
+                        },
+                    },
+                },
+            })
+            vim.lsp.config("kotolin_language_server", {
+                settings = {
+                    kotlin = { compiler = { jvm = { target = "17" } } },
+                },
+            })
+            vim.lsp.config("lua_ls", {
+                settings = {
+                    Lua = {
+                        runtime = {
+                            version = "LuaJIT",
+                        },
+                        workspace = {
+                            checkThirdParty = false,
+                            library = {
+                                vim.env.VIMRUNTIME,
                             },
                         },
-                        root_dir = lspconfig.util.root_pattern("go.mod"),
-                    })
-                end,
-                ["kotlin_language_server"] = function()
-                    lspconfig.kotlin_language_server.setup({
-                        settings = {
-                            kotlin = { compiler = { jvm = { target = "17" } } },
-                        },
-                    })
-                end,
-                ["lua_ls"] = function()
-                    lspconfig.lua_ls.setup({
-                        settings = {
-                            Lua = {
-                                runtime = {
-                                    version = "LuaJIT",
-                                },
-                                workspace = {
-                                    checkThirdParty = false,
-                                    library = {
-                                        vim.env.VIMRUNTIME,
-                                    },
-                                },
-                            },
-                        },
-                    })
-                end,
-                ["rust_analyzer"] = function() end,
-                ["ts_ls"] = function()
-                    lspconfig.ts_ls.setup({
-                        capabilities = capabilities,
-                        on_attach = on_attach,
-                        root_dir = lspconfig.util.root_pattern(
-                            "package.json",
-                            "tsconfig.json",
-                            "jsconfig.json"
-                        ),
-                        single_file_support = false,
-                    })
-                end,
+                    },
+                },
             })
 
             -- Diagnostic Configuration
@@ -133,6 +102,8 @@ return {
                 "DiagnosticSignHint",
                 { text = " ", texthl = "DiagnosticSignHint" }
             )
+
+            vim.lsp.enable(require("mason-lspconfig").get_installed_servers())
         end,
     },
 }
