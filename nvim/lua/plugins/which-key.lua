@@ -19,7 +19,6 @@ return {
                 { "<leader><space>o", "<cmd>AerialToggle!<cr>", desc = "Toggle outline" },
                 { "<leader><space>q", "<cmd>QFToggle!<cr>", desc = "Toggle quickfix" },
                 { "<leader><space>t", "<cmd>ToggleTerm<cr>", desc = "Toggle Terminal" },
-                { "<leader><space>x", "<cmd>TroubleToggle<cr>", desc = "Toggle Trouble" },
                 -- group "find"
                 { "<leader>f", group = "find" },
                 { "<leader>fD", "<cmd>Telescope lsp_definitions<cr>", desc = "Find definitions" },
@@ -31,7 +30,6 @@ return {
                 { "<leader>fg", "<cmd>Telescope git_files<cr>", desc = "Find git files" },
                 { "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Find help tags" },
                 { "<leader>fn", "<cmd>Telescope noice<cr>", desc = "Find noice message history" },
-                { "<leader>fp", "<cmd>Telescope projects<cr>", desc = "Find projects" },
                 { "<leader>fs", "<cmd>Telescope aerial<cr>", desc = "Find symbol in this buffer" },
                 -- group "git"
                 { "<leader>g", group = "git" },
@@ -130,23 +128,35 @@ return {
                 { "<leader>tS", neotest.stop, desc = "Stop test" },
                 -- group "trouble"
                 { "<leader>x", group = "trouble" },
-                { "<leader>x<space>", "<cmd>TroubleToggle<cr>", desc = "Trouble toggle" },
                 {
-                    "<leader>xd",
-                    "<cmd>Trouble document_diagnostics<cr>",
-                    desc = "Trouble document_diagnostics",
-                },
-                { "<leader>xl", "<cmd>Trouble loclist<cr>", desc = "Trouble loclist" },
-                { "<leader>xq", "<cmd>Trouble quickfix<cr>", desc = "Trouble quickfix" },
-                {
-                    "<leader>xr",
-                    "<cmd>Trouble lsp_references<cr>",
-                    desc = "Trouble lsp_references",
+                    "<leader>xx",
+                    "<cmd>Trouble diagnostics toggle filter=buf=0<cr>",
+                    desc = "Buffer Diagnostics (Trouble)",
                 },
                 {
-                    "<leader>xw",
-                    "<cmd>Trouble workspace_diagnostics<cr>",
-                    desc = "Trouble workspace_diagnostics",
+                    "<leader>xX",
+                    "<cmd>Trouble diagnostics toggle filter=buf=0<cr>",
+                    desc = "Diagnostics (Trouble)",
+                },
+                {
+                    "<leader>xs",
+                    "<cmd>Trouble symbol toggle focus=false<cr>",
+                    desc = "Symbols (Trouble)",
+                },
+                {
+                    "<leader>xl",
+                    "<cmd>Trouble loclist toggle<cr>",
+                    desc = "Location List (Trouble)",
+                },
+                {
+                    "<leader>xq",
+                    "<cmd>Trouble qflist toggle<cr>",
+                    desc = "Quickfix List (Trouble)",
+                },
+                {
+                    "<leader>xL",
+                    "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+                    desc = "LSP Definitions/references/... (Trouble)",
                 },
             })
             -- normal mode keymaps without <leader>
@@ -165,7 +175,7 @@ return {
                 {
                     "[d",
                     function()
-                        vim.diagnostic.goto_prev({ float = false })
+                        vim.diagnostic.jump({ count = -1, float = false })
                     end,
                     desc = "Prev diagnostic",
                 },
@@ -178,7 +188,7 @@ return {
                 {
                     "]d",
                     function()
-                        vim.diagnostic.goto_next({ float = false })
+                        vim.diagnostic.jump({ count = 1, float = false })
                     end,
                     desc = "Next diagnostic",
                 },
