@@ -19,6 +19,12 @@ return {
                 { "<leader><space>o", "<cmd>AerialToggle!<cr>", desc = "Toggle outline" },
                 { "<leader><space>q", "<cmd>QFToggle!<cr>", desc = "Toggle quickfix" },
                 { "<leader><space>t", "<cmd>ToggleTerm<cr>", desc = "Toggle Terminal" },
+                -- diagnostics
+                {
+                    "<leader>d",
+                    vim.diagnostic.open_float,
+                    desc = "Show diagnostics in floating window",
+                },
                 -- group "find"
                 { "<leader>f", group = "find" },
                 { "<leader>fD", "<cmd>Telescope lsp_definitions<cr>", desc = "Find definitions" },
@@ -75,11 +81,6 @@ return {
                     desc = "Find symbols in workspace",
                 },
                 { "<leader>la", vim.lsp.buf.code_action, desc = "Code Action" },
-                {
-                    "<leader>ld",
-                    vim.diagnostic.open_float,
-                    desc = "Show diagnostics in floating window",
-                },
                 { "<leader>ll", vim.lsp.codelens.run, desc = "Run CodeLens action" },
                 { "<leader>lr", vim.lsp.buf.rename, desc = "Rename symbol" },
                 {
