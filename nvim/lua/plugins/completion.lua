@@ -19,51 +19,37 @@ return {
                 preset = "none",
                 ["<C-i>"] = { "show", "show_documentation", "hide_documentation" },
                 ["<Esc>"] = {
-                    function(cmp)
-                        if cmp.is_visible() then
-                            return cmp.cancel()
-                        end
-                    end,
+                    "cancel",
                     "fallback",
                 },
-                ["<C-e>"] = { "cancel", "fallback" },
+                ["<Tab>"] = { "snippet_forward", "fallback" },
                 ["<CR>"] = { "accept", "fallback" },
+                ["<C-e>"] = { "cancel", "fallback" },
                 ["<Up>"] = { "select_prev", "fallback" },
                 ["<Down>"] = { "select_next", "fallback" },
                 ["<C-p>"] = { "select_prev", "fallback_to_mappings" },
                 ["<C-n>"] = {
-                    function(cmp)
-                        if not cmp.is_visible() then
-                            return cmp.show()
-                        end
-                    end,
+                    "show",
                     "select_next",
                     "fallback_to_mappings",
                 },
                 ["<C-b>"] = { "scroll_documentation_up", "fallback" },
                 ["<C-f>"] = { "scroll_documentation_down", "fallback" },
-                ["<Tab>"] = { "snippet_forward", "fallback" },
                 ["<S-Tab>"] = { "snippet_backward", "fallback" },
                 ["<C-k>"] = { "show_signature", "hide_signature", "fallback" },
+                ["<C-y>"] = { "accept", "fallback" },
             },
             cmdline = {
                 keymap = {
                     ["<Tab>"] = {
-                        function(cmp)
-                            if cmp.is_menu_visible() then
-                                return cmp.select_next()
-                            end
-                        end,
                         "show",
-                        "accept",
+                        "select_next",
+                        "fallback_to_mappings",
                     },
-                    ["<CR>"] = { "select_and_accept", "fallback" },
+                    ["<CR>"] = { "accept", "fallback" },
+                    ["<C-e>"] = { "cancel", "fallback" },
                     ["<C-n>"] = {
-                        function(cmp)
-                            if not cmp.menu_is_visible() then
-                                return cmp.show()
-                            end
-                        end,
+                        "show",
                         "select_next",
                         "fallback_to_mappings",
                     },
@@ -71,7 +57,7 @@ return {
                         "select_prev",
                         "fallback_to_mappings",
                     },
-                    ["<C-e>"] = { "cancel", "fallback" },
+                    ["<C-y>"] = { "accept", "fallback" },
                 },
                 completion = {
                     ghost_text = {
@@ -83,13 +69,23 @@ return {
                 },
             },
             completion = {
+                menu = {
+                    draw = {
+                        columns = {
+                            { "label", "label_description", gap = 1 },
+                            { "kind_icon", gap = 1, "kind" },
+                        },
+                    },
+                },
                 list = {
                     selection = { preselect = false },
                 },
+                documentation = { auto_show = true, auto_show_delay_ms = 200 },
             },
             signature = {
                 enabled = true,
                 window = {
+                    show_documentation = true,
                     border = "single",
                 },
             },
