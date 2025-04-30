@@ -14,7 +14,7 @@ return {
             wk.add({
                 -- group "toggle'
                 { "<leader><space>", group = "toggle" },
-                { "<leader><space>e", "<cmd>NvimTreeToggle<cr>", desc = "Toggle file explorer" },
+                { "<leader><space>e", "<cmd>Neotree toggle<cr>", desc = "Toggle file explorer" },
                 { "<leader><space>l", "<cmd>LLToggle!<cr>", desc = "Toggle loclist" },
                 { "<leader><space>o", "<cmd>AerialToggle!<cr>", desc = "Toggle outline" },
                 { "<leader><space>q", "<cmd>QFToggle!<cr>", desc = "Toggle quickfix" },
