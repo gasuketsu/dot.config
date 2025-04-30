@@ -25,17 +25,6 @@ return {
                 vim.lsp.codelens.refresh()
             end
 
-            -- local capabilities = require("cmp_nvim_lsp").default_capabilities(
-            --     vim.lsp.protocol.make_client_capabilities()
-            -- )
-            -- if not capabilities.workspace then
-            --     capabilities.workspace = {}
-            -- end
-            -- capabilities.workspace.didChangeWatchedFiles = {
-            --     dynamicRegistration = true,
-            -- }
-
-            -- local lspconfig = require("lspconfig")
             vim.lsp.config("*", {
                 root_markers = { ".git", ".hg" },
                 on_attach = on_attach,
@@ -79,28 +68,16 @@ return {
 
             -- Diagnostic Configuration
             vim.diagnostic.config({
-                signs = true,
+                signs = {
+                    text = {
+                        [vim.diagnostic.severity.ERROR] = " ",
+                        [vim.diagnostic.severity.WARN] = " ",
+                        [vim.diagnostic.severity.INFO] = " ",
+                        [vim.diagnostic.severity.HINT] = " ",
+                    },
+                },
                 underline = true,
             })
-
-            -- Sign Definition
-            vim.fn.sign_define(
-                "DiagnosticSignError",
-                { text = " ", texthl = "DiagnosticSignError" }
-            )
-            vim.fn.sign_define(
-                "DiagnosticSignWarn",
-                { text = " ", texthl = "DiagnosticSignWarn" }
-            )
-            vim.fn.sign_define(
-                "DiagnosticSignInfo",
-                { text = " ", texthl = "DiagnosticSignInfo" }
-            )
-            vim.fn.sign_define(
-                "DiagnosticSignHint",
-                { text = " ", texthl = "DiagnosticSignHint" }
-            )
-
             vim.lsp.enable(require("mason-lspconfig").get_installed_servers())
         end,
     },
