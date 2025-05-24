@@ -18,6 +18,7 @@ shellcheck = "latest"
 shfmt = "latest"
 starship = "latest"
 usage = "latest"
+uv = "latest"
 zellij = "latest"
 zoxide = "latest"
 

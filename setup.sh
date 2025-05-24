@@ -42,12 +42,11 @@ fi
 
 source "$HOME/.config/bash/rc.bash"
 
-# Ensure python and pipx are available
-mise install -y python
-mise exec python --command "pip install --user --upgrade pipx"
-
-# install remaining tools
+# Install python and uv at first for installation of pipx:* tools.
+# Then, install remaining tools
+mise install -y python uv
 mise install -y
+
 # generate completions
 mise completion fish >~/.config/fish/completions/mise.fish
 
