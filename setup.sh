@@ -41,7 +41,12 @@ if [ ! -f "$HOME/.config/go/env" ]; then
 fi
 
 source "$HOME/.config/bash/rc.bash"
-# install tools
+
+# Ensure python and pipx are available
+mise install -y python
+mise exec python --command "pip install --user --upgrade pipx"
+
+# install remaining tools
 mise install -y
 # generate completions
 mise completion fish >~/.config/fish/completions/mise.fish
@@ -50,17 +55,6 @@ mise completion fish >~/.config/fish/completions/mise.fish
 if type fish >/dev/null 2>&1; then
     fish -c "fish_update_completions"
 fi
-
-# (python) reinstall existing pipx packages
-echo "##### (python) reinstall existing pipx packages..."
-mise exec python --command "pipx reinstall-all"
-
-# (python) install default pipx packages
-echo "##### (python) install default pipx packages..."
-export PATH="$HOME/.local/bin:$PATH"
-while read -r pkg; do
-    mise exec python --command "pipx install $pkg"
-done <"$HOME/.config/pipx/pipx_packages"
 
 # (python) venv for nvim python bindings
 echo "##### (python) reinitialize virtualenv for neovim python bindings..."
