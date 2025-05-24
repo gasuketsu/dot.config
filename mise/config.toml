@@ -25,3 +25,6 @@ zoxide = "latest"
 [settings]
 python_compile = false
 go_set_gobin = false
+
+[settings.pipx]
+uvx = true
