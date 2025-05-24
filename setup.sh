@@ -30,6 +30,10 @@ fi
 if [ ! -e "$HOME/.default-python-packages" ]; then
     cp "$HOME/.config/mise/default-python-packages" "$HOME/.default-python-packages"
 fi
+# default npm packages
+if [ ! -e "$HOME/.default-npm-packages" ]; then
+    cp "$HOME/.config/mise/default-npm-packages" "$HOME/.default-npm-packages"
+fi
 # default golang packages
 if [ ! -e "$HOME/.default-go-packages" ]; then
     cp "$HOME/.config/mise/default-go-packages" "$HOME/.default-go-packages"
@@ -57,11 +61,11 @@ fi
 
 # (python) venv for nvim python bindings
 echo "##### (python) reinitialize virtualenv for neovim python bindings..."
-cd "$HOME/.config/nvim/py3nvim"
+cd "$HOME/.config/nvim/py3nvim" || exit
 mise exec python --command "pipenv --rm"
 mise exec python --command "pipenv lock"
 mise exec python --command "pipenv install"
-cd $CWD
+cd "$CWD" || exit
 
 # (bat) rebuild cache
 echo "##### (bat) rebuild cache..."
