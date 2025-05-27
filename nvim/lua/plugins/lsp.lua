@@ -8,7 +8,6 @@ return {
         config = function()
             require("mason-lspconfig").setup({
                 ensure_installed = {
-                    "denols",
                     "gopls",
                     "jsonls",
                     "lua_ls",
