@@ -26,14 +26,6 @@ if ! type mise >/dev/null 2>&1; then
     curl https://mise.run | sh
 fi
 
-# default python packages
-if [ ! -e "$HOME/.default-python-packages" ]; then
-    cp "$HOME/.config/mise/default-python-packages" "$HOME/.default-python-packages"
-fi
-# default npm packages
-if [ ! -e "$HOME/.default-npm-packages" ]; then
-    cp "$HOME/.config/mise/default-npm-packages" "$HOME/.default-npm-packages"
-fi
 # default golang packages
 if [ ! -e "$HOME/.default-go-packages" ]; then
     cp "$HOME/.config/mise/default-go-packages" "$HOME/.default-go-packages"
@@ -46,9 +38,9 @@ fi
 
 source "$HOME/.config/bash/rc.bash"
 
-# Install python and uv at first for installation of pipx:* tools.
+# Install node, python and uv at first for installation of npm:* and pipx:* tools.
 # Then, install remaining tools
-mise install -y python uv
+mise install -y node python uv
 mise install -y
 
 # generate completions
