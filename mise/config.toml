@@ -27,6 +27,7 @@ zoxide = "latest"
 [settings]
 python_compile = false
 go_set_gobin = false
+idiomatic_version_file_enable_tools = []
 
 [settings.pipx]
 uvx = true
