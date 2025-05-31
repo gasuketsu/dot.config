@@ -45,6 +45,7 @@ mise install -y
 
 # generate completions
 mise completion fish >~/.config/fish/completions/mise.fish
+echo 'uv generate-shell-completion fish | source' >~/.config/fish/completions/uv.fish
 
 # update fish completions
 if type fish >/dev/null 2>&1; then
