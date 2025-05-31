@@ -20,4 +20,5 @@ Pipfile.lock
 /neofetch/
 /containers/
 /systemd/user/*.wants/
+/systemd/user/containerd.service
 /github-copilot/
