@@ -15,4 +15,11 @@ vim.g.mapleader = " "
 require("rc.base")
 require("rc.filetype")
 
-require("lazy").setup("plugins")
+require("lazy").setup({
+    spec = {
+        { import = "plugins" },
+    },
+    rocks = {
+        enabled = false,
+    },
+})
