@@ -25,7 +25,11 @@ set -g fish_color_status red
 # suppress greeting message
 set fish_greeting
 
-type nvim >/dev/null 2>&1 and set -gx EDITOR nvim
+# environment variables
+if test -f ~/.environment
+    export (envsubst <~/.environment)
+end
+
 set -gx PIPENV_VENV_IN_PROJECT 1
 set -gx VIRTUAL_ENV_DISABLE_PROMPT 1
 
