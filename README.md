@@ -17,6 +17,12 @@ sudo zypper install -t pattern devel_basis
 sudo zypper install git fish dirmngr gcc-c++ xz bzip2 libbz2-devel libopenssl-devel readline-devel libffi-devel sqlite3-devel xz-devel tk-devel wl-clipboard curl zip unzip terminfo fzf
 ```
 
+### archlinux
+
+```
+sudo pacman -S base-devel git fish zlib-ng xz bzip2 readline libffi sqlite3 wl-clipboard curl zip unzip fzf
+```
+
 ## Installation and setup
 
 ### Initial setup
