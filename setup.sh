@@ -36,7 +36,7 @@ if [ ! -f "$HOME/.config/go/env" ]; then
     echo "GOBIN=$HOME/.local/bin" >"$HOME/.config/go/env"
 fi
 
-source "$HOME/.config/bash/rc.bash"
+source "$HOME/.config/bash/config.bash"
 
 # Install node, python and uv at first for installation of npm:* and pipx:* tools.
 # Then, install remaining tools
@@ -69,6 +69,6 @@ echo "######################################################"
 echo " Finished setup"
 echo
 echo " To enable configuration in bash, make sure to add"
-echo " following line into your ~/.profile or ~/.bashrc"
-echo " source ~/.config/bash/rc.bash"
+echo " following line into your ~/.bashrc"
+echo " source ~/.config/bash/config.bash"
 echo "######################################################"
