@@ -36,6 +36,11 @@ set -gx VIRTUAL_ENV_DISABLE_PROMPT 1
 fish_add_path $HOME/bin
 fish_add_path $HOME/.local/bin
 
+# enable skim key-bindings if available
+if functions -q skim_key_bindings
+    skim_key_bindings
+end
+
 if status --is-interactive
     mise activate fish | source
     mise exec zoxide --command "zoxide init fish" | source
