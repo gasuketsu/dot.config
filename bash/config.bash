@@ -9,8 +9,8 @@ if [ -d $HOME/.local/bin ] && ! echo $PATH | grep -q "$HOME/.local/bin"; then
 fi
 
 # enable skim key-bindings and completion if available
-if [ -d ~/.skim ] && command -v sk >/dev/null; then
-    source ~/.skim/shell/key-bindings.bash
+if [ -f ~/.local/share/skim/shell/key-bindings.bash ] && command -v sk >/dev/null; then
+    source ~/.local/share/skim/shell/key-bindings.bash
     source <(sk --shell bash)
 fi
 

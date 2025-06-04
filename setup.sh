@@ -22,11 +22,12 @@ if [ ! -e "$HOME/.editorconfig" ]; then
 fi
 
 # skim
-if [ ! -d "$HOME/.skim" ]; then
-    git clone --depth 1 https://github.com/skim-rs/skim.git "$HOME/.skim"
-    ~/.skim/install
-    cp ~/.skim/bin/sk ~/.local/bin
-    cp ~/.skim/shell/key-bindings.fish ~/.config/fish/functions/skim_key_bindings.fish
+SKIM_INSTALL_DIR=~/.local/share/skim
+if [ ! -d "$SKIM_INSTALL_DIR" ]; then
+    git clone --depth 1 https://github.com/skim-rs/skim.git "$SKIM_INSTALL_DIR"
+    $SKIM_INSTALL_DIR/install
+    cp $SKIM_INSTALL_DIR/bin/sk ~/.local/bin
+    cp $SKIM_INSTALL_DIR/shell/key-bindings.fish ~/.config/fish/functions/skim_key_bindings.fish
     sk --shell fish >~/.config/fish/completions/sk.fish
 fi
 
