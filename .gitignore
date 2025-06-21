@@ -2,6 +2,7 @@
 /fish/conf.d/
 /fish/fish_variables
 /fish/functions/
+!/fish/functionos/fish_user_key_bindings.fish
 /fisherman/*
 /fisher/*
 /htop/*

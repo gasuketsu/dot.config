@@ -32,14 +32,13 @@ end
 
 set -gx PIPENV_VENV_IN_PROJECT 1
 set -gx VIRTUAL_ENV_DISABLE_PROMPT 1
+set -gx FZF_DEFAULT_OPTS_FILE ~/.config/fzf/config
+set -gx FZF_CTRL_T_OPTS "--walker-skip .git,.hg,.venv,node_modules
+--preview 'bat -n --color=always {}'
+--bind 'ctrl-/:change-preview-window(down|hidden|)'"
 
 fish_add_path $HOME/bin
 fish_add_path $HOME/.local/bin
-
-# enable skim key-bindings if available
-if functions -q skim_key_bindings
-    skim_key_bindings
-end
 
 if status --is-interactive
     mise activate fish | source

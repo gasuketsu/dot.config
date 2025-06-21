@@ -21,16 +21,6 @@ if [ ! -e "$HOME/.editorconfig" ]; then
     cp "$HOME/.config/editorconfig/editorconfig" "$HOME/.editorconfig"
 fi
 
-# skim
-SKIM_INSTALL_DIR=~/.local/share/skim
-if [ ! -d "$SKIM_INSTALL_DIR" ]; then
-    git clone --depth 1 https://github.com/skim-rs/skim.git "$SKIM_INSTALL_DIR"
-    $SKIM_INSTALL_DIR/install
-    cp $SKIM_INSTALL_DIR/bin/sk ~/.local/bin
-    cp $SKIM_INSTALL_DIR/shell/key-bindings.fish ~/.config/fish/functions/skim_key_bindings.fish
-    sk --shell fish >~/.config/fish/completions/sk.fish
-fi
-
 # mise
 if ! type mise >/dev/null 2>&1; then
     curl https://mise.run | sh
