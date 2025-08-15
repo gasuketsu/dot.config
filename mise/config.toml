@@ -25,9 +25,13 @@ zellij = "latest"
 zoxide = "latest"
 
 [settings]
+experimental = true
 python_compile = false
 go_set_gobin = false
 idiomatic_version_file_enable_tools = []
 
 [settings.pipx]
 uvx = true
+
+[settings.python]
+uv_venv_auto = true
