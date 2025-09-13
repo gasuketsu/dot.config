@@ -4,6 +4,11 @@ CWD=$PWD
 
 mkdir -p "$HOME/.local/bin"
 
+# Sheldon
+if ! type sheldon >/dev/null 2>&1; then
+    curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh |
+        bash -s -- --repo rossmacarthur/sheldon --to ~/.local/bin
+fi
 # Fisher
 if type fish >/dev/null 2>&1 && ! fish -c "type fisher" >/dev/null 2>&1; then
     fish -c "curl -skL https://git.io/fisher | source && fisher update"
