@@ -1,0 +1,9 @@
+#!/usr/bin/env zsh
+gcp () {
+    proj=$(ghq list | fzf)
+    if [ $? -eq 0 ]; then
+        cd $(ghq root)/${proj}
+    fi
+}
+
+gcp

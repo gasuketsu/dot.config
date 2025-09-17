@@ -2,6 +2,9 @@ if [ -f ~/.environment ]; then
     export $(envsubst <~/.environment)
 fi
 
+fpath+=($HOME/.config/zsh/functions)
+autoload -Uz gcp
+
 export PIPENV_VENV_IN_PROJECT=1
 export FZF_DEFAULT_OPTS_FILE=~/.config/fzf/config
 
