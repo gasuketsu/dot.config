@@ -13,6 +13,7 @@ if [ -d $HOME/.local/bin ] && ! echo $PATH | grep -q "$HOME/.local/bin"; then
 fi
 
 eval "$(sheldon source)"
-
+eval "$(atuin init zsh)"
 eval "$(mise activate zsh)"
 eval "$(zoxide init zsh)"
+eval "$(starship init zsh)"
