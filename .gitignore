@@ -1,5 +1,6 @@
 /fish/completions/
 /fish/fish_variables
+/fish/conf.d/fzf.fish
 /fish/functions/
 !/fish/functionos/fish_user_key_bindings.fish
 /fisherman/*
