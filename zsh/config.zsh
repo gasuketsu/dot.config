@@ -24,5 +24,7 @@ fi
 
 fpath=($HOME/.config/zsh/functions "${fpath[@]}")
 autoload -Uz gcp
+autoload -Uz _mise
+compdef _mise mise
 
 eval "$(starship init zsh)"
