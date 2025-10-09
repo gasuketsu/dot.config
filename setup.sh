@@ -3,6 +3,7 @@
 CWD=$PWD
 
 mkdir -p "$HOME/.local/bin"
+mkdir -p "$HOME/.local/share"
 
 # Sheldon
 if ! type sheldon >/dev/null 2>&1; then
@@ -24,6 +25,13 @@ fi
 # EditorConfig
 if [ ! -e "$HOME/.editorconfig" ]; then
     cp "$HOME/.config/editorconfig/editorconfig" "$HOME/.editorconfig"
+fi
+
+# fzf-git
+if [ ! -d "$HOME/.local/share/fzf-git" ]; then
+    git clone --depth 1 https://github.com/junegunn/fzf-git.sh.git "$HOME/.local/share/fzf-git"
+else
+    (cd "$HOME/.local/share/fzf-git" && git pull)
 fi
 
 # mise

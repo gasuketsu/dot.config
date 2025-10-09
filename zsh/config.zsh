@@ -16,6 +16,10 @@ eval "$(zoxide init zsh)"
 
 if type fzf >/dev/null 2>&1; then
     source <(fzf --zsh)
+
+    if [ -f ~/.local/share/fzf-git/fzf-git.sh ]; then
+        source ~/.local/share/fzf-git/fzf-git.sh
+    fi
 fi
 
 fpath=($HOME/.config/zsh/functions "${fpath[@]}")
