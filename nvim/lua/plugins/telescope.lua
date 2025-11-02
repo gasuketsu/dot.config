@@ -1,7 +1,10 @@
 return {
     {
         "nvim-telescope/telescope.nvim",
-        dependencies = { "nvim-lua/plenary.nvim" },
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "cljoly/telescope-repo.nvim",
+        },
         config = function()
             local actions = require("telescope.actions")
             require("telescope").setup({
@@ -16,7 +19,15 @@ return {
                         },
                     },
                 },
+                extensions = {
+                    repo = {
+                        settings = {
+                            auto_lcd = true,
+                        },
+                    },
+                },
             })
+            require("telescope").load_extension("repo")
         end,
     },
 }

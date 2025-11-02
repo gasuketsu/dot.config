@@ -10,3 +10,4 @@ if [ -d $HOME/.local/bin ] && ! echo $PATH | grep -q "$HOME/.local/bin"; then
 fi
 
 eval "$(mise activate bash)"
+eval "$(zoxide init bash)"
