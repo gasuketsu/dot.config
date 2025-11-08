@@ -22,6 +22,12 @@ if type fzf >/dev/null 2>&1; then
     fi
 fi
 
+# aliases
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias ip='ip --color=auto'
+
+# functions
 fpath=($HOME/.config/zsh/functions "${fpath[@]}")
 autoload -Uz gcp
 autoload -Uz _mise
