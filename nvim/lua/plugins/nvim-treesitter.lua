@@ -6,56 +6,55 @@ return {
             { "windwp/nvim-ts-autotag" },
             { "JoosepAlviste/nvim-ts-context-commentstring" },
         },
-        build = function()
-            require("nvim-treesitter.install").update({ with_sync = true })
-        end,
+        lazy = false,
+        branch = "main",
+        build = ":TSUpdate",
         config = function()
-            require("nvim-treesitter.configs").setup({
-                -- A list of parser names, or "all"
-                ensure_installed = {
-                    "bash",
-                    "c",
-                    "cmake",
-                    "comment",
-                    "cpp",
-                    "css",
-                    "dockerfile",
-                    "fish",
-                    "go",
-                    "gomod",
-                    "groovy",
-                    "hjson",
-                    "html",
-                    "java",
-                    "javascript",
-                    "json",
-                    "jsonc",
-                    "kotlin",
-                    "lua",
-                    "make",
-                    "markdown",
-                    "markdown_inline",
-                    "proto",
-                    "python",
-                    "regex",
-                    "rust",
-                    "scss",
-                    "svelte",
-                    "toml",
-                    "tsx",
-                    "typescript",
-                    "vim",
-                    "vimdoc",
-                    "yaml",
-                },
-                ignore_install = {}, -- List of parsers to ignore installing
-                highlight = {
-                    enable = true, -- false will disable the whole extension
-                    disable = { "elixir" }, -- list of language that will be disabled
-                },
-                autotag = {
-                    enable = true,
-                },
+            local langs = {
+                "bash",
+                "c",
+                "cmake",
+                "comment",
+                "cpp",
+                "css",
+                "dockerfile",
+                "fish",
+                "go",
+                "gomod",
+                "groovy",
+                "hjson",
+                "html",
+                "java",
+                "javascript",
+                "json",
+                "jsonc",
+                "kotlin",
+                "lua",
+                "make",
+                "markdown",
+                "markdown_inline",
+                "proto",
+                "python",
+                "regex",
+                "rust",
+                "scss",
+                "svelte",
+                "toml",
+                "tsx",
+                "typescript",
+                "vim",
+                "vimdoc",
+                "yaml",
+                "zsh",
+            }
+            require("nvim-treesitter").install(langs)
+
+            vim.api.nvim_create_autocmd("FileType", {
+                group = vim.api.nvim_create_augroup("vim-treesitter-start", { clear = true }),
+                pattern = langs,
+                callback = function(args)
+                    vim.treesitter.start(args.buf)
+                end,
             })
 
             require("treesitter-context").setup()

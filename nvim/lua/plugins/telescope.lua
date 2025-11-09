@@ -3,7 +3,6 @@ return {
         "nvim-telescope/telescope.nvim",
         dependencies = {
             "nvim-lua/plenary.nvim",
-            "cljoly/telescope-repo.nvim",
         },
         config = function()
             local actions = require("telescope.actions")
@@ -27,7 +26,6 @@ return {
                     },
                 },
             })
-            require("telescope").load_extension("repo")
         end,
     },
 }
