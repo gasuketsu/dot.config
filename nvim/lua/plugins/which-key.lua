@@ -37,7 +37,7 @@ return {
                 { "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Find help tags" },
                 { "<leader>fn", "<cmd>Telescope noice<cr>", desc = "Find noice message history" },
                 { "<leader>fp", "<cmd>Telescope project<cr>", desc = "Find project" },
-                { "<leader>fr", "<cmd>Telescope repo<cr>", desc = "Find repository" },
+                { "<leader>fr", "<cmd>Telescope ghq<cr>", desc = "Find repository managed in ghq" },
                 { "<leader>fs", "<cmd>Telescope aerial<cr>", desc = "Find symbol in this buffer" },
                 -- group "git"
                 { "<leader>g", group = "git" },

@@ -3,6 +3,7 @@ return {
         "nvim-telescope/telescope.nvim",
         dependencies = {
             "nvim-lua/plenary.nvim",
+            "nvim-telescope/telescope-ghq.nvim",
         },
         config = function()
             local actions = require("telescope.actions")
@@ -18,14 +19,8 @@ return {
                         },
                     },
                 },
-                extensions = {
-                    repo = {
-                        settings = {
-                            auto_lcd = true,
-                        },
-                    },
-                },
             })
+            require("telescope").load_extension("ghq")
         end,
     },
 }
