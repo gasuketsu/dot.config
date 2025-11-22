@@ -45,7 +45,7 @@ return {
                             col = "100%",
                         },
                         size = {
-                            width = "40%",
+                            width = "50%",
                             height = "auto",
                             max_height = 8,
                         },
