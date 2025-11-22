@@ -48,13 +48,9 @@ return {
                 "zsh",
             }
             local langs_indent = {
-                "c",
                 "cmake",
                 "comment",
-                "cpp",
                 "css",
-                "fish",
-                "go",
                 "gomod",
                 "groovy",
                 "hjson",
