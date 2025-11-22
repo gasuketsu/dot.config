@@ -47,13 +47,49 @@ return {
                 "yaml",
                 "zsh",
             }
+            local langs_indent = {
+                "c",
+                "cmake",
+                "comment",
+                "cpp",
+                "css",
+                "fish",
+                "go",
+                "gomod",
+                "groovy",
+                "hjson",
+                "html",
+                "java",
+                "javascript",
+                "json",
+                "jsonc",
+                "lua",
+                "markdown",
+                "proto",
+                "python",
+                "rust",
+                "scss",
+                "svelte",
+                "toml",
+                "tsx",
+                "typescript",
+                "yaml",
+            }
             require("nvim-treesitter").install(langs)
 
+            local group = vim.api.nvim_create_augroup("vim-treesitter-start", { clear = true })
             vim.api.nvim_create_autocmd("FileType", {
-                group = vim.api.nvim_create_augroup("vim-treesitter-start", { clear = true }),
+                group = group,
                 pattern = langs,
                 callback = function(args)
                     vim.treesitter.start(args.buf)
+                end,
+            })
+
+            vim.api.nvim_create_autocmd("FileType", {
+                group = group,
+                pattern = langs_indent,
+                callback = function(_)
                     vim.bo.indentexpr = "v:lua.require('nvim-treesitter').indentexpr()"
                 end,
             })

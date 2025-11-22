@@ -21,6 +21,7 @@ return {
                     typescript = { "biome" },
                     typescriptreact = { "biome" },
                     yaml = { "yamlfmt" },
+                    zsh = { "shfmt" },
                     ["_"] = { "trim_whitespace" },
                 },
                 format_on_save = {
