@@ -11,7 +11,7 @@ return {
                     "gopls",
                     "jsonls",
                     "lua_ls",
-                    "pyright",
+                    "pyrefly",
                     "rust_analyzer",
                     "svelte",
                     "ts_ls",
