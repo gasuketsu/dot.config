@@ -14,7 +14,7 @@
 /go/*
 /TabNine/
 /pulse/*
-Pipfile.lock
+uv.lock
 /cni/
 /btop/
 /nvim/plugin/packer_compiled.lua

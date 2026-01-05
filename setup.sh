@@ -68,9 +68,8 @@ fi
 # (python) venv for nvim python bindings
 echo "##### (python) reinitialize virtualenv for neovim python bindings..."
 cd "$HOME/.config/nvim/py3nvim" || exit
-mise exec python --command "pipenv --rm"
-mise exec python --command "pipenv lock"
-mise exec python --command "pipenv install"
+mise exec python --command "uv venv --clear"
+mise exec python --command "uv sync"
 cd "$CWD" || exit
 
 # (bat) rebuild cache

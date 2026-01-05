@@ -1,0 +1,8 @@
+[project]
+name = "py3nvim"
+version = "0.1.0"
+description = "Manages python plugins for neovim"
+requires-python = ">=3.12"
+dependencies = [
+    "neovim",
+]
