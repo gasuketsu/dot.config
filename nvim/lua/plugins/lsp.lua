@@ -12,6 +12,7 @@ return {
                     "gopls",
                     "jsonls",
                     "lua_ls",
+                    "mesonlsp",
                     "pyrefly",
                     "rust_analyzer",
                     "svelte",
