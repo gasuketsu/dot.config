@@ -1,0 +1,28 @@
+{
+    "kanagawa-wave": {
+        "display:name": "Kanagawa Wave",
+        "display:order": 1,
+        "foreground": "#A7AC9C",
+        "background": "#1F1F28",
+        "black": "#181820",
+        "red": "#C34043",
+        "green": "#6F894E",
+        "yellow": "#DCA561",
+        "blue": "#4D699B",
+        "magenta": "#766B90",
+        "cyan": "#6A9589",
+        "white": "#DCD7BA",
+        "brightBlack": "#363646",
+        "brightRed": "#FF5D62",
+        "brightGreen": "#98BB6C",
+        "brightYellow": "#E6C384",
+        "brightBlue": "#7FB4CA",
+        "brightMagenta": "#938AA9",
+        "brightCyan": "#7AA89F",
+        "brightWhite": "#F2ECBC",
+        "gray": "#727169",
+        "cmdtext": "#DCD7BA",
+        "cursor": "#DCD7BA",
+        "selectionBackground": "#2D4F67"
+    }
+}

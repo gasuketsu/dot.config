@@ -1,0 +1,7 @@
+{
+  "autoupdate:channel": "latest",
+  "conn:askbeforewshinstall": false,
+  "term:theme": "kanagawa-dragon",
+  "term:fontfamily": "PlemolJP Console NF",
+  "term:fontsize": 16
+}
