@@ -5,6 +5,7 @@
 !/fish/functionos/fish_user_key_bindings.fish
 /fisherman/*
 /fisher/*
+/mise/config.local.toml
 /htop/*
 /pudb/*
 /lxc/*
