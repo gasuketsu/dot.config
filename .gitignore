@@ -25,3 +25,4 @@ uv.lock
 /systemd/user/containerd.service
 /github-copilot/
 /helm/
+/waveterm/connections.json
