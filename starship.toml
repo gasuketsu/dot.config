@@ -23,16 +23,16 @@ disabled = true
 
 # per-language configuration
 [cmake]
-format = "[$symbol$version]($style) "
+format = "[$symbol $version]($style) "
 
 [golang]
-format = "[$symbol$version]($style) "
+format = "[$symbol $version]($style) "
 
 [gradle]
 symbol = " "
 
 [java]
-format = "[${symbol}${version}]($style) "
+format = "[${symbol} ${version}]($style) "
 
 [kotlin]
 symbol = "󱈙 "
@@ -41,10 +41,10 @@ symbol = "󱈙 "
 format = "[$symbol$version]($style) "
 
 [python]
-format = "[${symbol}${pyenv_prefix}${version}( \\($virtualenv\\))]($style) "
+format = "[${symbol} ${pyenv_prefix}${version}( \\($virtualenv\\))]($style) "
 
 [rust]
-format = "[$symbol]($style) "
+format = "[$symbol] ($style) "
 
 [lua]
-format = "[$symbol$version]($style) "
+format = "[$symbol $version]($style) "
