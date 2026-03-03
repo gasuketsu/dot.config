@@ -10,10 +10,12 @@ return {
             local wk = require("which-key")
             local conform = require("conform")
             local neotest = require("neotest")
+            local hc = require("nvim-highlight-colors")
             -- normal mode keymaps with <leader>
             wk.add({
                 -- group "toggle'
                 { "<leader><space>", group = "toggle" },
+                { "<leader><space>c", hc.toggle, desc = "Toggle highlight colors" },
                 { "<leader><space>e", "<cmd>Neotree toggle<cr>", desc = "Toggle file explorer" },
                 { "<leader><space>l", "<cmd>LLToggle!<cr>", desc = "Toggle loclist" },
                 { "<leader><space>o", "<cmd>AerialToggle!<cr>", desc = "Toggle outline" },

@@ -66,6 +66,15 @@ return {
                     },
                 },
             })
+            vim.lsp.config("pyrefly", {
+                settings = {
+                    pyrefly = {
+                        analyzer = true,
+                        diagnostics = true,
+                        typechecking = "strict",
+                    },
+                },
+            })
 
             -- Diagnostic Configuration
             vim.diagnostic.config({
