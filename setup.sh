@@ -76,6 +76,19 @@ cd "$CWD" || exit
 echo "##### (bat) rebuild cache..."
 mise exec bat --command "bat cache --build"
 
+# (neovim) copy skel
+echo "##### (neovim) copy env specific skels..."
+for p in "$HOME/.config/skel/nvim/lua/env/*.lua"; do
+    file=$(basename ${p})
+    echo -n "${file} ... "
+    if [ -f "$HOME/.config/nvim/lua/env/${file}" ]; then
+        echo "skipped"
+    else
+        cp ${p} "$HOME/.config/nvim/lua/env/"
+        echo "done"
+    fi
+done
+
 echo
 echo "######################################################"
 echo " Finished setup"

@@ -18,7 +18,7 @@
 uv.lock
 /cni/
 /btop/
-/nvim/plugin/packer_compiled.lua
+/nvim/lua/env/*.lua
 /neofetch/
 /containers/
 /systemd/user/*.wants/
