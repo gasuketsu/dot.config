@@ -26,3 +26,4 @@ uv.lock
 /github-copilot/
 /helm/
 /waveterm/connections.json
+/opencode/config.json

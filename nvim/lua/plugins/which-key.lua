@@ -11,6 +11,7 @@ return {
             local conform = require("conform")
             local neotest = require("neotest")
             local hc = require("nvim-highlight-colors")
+            local snacks = require("snacks")
             -- normal mode keymaps with <leader>
             wk.add({
                 -- group "toggle'
@@ -20,7 +21,7 @@ return {
                 { "<leader><space>l", "<cmd>LLToggle!<cr>", desc = "Toggle loclist" },
                 { "<leader><space>o", "<cmd>AerialToggle!<cr>", desc = "Toggle outline" },
                 { "<leader><space>q", "<cmd>QFToggle!<cr>", desc = "Toggle quickfix" },
-                { "<leader><space>t", "<cmd>ToggleTerm<cr>", desc = "Toggle Terminal" },
+                { "<leader><space>t", snacks.terminal.toggle, desc = "Toggle Terminal" },
                 -- diagnostics
                 {
                     "<leader>d",

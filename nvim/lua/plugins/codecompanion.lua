@@ -6,10 +6,20 @@ return {
             "nvim-lua/plenary.nvim",
             "nvim-treesitter/nvim-treesitter",
         },
-        opts = function(_, opts)
-            local base_opts = {}
-            local env_opts = require("env.codecompanion").opts
-            return vim.tbl_deep_extend("force", opts, base_opts, env_opts)
+        config = function()
+            vim.g.codecompletion_auto_tool_mode = true
+            require("codecompanion").setup({
+                interactions = {
+                    chat = {
+                        adapter = {
+                            name = "opencode",
+                        },
+                        opts = {
+                            completion_provider = "blink",
+                        },
+                    },
+                },
+            })
         end,
     },
 }
