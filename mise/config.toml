@@ -30,12 +30,14 @@ zoxide = "latest"
 
 [settings]
 experimental = true
-python_compile = false
-go_set_gobin = false
 idiomatic_version_file_enable_tools = []
+
+[settings.go]
+set_gobin = false
 
 [settings.pipx]
 uvx = true
 
 [settings.python]
 uv_venv_auto = true
+compile = false
