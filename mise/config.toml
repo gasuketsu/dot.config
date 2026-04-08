@@ -1,9 +1,5 @@
 [tools]
-bat = "latest"
-difftastic = "latest"
-fd = "latest"
 go = "latest"
-jless = "latest"
 node = "lts"
 "npm:biome" = "latest"
 "npm:prettier" = "latest"
@@ -16,18 +12,10 @@ opencode = "latest"
 "pipx:pipenv" = "latest"
 "pipx:poetry" = "latest"
 "pipx:ruff" = "latest"
-protoc = "latest"
 python = "latest"
-ripgrep = "latest"
 rust = "latest"
-shellcheck = "latest"
-shfmt = "latest"
-starship = "latest"
 tree-sitter = "latest"
-usage = "latest"
 uv = "latest"
-zellij = "latest"
-zoxide = "latest"
 
 [settings]
 experimental = true

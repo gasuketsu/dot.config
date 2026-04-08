@@ -4,6 +4,9 @@ Manages configurations stored under `~/.config`.
 
 ## Prerequisites
 
+Since several tools are managed by home-manager,
+[nix](https://github.com/NixOS/nix-installer) must be available in your environment.
+
 ### Debian/Ubuntu
 
 ```
