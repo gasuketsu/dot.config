@@ -14,7 +14,6 @@ opencode = "latest"
 "pipx:ruff" = "latest"
 python = "latest"
 rust = "latest"
-tree-sitter = "latest"
 uv = "latest"
 
 [settings]

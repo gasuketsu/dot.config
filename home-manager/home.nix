@@ -53,6 +53,7 @@
     shellcheck
     shfmt
     starship
+    tree-sitter
     usage
     yamlfmt
     zellij
