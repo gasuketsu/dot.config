@@ -101,26 +101,24 @@
   programs.home-manager.enable = true;
   programs.git = {
     enable = true;
-    init.defaultlBranch = "main";
-    push.default = "simple";
-    pull.rebase = false;
-    alias = {
-      glog = "log --graph --decorate --date=iso";
-      root = "rev-parse --show-toplevel";
+    settings = {
+      init.defaultlBranch = "main";
+      push.default = "simple";
+      pull.rebase = false;
+      aliases = {
+        glog = "log --graph --decorate --date=iso";
+        root = "rev-parse --show-toplevel";
+      };
+      mergetool.prompt = false;
+      mergetool.nvim = {
+        cmd = "nvim -f -c \"DiffviewOpen\"";
+      };
+      merge.tool = "nvim";
+      difftool.prompt = false;
+      difftool.nvim = {
+        cmd = "nvim -d \"$LOCAL\" \"$REMOTE\"";
+      };
     };
-    mergetool.prompt = false;
-    mergetool.nvim = {
-      cmd = "nvim -f -c \"DiffviewOpen\"";
-    };
-    merge.tool = "nvim";
-    difftool.prompt = false;
-    difftool.nvim = {
-      cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
-    };
-    difftool.difftastic = {
-      cmd = "difft \"$LOCAL\" \"$REMOTE\""
-    };
-    diff.tool = "difftastic";
   };
 
 
