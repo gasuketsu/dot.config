@@ -105,7 +105,7 @@
       init.defaultlBranch = "main";
       push.default = "simple";
       pull.rebase = false;
-      aliase = {
+      alias = {
         glog = "log --graph --decorate --date=iso";
         root = "rev-parse --show-toplevel";
       };
@@ -114,12 +114,6 @@
         cmd = "nvim -f -c \"DiffviewOpen\"";
       };
       merge.tool = "nvim";
-      difftool.prompt = false;
-      difftool.nvim = {
-        cmd = "nvim -d \"$LOCAL\" \"$REMOTE\"";
-      };
     };
   };
-
-
 }
