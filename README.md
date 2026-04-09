@@ -7,6 +7,8 @@ Manages configurations stored under `~/.config`.
 Since several tools are managed by home-manager,
 [nix](https://github.com/NixOS/nix-installer) must be available in your environment.
 
+Also, several packages should be installed.
+
 ### Debian/Ubuntu
 
 ```
@@ -48,13 +50,9 @@ in your `.bashrc` after running setup script.
 ### Neovim plugins
 
 Packages should be installed automatically when you start neovim first time with this config.
-Also, you can install/update packages managed in `nvim/lua/plugins.lua` with `Lazy` command
+Also, you can sync packages managed in `nvim/lua/plugins.lua` with `Lazy` command
 in neovim.
 
 ```
-# install
-:Lazy install
-
-# update
-:Lazy update
+:Lazy sync
 ```
