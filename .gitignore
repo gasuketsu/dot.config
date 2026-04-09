@@ -12,6 +12,7 @@
 /tmux/plugins/
 /configstore/
 .venv/
+/git/config
 /go/*
 /TabNine/
 /pulse/*
@@ -27,3 +28,4 @@ uv.lock
 /helm/
 /waveterm/connections.json
 /opencode/config.json
+/envinronment.d/10-home-manager.conf

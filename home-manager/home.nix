@@ -105,7 +105,7 @@
       init.defaultlBranch = "main";
       push.default = "simple";
       pull.rebase = false;
-      aliases = {
+      aliase = {
         glog = "log --graph --decorate --date=iso";
         root = "rev-parse --show-toplevel";
       };
