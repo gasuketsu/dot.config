@@ -5,28 +5,13 @@ CWD=$PWD
 mkdir -p "$HOME/.local/bin"
 mkdir -p "$HOME/.local/share"
 
-# Sheldon
-if ! type sheldon >/dev/null 2>&1; then
-    curl --proto '=https' -fLsS https://rossmacarthur.github.io/install/crate.sh |
-        bash -s -- --repo rossmacarthur/sheldon --to ~/.local/bin
-fi
+# enable home-manager and apply configuration
+nix run home-manager/master -- init --switch
+
 # Fisher
 if type fish >/dev/null 2>&1 && ! fish -c "type fisher" >/dev/null 2>&1; then
     fish -c "curl -skL https://git.io/fisher | source && fisher update"
 fi
-# clang-format
-if [ ! -e "$HOME/.clang-format" ]; then
-    cp "$HOME/.config/clang-format/clang-format" "$HOME/.clang-format"
-fi
-# .gitconfig
-if [ ! -e "$HOME/.gitconfig" ]; then
-    touch "$HOME/.gitconfig"
-fi
-# EditorConfig
-if [ ! -e "$HOME/.editorconfig" ]; then
-    cp "$HOME/.config/editorconfig/editorconfig" "$HOME/.editorconfig"
-fi
-
 # fzf-git
 if [ ! -d "$HOME/.local/share/fzf-git" ]; then
     git clone --depth 1 https://github.com/junegunn/fzf-git.sh.git "$HOME/.local/share/fzf-git"
@@ -34,15 +19,6 @@ else
     (cd "$HOME/.local/share/fzf-git" && git pull)
 fi
 
-# mise
-if ! type mise >/dev/null 2>&1; then
-    curl https://mise.run | sh
-fi
-
-# default golang packages
-if [ ! -e "$HOME/.default-go-packages" ]; then
-    cp "$HOME/.config/mise/default-go-packages" "$HOME/.default-go-packages"
-fi
 # default go env (only when no env file exist)
 if [ ! -f "$HOME/.config/go/env" ]; then
     mkdir -p "$HOME/.config/go"
@@ -75,19 +51,6 @@ cd "$CWD" || exit
 # (bat) rebuild cache
 echo "##### (bat) rebuild cache..."
 mise exec bat --command "bat cache --build"
-
-# (neovim) copy skel
-echo "##### (neovim) copy env specific skels..."
-for p in "$HOME/.config/skel/nvim/lua/env/*.lua"; do
-    file=$(basename ${p})
-    echo -n "${file} ... "
-    if [ -f "$HOME/.config/nvim/lua/env/${file}" ]; then
-        echo "skipped"
-    else
-        cp ${p} "$HOME/.config/nvim/lua/env/"
-        echo "done"
-    fi
-done
 
 echo
 echo "######################################################"
