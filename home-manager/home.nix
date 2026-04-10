@@ -23,7 +23,6 @@
   # environment.
   home.packages = with pkgs; [
     devbox
-    fish
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -75,4 +74,5 @@
       merge.tool = "nvim";
     };
   };
+
 }

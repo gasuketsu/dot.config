@@ -12,17 +12,7 @@ nix run home-manager/master -- init --switch
 eval "$(devbox global shellenv)"
 devbox global pull https://github.com/gasuketsu/devbox-global-default.git
 devbox global install
-
-# Fisher
-if type fish >/dev/null 2>&1 && ! fish -c "type fisher" >/dev/null 2>&1; then
-    fish -c "curl -skL https://git.io/fisher | source && fisher update"
-fi
-# fzf-git
-if [ ! -d "$HOME/.local/share/fzf-git" ]; then
-    git clone --depth 1 https://github.com/junegunn/fzf-git.sh.git "$HOME/.local/share/fzf-git"
-else
-    (cd "$HOME/.local/share/fzf-git" && git pull)
-fi
+eval "$(devbox global shellenv --preserve-path-stack -r)" && hash -r
 
 # default go env (only when no env file exist)
 if [ ! -f "$HOME/.config/go/env" ]; then
@@ -35,15 +25,6 @@ source "$HOME/.config/bash/config.bash"
 # Install node, python and uv at first for installation of npm:* and pipx:* tools.
 # Then, install remaining tools
 mise install -y
-
-# generate completions
-mise completion fish >~/.config/fish/completions/mise.fish
-echo 'uv generate-shell-completion fish | source' >~/.config/fish/completions/uv.fish
-
-# update fish completions
-if type fish >/dev/null 2>&1; then
-    fish -c "fish_update_completions"
-fi
 
 # (python) venv for nvim python bindings
 echo "##### (python) reinitialize virtualenv for neovim python bindings..."
