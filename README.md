@@ -7,25 +7,20 @@ Manages configurations stored under `~/.config`.
 ### Debian/Ubuntu
 
 ```
-sudo apt install git fish build-essential zlib1g-dev libffi-dev libssl-dev libbz2-dev \
-         libncursesw5-dev libgdbm-dev liblzma-dev libsqlite3-dev uuid-dev libreadline-dev \
-         liblzma-dev tk-dev wl-clipboard curl zip unzip ncurses-term fzf gettext-base plocate
+sudo apt install git fish build-essential wl-clipboard curl zip unzip ncurses-term gettext-base
 ```
 
 ### openSUSE
 
 ```
 sudo zypper install -t pattern devel_basis
-sudo zypper install git fish dirmngr gcc-c++ xz bzip2 libbz2-devel libopenssl-devel \
-         readline-devel libffi-devel sqlite3-devel xz-devel tk-devel wl-clipboard \
-         curl zip unzip terminfo fzf plocate
+sudo zypper install git fish dirmngr gcc-c++ wl-clipboard curl zip unzip terminfo
 ```
 
 ### archlinux
 
 ```
-sudo pacman -S base-devel git fish zlib-ng xz bzip2 readline libffi sqlite3 wl-clipboard \
-         curl zip unzip fzf plocate
+sudo pacman -S base-devel git fish zlib-ng wl-clipboard curl zip unzip
 ```
 
 ## Installation and setup
