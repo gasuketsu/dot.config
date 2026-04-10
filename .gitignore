@@ -27,6 +27,6 @@ uv.lock
 /github-copilot/
 /helm/
 /waveterm/connections.json
-/opencode/config.json
+/opencode/
 /environment.d/10-home-manager.conf
 /systemd/user/tray.target

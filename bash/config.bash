@@ -9,5 +9,6 @@ if [ -d $HOME/.local/bin ] && ! echo $PATH | grep -q "$HOME/.local/bin"; then
     export PATH=$HOME/.local/bin:$PATH
 fi
 
+eval "$(devbox global shellenv)"
 eval "$(mise activate bash)"
 eval "$(zoxide init bash)"

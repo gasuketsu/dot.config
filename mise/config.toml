@@ -1,27 +1,9 @@
 [tools]
-go = "latest"
-node = "lts"
-"npm:biome" = "latest"
-"npm:prettier" = "latest"
-opencode = "latest"
-"pipx:ansible-core" = "latest"
-"pipx:ast-grep-cli" = "latest"
-"pipx:httpie" = "latest"
-"pipx:meson" = "latest"
-"pipx:ninja" = "latest"
-"pipx:pipenv" = "latest"
-"pipx:poetry" = "latest"
-"pipx:ruff" = "latest"
-python = "latest"
-rust = "latest"
-uv = "latest"
 
 [settings]
 experimental = true
 idiomatic_version_file_enable_tools = []
-
-[settings.go]
-set_gobin = false
+go_set_gobin = false
 
 [settings.pipx]
 uvx = true

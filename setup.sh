@@ -8,6 +8,11 @@ mkdir -p "$HOME/.local/share"
 # enable home-manager and apply configuration
 nix run home-manager/master -- init --switch
 
+# pull devbox global default from remote
+eval "$(devbox global shellenv)"
+devbox global pull https://github.com/gasuketsu/devbox-global-default.git
+devbox global install
+
 # Fisher
 if type fish >/dev/null 2>&1 && ! fish -c "type fisher" >/dev/null 2>&1; then
     fish -c "curl -skL https://git.io/fisher | source && fisher update"
@@ -29,7 +34,6 @@ source "$HOME/.config/bash/config.bash"
 
 # Install node, python and uv at first for installation of npm:* and pipx:* tools.
 # Then, install remaining tools
-mise install -y node python uv
 mise install -y
 
 # generate completions
@@ -44,13 +48,13 @@ fi
 # (python) venv for nvim python bindings
 echo "##### (python) reinitialize virtualenv for neovim python bindings..."
 cd "$HOME/.config/nvim/py3nvim" || exit
-mise exec python --command "uv venv --clear"
-mise exec python --command "uv sync"
+uv venv --clear
+uv sync
 cd "$CWD" || exit
 
 # (bat) rebuild cache
 echo "##### (bat) rebuild cache..."
-mise exec bat --command "bat cache --build"
+bat cache --build
 
 echo
 echo "######################################################"
