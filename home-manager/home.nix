@@ -28,10 +28,6 @@
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
-    ".clang-format".source = ../clang-format/clang-format;
-    ".editorconfig".source = ../editorconfig/editorconfig;
-    ".default-go-packages".source = ../mise/default-go-packages;
-    ".zshrc".source = ../zsh/zshrc;
   };
 
   # Home Manager can also manage your environment variables through

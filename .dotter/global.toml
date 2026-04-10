@@ -1,0 +1,14 @@
+[helpers]
+
+[default]
+depends = []
+
+[default.files]
+"clang-format/clang-format" = "~/.clang-format"
+"editorconfig/editorconfig" = "~/.editorconfig"
+"zsh/zshrc" = "~/.zshrc"
+
+[default.variables]
+
+[settings]
+default_target_type = "automatic"

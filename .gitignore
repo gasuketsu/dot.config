@@ -23,3 +23,5 @@ uv.lock
 /opencode/
 /environment.d/10-home-manager.conf
 /systemd/user/tray.target
+/.dotter/cache.toml
+/.dotter/local.toml
