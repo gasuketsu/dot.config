@@ -5,8 +5,10 @@ CWD=$PWD
 mkdir -p "$HOME/.local/bin"
 mkdir -p "$HOME/.local/share"
 
-# enable home-manager and apply configuration
-nix run home-manager/master -- init --switch
+# Install devbox if needed.
+if ! command -v devbox >/dev/null 2>&1; then
+    curl -fsSL https://get.jetify.com/devbox | bash
+fi
 
 # pull devbox global default from remote
 eval "$(devbox global shellenv)"
